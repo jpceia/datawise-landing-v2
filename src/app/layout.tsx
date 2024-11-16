@@ -2,6 +2,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Lato } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 
 const geistSans = localFont({
@@ -14,6 +15,11 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+const lato = Lato({ 
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: "DATAWISE",
@@ -27,12 +33,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Navbar />
+      
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${lato.className} antialiased`}
       >
-        {children}
+        <Navbar />
+        <main className="pt-20">
+          {children}
+        </main>
+        <footer>
+        </footer>
       </body>
+
     </html>
   );
 }

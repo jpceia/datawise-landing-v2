@@ -4,16 +4,17 @@ import Link from 'next/link';
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white z-50 px-6 py-4">
+    <nav className="bg-white shadow-sm w-full px-6 py-6">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="transition-opacity hover:opacity-80 duration-300">
+        <Link href="/" className="transition-all duration-300 hover:opacity-75">
           <Image
             src="/images/logo.png"
             alt="Datawise Logo"
-            width={200}
-            height={40}
-            className="h-10 w-auto"
+            width={260}
+            height={50}
+            priority
+            className="h-14 w-auto"
           />
         </Link>
 
@@ -21,28 +22,28 @@ const Navbar = () => {
         <div className="flex items-center gap-8">
           <Link 
             href="#services"
-            className="text-gray-800 hover:-translate-y-1 transition-transform duration-1000"
+            className="text-primary font-bold transition-all duration-300 transform hover:-translate-y-1"
           >
             Serviços
           </Link>
           
           <Link 
             href="#success_stories"
-            className="text-gray-800 hover:-translate-y-1 transition-transform duration-1000"
+            className="text-primary font-bold transition-all duration-300 transform hover:-translate-y-1"
           >
             Casos de Sucesso
           </Link>
           
           <a 
             href="mailto:geral@datawise.pt"
-            className="text-gray-800 hover:-translate-y-1 transition-transform duration-1000"
+            className="text-primary font-bold transition-all duration-300 transform hover:-translate-y-1"
           >
             Carreiras
           </a>
           
           <Link 
             href="#contactos"
-            className="border-2 border-gray-800 px-4 py-2 rounded hover:-translate-y-1 transition-transform duration-1000"
+            className="border-2 border-primary text-primary font-bold px-5 py-2 rounded transition-all duration-300 transform hover:-translate-y-1 shadow-custom"
           >
             Contacte-nos
           </Link>
