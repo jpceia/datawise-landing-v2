@@ -5,14 +5,14 @@ import Link from 'next/link';
 const Navbar = () => {
   return (
     <nav className="bg-white shadow-sm w-full px-6 py-6">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+      <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="transition-all duration-300 hover:opacity-75">
-          <Image
+        <Image 
             src="/images/logo.png"
-            alt="Datawise Logo"
+            alt="DATAWISE Logo"
             width={260}
-            height={50}
+            height={48}
             priority
             className="h-14 w-auto"
           />
@@ -34,12 +34,12 @@ const Navbar = () => {
             Casos de Sucesso
           </Link>
           
-          <a 
+          <Link 
             href="mailto:geral@datawise.pt"
             className="text-primary font-bold transition-all duration-300 transform hover:-translate-y-1"
           >
             Carreiras
-          </a>
+          </Link>
           
           <Link 
             href="#contactos"
