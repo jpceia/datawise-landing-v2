@@ -1,0 +1,51 @@
+/* components/Globe/styles.module.css */
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.globeWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.globe3D,
+.globe2DOverlay,
+.globePopupOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.globe2DOverlay,
+.globePopupOverlay {
+  pointer-events: none;
+}
+
+.globePopup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  opacity: 0;
+  color: #111;
+  font-family: sans-serif;
+  padding: 5px 10px;
+  font-size: 15px;
+  border-radius: 3px;
+  filter: drop-shadow(0px 0px 3px #555555);
+}

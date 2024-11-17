@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from 'react';
+import Globe from '../Globe';
 
 export default function Hero() {
   // Add Ubuntu font
@@ -57,10 +58,16 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column - Globe Placeholder */}
+          {/* Right Column - Globe Placeholder 
           <div className="aspect-square bg-gray-100 rounded-lg">
             <div className="w-full h-full flex items-center justify-center text-gray-400">
               Globo 3D
+            </div>
+          </div>
+          */}
+          <div className="relative flex items-center justify-center w-full h-full aspect-square">
+          <div className="w-full h-full">
+              <Globe />
             </div>
           </div>
         </div>
