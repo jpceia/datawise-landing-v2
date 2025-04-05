@@ -1,0 +1,31 @@
+import React from 'react';
+
+const Section = ({ 
+  children, 
+  className = '',
+  id,
+  background = 'white',
+  ...props 
+}) => {
+  const backgrounds = {
+    white: 'bg-white',
+    gray: 'bg-gray-50',
+    dark: 'bg-secondary-dark text-white',
+    primary: 'bg-primary text-white',
+    gradient: 'bg-gradient-to-r from-primary-dark to-primary',
+  };
+  
+  return (
+    <section 
+      id={id}
+      className={`py-16 ${backgrounds[background]} ${className}`}
+      {...props}
+    >
+      <div className="container mx-auto px-4">
+        {children}
+      </div>
+    </section>
+  );
+};
+
+export default Section;
