@@ -105,26 +105,6 @@ const MissionValues = () => {
             </div>
           </div>
         </div>
-        
-        {/* Metric cards */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-16">
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
-            <div className="text-3xl font-bold text-primary-light mb-1">+50</div>
-            <div className="text-sm opacity-80">Clientes satisfeitos</div>
-          </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
-            <div className="text-3xl font-bold text-primary-light mb-1">+120</div>
-            <div className="text-sm opacity-80">Projetos concluídos</div>
-          </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
-            <div className="text-3xl font-bold text-primary-light mb-1">98%</div>
-            <div className="text-sm opacity-80">Taxa de retenção</div>
-          </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
-            <div className="text-3xl font-bold text-primary-light mb-1">+15</div>
-            <div className="text-sm opacity-80">Especialistas dedicados</div>
-          </div>
-        </div>
       </div>
     </section>
   );

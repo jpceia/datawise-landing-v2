@@ -2,15 +2,47 @@ import React from 'react';
 import Image from 'next/image';
 
 const Technologies = () => {
-  const techLogos = [
-    { id: 1, name: 'Python', logo: '/python-logo.png', placeholder: 'https://via.placeholder.com/150x75?text=Python' },
-    { id: 2, name: 'Jupyter', logo: '/jupyter-logo.png', placeholder: 'https://via.placeholder.com/150x75?text=Jupyter' },
-    { id: 3, name: 'scikit-learn', logo: '/scikit-logo.png', placeholder: 'https://via.placeholder.com/150x75?text=scikit-learn' },
-    { id: 4, name: 'XGBoost', logo: '/xgboost-logo.png', placeholder: 'https://via.placeholder.com/150x75?text=XGBoost' },
-    { id: 5, name: 'TensorFlow', logo: '/tensorflow-logo.png', placeholder: 'https://via.placeholder.com/150x75?text=TensorFlow' },
-    { id: 6, name: 'Google Cloud', logo: '/gcloud-logo.png', placeholder: 'https://via.placeholder.com/150x75?text=Google+Cloud' },
-    { id: 7, name: 'Microsoft Cognitive Services', logo: '/ms-cognitive-logo.png', placeholder: 'https://via.placeholder.com/150x75?text=MS+Cognitive' },
-    { id: 8, name: 'AWS', logo: '/aws-logo.png', placeholder: 'https://via.placeholder.com/150x75?text=AWS' },
+  const technologies = [
+    { 
+      id: 1, 
+      name: 'Python', 
+      logo: '/tech-logos/python.png'
+    },
+    { 
+      id: 2, 
+      name: 'Jupyter', 
+      logo: '/tech-logos/Jupyter_logo.svg.webp'
+    },
+    { 
+      id: 3, 
+      name: 'scikit-learn', 
+      logo: '/tech-logos/Scikit_learn_logo_small.svg.png'
+    },
+    { 
+      id: 4, 
+      name: 'XGBoost', 
+      logo: '/tech-logos/XGBoost_logo.png'
+    },
+    { 
+      id: 5, 
+      name: 'TensorFlow', 
+      logo: '/tech-logos/Tensorflow_logo.svg.png'
+    },
+    { 
+      id: 6, 
+      name: 'Azure', 
+      logo: '/tech-logos/Microsoft_Azure.svg.png'
+    },
+    { 
+      id: 7, 
+      name: 'Microsoft Cognitive Services', 
+      logo: '/tech-logos/Microsoft_logo_(2012).svg.png'
+    },
+    { 
+      id: 8, 
+      name: 'OpenAI', 
+      logo: '/tech-logos/openai-icon-2021x2048-4rpe5x7n.png'
+    },
   ];
 
   return (
@@ -41,16 +73,17 @@ const Technologies = () => {
           
           <div className="bg-white/50 backdrop-blur-sm rounded-2xl py-12 px-8 shadow-lg">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
-              {techLogos.map((tech) => (
+              {technologies.map((tech) => (
                 <div key={tech.id} className="group transform transition-all hover:scale-110">
-                  <div className="bg-white rounded-xl shadow-md p-4 h-24 flex items-center justify-center transition-all group-hover:shadow-lg">
-                    <div className="relative h-full w-full">
+                  <div className="h-24 flex items-center justify-center transition-all">
+                    <div className="relative w-16 h-16">
                       <Image
-                        src={tech.placeholder}
+                        src={tech.logo}
                         alt={`${tech.name} logo`}
                         fill
                         sizes="(max-width: 768px) 50vw, 25vw"
                         className="object-contain"
+                        priority={tech.id <= 4} // Priorizar carregamento das primeiras 4 imagens
                       />
                     </div>
                   </div>

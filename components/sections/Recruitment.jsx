@@ -1,6 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 import Button from '../ui/Button';
+import Badge from '../ui/Badge';
+import IconCircle from '../ui/IconCircle';
+import FeatureCard from '../ui/FeatureCard';
+import SectionTitle from '../ui/SectionTitle';
 
 const Recruitment = () => {
   const benefits = [
@@ -37,34 +41,30 @@ const Recruitment = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <div className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-              JUNTE-SE A NÓS
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Queres trabalhar connosco?</h2>
-            <p className="text-xl mb-8 text-gray-600">
-              Procuramos talentos apaixonados por dados e análises que queiram fazer parte de uma equipa inovadora.
-            </p>
+            <SectionTitle 
+              badge="JUNTE-SE A NÓS"
+              title="Queres trabalhar connosco?"
+              subtitle="Procuramos talentos apaixonados por dados e análises que queiram fazer parte de uma equipa inovadora."
+            />
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               {benefits.map((benefit, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-md p-6 transform transition-all hover:shadow-lg hover:-translate-y-1">
-                  <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <FeatureCard
+                  key={index}
+                  icon={
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={benefit.icon}></path>
                     </svg>
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-800 mb-2">{benefit.title}</h3>
-                  <p className="text-gray-600 text-sm">{benefit.description}</p>
-                </div>
+                  }
+                  title={benefit.title}
+                  description={benefit.description}
+                />
               ))}
             </div>
             
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <Button variant="primary" size="lg" className="flex-1">
+            <div className="flex justify-center">
+              <Button variant="primary" size="lg" className="w-full sm:w-auto">
                 Envia-nos o teu CV
-              </Button>
-              <Button variant="outline" size="lg" className="flex-1 text-primary">
-                Ver oportunidades
               </Button>
             </div>
           </div>
@@ -89,9 +89,9 @@ const Recruitment = () => {
                   </p>
                   
                   <div className="flex mt-6 space-x-2">
-                    <div className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm text-white">Data Science</div>
-                    <div className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm text-white">Engineering</div>
-                    <div className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm text-white">Business</div>
+                    <Badge variant="light" size="sm">Data Science</Badge>
+                    <Badge variant="light" size="sm">Engineering</Badge>
+                    <Badge variant="light" size="sm">Business</Badge>
                   </div>
                 </div>
               </div>
