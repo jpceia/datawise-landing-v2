@@ -225,6 +225,20 @@ const InteractiveGlobe = () => {
 
     return () => {
       window.removeEventListener('resize', updateSize);
+      if (renderer) {
+        renderer.dispose();
+      }
+      if (earthTexture) {
+        earthTexture.dispose();
+      }
+      if (globe) {
+        globe.geometry.dispose();
+        globe.material.dispose();
+      }
+      if (globeMesh) {
+        globeMesh.geometry.dispose();
+        globeMesh.material.dispose();
+      }
     };
   }, []);
 
