@@ -9,8 +9,9 @@ import Recruitment from '../components/sections/Recruitment';
 import TechMaturity from '../components/sections/TechMaturity';
 import MissionValues from '../components/sections/MissionValues';
 import Technologies from '../components/sections/Technologies';
+import type { NextPage } from 'next';
 
-export default function Home() {
+const Home: NextPage = () => {
   return (
     <>
       <Head>
@@ -41,4 +42,6 @@ export default function Home() {
       <Footer />
     </>
   );
-}
+};
+
+export default Home;

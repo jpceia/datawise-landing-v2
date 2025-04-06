@@ -1,4 +1,15 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
+
+export type BadgeVariant = 'primary' | 'light' | 'dark';
+export type BadgeSize = 'sm' | 'md' | 'lg';
+
+interface BadgeProps {
+  children: ReactNode;
+  variant?: BadgeVariant;
+  size?: BadgeSize;
+  className?: string;
+  [x: string]: any;
+}
 
 const Badge = ({ 
   children, 
@@ -6,7 +17,7 @@ const Badge = ({
   size = 'md',
   className = '',
   ...props 
-}) => {
+}: BadgeProps) => {
   const baseClasses = 'inline-block font-medium rounded-full';
   
   const variants = {

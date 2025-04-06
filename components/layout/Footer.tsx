@@ -1,8 +1,17 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 
-const Footer = () => {
+interface FooterLink {
+  href: string;
+  label: string;
+}
+
+interface FooterSection {
+  title: string;
+  links: FooterLink[];
+}
+
+const Footer: React.FC = () => {
   return (
     <footer className="bg-primary text-white relative overflow-hidden">
       {/* Elementos decorativos (esferas) */}

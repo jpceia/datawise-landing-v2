@@ -1,8 +1,12 @@
 import React from 'react';
-import Image from 'next/image';
-import Section from '../ui/Section';
 
-const ServiceCard = ({ icon, title, description }) => (
+interface ServiceCardProps {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const ServiceCard = ({ icon, title, description }: ServiceCardProps) => (
   <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group">
     <div className="relative">
       <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary-light/80 opacity-90 group-hover:opacity-100 transition-opacity"></div>

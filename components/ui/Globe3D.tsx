@@ -2,6 +2,18 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import gsap from 'gsap';
+import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber';
+import { TextureLoader } from 'three';
+
+interface GlobeProps {
+  rotationSpeed?: number;
+  size?: number;
+}
+
+interface SceneProps {
+  rotationSpeed: number;
+  size: number;
+}
 
 const InteractiveGlobe = () => {
   const containerRef = useRef(null);
@@ -12,15 +24,26 @@ const InteractiveGlobe = () => {
   const [coordinates, setCoordinates] = useState('');
 
   useEffect(() => {
-    let renderer, scene, camera, rayCaster, controls, group;
-    let overlayCtx, mouse, pointer, globe, globeMesh;
+    let renderer: THREE.WebGLRenderer;
+    let scene: THREE.Scene;
+    let camera: THREE.OrthographicCamera;
+    let rayCaster: THREE.Raycaster;
+    let controls: OrbitControls;
+    let group: THREE.Group;
+    let overlayCtx: CanvasRenderingContext2D | null;
+    let mouse: THREE.Vector2;
+    let pointer: THREE.Mesh;
+    let globe: THREE.Points;
+    let globeMesh: THREE.Mesh;
     let popupVisible = false;
-    let earthTexture, mapMaterial;
-    let popupOpenTl, popupCloseTl;
+    let earthTexture: THREE.Texture;
+    let mapMaterial: THREE.ShaderMaterial;
+    let popupOpenTl: gsap.core.Timeline;
+    let popupCloseTl: gsap.core.Timeline;
 
     const initScene = () => {
       renderer = new THREE.WebGLRenderer({
-        canvas: canvasRef.current,
+        canvas: canvasRef.current!,
         alpha: true,
       });
       renderer.setPixelRatio(2);
@@ -119,12 +142,12 @@ const InteractiveGlobe = () => {
         vertexShader,
         fragmentShader,
         uniforms: {
-          u_map_tex: { type: 't', value: earthTexture },
-          u_dot_size: { type: 'f', value: 0 },
-          u_pointer: { type: 'v3', value: new THREE.Vector3(0.0, 0.0, 1) },
+          u_map_tex: { value: earthTexture },
+          u_dot_size: { value: 0 },
+          u_pointer: { value: new THREE.Vector3(0.0, 0.0, 1) },
           u_time_since_click: { value: 0 },
         },
-        alphaTest: false,
+        alphaTest: 0,
         transparent: true,
       });
 
@@ -161,13 +184,9 @@ const InteractiveGlobe = () => {
       const activePointPositionProjected = activePointPosition.clone();
       activePointPositionProjected.project(camera);
 
-      const containerEl = containerRef.current;
-      const coordinates2D = [
-        (activePointPositionProjected.x + 1) * containerEl.offsetWidth * 0.5,
-        (1 - activePointPositionProjected.y) * containerEl.offsetHeight * 0.5,
-      ];
+      if (!containerRef.current) return;
 
-      const matrixWorldInverse = controls.object.matrixWorldInverse;
+      const matrixWorldInverse = (controls.object as any).matrixWorldInverse;
       activePointPosition.applyMatrix4(matrixWorldInverse);
 
       if (activePointPosition.z > -1) {
@@ -181,8 +200,9 @@ const InteractiveGlobe = () => {
     };
 
     const addCanvasEvents = () => {
-      const containerEl = containerRef.current;
-      containerEl.addEventListener('mousemove', (e) => {
+      if (!containerRef.current) return;
+      const containerEl = containerRef.current as HTMLDivElement;
+      containerEl.addEventListener('mousemove', (e: MouseEvent) => {
         mouse.x = ((e.clientX - containerEl.offsetLeft) / containerEl.offsetWidth) * 2 - 1;
         mouse.y = -((e.clientY - containerEl.offsetTop) / containerEl.offsetHeight) * 2 + 1;
       });
@@ -209,12 +229,13 @@ const InteractiveGlobe = () => {
     };
 
     const updateSize = () => {
-      const containerEl = containerRef.current;
+      if (!containerRef.current || !canvas2DRef.current) return;
+      const containerEl = containerRef.current as HTMLDivElement;
       const minSide = 0.65 * Math.min(window.innerWidth, window.innerHeight);
       containerEl.style.width = `${minSide}px`;
       containerEl.style.height = `${minSide}px`;
       renderer.setSize(minSide, minSide);
-      canvas2DRef.current.width = canvas2DRef.current.height = minSide;
+      (canvas2DRef.current as HTMLCanvasElement).width = (canvas2DRef.current as HTMLCanvasElement).height = minSide;
       if (mapMaterial) {
         mapMaterial.uniforms.u_dot_size.value = 0.04 * minSide;
       }
@@ -233,11 +254,11 @@ const InteractiveGlobe = () => {
       }
       if (globe) {
         globe.geometry.dispose();
-        globe.material.dispose();
+        (globe.material as THREE.Material).dispose();
       }
       if (globeMesh) {
         globeMesh.geometry.dispose();
-        globeMesh.material.dispose();
+        (globeMesh.material as THREE.Material).dispose();
       }
     };
   }, []);

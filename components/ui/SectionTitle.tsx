@@ -1,5 +1,14 @@
-import React from 'react';
-import Badge from './Badge';
+import React, { ReactNode } from 'react';
+import Badge, { BadgeVariant } from './Badge';
+
+interface SectionTitleProps {
+  badge?: string;
+  title?: string;
+  subtitle?: string;
+  className?: string;
+  badgeVariant?: BadgeVariant;
+  [key: string]: any;
+}
 
 const SectionTitle = ({ 
   badge, 
@@ -8,7 +17,7 @@ const SectionTitle = ({
   className = '',
   badgeVariant = 'primary',
   ...props 
-}) => {
+}: SectionTitleProps) => {
   return (
     <div className={`mb-12 ${className}`} {...props}>
       {badge && (

@@ -1,4 +1,14 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
+
+type BackgroundType = 'white' | 'gray' | 'dark' | 'primary' | 'gradient';
+
+interface SectionProps {
+  children: ReactNode;
+  className?: string;
+  id?: string;
+  background?: BackgroundType;
+  [key: string]: any;
+}
 
 const Section = ({ 
   children, 
@@ -6,7 +16,7 @@ const Section = ({
   id,
   background = 'white',
   ...props 
-}) => {
+}: SectionProps) => {
   const backgrounds = {
     white: 'bg-white',
     gray: 'bg-gray-50',

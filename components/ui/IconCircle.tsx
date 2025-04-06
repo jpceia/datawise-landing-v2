@@ -1,4 +1,15 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
+
+export type IconCircleVariant = 'primary' | 'light' | 'dark';
+export type IconCircleSize = 'sm' | 'md' | 'lg';
+
+interface IconCircleProps {
+  children: ReactNode;
+  variant?: IconCircleVariant;
+  size?: IconCircleSize;
+  className?: string;
+  [key: string]: any;
+}
 
 const IconCircle = ({ 
   children, 
@@ -6,7 +17,7 @@ const IconCircle = ({
   size = 'md',
   className = '',
   ...props 
-}) => {
+}: IconCircleProps) => {
   const baseClasses = 'rounded-full flex items-center justify-center';
   
   const variants = {

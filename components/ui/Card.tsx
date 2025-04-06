@@ -1,5 +1,16 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Image from 'next/image';
+
+interface CardProps {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  imageUrl?: string;
+  imageAlt?: string;
+  className?: string;
+  children?: ReactNode;
+  [key: string]: any;
+}
 
 const Card = ({ 
   title, 
@@ -10,7 +21,7 @@ const Card = ({
   className = '',
   children,
   ...props 
-}) => {
+}: CardProps) => {
   return (
     <div className={`bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1 ${className}`} {...props}>
       {imageUrl && (

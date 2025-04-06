@@ -1,5 +1,15 @@
-import React from 'react';
-import IconCircle from './IconCircle';
+import React, { ReactNode } from 'react';
+import IconCircle, { IconCircleVariant, IconCircleSize } from './IconCircle';
+
+interface FeatureCardProps {
+  icon: ReactNode;
+  title: string;
+  description: string;
+  className?: string;
+  iconVariant?: IconCircleVariant;
+  iconSize?: IconCircleSize;
+  [key: string]: any;
+}
 
 const FeatureCard = ({ 
   icon, 
@@ -9,7 +19,7 @@ const FeatureCard = ({
   iconVariant = 'primary',
   iconSize = 'md',
   ...props 
-}) => {
+}: FeatureCardProps) => {
   return (
     <div className={`bg-white rounded-xl shadow-md p-6 transform transition-all hover:shadow-lg hover:-translate-y-1 ${className}`} {...props}>
       <IconCircle variant={iconVariant} size={iconSize} className="mb-4">

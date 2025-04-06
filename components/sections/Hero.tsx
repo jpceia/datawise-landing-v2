@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Globe3D from '../ui/Globe3D';
 import { motion } from 'framer-motion';
 
-const Hero = () => {
-  const [isVisible, setIsVisible] = useState(false);
+const Hero: React.FC = () => {
+  const [isVisible, setIsVisible] = useState<boolean>(false);
   
   useEffect(() => {
     setIsVisible(true);
