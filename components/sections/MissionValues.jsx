@@ -1,6 +1,41 @@
 import React from 'react';
+import SectionTitle from '../ui/SectionTitle';
+import IconCircle from '../ui/IconCircle';
 
 const MissionValues = () => {
+  const pillars = [
+    {
+      icon: 'M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9',
+      title: '100% Nacional',
+      description: 'Uma empresa portuguesa, com ADN português, focada no mercado nacional e nas necessidades específicas das empresas portuguesas.',
+      features: [
+        'Conhecimento profundo do mercado local',
+        'Suporte técnico em português',
+        'Proximidade com o cliente'
+      ]
+    },
+    {
+      icon: 'M13 10V3L4 14h7v7l9-11h-7z',
+      title: 'Agilidade',
+      description: 'Adaptamo-nos rapidamente às mudanças do mercado e às necessidades específicas de cada cliente.',
+      features: [
+        'Metodologias ágeis',
+        'Respostas rápidas',
+        'Soluções personalizadas'
+      ]
+    },
+    {
+      icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z',
+      title: 'Compromisso com Resultados',
+      description: 'O sucesso dos nossos clientes é o nosso sucesso. Focamo-nos em entregar valor real e mensurável.',
+      features: [
+        'Objetivos mensuráveis',
+        'Resultados comprovados',
+        'Parceria de longo prazo'
+      ]
+    }
+  ];
+
   return (
     <section className="py-24 bg-gradient-to-br from-primary-dark to-primary text-white relative overflow-hidden">
       {/* Background elements */}
@@ -14,96 +49,42 @@ const MissionValues = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4">
-            QUEM SOMOS
+            A NOSSA IDENTIDADE
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Nossa Identidade</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Os Pilares que nos Definem</h2>
           <p className="text-lg opacity-80">
-            Conheça os pilares que definem nossa abordagem e impulsionam o nosso compromisso com os clientes.
+            Construímos a nossa identidade em três pilares fundamentais que orientam todas as nossas ações e decisões.
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 transform transition-all hover:translate-y-[-10px] hover:bg-white/15">
-            <div className="bg-primary-light rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-              </svg>
-            </div>
-            <h3 className="text-2xl font-bold mb-4 text-center">Missão</h3>
-            <p className="text-center opacity-90">
-              Queremos transformar dados em decisões estratégicas, capacitando os nossos clientes a operar com máxima eficiência.
-            </p>
-            
-            <div className="mt-8 pt-6 border-t border-white/20">
-              <div className="flex items-center">
-                <svg className="w-5 h-5 text-primary-light mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+          {pillars.map((pillar, index) => (
+            <div key={index} className={`bg-white/10 backdrop-blur-sm rounded-xl p-8 transform transition-all hover:translate-y-[-10px] hover:bg-white/15 ${
+              index === 1 ? 'md:mt-8' : index === 2 ? 'md:mt-16' : ''
+            }`}>
+              <div className="bg-primary-light rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={pillar.icon}></path>
                 </svg>
-                <span className="opacity-80">Orientação para resultados</span>
               </div>
-              <div className="flex items-center mt-2">
-                <svg className="w-5 h-5 text-primary-light mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span className="opacity-80">Transformação tecnológica</span>
-              </div>
-            </div>
-          </div>
-          
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 transform transition-all hover:translate-y-[-10px] hover:bg-white/15 md:mt-8">
-            <div className="bg-primary-light rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-              </svg>
-            </div>
-            <h3 className="text-2xl font-bold mb-4 text-center">Valores</h3>
-            <p className="text-center opacity-90">
-              Valorizamos a inovação e o compromisso com resultados, entregando soluções personalizadas que impulsionam o sucesso dos nossos clientes.
-            </p>
-            
-            <div className="mt-8 pt-6 border-t border-white/20">
-              <div className="flex items-center">
-                <svg className="w-5 h-5 text-primary-light mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span className="opacity-80">Excelência técnica</span>
-              </div>
-              <div className="flex items-center mt-2">
-                <svg className="w-5 h-5 text-primary-light mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span className="opacity-80">Integridade e transparência</span>
+              
+              <h3 className="text-2xl font-bold mb-4 text-center">{pillar.title}</h3>
+              <p className="text-center opacity-90 mb-8">
+                {pillar.description}
+              </p>
+              
+              <div className="mt-8 pt-6 border-t border-white/20">
+                {pillar.features.map((feature, featureIndex) => (
+                  <div key={featureIndex} className="flex items-center mt-2 first:mt-0">
+                    <svg className="w-5 h-5 text-primary-light mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span className="opacity-80">{feature}</span>
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
-          
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 transform transition-all hover:translate-y-[-10px] hover:bg-white/15 md:mt-16">
-            <div className="bg-primary-light rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-              </svg>
-            </div>
-            <h3 className="text-2xl font-bold mb-4 text-center">Visão</h3>
-            <p className="text-center opacity-90">
-              Ambicionamos ser a referência em soluções de ciências de dados, reconhecidos pela capacidade de transformar organizações através da tecnologia.
-            </p>
-            
-            <div className="mt-8 pt-6 border-t border-white/20">
-              <div className="flex items-center">
-                <svg className="w-5 h-5 text-primary-light mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span className="opacity-80">Liderança de mercado</span>
-              </div>
-              <div className="flex items-center mt-2">
-                <svg className="w-5 h-5 text-primary-light mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span className="opacity-80">Inovação constante</span>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

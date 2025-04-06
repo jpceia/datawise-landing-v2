@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Globe3DCanvas from '../ui/Globe3DCanvas';
+import Globe3D from '../ui/Globe3D';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
@@ -10,8 +10,8 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-screen bg-gradient-to-b from-gray-100 to-white overflow-hidden">
-      {/* Animated background elements */}
+    <section className="relative w-full h-screen bg-white overflow-hidden">
+      {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-10">
           <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
@@ -23,7 +23,7 @@ const Hero = () => {
       {/* Content container with flex layout */}
       <div className="relative z-10 container mx-auto px-4 h-full flex items-center">
         {/* Left side - Text content */}
-        <div className="w-1/2 pr-8">
+        <div className="w-5/12 pr-8">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -20 }}
@@ -50,7 +50,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-xl md:text-2xl text-gray-600 mb-10"
           >
-            Transformamos dados em <span className="text-blue-600 font-semibold">insights valiosos</span> para impulsionar o seu negócio.
+            Transformamos dados em <span className="text-blue-600 font-semibold">insights valiosos</span> para impulsionar o seu negócio rumo a novos patamares de eficiência e rentabilidade.
           </motion.p>
           
           <motion.div 
@@ -92,11 +92,7 @@ const Hero = () => {
           className="w-1/2 h-full relative"
         >
           <div className="absolute inset-0">
-            <Globe3DCanvas 
-              scale={0.8} 
-              position={[0, 0, 0]} 
-              speed={0.3} 
-            />
+            <Globe3D />
           </div>
         </motion.div>
       </div>

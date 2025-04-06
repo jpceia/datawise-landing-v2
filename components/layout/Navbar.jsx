@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,16 +15,42 @@ const Navbar = () => {
       } else {
         setScrolled(false);
       }
+
+      // Update active section based on scroll position
+      const sections = ['servicos', 'casos-sucesso', 'tecnologias', 'sobre', 'contacto'];
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navItems = [
+    { href: '#servicos', label: 'Serviços' },
+    { href: '#casos-sucesso', label: 'Casos de Sucesso' },
+    { href: '#tecnologias', label: 'Tecnologias' },
+    { href: '#sobre', label: 'Sobre Nós' },
+  ];
+
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-2' : 'bg-white/90 backdrop-blur-sm py-4'}`}>
+    <motion.nav 
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        scrolled 
+          ? 'bg-white shadow-lg py-2' 
+          : 'bg-white/80 backdrop-blur-md py-4'
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -38,81 +66,101 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href="#servicos" className="text-gray-700 hover:text-blue-700 font-medium transition-colors">
-              Serviços
-            </Link>
-            <Link href="#casos-sucesso" className="text-gray-700 hover:text-blue-700 font-medium transition-colors">
-              Casos de Sucesso
-            </Link>
-            <Link href="#tecnologias" className="text-gray-700 hover:text-blue-700 font-medium transition-colors">
-              Tecnologias
-            </Link>
-            <Link href="#sobre" className="text-gray-700 hover:text-blue-700 font-medium transition-colors">
-              Sobre Nós
-            </Link>
-            <Link href="#contacto" className="bg-blue-700 hover:bg-blue-800 text-white px-5 py-2 rounded-md font-medium transition-colors">
+          <div className="hidden md:flex items-center space-x-1">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="relative px-4 py-2 text-gray-700 hover:text-blue-600 font-medium transition-colors rounded-md group"
+              >
+                {item.label}
+                {activeSection === item.href.slice(1) && (
+                  <motion.div
+                    layoutId="activeSection"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600"
+                    initial={false}
+                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                  />
+                )}
+                <div className="absolute inset-0 bg-blue-50 scale-0 group-hover:scale-100 transition-transform rounded-md -z-10" />
+              </Link>
+            ))}
+            <Link 
+              href="#contacto" 
+              className="ml-4 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-md font-medium transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 active:scale-95"
+            >
               Contacte-nos
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-blue-700 focus:outline-none"
-              aria-label="Toggle menu"
-            >
-              {!isOpen ? (
-                <svg className="h-6 w-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                  <path d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-              ) : (
-                <svg className="h-6 w-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                  <path d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-              )}
-            </button>
-          </div>
+          <motion.button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 rounded-md hover:bg-gray-100 focus:outline-none"
+            whileTap={{ scale: 0.95 }}
+          >
+            <div className="w-6 h-5 flex flex-col justify-between">
+              <motion.div
+                animate={isOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
+                className="w-full h-0.5 bg-gray-600 origin-left transition-all"
+              />
+              <motion.div
+                animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
+                className="w-full h-0.5 bg-gray-600 transition-all"
+              />
+              <motion.div
+                animate={isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
+                className="w-full h-0.5 bg-gray-600 origin-left transition-all"
+              />
+            </div>
+          </motion.button>
         </div>
       </div>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden absolute w-full bg-white shadow-md transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
-        <div className="container mx-auto px-4 py-4 space-y-3">
-          <Link href="#servicos" 
-            className="block text-gray-700 hover:text-blue-700 hover:bg-gray-50 py-2 px-3 rounded-md font-medium transition-colors"
-            onClick={() => setIsOpen(false)}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden overflow-hidden bg-white border-t"
           >
-            Serviços
-          </Link>
-          <Link href="#casos-sucesso" 
-            className="block text-gray-700 hover:text-blue-700 hover:bg-gray-50 py-2 px-3 rounded-md font-medium transition-colors"
-            onClick={() => setIsOpen(false)}
-          >
-            Casos de Sucesso
-          </Link>
-          <Link href="#tecnologias" 
-            className="block text-gray-700 hover:text-blue-700 hover:bg-gray-50 py-2 px-3 rounded-md font-medium transition-colors"
-            onClick={() => setIsOpen(false)}
-          >
-            Tecnologias
-          </Link>
-          <Link href="#sobre" 
-            className="block text-gray-700 hover:text-blue-700 hover:bg-gray-50 py-2 px-3 rounded-md font-medium transition-colors"
-            onClick={() => setIsOpen(false)}
-          >
-            Sobre Nós
-          </Link>
-          <Link href="#contacto" 
-            className="block bg-blue-700 hover:bg-blue-800 text-white py-2 px-3 rounded-md font-medium transition-colors"
-            onClick={() => setIsOpen(false)}
-          >
-            Contacte-nos
-          </Link>
-        </div>
-      </div>
-    </nav>
+            <div className="container mx-auto px-4 py-4 space-y-2">
+              {navItems.map((item) => (
+                <motion.div
+                  key={item.href}
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: -20, opacity: 0 }}
+                >
+                  <Link
+                    href={item.href}
+                    className="block w-full text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-3 rounded-md font-medium transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.div
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -20, opacity: 0 }}
+              >
+                <Link
+                  href="#contacto"
+                  className="block w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-3 rounded-md font-medium text-center transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Contacte-nos
+                </Link>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   );
 };
 
