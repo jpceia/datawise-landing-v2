@@ -24,22 +24,12 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 h-full flex items-center">
         {/* Left side - Text content */}
         <div className="w-5/12 pr-8">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -20 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-6"
-          >
-            <span className="inline-block px-4 py-1 bg-blue-500/10 text-blue-600 rounded-full text-sm font-medium mb-4">
-              CONSULTORIA EM CIÊNCIA DE DADOS
-            </span>
-          </motion.div>
           
           <motion.h1 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-4xl md:text-6xl font-bold text-gray-800 mb-6"
+            className="text-4xl md:text-5xl font-bold text-gray-800 mb-6"
           >
             Potencie os dados da sua empresa
           </motion.h1>
@@ -67,7 +57,7 @@ const Hero = () => {
             </button>
           </motion.div>
           
-          {/* Trust indicators */}
+          {/* Trust indicators 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: isVisible ? 1 : 0 }}
@@ -82,6 +72,7 @@ const Hero = () => {
               <div className="h-8 w-24 bg-gray-200 rounded"></div>
             </div>
           </motion.div>
+          */}
         </div>
 
         {/* Right side - Globe */}
