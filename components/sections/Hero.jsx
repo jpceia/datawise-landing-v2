@@ -89,28 +89,32 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.8 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="w-1/2 h-full relative"
+          className="w-7/12 h-full relative"
         >
-          <div className="absolute inset-0">
+          <div className="absolute inset-0 translate-y-8 scale-110">
             <Globe3D />
           </div>
         </motion.div>
       </div>
       
       {/* Scroll indicator */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isVisible ? 1 : 0 }}
-        transition={{ duration: 0.8, delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <div className="flex flex-col items-center">
-          <span className="text-gray-400 text-sm mb-2">Descubra mais</span>
-          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-bounce"></div>
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+          className="flex flex-col items-center"
+        >
+          <span className="text-gray-500 text-sm mb-2">Scroll para explorar</span>
+          <div className="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center p-1">
+            <motion.div
+              animate={{ y: [0, 12, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              className="w-1 h-1 bg-gray-400 rounded-full"
+            ></motion.div>
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 };
