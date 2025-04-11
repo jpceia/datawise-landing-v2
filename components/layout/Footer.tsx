@@ -135,9 +135,8 @@ const Footer: React.FC = () => {
               © {currentYear} DataWise. Todos os direitos reservados.
             </div>
             <div className="flex space-x-6">
-              <a href="#" className="text-white/70 hover:text-white text-sm transition-colors">Política de Privacidade</a>
-              <a href="#" className="text-white/70 hover:text-white text-sm transition-colors">Termos de Utilização</a>
-              <a href="#" className="text-white/70 hover:text-white text-sm transition-colors">Cookies</a>
+              <a href="/privacy" className="text-white/70 hover:text-white text-sm transition-colors">Política de Privacidade</a>
+              <a href="/termsofuse" className="text-white/70 hover:text-white text-sm transition-colors">Termos de Utilização</a>
             </div>
           </div>
         </div>
