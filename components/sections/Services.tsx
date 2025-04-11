@@ -27,44 +27,44 @@ const Services = () => {
   const services = [
     {
       id: 1,
-      title: 'Otimização de Rotas',
-      icon: 'M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7',
-      description: 'A nossa abordagem assegura que as rotas são otimizadas para maximizar o uso de recursos, minimizando tempos mortos e distâncias desnecessárias.',
+      title: 'Modelos Preditivos',
+      icon: 'M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z',
+      description: 'Desenvolvemos modelos que antecipam tendências e comportamentos, permitindo decisões proativas baseadas em previsões de qualidade.',
     },
     {
       id: 2,
-      title: 'Definição de Preços',
-      icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
-      description: 'A partir de algoritmos avançados, auxiliamos as empresas a otimizar as políticas de preços, adaptado-as à procura.',
+      title: 'Inteligência Artificial Generativa',
+      icon: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z',
+      description: 'Criamos soluções baseadas em IA generativa para automatizar processos criativos, gerar conteúdo e desenvolver assistentes virtuais personalizados.',
     },
     {
       id: 3,
-      title: 'Planeamento',
-      icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
-      description: 'O planeamento eficaz é crucial para garantir que todos os recursos – humanos, materiais e financeiros – são utilizados da melhor forma.',
+      title: 'Dashboards Analíticos',
+      icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
+      description: 'Desenvolvemos dashboards interativos e personalizados que transformam dados complexos em visualizações intuitivas para tomada de decisões.',
     },
     {
       id: 4,
-      title: 'Controlo de Gestão',
-      icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
-      description: 'Fornece-mos ferramentas para monitorizar e avaliar o desempenho operacional e financeiro da empresa em tempo real.',
+      title: 'Otimização',
+      icon: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6',
+      description: 'Utilizamos algoritmos avançados para otimizar recursos, maximizar a eficiência operacional e reduzir custos em toda a cadeia de valor do seu negócio.',
     },
     {
       id: 5,
-      title: 'Gestão de Stocks',
-      icon: 'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4',
-      description: 'Oferecemos soluções que permitem às empresas gerir melhor os seu stock, garantindo um equilíbrio entre a oferta e a procura.',
+      title: 'Definição de Preços',
+      icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+      description: 'A partir de algoritmos avançados, auxiliamos as empresas a otimizar as políticas de preços, adaptando-as à procura e maximizando as margens.',
     },
     {
       id: 6,
-      title: 'Análise Preditiva',
-      icon: 'M13 10V3L4 14h7v7l9-11h-7z',
-      description: 'Desenvolvemos modelos preditivos que permitem antecipar tendências de mercado e comportamentos de clientes.',
+      title: 'Planeamento',
+      icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
+      description: 'O planeamento eficaz é crucial para garantir que todos os recursos – humanos, materiais e financeiros – são utilizados da melhor forma possível.',
     },
   ];
 
   return (
-    <section id="services" className="py-24 relative overflow-hidden bg-gray-50">
+    <section className="py-24 relative overflow-hidden bg-gray-50">
       {/* Elementos decorativos */}
       <div className="absolute top-0 right-0 w-72 h-72 bg-primary/5 rounded-full"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full"></div>
