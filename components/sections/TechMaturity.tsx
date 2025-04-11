@@ -96,7 +96,7 @@ const TechMaturity = () => {
         {/* Títulos abaixo dos botões com altura fixa */}
         <div className="flex justify-between max-w-3xl mx-auto mb-16">
           {maturityStages.map((stage, index) => (
-            <div key={`label-${stage.id}`} className="w-1/3 text-center px-4">
+            <div key={`label-${stage.id}`} className="w-1/3 text-center px-4 mx-5">
               {/* Contentor com altura fixa para evitar deslocamentos */}
               <div className="h-16">
                 <h4 
