@@ -21,10 +21,9 @@ const Hero: React.FC = () => {
       </div>
       
       {/* Content container with flex layout */}
-      <div className="relative z-10 container mx-auto px-4 h-full flex items-center">
+      <div className="relative z-10 container mx-auto px-4 h-full flex flex-col lg:flex-row items-center pt-16 lg:pt-0">
         {/* Left side - Text content */}
-        <div className="w-5/12 pr-8">
-          
+        <div className="w-full lg:w-5/12 lg:pr-8 order-2 lg:order-1 mt-8 lg:mt-0 text-center lg:text-left">
           <motion.h1 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -20 }}
@@ -47,7 +46,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -20 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
           >
             <button className="px-8 py-4 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-blue-500/30">
               Agende uma Consulta Gratuita
@@ -80,9 +79,9 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.8 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="w-7/12 h-full relative"
+          className="w-full lg:w-7/12 h-[380px] lg:h-full order-1 lg:order-2"
         >
-          <div className="absolute inset-0 translate-y-8 scale-110">
+          <div className="h-full w-full relative">
             <Globe3D />
           </div>
         </motion.div>
