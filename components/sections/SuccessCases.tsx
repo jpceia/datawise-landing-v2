@@ -17,7 +17,7 @@ const SuccessCases = () => {
         { value: 'Melhoria', label: 'Taxa de ocupação' },
       ],
       description: 'Este é um exemplo de sucesso de uma empresa de aluguer de auto-caravanas, onde conseguimos otimizar o processo de gestão de frota e, consequentemente, melhorar os seus resultados operacionais.',
-      link: '/casos/auto-caravanas',
+      link: '/blog/auto-caravanas',
       tags: ['Análise de dados', 'Machine Learning', 'Python']
     },
     {
@@ -31,7 +31,7 @@ const SuccessCases = () => {
         { value: 'Aumento', label: 'Satisfação do cliente' },
       ],
       description: 'Mais um caso de sucesso com uma transportadora especializada em last-mile delivery, onde ajudámos a resolver um desafio operacional bastante específico.',
-      link: '/casos/last-mile',
+      link: '/blog/last-mile',
       tags: ['Otimização', 'Georreferenciação', 'Python']
     },
     {
@@ -45,7 +45,7 @@ const SuccessCases = () => {
         { value: 'Redução', label: 'Custos operacionais' },
       ],
       description: 'A história de como auxiliámos uma empresa de TVDE a resolver um desafio crítico relacionado com a visibilidade da rentabilidade.',
-      link: '/casos/tvde',
+      link: '/blog/tvde',
       tags: ['Controlo de Gestão', 'Contabilidade Analítica', 'PowerBI']
     },
   ];
