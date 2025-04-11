@@ -24,7 +24,7 @@ const TechMaturity = () => {
       title: 'Investigação',
       subtitle: 'Analytics e Estatística Descritiva',
       icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
-      imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000',
+      imageUrl: 'https://images.unsplash.com/photo-1608222351212-18fe0ec7b13b?q=80&w=1000',
       description: 'A partir desta etapa começamos a explorar os dados que recolhemos. Através de Analytics e Estatística Descritiva, descobrimos padrões e tendências, ajudando-nos a identificar áreas de melhoria e otimização dentro da operação.',
       features: [
         'Análise exploratória de dados',
@@ -38,7 +38,7 @@ const TechMaturity = () => {
       title: 'Automação',
       subtitle: 'Inteligência Artificial e Algoritmos',
       icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z',
-      imageUrl: 'https://images.unsplash.com/photo-1677442135132-161e77ab661d?q=80&w=1000',
+      imageUrl: 'https://images.unsplash.com/photo-1535378620166-273708d44e4c?q=80&w=1000',
       description: 'Através de Inteligência Artificial, de Algoritmos e da Otimização garantimos a maximização de resultados com o mínimo de recursos, garantindo eficiência operacional e melhores resultados para os nossos clientes.',
       features: [
         'Algoritmos de machine learning',
@@ -50,7 +50,7 @@ const TechMaturity = () => {
   ];
 
   return (
-    <section id="methodology" className="py-24 bg-gray-100 relative overflow-hidden">
+    <section className="py-24 bg-gray-100 relative overflow-hidden">
       {/* Elementos decorativos */}
       <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white to-transparent"></div>
       
@@ -65,50 +65,54 @@ const TechMaturity = () => {
           </p>
         </div>
         
-        {/* Fases timeline */}
-        <div className="flex justify-center mb-12 relative">
+        {/* Timeline com botões fixos */}
+        <div className="flex justify-center mb-10 relative">
           <div className="bg-gray-300 h-1 absolute top-1/2 left-0 right-0"></div>
           <div className="flex justify-between relative z-10 w-full max-w-3xl">
             {maturityStages.map((stage, index) => (
-              <button 
-                key={stage.id}
-                className="bg-white rounded-full border-4 focus:outline-none transition-all"
-                style={{ 
-                  borderColor: activeStage === index ? '#2196F3' : 'white',
-                  boxShadow: '0 0 15px rgba(0,0,0,0.1)',
-                  width: activeStage === index ? '60px' : '50px',
-                  height: activeStage === index ? '60px' : '50px',
-                }}
-                onClick={() => setActiveStage(index)}
-              >
-                <svg 
-                  className={`w-6 h-6 mx-auto ${activeStage === index ? 'text-primary' : 'text-gray-500'}`} 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
+              <div key={stage.id} className="flex flex-col items-center">
+                <button 
+                  className={`bg-white rounded-full focus:outline-none transition-all box-content
+                             ${activeStage === index 
+                                ? 'border-4 border-primary-light text-primary' 
+                                : 'border-4 border-white text-gray-500 hover:text-gray-700'}`}
+                  style={{width: '52px', height: '52px'}}
+                  onClick={() => setActiveStage(index)}
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={stage.icon}></path>
-                </svg>
-              </button>
+                  <svg 
+                    className="w-6 h-6 mx-auto" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={stage.icon}></path>
+                  </svg>
+                </button>
+              </div>
             ))}
           </div>
         </div>
         
-        {/* Labels */}
-        <div className="flex justify-between mb-16 relative max-w-3xl mx-auto text-center px-6">
+        {/* Títulos abaixo dos botões com altura fixa */}
+        <div className="flex justify-between max-w-3xl mx-auto mb-16">
           {maturityStages.map((stage, index) => (
-            <div key={`label-${stage.id}`} className="w-1/3">
-              <h4 className={`font-bold ${activeStage === index ? 'text-primary text-lg' : 'text-gray-500'}`}>
-                {stage.title}
-              </h4>
-              <p className={`text-sm ${activeStage === index ? 'text-gray-800' : 'text-gray-500'}`}>
-                {stage.subtitle}
-              </p>
+            <div key={`label-${stage.id}`} className="w-1/3 text-center px-4">
+              {/* Contentor com altura fixa para evitar deslocamentos */}
+              <div className="h-16">
+                <h4 
+                  className={`font-bold transition-all ${activeStage === index ? 'text-primary text-lg' : 'text-gray-500'}`}
+                >
+                  {stage.title}
+                </h4>
+                <p className={`text-sm transition-all ${activeStage === index ? 'text-gray-800' : 'text-gray-500'}`}>
+                  {stage.subtitle}
+                </p>
+              </div>
             </div>
           ))}
         </div>
         
-        {/* Content */}
+        {/* Conteúdo detalhado */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
             <div className="bg-white rounded-xl shadow-lg p-8">
@@ -132,7 +136,7 @@ const TechMaturity = () => {
                 ))}
               </div>
               
-              {/* Progress indicator */}
+              {/* Indicador de progresso */}
               <div className="mt-8 bg-gray-200 h-2 rounded-full overflow-hidden">
                 <div 
                   className="bg-primary h-full rounded-full transition-all duration-500"
