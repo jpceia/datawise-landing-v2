@@ -42,7 +42,7 @@ const Recruitment = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <SectionTitle 
-              badge="JUNTE-SE A NÓS"
+              badge="JUNTA-TE A NÓS"
               title="Queres trabalhar connosco?"
               subtitle="Procuramos talentos apaixonados por dados e análises que queiram fazer parte de uma equipa inovadora."
             />
