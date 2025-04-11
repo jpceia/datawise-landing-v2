@@ -15,7 +15,7 @@ const TransformBusiness = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-pulse">Transforme o Seu Negócio</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Transforme o Seu Negócio</h2>
           <p className="text-xl max-w-3xl mx-auto">
             Descubra como as nossas soluções personalizadas podem impulsionar a eficiência e a rentabilidade do seu negócio.
           </p>
@@ -71,42 +71,24 @@ const TransformBusiness = () => {
               </Button>
             </div>
           </div>
-          
-          <div className="relative">
-            <div className="relative h-[500px] w-full bg-white/5 rounded-2xl backdrop-blur-sm p-6 overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-full h-full opacity-80">
-                  <Image
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000"
-                    alt="Analytics dashboard"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-contain rounded-lg"
-                  />
-                </div>
-              </div>
-              
-              <div className="absolute bottom-6 left-6 right-6 bg-primary/90 backdrop-blur-sm p-4 rounded-lg">
-                <div className="flex justify-between mb-2">
-                  <span className="font-medium">Aumento de eficiência</span>
-                  <span className="font-bold">92%</span>
-                </div>
-                <div className="w-full bg-gray-300/30 rounded-full h-2.5">
-                  <div className="bg-white h-2.5 rounded-full" style={{ width: '92%' }}></div>
-                </div>
-                
-                <div className="flex justify-between mt-4 mb-2">
-                  <span className="font-medium">Redução de custos</span>
-                  <span className="font-bold">78%</span>
-                </div>
-                <div className="w-full bg-gray-300/30 rounded-full h-2.5">
-                  <div className="bg-white h-2.5 rounded-full" style={{ width: '78%' }}></div>
-                </div>
-              </div>
+
+              <div className="relative h-full">
+  <div className="relative h-full w-full bg-white/5 rounded-2xl backdrop-blur-sm p-6 overflow-hidden">
+    <div className="absolute inset-0 flex items-center justify-center">
+      <div className="w-full h-full opacity-80">
+        <Image
+          src="/photo-1556514767-5c270b96a005.jpeg"
+          alt="Analytics dashboard"
+          fill
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          className="object-cover rounded-lg"
+        />
+      </div>
+    </div>
             </div>
             
-            <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-primary-light rounded-full opacity-30 animate-pulse"></div>
-            <div className="absolute -top-12 -left-12 w-24 h-24 bg-primary-light rounded-full opacity-20 animate-pulse"></div>
+            <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-primary-light rounded-full opacity-30"></div>
+            <div className="absolute -top-12 -left-12 w-24 h-24 bg-primary-light rounded-full opacity-20"></div>
           </div>
         </div>
       </div>
