@@ -12,6 +12,9 @@ interface FooterSection {
 }
 
 const Footer: React.FC = () => {
+  // Obter o ano atual dinamicamente
+  const currentYear = new Date().getFullYear();
+
   // Links da empresa modificados para apontar para secções internas
   const companyLinks: FooterLink[] = [
     { href: "#about", label: "Sobre nós" },
@@ -129,7 +132,7 @@ const Footer: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="text-white/70 text-sm mb-4 md:mb-0">
-              © 2024 DataWise. Todos os direitos reservados.
+              © {currentYear} DataWise. Todos os direitos reservados.
             </div>
             <div className="flex space-x-6">
               <a href="#" className="text-white/70 hover:text-white text-sm transition-colors">Política de Privacidade</a>
