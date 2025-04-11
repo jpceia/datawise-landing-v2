@@ -12,14 +12,32 @@ interface FooterSection {
 }
 
 const Footer: React.FC = () => {
+  // Links da empresa modificados para apontar para secções internas
+  const companyLinks: FooterLink[] = [
+    { href: "#about", label: "Sobre nós" },
+    { href: "#services", label: "Serviços" },
+    { href: "#success-cases", label: "Casos de Sucesso" },
+    { href: "/blog", label: "Blog" },  // Mantém-se externo
+    { href: "#careers", label: "Carreiras" },
+  ];
+
+  // Links de serviços modificados para apontar para subsecções ou a secção principal
+  const serviceLinks: FooterLink[] = [
+    { href: "#services", label: "Otimização de Rotas" },
+    { href: "#services", label: "Definição de Preços" },
+    { href: "#services", label: "Planeamento" },
+    { href: "#services", label: "Controlo de Gestão" },
+    { href: "#services", label: "Gestão de Stocks" },
+  ];
+
   return (
     <footer className="bg-primary text-white relative overflow-hidden">
-      {/* Elementos decorativos (esferas) */}
+      {/* Elementos decorativos (esferas) - permanecem inalterados */}
       <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-blue-600/20 -translate-y-1/2 translate-x-1/3"></div>
       <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-blue-400/10 translate-y-1/3 -translate-x-1/4"></div>
       <div className="absolute top-1/4 left-1/4 w-24 h-24 rounded-full bg-blue-400/10"></div>
       
-      {/* Padrão de pontos */}
+      {/* Padrão de pontos - permanece inalterado */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
       </div>
@@ -61,27 +79,31 @@ const Footer: React.FC = () => {
             </div>
           </div>
           
-          {/* Links rápidos */}
+          {/* Links rápidos - Aqui atualizamos os hrefs */}
           <div className="md:col-span-2">
             <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-4">Empresa</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors">Sobre nós</a></li>
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors">Serviços</a></li>
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors">Casos de Sucesso</a></li>
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors">Blog</a></li>
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors">Carreiras</a></li>
+              {companyLinks.map((link, index) => (
+                <li key={index}>
+                  <a href={link.href} className="text-white/70 hover:text-white transition-colors">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
           
-          {/* Serviços */}
+          {/* Serviços - Aqui atualizamos os hrefs */}
           <div className="md:col-span-2">
             <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-4">Serviços</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors">Otimização de Rotas</a></li>
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors">Definição de Preços</a></li>
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors">Planeamento</a></li>
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors">Controlo de Gestão</a></li>
-              <li><a href="#" className="text-white/70 hover:text-white transition-colors">Gestão de Stocks</a></li>
+              {serviceLinks.map((link, index) => (
+                <li key={index}>
+                  <a href={link.href} className="text-white/70 hover:text-white transition-colors">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
           
