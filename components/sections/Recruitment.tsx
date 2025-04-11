@@ -1,10 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-import Button from '../ui/Button';
 import Badge from '../ui/Badge';
-import IconCircle from '../ui/IconCircle';
 import FeatureCard from '../ui/FeatureCard';
 import SectionTitle from '../ui/SectionTitle';
+import ContactData from '../../utils/ContactData';
 
 const Recruitment = () => {
   const benefits = [
@@ -63,9 +62,12 @@ const Recruitment = () => {
             </div>
             
             <div className="flex justify-center">
-              <Button variant="primary" size="lg" className="w-full sm:w-auto">
+              <a 
+                href={`mailto:${ContactData.careers.email}`} 
+                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-blue-500/30"
+              >
                 Envia-nos o teu CV
-              </Button>
+              </a>
             </div>
           </div>
           

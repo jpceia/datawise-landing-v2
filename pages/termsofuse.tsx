@@ -3,6 +3,7 @@ import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import React from 'react';
 import { NextPage } from 'next';
+import ContactData from '../utils/ContactData';
 
 const TermsOfUse: NextPage = () => {
   return (
@@ -152,7 +153,7 @@ const TermsOfUse: NextPage = () => {
                   </p>
                   <p>
                     Se recebermos informações pessoais sobre si de terceiros, iremos protegê-las conforme descrito nesta política 
-                    de privacidade. Se você for um terceiro que fornece informações pessoais sobre outra pessoa, garante e declara 
+                    de privacidade. Se você é um terceiro que fornece informações pessoais sobre outra pessoa, garante e declara 
                     que tem o consentimento dessa pessoa para nos fornecer as informações.
                   </p>
                   <p>
@@ -209,7 +210,7 @@ const TermsOfUse: NextPage = () => {
                   </p>
                   <p className="mt-2">
                     <strong>Preocupações Relacionadas com a Privacidade</strong><br />
-                    E-mail: <a href="mailto:geral@datawise.pt" className="text-primary hover:underline">geral@datawise.pt</a>
+                    E-mail: <a href={`mailto:${ContactData.general.email}`} className="text-primary hover:underline">{ContactData.general.email}</a>
                   </p>
                   
                   <div className="mt-12 pt-6 border-t border-gray-200">

@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import Section from '../ui/Section';
-import Button from '../ui/Button';
+import ContactData from '../../utils/ContactData';
 
 const TransformBusiness = () => {
   return (
@@ -66,25 +65,28 @@ const TransformBusiness = () => {
             </div>
             
             <div className="text-center mt-4">
-              <Button variant="secondary" size="lg">
+              <a 
+                href={`mailto:${ContactData.general.email}`} 
+                className="inline-flex items-center justify-center px-6 py-3 bg-white text-primary rounded-lg font-medium hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg"
+              >
                 Agende uma reunião
-              </Button>
+              </a>
             </div>
           </div>
 
-              <div className="relative h-full">
-  <div className="relative h-full w-full bg-white/5 rounded-2xl backdrop-blur-sm p-6 overflow-hidden">
-    <div className="absolute inset-0 flex items-center justify-center">
-      <div className="w-full h-full opacity-80">
-        <Image
-          src="/photo-1556514767-5c270b96a005.jpeg"
-          alt="Analytics dashboard"
-          fill
-          sizes="(max-width: 1024px) 100vw, 50vw"
-          className="object-cover rounded-lg"
-        />
-      </div>
-    </div>
+          <div className="relative h-full">
+            <div className="relative h-full w-full bg-white/5 rounded-2xl backdrop-blur-sm p-6 overflow-hidden">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-full h-full opacity-80">
+                  <Image
+                    src="/photo-1556514767-5c270b96a005.jpeg"
+                    alt="Analytics dashboard"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+              </div>
             </div>
             
             <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-primary-light rounded-full opacity-30"></div>

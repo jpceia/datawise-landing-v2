@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NavItem } from '../../types';
+import ContactData from '../../utils/ContactData';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -92,7 +93,7 @@ const Navbar: React.FC = () => {
               </Link>
             ))}
             <Link 
-              href="#contacto" 
+              href={`mailto:${ContactData.general.email}`} 
               className="ml-4 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-md font-medium transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 active:scale-95"
             >
               Contacte-nos
@@ -155,7 +156,7 @@ const Navbar: React.FC = () => {
                 exit={{ x: -20, opacity: 0 }}
               >
                 <Link
-                  href="#contacto"
+                  href={`mailto:${ContactData.general.email}`}
                   className="block w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-3 rounded-md font-medium text-center transition-colors"
                   onClick={() => setIsOpen(false)}
                 >

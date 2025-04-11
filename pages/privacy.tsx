@@ -3,6 +3,7 @@ import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import React from 'react';
 import { NextPage } from 'next';
+import ContactData from '../utils/ContactData';
 
 const PrivacyPolicy: NextPage = () => {
   return (
@@ -126,7 +127,7 @@ const PrivacyPolicy: NextPage = () => {
                   <h2 className="text-2xl font-bold mt-10 mb-4 text-primary">Contacte-nos</h2>
                   <p>
                     Se tiver dúvidas sobre esta Política de Privacidade ou as práticas de privacidade da DataWise, 
-                    entre em contacto connosco através do e-mail: <a href="mailto:geral@datawise.pt" className="text-primary hover:underline">geral@datawise.pt</a>
+                    entre em contacto connosco através do e-mail: <a href={`mailto:${ContactData.general.email}`} className="text-primary hover:underline">{ContactData.general.email}</a>
                   </p>
                   
                   <div className="mt-12 pt-6 border-t border-gray-200">
