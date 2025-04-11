@@ -12,25 +12,27 @@ const SuccessCases = () => {
       subtitle: 'Otimização de One-Way Fees',
       imageUrl: 'https://images.unsplash.com/photo-1515876305430-f06edab8282a?q=80&w=1000',
       stats: [
-        { value: '32%', label: 'Aumento de rentabilidade' },
-        { value: '45%', label: 'Redução em custos logísticos' },
-        { value: '28%', label: 'Melhoria na taxa de ocupação' },
+        { value: 'Maior', label: 'Rentabilidade' },
+        { value: 'Redução', label: 'Custos logísticos' },
+        { value: 'Melhoria', label: 'Taxa de ocupação' },
       ],
       description: 'Este é um exemplo de sucesso de uma empresa de aluguer de auto-caravanas, onde conseguimos otimizar o processo de gestão de frota e, consequentemente, melhorar os seus resultados operacionais.',
       link: '/casos/auto-caravanas',
+      tags: ['Análise de dados', 'Machine Learning', 'Python']
     },
     {
       id: 2,
       title: 'Transportadora Last-Mile Delivery',
       subtitle: 'Planeamento de Rotas',
-      imageUrl: 'https://images.unsplash.com/photo-1586323287528-81d965080672?q=80&w=1000',
+      imageUrl: 'https://images.unsplash.com/photo-1545987796-200677ee1011?q=80&w=1000',
       stats: [
-        { value: '47%', label: 'Redução no tempo de entrega' },
-        { value: '39%', label: 'Economia de combustível' },
-        { value: '86%', label: 'Aumento na satisfação do cliente' },
+        { value: 'Redução', label: 'Tempo de entrega' },
+        { value: 'Economia', label: 'Combustível' },
+        { value: 'Aumento', label: 'Satisfação do cliente' },
       ],
       description: 'Mais um caso de sucesso com uma transportadora especializada em last-mile delivery, onde ajudámos a resolver um desafio operacional bastante específico.',
       link: '/casos/last-mile',
+      tags: ['Otimização', 'Georreferenciação', 'Python']
     },
     {
       id: 3,
@@ -38,17 +40,18 @@ const SuccessCases = () => {
       subtitle: 'Dashboard de Rentabilidade',
       imageUrl: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=1000',
       stats: [
-        { value: '58%', label: 'Aumento na rentabilidade por motorista' },
-        { value: '24%', label: 'Otimização de horas de trabalho' },
-        { value: '35%', label: 'Redução de custos operacionais' },
+        { value: 'Aumento', label: 'Rentabilidade por motorista' },
+        { value: 'Otimização', label: 'Horas de trabalho' },
+        { value: 'Redução', label: 'Custos operacionais' },
       ],
       description: 'A história de como auxiliámos uma empresa de TVDE a resolver um desafio crítico relacionado com a visibilidade da rentabilidade.',
       link: '/casos/tvde',
+      tags: ['Controlo de Gestão', 'Contabilidade Analítica', 'PowerBI']
     },
   ];
 
   return (
-    <section id="success-cases" className="py-24 bg-gradient-to-br from-primary-dark to-primary text-white relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-br from-primary-dark to-primary text-white relative overflow-hidden">
       {/* Elementos decorativos */}
       <div className="absolute top-0 right-0 w-full h-full opacity-10">
         <svg className="w-full h-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -124,9 +127,9 @@ const SuccessCases = () => {
               {/* Badges */}
               <div className="absolute bottom-6 left-6 right-6 z-20">
                 <div className="flex flex-wrap gap-3">
-                  <span className="bg-primary-light/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm">Data Analysis</span>
-                  <span className="bg-primary-light/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm">Optimization</span>
-                  <span className="bg-primary-light/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm">Machine Learning</span>
+                  {cases[activeCase].tags.map((tag, index) => (
+                    <span key={index} className="bg-primary-light/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm">{tag}</span>
+                  ))}
                 </div>
               </div>
             </div>
