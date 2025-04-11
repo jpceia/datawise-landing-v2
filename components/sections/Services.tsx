@@ -64,7 +64,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden bg-gray-50">
+    <section id="services" className="py-24 relative overflow-hidden bg-gray-50">
       {/* Elementos decorativos */}
       <div className="absolute top-0 right-0 w-72 h-72 bg-primary/5 rounded-full"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full"></div>
