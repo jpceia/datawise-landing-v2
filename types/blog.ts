@@ -7,17 +7,10 @@ export interface BlogPost {
     excerpt: string;
     content: string; // Conteúdo em formato Markdown
     date: string;
-    author: Author;
     coverImage: string;
     readingTime: string;
     category: string;
     tags: string[];
-  }
-  
-  export interface Author {
-    name: string;
-    avatar?: string;
-    role?: string;
   }
   
   // Para simulação de dados
@@ -25,12 +18,12 @@ export interface BlogPost {
     {
       id: '1',
       slug: 'auto-caravanas',
-      title: 'Caso de Sucesso: Como a DataWise Ajudou uma Empresa de Aluguer de Auto-Caravanas a Maximizar a Ocupação e Aumentar as Receitas',
-      excerpt: 'A DataWise tem como missão ajudar as empresas a otimizar as suas operações e a transformar os desafios em oportunidades através de soluções baseadas em dados.',
+      title: 'Como a Datawise Ajudou uma Empresa de Aluguer de Auto-Caravanas a Maximizar a Ocupação e Aumentar as Receitas',
+      excerpt: 'A Datawise tem como missão ajudar as empresas a otimizar as suas operações e a transformar os desafios em oportunidades através de soluções baseadas em dados.',
       content: `
-  # Caso de Sucesso: Como a DataWise Ajudou uma Empresa de Aluguer de Auto-Caravanas a Maximizar a Ocupação e Aumentar as Receitas
+  # Como a Datawise Ajudou uma Empresa de Aluguer de Auto-Caravanas a Maximizar a Ocupação e Aumentar as Receitas
   
-  A DataWise tem como missão ajudar as empresas a otimizar as suas operações e a transformar os desafios em oportunidades através de soluções baseadas em dados. Um dos nossos mais recentes casos de sucesso é o trabalho desenvolvido com uma empresa de aluguer de auto-caravanas que opera em vários países da Europa.
+  A Datawise tem como missão ajudar as empresas a otimizar as suas operações e a transformar os desafios em oportunidades através de soluções baseadas em dados. Um dos nossos mais recentes casos de sucesso é o trabalho desenvolvido com uma empresa de aluguer de auto-caravanas que opera em vários países da Europa.
   
   ## O Desafio: Desbalanceamento Geográfico das Auto-Caravanas
   
@@ -44,9 +37,9 @@ export interface BlogPost {
   
   O desbalanceamento na distribuição das caravanas estava a prejudicar não só a taxa de ocupação, mas também a capacidade da empresa de maximizar a receita e minimizar os custos operacionais.
   
-  ## A Solução: Algoritmo Inteligente de Ajuste de Preços da DataWise
+  ## A Solução: Algoritmo Inteligente de Ajuste de Preços da Datawise
   
-  Para resolver este desafio, a DataWise desenvolveu uma solução personalizada que focava na otimização da distribuição das auto-caravanas. O nosso ponto de partida foi a criação de um algoritmo de ajuste de preços dinâmico que balanceava a oferta com a procura em diferentes regiões geográficas.
+  Para resolver este desafio, a Datawise desenvolveu uma solução personalizada que focava na otimização da distribuição das auto-caravanas. O nosso ponto de partida foi a criação de um algoritmo de ajuste de preços dinâmico que balanceava a oferta com a procura em diferentes regiões geográficas.
   
   Através de ajustes inteligentes de preços, o algoritmo incentivava os clientes a deixarem as auto-caravanas em áreas carentes de veículos. Isso permitia à empresa "mobilizar" os seus clientes para resolverem o problema da distribuição das caravanas, sem necessidade de incorrer em custos elevados de transporte.
   
@@ -54,7 +47,7 @@ export interface BlogPost {
   
   ## Impacto na Faturação e Eficiência Operacional
   
-  Os resultados desta abordagem inovadora foram impressionantes. No trimestre seguinte à implementação da solução da DataWise, a empresa registou um aumento na faturação, o que representou um crescimento de 2% face ao trimestre anterior.
+  Os resultados desta abordagem inovadora foram impressionantes. No trimestre seguinte à implementação da solução da Datawise, a empresa registou um aumento na faturação, o que representou um crescimento de 2% face ao trimestre anterior.
   
   Além do aumento direto das receitas, a empresa também beneficiou de:
   
@@ -64,16 +57,11 @@ export interface BlogPost {
   
   ## Conclusão
   
-  Este caso é um excelente exemplo de como a DataWise utiliza dados e algoritmos inteligentes para ajudar as empresas a otimizar as suas operações, melhorar a eficiência e aumentar a sua rentabilidade. Ao aplicar uma solução personalizada, baseada em ajustes de preços e redistribuição de recursos, a nossa equipa foi capaz de resolver um problema complexo e aumentar significativamente os resultados desta empresa de aluguer de auto-caravanas.
+  Este caso é um excelente exemplo de como a Datawise utiliza dados e algoritmos inteligentes para ajudar as empresas a otimizar as suas operações, melhorar a eficiência e aumentar a sua rentabilidade. Ao aplicar uma solução personalizada, baseada em ajustes de preços e redistribuição de recursos, a nossa equipa foi capaz de resolver um problema complexo e aumentar significativamente os resultados desta empresa de aluguer de auto-caravanas.
   
-  Se a sua empresa enfrenta desafios semelhantes ou procura formas de melhorar a sua eficiência operacional, a DataWise está pronta para o ajudar. Entre em contacto connosco para descobrir como podemos transformar os seus dados em soluções estratégicas e resultados tangíveis.
+  Se a sua empresa enfrenta desafios semelhantes ou procura formas de melhorar a sua eficiência operacional, a Datawise está pronta para o ajudar. Entre em contacto connosco para descobrir como podemos transformar os seus dados em soluções estratégicas e resultados tangíveis.
       `,
       date: '5 de Novembro de 2024',
-      author: {
-        name: 'Miguel Santos',
-        avatar: '/images/authors/miguel-santos.jpg',
-        role: 'Data Scientist'
-      },
       coverImage: 'https://images.unsplash.com/photo-1515876305430-f06edab8282a?q=80&w=1000',
       readingTime: '8 min',
       category: 'Estudos de Caso',
@@ -82,156 +70,124 @@ export interface BlogPost {
     {
       id: '2',
       slug: 'last-mile',
-      title: 'Transportadora Last-Mile Delivery: Planeamento de Rotas',
-      excerpt: 'Mais um caso de sucesso com uma transportadora especializada em last-mile delivery, onde ajudámos a resolver um desafio operacional bastante específico.',
+      title: 'Como a Datawise Ajudou uma Transportadora Last-Mile a Otimizar a Coordenação entre Carrinhas e Motas',
+      excerpt: 'Na Datawise, o nosso compromisso é desenvolver soluções tecnológicas inovadoras que resolvam desafios complexos e permitam às empresas melhorar as suas operações.',
       content: `
-  # Transportadora Last-Mile Delivery: Planeamento de Rotas
+  # Como a Datawise Ajudou uma Transportadora Last-Mile a Otimizar a Coordenação entre Carrinhas e Motas
   
-  Mais um caso de sucesso com uma transportadora especializada em last-mile delivery, onde ajudámos a resolver um desafio operacional bastante específico.
+  Na Datawise, o nosso compromisso é desenvolver soluções tecnológicas inovadoras que resolvam desafios complexos e permitam às empresas melhorar as suas operações. Um dos nossos casos mais notáveis foi a parceria com uma start-up de last-mile delivery, que enfrentava dificuldades na coordenação eficiente entre carrinhas e motas nas suas entregas. Através da nossa expertise em algoritmos e otimização de rotas, ajudámos esta empresa a transformar a sua operação e a provar a viabilidade do seu modelo de negócio.
   
-  ## O Desafio
+  ## O Desafio: Coordenação Ineficiente entre Carrinhas e Motas
   
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras porttitor augue vel fermentum finibus. Maecenas scelerisque ligula sed metus pharetra, eu euismod quam egestas.
+  O modelo de negócios desta empresa de last-mile delivery era inovador ao combinar dois tipos de veículos — carrinhas e motas — nas suas operações diárias de entrega. Este conceito oferecia flexibilidade e rapidez, mas também trouxe um desafio significativo: não havia no mercado uma solução que otimizasse rotas para uma operação mista de carrinhas e motas, o que causava ineficiências na coordenação entre os dois tipos de veículos.
   
-  ## A Solução
+  A falta de uma solução apropriada resultava em:
   
-  Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus.
+  - Rotas desorganizadas, onde carrinhas e motas não operavam em sincronia, o que atrasava as entregas;
+  - Visibilidade limitada das operações, dificultando o acompanhamento do fluxo de trabalho e a otimização de recursos;
+  - Desafios na gestão centralizada das operações, uma vez que os sistemas existentes não estavam preparados para a coordenação eficaz de diferentes tipos de veículos.
   
-  ## Resultados
+  Estes problemas colocavam em risco o desempenho da start-up e a sua capacidade de cumprir as expectativas dos seus clientes.
   
-  - 47% de redução no tempo de entrega
-  - 39% de economia de combustível
-  - 86% de aumento na satisfação do cliente
+  ## A Solução: Algoritmo de Roteamento Inteligente e Gestão Centralizada
+  
+  A Datawise entrou em ação desenvolvendo uma solução personalizada que atendia às necessidades específicas da transportadora. O nosso ponto de partida foi criar um algoritmo de roteamento que otimizava a coordenação entre carrinhas e motas, ajustando as rotas em tempo real para garantir que ambos os tipos de veículos operassem de forma eficiente e coordenada.
+  
+  O nosso algoritmo inteligente não só melhorava a distribuição de tarefas entre carrinhas e motas, mas também integrava-se perfeitamente com o back-end da empresa, proporcionando uma gestão centralizada de todas as operações. Isso ofereceu à empresa:
+  
+  - Visibilidade total do fluxo de trabalho, permitindo monitorizar em tempo real o desempenho dos veículos e ajustar rotas conforme necessário;
+  - Operações mais eficientes, com as rotas otimizadas em tempo real para minimizar atrasos e aumentar a capacidade de entrega;
+  - Maior coordenação entre diferentes tipos de veículos, garantindo que motas e carrinhas trabalhassem em conjunto de maneira harmoniosa e eficaz.
+  
+  ## Resultados: Viabilização do Negócio e Sustentabilidade
+  
+  A implementação da solução desenvolvida pela Datawise foi um verdadeiro marco para a empresa. O nosso algoritmo permitiu que a start-up não só viabilizasse o seu modelo de negócio, mas também se posicionasse como um parceiro fiável e eficiente no setor de last-mile delivery. Os resultados incluem:
+  
+  - SLA (Service Level Agreement) superior a 95%, o que garantiu um serviço de entrega rápido e seguro, elevando a confiança dos seus clientes;
+  - Redução da pegada de carbono, uma vez que a otimização do uso de veículos permitiu diminuir o número de viagens desnecessárias, contribuindo para uma operação mais sustentável;
+  - Sucesso em testes piloto com grandes empresas. Estes pilotos foram essenciais para a credibilidade da start-up e demonstraram a eficácia e robustez da solução desenvolvida pela Datawise.
+  
+  ## Conclusão
+  
+  Este caso de sucesso é um exemplo claro de como a Datawise pode ajudar empresas inovadoras a superar desafios operacionais complexos e a alcançar o seu potencial máximo. Através de uma solução personalizada que integrou algoritmos de roteamento inteligentes e gestão centralizada, conseguimos melhorar a eficiência, aumentar a sustentabilidade e impulsionar a viabilidade desta start-up.
+  
+  Se a sua empresa também enfrenta desafios de otimização de rotas, gestão de frotas ou eficiência operacional, estamos prontos para o ajudar a desenvolver soluções inovadoras que maximizem os seus resultados. Entre em contacto connosco e descubra como a Datawise pode transformar a sua operação.
       `,
       date: '28 de Outubro de 2024',
-      author: {
-        name: 'Ana Oliveira',
-        avatar: '/images/authors/ana-oliveira.jpg',
-        role: 'Operations Specialist'
-      },
       coverImage: 'https://images.unsplash.com/photo-1586323287528-81d965080672?q=80&w=1000',
-      readingTime: '6 min',
+      readingTime: '8 min',
       category: 'Estudos de Caso',
-      tags: ['Logística', 'Otimização', 'Machine Learning', 'Planeamento']
+      tags: ['Logística', 'Otimização', 'Machine Learning', 'Planeamento', 'Last Mile', 'Sustentabilidade']
     },
     {
       id: '3',
       slug: 'tvde',
-      title: 'Dashboard de Rentabilidade: Como a DataWise Transformou os Dados de uma Empresa TVDE em Insights Acionáveis',
-      excerpt: 'A história de como auxiliámos uma empresa de TVDE a resolver um desafio crítico relacionado com a visibilidade da rentabilidade através de dashboards analíticos.',
+      title: 'Como a Datawise Transformou os Dados de uma Empresa TVDE em Insights Acionáveis',
+      excerpt: 'Na Datawise, ajudamos empresas a transformar os seus dados em decisões estratégicas que impulsionam o crescimento e a rentabilidade.',
       content: `
-  # Dashboard de Rentabilidade: Como a DataWise Transformou os Dados de uma Empresa TVDE em Insights Acionáveis
+  # Como a Datawise Transformou os Dados de uma Empresa TVDE em Insights Acionáveis
   
-  A economia digital trouxe novos modelos de negócio, e entre eles, o setor de TVDE (Transporte Individual e Remunerado de Passageiros em Veículos Descaracterizados) tem crescido exponencialmente em Portugal. Com este crescimento, surgiu também a necessidade de ferramentas avançadas de análise de dados para otimizar operações e aumentar a rentabilidade. Neste artigo, partilhamos como a DataWise ajudou uma empresa de TVDE a transformar os seus dados operacionais em insights estratégicos que resultaram num aumento significativo de rentabilidade.
+  Na Datawise, ajudamos empresas a transformar os seus dados em decisões estratégicas que impulsionam o crescimento e a rentabilidade. Um dos nossos projetos de sucesso foi com uma empresa de transporte TVDE, que enfrentava sérios desafios relacionados com a falta de visibilidade detalhada sobre a rentabilidade das suas operações. A nossa solução foi criar um dashboard avançado, permitindo à empresa otimizar os seus recursos e, ao mesmo tempo, aumentar a motivação da sua equipa.
   
-  ## O Desafio: Falta de Visibilidade Operacional
+  ## O Desafio: Falta de Visibilidade na Rentabilidade por Veículo, Motorista e Tipo de Cliente
   
-  O nosso cliente, uma empresa de TVDE com uma frota de mais de 50 veículos e aproximadamente 75 motoristas, enfrentava um desafio crítico: apesar do volume crescente de viagens, a rentabilidade não estava a acompanhar o crescimento da operação. A empresa operava com base em decisões intuitivas, sem uma visão clara sobre:
+  A empresa TVDE operava com uma frota diversificada e uma equipa de motoristas que atendia a diferentes tipos de clientes, mas tinha dificuldades em monitorizar o desempenho individual de cada um destes fatores. O principal problema era a falta de visibilidade detalhada sobre a rentabilidade por:
   
-  - Quais as zonas mais rentáveis da cidade
-  - Quais os horários que apresentavam melhor relação entre procura e oferta
-  - Qual o desempenho individual de cada motorista
-  - Como os custos operacionais afetavam a rentabilidade global
+  - Veículo, o que dificultava a identificação dos carros com melhor desempenho em termos de custo-benefício;
+  - Motorista, tornando complexo reconhecer os motoristas mais rentáveis, impactando a avaliação de desempenho e a tomada de decisões;
   
-  A ausência de métricas operacionais claras dificultava a identificação de ineficiências e oportunidades de melhoria. Os gestores sabiam que tinham um tesouro de dados nas suas mãos, mas não conseguiam transformá-los em informações acionáveis.
+  Sem esta informação crítica, a empresa enfrentava desafios para identificar:
   
-  ## A Solução: Dashboard Analítico Inteligente
+  - Quais motoristas e veículos eram mais eficientes e lucrativos;
+  - Como otimizar a alocação dos recursos da frota;
+  - Que tipos de clientes contribuíam mais ou menos para os lucros.
   
-  A DataWise desenhou e implementou uma solução analítica completa, que incluiu:
+  Esta ausência de dados detalhados estava a prejudicar a capacidade da empresa de tomar decisões estratégicas que poderiam melhorar tanto o desempenho operacional como a lucratividade.
   
-  ### 1. Integração e Processamento de Dados
+  ## A Solução: Dashboard de Rentabilidade Detalhado e Funcionalidades Avançadas
   
-  O primeiro passo foi consolidar dados de múltiplas fontes:
-  - Plataformas de TVDE (viagens, valores, ratings)
-  - Sistemas GPS de rastreamento de veículos
-  - Registos de manutenção dos veículos
-  - Sistemas de gestão de combustível
-  - Escalas de trabalho dos motoristas
+  Para resolver o problema, a Datawise desenvolveu uma ferramenta de análise de rentabilidade completamente adaptada às necessidades da empresa. Esta solução começou por registar todas as receitas e despesas associadas a cada veículo, motorista e transação, desde comissões pagas às plataformas de transporte até aos custos com combustível e manutenção. Estas informações eram depois alimentadas num dashboard de rentabilidade altamente intuitivo e visual, que permitia à empresa analisar o desempenho em tempo real.
   
-  Todos estes dados foram integrados numa arquitetura de dados unificada, permitindo uma visão holística da operação.
+  As principais funcionalidades do dashboard incluíram:
   
-  ### 2. Desenvolvimento de um Dashboard Analítico Personalizado
+  - Rentabilidade detalhada por veículo e motorista, permitindo identificar quais os veículos com melhor desempenho e quais os motoristas mais rentáveis;
+  - Receitas totais e por quilómetro, o que deu à empresa uma visão clara do retorno sobre cada viagem realizada;
+  - Análise de custos detalhados, incluindo despesas com combustível, manutenção, salários e comissões pagas às plataformas (como Uber e Bolt), permitindo uma avaliação clara dos custos operacionais;
+  - Comparação entre diferentes plataformas de transporte, permitindo que a empresa visse em que plataformas (Uber, Bolt, etc.) obtinha os melhores resultados;
+  - Monitorização da eficiência da frota, otimizando o uso dos veículos e garantindo que os mais lucrativos fossem alocados às rotas e motoristas mais eficientes.
   
-  Criámos um dashboard dinâmico e interativo que proporcionava várias visualizações críticas:
+  Esta ferramenta oferecia à empresa uma visão clara da sua operação, capacitando os gestores a tomar decisões informadas e baseadas em dados, além de melhorar a eficiência operacional.
   
-  - **Mapa de Calor de Rentabilidade**: Visualização geográfica que mostrava quais zonas da cidade geravam maior receita por quilómetro percorrido, permitindo otimizar o posicionamento dos veículos.
+  ## Resultados: Maior Rentabilidade e Motivação da Equipa
   
-  - **Análise Temporal de Procura**: Gráficos que destacavam os padrões de procura por hora do dia, dia da semana e eventos especiais, facilitando a otimização de escalas de trabalho.
+  Os resultados da implementação deste dashboard foram notáveis. A empresa conseguiu:
   
-  - **Avaliação de Desempenho de Motoristas**: Métricas de eficiência, rating médio, tempos de resposta e rentabilidade por motorista, criando um sistema de avaliação objetivo.
+  - Atribuir bónus baseados na rentabilidade individual de cada motorista, o que não só aumentou o desempenho dos motoristas, mas também melhorou a motivação e envolvimento da equipa. Cada motorista tinha agora visibilidade clara dos seus resultados e podia trabalhar com objetivos mais específicos.
+  - Aumento da rentabilidade em toda a operação, graças à nova capacidade de analisar os custos e receitas detalhadamente. Isto permitiu à empresa direcionar os investimentos de forma mais eficaz e otimizar a alocação de veículos e motoristas, maximizando o ROI (Retorno sobre o Investimento).
+  - Maior eficiência na gestão de frota, através de uma alocação mais estratégica dos recursos, garantindo que os veículos mais rentáveis fossem utilizados nas rotas mais lucrativas.
   
-  - **Monitorização de Custos**: Acompanhamento detalhado de custos com combustível, manutenção, seguros e outras despesas, identificando desvios e anomalias.
+  Adicionalmente, com a comparação detalhada entre diferentes plataformas de transporte, a empresa pôde ajustar a sua estratégia e alocar mais motoristas e veículos às plataformas mais lucrativas, aumentando assim a faturação geral.
   
-  - **Previsão de Demanda**: Algoritmos de machine learning que previam a procura futura com base em dados históricos e eventos programados.
+  ## Impacto Estratégico
   
-  ### 3. Sistema de Alertas e Recomendações
+  Este caso de sucesso demonstra como uma solução de análise de rentabilidade, como o dashboard desenvolvido pela Datawise, pode ter um impacto direto e positivo nos resultados de uma empresa TVDE. A capacidade de monitorizar a rentabilidade por veículo, motorista e tipo de cliente proporcionou à empresa uma visão completa da operação, algo que anteriormente era impossível.
   
-  Além da visualização de dados, implementámos um sistema de alertas inteligentes que notificava os gestores sobre:
+  Através desta análise detalhada, a empresa conseguiu:
   
-  - Veículos com consumos acima da média
-  - Zonas com súbito aumento de procura
-  - Motoristas com desempenho fora do padrão esperado
-  - Oportunidades de otimização de rotas
+  - Tomar decisões mais informadas e alocar os recursos de forma otimizada, maximizando o uso de veículos e motoristas;
+  - Melhorar a motivação e desempenho da equipa, através da introdução de bónus e incentivos baseados em dados concretos;
+  - Aumentar o retorno sobre os investimentos futuros, focando-se em áreas que ofereciam maior rentabilidade.
   
-  ## Resultados: Transformação Baseada em Dados
+  ## Conclusão
   
-  Os resultados da implementação desta solução foram impressionantes:
+  Através da implementação da nossa solução de dashboard de rentabilidade, esta empresa TVDE transformou completamente a sua gestão operacional e financeira, alcançando melhores resultados tanto em termos de eficiência como de motivação da equipa. Este exemplo demonstra o valor das soluções desenvolvidas pela Datawise para empresas que querem usar os seus dados de forma estratégica para melhorar a rentabilidade e a competitividade.
   
-  - **58% de aumento na rentabilidade por motorista** nos seis meses seguintes à implementação
-  - **24% de otimização das horas de trabalho**, permitindo melhor cobertura nos horários de pico
-  - **35% de redução nos custos operacionais**, principalmente relativos a combustível e manutenção preventiva
-  
-  Além dos números, observámos mudanças qualitativas significativas:
-  
-  1. **Cultura orientada a dados**: A empresa passou a tomar decisões fundamentadas em métricas objetivas, abandonando a gestão baseada em intuição.
-  
-  2. **Maior engajamento dos motoristas**: Com métricas claras de desempenho, os motoristas passaram a ter objetivos tangíveis e visibilidade sobre suas performances.
-  
-  3. **Melhoria na satisfação dos clientes**: A otimização de rotas e posicionamento estratégico dos veículos reduziu o tempo médio de espera, aumentando o rating geral da empresa nas plataformas.
-  
-  ## Como Fizemos a Diferença
-  
-  O diferencial da nossa abordagem para este cliente esteve em vários fatores:
-  
-  ### Abordagem Holística aos Dados
-  
-  Em vez de analisar fontes de dados isoladamente, desenvolvemos uma visão integrada que permitia correlacionar informações de diferentes sistemas, revelando insights que antes permaneciam ocultos.
-  
-  ### Personalização Completa
-  
-  Não utilizámos soluções genéricas. Cada aspeto do dashboard e das análises foi desenhado especificamente para as necessidades e particularidades do negócio TVDE, considerando a realidade do mercado português.
-  
-  ### Foco em Ações Concretas
-  
-  Os insights gerados eram traduzidos em recomendações práticas que podiam ser implementadas imediatamente, como reorganização de escalas, reposicionamento de veículos e formação direcionada para motoristas.
-  
-  ### Capacitação da Equipa
-  
-  Além de fornecer as ferramentas, capacitámos a equipa do cliente para interpretar e utilizar os dados de forma autónoma, criando uma verdadeira cultura de decisão baseada em dados.
-  
-  ## O Testemunho do Cliente
-  
-  > "Antes de trabalhar com a DataWise, operávamos às cegas. Tínhamos a sensação de que estávamos a deixar dinheiro na mesa, mas não sabíamos exatamente onde. O dashboard que desenvolveram para nós abriu os nossos olhos para oportunidades que nem sabíamos que existiam. Hoje, não consigo imaginar gerir o nosso negócio sem esta ferramenta."
-  > 
-  > — Carlos Mendes, Diretor de Operações
-  
-  ## Conclusão: O Poder dos Dados no Setor de TVDE
-  
-  Este caso demonstra como o setor de TVDE, que já é digital por natureza, pode beneficiar enormemente de uma abordagem avançada à análise de dados. Com o aumento da concorrência neste mercado, a capacidade de otimizar operações e maximizar a rentabilidade torna-se um diferencial competitivo crucial.
-  
-  A transformação que testemunhámos nesta empresa exemplifica a nossa missão na DataWise: converter dados em valor tangível para os negócios. Não se trata apenas de criar visualizações sofisticadas, mas de transformar informação em ação concreta que impacta positivamente os resultados financeiros e operacionais.
-  
-  Se a sua empresa de TVDE ou outro negócio baseado em plataformas digitais busca otimizar operações e aumentar a rentabilidade através de uma abordagem orientada a dados, a DataWise está pronta para ajudar. Entre em contacto connosco para descobrir como podemos transformar os seus dados em vantagem competitiva.
+  Se a sua empresa também enfrenta desafios na gestão de frota ou na visibilidade da rentabilidade, entre em contacto com a Datawise e descubra como podemos ajudar a transformar os seus dados em decisões mais eficientes.
       `,
       date: '15 de Outubro de 2024',
-      author: {
-        name: 'Pedro Costa',
-        avatar: '/images/authors/pedro-costa.jpg',
-        role: 'Data Analytics Lead'
-      },
       coverImage: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=1000',
       readingTime: '10 min',
       category: 'Estudos de Caso',
-      tags: ['TVDE', 'Dashboards', 'Business Intelligence', 'Analytics', 'Mobilidade']
+      tags: ['TVDE', 'Dashboards', 'Business Intelligence', 'Analytics', 'Mobilidade', 'Rentabilidade']
     }
   ];

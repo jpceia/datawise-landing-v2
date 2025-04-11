@@ -11,8 +11,8 @@ import MarkdownContent from '../../components/MarkdownContent';
 
 interface BlogPostPageProps {
   post: BlogPost;
-  nextPost?: { slug: string; title: string };
-  prevPost?: { slug: string; title: string };
+  nextPost: { slug: string; title: string } | null;
+  prevPost: { slug: string; title: string } | null;
 }
 
 const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost }) => {
@@ -71,19 +71,8 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
                 
                 {/* Author information */}
                 <div className="flex items-center mb-8">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
-                    <Image
-                      src={post.author.avatar || "https://via.placeholder.com/100?text=A"}
-                      alt={post.author.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
                   <div>
-                    <div className="font-medium text-gray-900">{post.author.name}</div>
                     <div className="text-sm text-gray-500 flex items-center">
-                      {post.author.role}
-                      <span className="mx-2">•</span>
                       <div className="flex items-center">
                         <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -159,7 +148,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
                   </div>
                 </div>
                 <div className="flex space-x-4">
-                  {prevPost && (
+                  {prevPost !== null && (
                     <Link href={`/blog/${prevPost.slug}`} className="inline-flex items-center text-gray-600 hover:text-primary">
                       <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
@@ -168,7 +157,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
                     </Link>
                   )}
                   
-                  {nextPost && (
+                  {nextPost !== null && (
                     <Link href={`/blog/${nextPost.slug}`} className="inline-flex items-center text-gray-600 hover:text-primary">
                       Próximo artigo
                       <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -213,17 +202,30 @@ export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({ params
 
   // Encontrar o próximo e o anterior post para navegação
   const currentIndex = sampleBlogPosts.findIndex(p => p.slug === slug);
-  const nextPost = currentIndex < sampleBlogPosts.length - 1 
-    ? { slug: sampleBlogPosts[currentIndex + 1].slug, title: sampleBlogPosts[currentIndex + 1].title }
-    : undefined;
   
-  const prevPost = currentIndex > 0 
-    ? { slug: sampleBlogPosts[currentIndex - 1].slug, title: sampleBlogPosts[currentIndex - 1].title }
-    : undefined;
+  // Criando objetos simples e serializáveis para nextPost e prevPost
+  let nextPost = null;
+  if (currentIndex < sampleBlogPosts.length - 1) {
+    nextPost = {
+      slug: sampleBlogPosts[currentIndex + 1].slug,
+      title: sampleBlogPosts[currentIndex + 1].title
+    };
+  }
+  
+  let prevPost = null;
+  if (currentIndex > 0) {
+    prevPost = {
+      slug: sampleBlogPosts[currentIndex - 1].slug,
+      title: sampleBlogPosts[currentIndex - 1].title
+    };
+  }
+
+  // Converte o post para um formato JSON seguro
+  const serializedPost = JSON.parse(JSON.stringify(post));
 
   return {
     props: {
-      post,
+      post: serializedPost,
       nextPost,
       prevPost
     },
