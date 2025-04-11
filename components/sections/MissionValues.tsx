@@ -1,6 +1,4 @@
 import React from 'react';
-import SectionTitle from '../ui/SectionTitle';
-import IconCircle from '../ui/IconCircle';
 
 const MissionValues = () => {
   const pillars = [
