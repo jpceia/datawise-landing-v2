@@ -19,20 +19,21 @@ const Footer: React.FC = () => {
 
   // Links da empresa modificados para apontar para secções internas
   const companyLinks: FooterLink[] = [
-    { href: "#about", label: "Sobre nós" },
-    { href: "#services", label: "Serviços" },
-    { href: "#success-cases", label: "Casos de Sucesso" },
+    { href: "/#about", label: "Sobre nós" },
+    { href: "/#services", label: "Serviços" },
+    { href: "/#success-cases", label: "Casos de Sucesso" },
     { href: "/blog", label: "Blog" },  // Mantém-se externo
-    { href: "#careers", label: "Carreiras" },
+    { href: "/#careers", label: "Carreiras" },
   ];
 
-  // Links de serviços modificados para apontar para subsecções ou a secção principal
+  // Links de serviços atualizados com base nos serviços exibidos na secção Services.tsx
   const serviceLinks: FooterLink[] = [
-    { href: "#services", label: "Otimização de Rotas" },
-    { href: "#services", label: "Definição de Preços" },
-    { href: "#services", label: "Planeamento" },
-    { href: "#services", label: "Controlo de Gestão" },
-    { href: "#services", label: "Gestão de Stocks" },
+    { href: "/#services", label: "Modelos Preditivos" },
+    { href: "/#services", label: "IA Generativa" },
+    { href: "/#services", label: "Dashboards Analíticos" },
+    { href: "/#services", label: "Otimização" },
+    { href: "/#services", label: "Definição de Preços" },
+    { href: "/#services", label: "Planeamento" },
   ];
 
   return (
@@ -54,6 +55,7 @@ const Footer: React.FC = () => {
           <div className="md:col-span-4">
             <div className="flex items-center mb-4">
               {/* Logo */}
+              <a href="/">
               <Image 
                 src="/datawise-logo.webp" 
                 alt="DataWise"
@@ -61,6 +63,7 @@ const Footer: React.FC = () => {
                 height={40} 
                 className="h-10 w-auto brightness-0 invert" 
               />
+              </a>
             </div>
             <p className="text-white/90 mb-6">
               Transformamos dados em decisões estratégicas, capacitando nossos clientes a operar com máxima eficiência.
