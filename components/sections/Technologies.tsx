@@ -56,7 +56,7 @@ const Technologies = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-            NOSSAS FERRAMENTAS
+            AS NOSSAS FERRAMENTAS
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
             As tecnologias que nos permitem entregar resultados excecionais
