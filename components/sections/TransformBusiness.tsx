@@ -5,7 +5,7 @@ import Button from '../ui/Button';
 
 const TransformBusiness = () => {
   return (
-    <section className="py-24 bg-gradient-to-r from-primary-dark to-primary text-white overflow-hidden relative">
+    <section id="about" className="py-24 bg-gradient-to-r from-primary-dark to-primary text-white overflow-hidden relative">
       {/* Elementos decorativos */}
       <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
         <svg className="w-full h-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">

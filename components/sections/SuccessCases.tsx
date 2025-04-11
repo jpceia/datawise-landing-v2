@@ -48,7 +48,7 @@ const SuccessCases = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-primary-dark to-primary text-white relative overflow-hidden">
+    <section id="success-cases" className="py-24 bg-gradient-to-br from-primary-dark to-primary text-white relative overflow-hidden">
       {/* Elementos decorativos */}
       <div className="absolute top-0 right-0 w-full h-full opacity-10">
         <svg className="w-full h-full" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">

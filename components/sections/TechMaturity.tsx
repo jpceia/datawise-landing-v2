@@ -50,7 +50,7 @@ const TechMaturity = () => {
   ];
 
   return (
-    <section className="py-24 bg-gray-100 relative overflow-hidden">
+    <section id="methodology" className="py-24 bg-gray-100 relative overflow-hidden">
       {/* Elementos decorativos */}
       <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white to-transparent"></div>
       

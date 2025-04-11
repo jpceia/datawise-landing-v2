@@ -46,7 +46,7 @@ const Technologies = () => {
   ];
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section id="technologies" className="py-24 bg-white relative overflow-hidden">
       {/* Background patterns */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute left-0 top-0 h-full w-1/3" style={{ backgroundImage: 'radial-gradient(#0D47A1 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>

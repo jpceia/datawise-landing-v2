@@ -31,7 +31,7 @@ const Recruitment = () => {
   ];
 
   return (
-    <section className="py-24 bg-gray-50 relative overflow-hidden">
+    <section id="careers" className="py-24 bg-gray-50 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden opacity-30">
         <div className="absolute -left-20 top-0 w-64 h-64 bg-primary/30 rounded-full filter blur-3xl"></div>

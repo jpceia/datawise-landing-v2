@@ -37,7 +37,7 @@ const MissionValues = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-primary-dark to-primary text-white relative overflow-hidden">
+    <section id="values" className="py-24 bg-gradient-to-br from-primary-dark to-primary text-white relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden opacity-10">
         <div className="absolute -right-40 -top-40 w-96 h-96 rounded-full border-4 border-white"></div>
