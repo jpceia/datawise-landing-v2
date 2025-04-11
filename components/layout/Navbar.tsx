@@ -36,10 +36,15 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navItems: NavItem[] = [
-    { href: '#servicos', label: 'Serviços' },
-    { href: '#casos-sucesso', label: 'Casos de Sucesso' },
-    { href: '#tecnologias', label: 'Tecnologias' },
-    { href: '#sobre', label: 'Sobre Nós' },
+    // { href: '#home', label: 'Início' },
+    
+    { href: '#about', label: 'Sobre Nós' },
+    { href: '#services', label: 'Serviços' },
+    { href: '#success-cases', label: 'Casos de Sucesso' },
+    // { href: '#technologies', label: 'Tecnologias' },
+    // { href: '#methodology', label: 'Metodologia' },
+    // { href: '#values', label: 'Valores' },
+    // { href: '#careers', label: 'Carreiras' },
   ];
 
   return (
