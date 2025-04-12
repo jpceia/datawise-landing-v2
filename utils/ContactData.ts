@@ -17,9 +17,8 @@ export const ContactData = {
     
     // Social media
     social: {
-      facebook: "https://facebook.com/datawise",
-      twitter: "https://twitter.com/datawise",
-      linkedin: "https://linkedin.com/company/datawise",
+      facebook: "https://www.facebook.com/profile.php?id=61557098815225",
+      linkedin: "https://www.linkedin.com/company/datawise-dev/",
     }
   };
   
