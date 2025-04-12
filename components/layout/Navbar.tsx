@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
           <Link href="/" className="flex items-center">
             <Image 
               src="/datawise-logo.webp" 
-              alt="DataWise" 
+              alt="Datawise" 
               width={300} 
               height={80} 
               className="h-20 w-auto" 

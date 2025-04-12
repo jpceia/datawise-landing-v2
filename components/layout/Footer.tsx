@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
               <a href="/">
               <Image 
                 src="/datawise-logo.webp" 
-                alt="DataWise"
+                alt="Datawise"
                 width={150} 
                 height={40} 
                 className="h-10 w-auto brightness-0 invert" 
@@ -133,7 +133,7 @@ const Footer: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="text-white/70 text-sm mb-4 md:mb-0">
-              © {currentYear} DataWise. Todos os direitos reservados.
+              © {currentYear} Datawise. Todos os direitos reservados.
             </div>
             <div className="flex space-x-6">
               <Link href="/privacy" className="text-white/70 hover:text-white text-sm transition-colors">Política de Privacidade</Link>
