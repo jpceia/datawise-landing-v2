@@ -1,19 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import gsap from 'gsap';
-import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber';
-import { TextureLoader } from 'three';
-
-interface GlobeProps {
-  rotationSpeed?: number;
-  size?: number;
-}
-
-interface SceneProps {
-  rotationSpeed: number;
-  size: number;
-}
 
 const InteractiveGlobe = () => {
   const containerRef = useRef(null);
@@ -29,17 +16,12 @@ const InteractiveGlobe = () => {
     let camera: THREE.OrthographicCamera;
     let rayCaster: THREE.Raycaster;
     let controls: OrbitControls;
-    let group: THREE.Group;
-    let overlayCtx: CanvasRenderingContext2D | null;
     let mouse: THREE.Vector2;
     let pointer: THREE.Mesh;
     let globe: THREE.Points;
     let globeMesh: THREE.Mesh;
-    let popupVisible = false;
     let earthTexture: THREE.Texture;
     let mapMaterial: THREE.ShaderMaterial;
-    let popupOpenTl: gsap.core.Timeline;
-    let popupCloseTl: gsap.core.Timeline;
 
     const initScene = () => {
       renderer = new THREE.WebGLRenderer({
@@ -59,18 +41,15 @@ const InteractiveGlobe = () => {
       createOrbitControls();
 
       const textureLoader = new THREE.TextureLoader();
-      textureLoader.load(
-        'https://ksenia-k.com/img/earth-map-colored.png',
-        (mapTex) => {
-          earthTexture = mapTex;
-          earthTexture.repeat.set(1, 1);
-          createGlobe();
-          createPointer();
-          addCanvasEvents();
-          updateSize();
-          render();
-        }
-      );
+      textureLoader.load('https://ksenia-k.com/img/earth-map-colored.png', mapTex => {
+        earthTexture = mapTex;
+        earthTexture.repeat.set(1, 1);
+        createGlobe();
+        createPointer();
+        addCanvasEvents();
+        updateSize();
+        render();
+      });
     };
 
     const createOrbitControls = () => {
@@ -192,10 +171,8 @@ const InteractiveGlobe = () => {
       if (activePointPosition.z > -1) {
         const lat = 90 - (Math.acos(pointer.position.y) * 180) / Math.PI;
         const lng = ((270 + (Math.atan2(pointer.position.x, pointer.position.z) * 180) / Math.PI) % 360) - 180;
-        
-        setCoordinates(
-          `${Math.abs(lat).toFixed(4)}°${lat >= 0 ? 'N' : 'S'}, ${Math.abs(lng).toFixed(4)}°${lng >= 0 ? 'E' : 'W'}`
-        );
+
+        setCoordinates(`${Math.abs(lat).toFixed(4)}°${lat >= 0 ? 'N' : 'S'}, ${Math.abs(lng).toFixed(4)}°${lng >= 0 ? 'E' : 'W'}`);
       }
     };
 
@@ -231,7 +208,7 @@ const InteractiveGlobe = () => {
     const updateSize = () => {
       if (!containerRef.current || !canvas2DRef.current) return;
       const containerEl = containerRef.current as HTMLDivElement;
-      const minSide = 0.65 * Math.min(window.innerWidth, window.innerHeight);
+      const minSide = 0.7 * Math.min(window.innerWidth, window.innerHeight);
       containerEl.style.width = `${minSide}px`;
       containerEl.style.height = `${minSide}px`;
       renderer.setSize(minSide, minSide);
@@ -264,26 +241,10 @@ const InteractiveGlobe = () => {
   }, []);
 
   return (
-    <div 
-      ref={containerRef} 
-      className="globe-wrapper relative w-full h-full flex justify-center items-center"
-    >
-      <canvas 
-        ref={canvasRef} 
-        id="globe-3d" 
-        className="absolute top-0 left-0 w-full h-full"
-      />
-      <canvas 
-        ref={canvas2DRef} 
-        id="globe-2d-overlay" 
-        className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-0"
-      />
-      <div 
-        ref={popupRef} 
-        className="globe-popup absolute top-0 left-0 bg-white text-gray-800 p-2 rounded-md text-sm shadow-md opacity-0"
-      >
-        {coordinates}
-      </div>
+    <div ref={containerRef} className="globe-wrapper">
+      <canvas ref={canvasRef} id="globe-3d" />
+      <canvas ref={canvas2DRef} id="globe-2d-overlay" />
+      <div ref={popupRef}>{coordinates}</div>
     </div>
   );
 };

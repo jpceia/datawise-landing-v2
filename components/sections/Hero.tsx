@@ -5,7 +5,7 @@ import ContactData from '../../utils/ContactData';
 
 const Hero: React.FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  
+
   useEffect(() => {
     setIsVisible(true);
   }, []);
@@ -20,12 +20,12 @@ const Hero: React.FC = () => {
           <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
         </div>
       </div>
-      
+
       {/* Content container with flex layout */}
       <div className="relative z-10 container mx-auto px-4 h-full flex flex-col lg:flex-row items-center pt-16 lg:pt-0">
         {/* Left side - Text content */}
-        <div className="w-full lg:w-5/12 lg:pr-8 order-2 lg:order-1 mt-8 lg:mt-0 text-center lg:text-left">
-          <motion.h1 
+        <div className="w-full lg:w-5/12 lg:pr-8 order-1 lg:order-2 mt-8 lg:mt-0 text-center lg:text-left">
+          <motion.h1
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -33,36 +33,37 @@ const Hero: React.FC = () => {
           >
             Potencie os dados da sua empresa
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -20 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-xl md:text-2xl text-gray-600 mb-10"
           >
-            Transformamos dados em <span className="text-blue-600 font-semibold">insights valiosos</span> para impulsionar o seu negócio rumo a novos patamares de eficiência e rentabilidade.
+            Transformamos dados em <span className="text-blue-600 font-semibold">insights valiosos</span> para impulsionar o seu negócio
+            rumo a novos patamares de eficiência e rentabilidade.
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -20 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
           >
-            <a 
-              href={`mailto:${ContactData.general.email}`} 
+            <a
+              href={`mailto:${ContactData.general.email}`}
               className="px-8 py-4 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-blue-500/30"
             >
               Agende uma Consulta Gratuita
             </a>
-            <a 
-              href="#services" 
+            <a
+              href="#services"
               className="px-8 py-4 bg-transparent border border-blue-600 text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition-all transform hover:scale-105"
             >
               Conheça os Nossos Serviços
             </a>
           </motion.div>
-          
+
           {/* Trust indicators 
           <motion.div
             initial={{ opacity: 0 }}
@@ -70,7 +71,7 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 1 }}
             className="mt-16"
           >
-            <p className="text-gray-500 text-sm mb-4">Empresas que confiam na DataWise</p>
+            <p className="text-gray-500 text-sm mb-4">Empresas que confiam na Datawise</p>
             <div className="flex flex-wrap gap-8 opacity-50">
               <div className="h-8 w-24 bg-gray-200 rounded"></div>
               <div className="h-8 w-24 bg-gray-200 rounded"></div>
@@ -82,18 +83,21 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Right side - Globe */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.8 }}
-          transition={{ duration: 1, delay: 0.4 }}
-          className="w-full lg:w-7/12 h-[380px] lg:h-full order-1 lg:order-2"
-        >
-          <div className="h-full w-full relative">
-            <Globe3D />
-          </div>
-        </motion.div>
+        <div className="w-full lg:w-7/12 h-auto order-1 lg:order-2">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.8 }}
+            transition={{ duration: 1, delay: 0.4 }}
+            className="relative"
+            style={{ top: '-50px' }} // Adicione um valor negativo para mover para cima
+          >
+            <div>
+              <Globe3D />
+            </div>
+          </motion.div>
+        </div>
       </div>
-      
+
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
         <motion.div
@@ -106,7 +110,7 @@ const Hero: React.FC = () => {
           <div className="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center p-1">
             <motion.div
               animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
               className="w-1 h-1 bg-gray-400 rounded-full"
             ></motion.div>
           </div>
