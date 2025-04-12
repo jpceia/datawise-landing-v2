@@ -48,9 +48,6 @@ const BlogIndex: NextPage<BlogIndexProps> = ({ posts, categories }) => {
         <meta property="og:url" content="https://datawise.pt/blog" />
         <meta property="og:type" content="website" />
       </Head>
-
-      <Navbar />
-
       <main>
         <section className="pt-36 pb-20 bg-gray-50">
           <div className="container mx-auto px-4">
@@ -235,8 +232,6 @@ const BlogIndex: NextPage<BlogIndexProps> = ({ posts, categories }) => {
           </div>
         </section>
       </main>
-
-      <Footer />
     </>
   );
 };

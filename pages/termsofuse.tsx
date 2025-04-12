@@ -23,8 +23,6 @@ const TermsOfUse: NextPage = () => {
         <meta property="og:site_name" content="DataWise" />
       </Head>
 
-      <Navbar />
-
       <main>
         <section className="pt-36 pb-20 bg-gray-50">
           <div className="container mx-auto px-4">
@@ -229,7 +227,6 @@ const TermsOfUse: NextPage = () => {
         </section>
       </main>
 
-      <Footer />
     </>
   );
 };

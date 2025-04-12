@@ -21,8 +21,6 @@ const PrivacyPolicy: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar />
-
       <main>
         <section className="pt-36 pb-20 bg-gray-50">
           <div className="container mx-auto px-4">
@@ -152,8 +150,6 @@ const PrivacyPolicy: NextPage = () => {
           </div>
         </section>
       </main>
-
-      <Footer />
     </>
   );
 };

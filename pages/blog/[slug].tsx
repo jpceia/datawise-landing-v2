@@ -42,8 +42,6 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
         ))}
       </Head>
 
-      <Navbar />
-
       <main>
         <section className="pt-36 pb-20 bg-gray-50">
           <div className="container mx-auto px-4">
@@ -201,8 +199,6 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
           </div>
         </section>
       </main>
-
-      <Footer />
     </>
   );
 };

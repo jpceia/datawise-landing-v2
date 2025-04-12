@@ -29,8 +29,6 @@ const Home: NextPage = () => {
         <meta property="og:type" content="website" />
       </Head>
 
-      <Navbar />
-
       <main>
         <Hero />
 
@@ -42,8 +40,6 @@ const Home: NextPage = () => {
         <Recruitment />
         <Technologies />
       </main>
-
-      <Footer />
     </>
   );
 };
