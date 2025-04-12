@@ -10,7 +10,7 @@ const SuccessCases = () => {
       id: 1,
       title: 'Empresa de Aluguer de Auto-Caravanas',
       subtitle: 'Otimização de One-Way Fees',
-      imageUrl: '/photo-1515876305430-f06edab8282a.jpeg',
+      imageUrl: '/images/photo-1515876305430-f06edab8282a.jpeg',
       stats: [
         { value: 'Maior', label: 'Rentabilidade' },
         { value: 'Redução', label: 'Custos logísticos' },
@@ -24,7 +24,7 @@ const SuccessCases = () => {
       id: 2,
       title: 'Transportadora Last-Mile Delivery',
       subtitle: 'Planeamento de Rotas',
-      imageUrl: '/photo-1545987796-200677ee1011.jpeg',
+      imageUrl: '/images/photo-1545987796-200677ee1011.jpeg',
       stats: [
         { value: 'Redução', label: 'Tempo de entrega' },
         { value: 'Economia', label: 'Combustível' },
@@ -38,7 +38,7 @@ const SuccessCases = () => {
       id: 3,
       title: 'Empresa TVDE',
       subtitle: 'Dashboard de Rentabilidade',
-      imageUrl: '/photo-1449965408869-eaa3f722e40d.jpeg',
+      imageUrl: '/images/photo-1449965408869-eaa3f722e40d.jpeg',
       stats: [
         { value: 'Aumento', label: 'Rentabilidade por motorista' },
         { value: 'Otimização', label: 'Horas de trabalho' },

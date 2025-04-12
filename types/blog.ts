@@ -62,7 +62,7 @@ export interface BlogPost {
   Se a sua empresa enfrenta desafios semelhantes ou procura formas de melhorar a sua eficiência operacional, a Datawise está pronta para o ajudar. Entre em contacto connosco para descobrir como podemos transformar os seus dados em soluções estratégicas e resultados tangíveis.
       `,
       date: '5 de Novembro de 2024',
-      coverImage: '/photo-1515876305430-f06edab8282a.jpeg',
+      coverImage: '/images/photo-1515876305430-f06edab8282a.jpeg',
       readingTime: '8 min',
       category: 'Caso de Sucesso',
       tags: ['Otimização', 'Pricing', 'Machine Learning']
@@ -114,7 +114,7 @@ export interface BlogPost {
   Se a sua empresa também enfrenta desafios de otimização de rotas, gestão de frotas ou eficiência operacional, estamos prontos para o ajudar a desenvolver soluções inovadoras que maximizem os seus resultados. Entre em contacto connosco e descubra como a Datawise pode transformar a sua operação.
       `,
       date: '28 de Outubro de 2024',
-      coverImage: '/photo-1545987796-200677ee1011.jpeg',
+      coverImage: '/images/photo-1545987796-200677ee1011.jpeg',
       readingTime: '8 min',
       category: 'Estudos de Caso',
       tags: ['Logística', 'Otimização', 'Machine Learning', 'Planeamento', 'Last Mile', 'Sustentabilidade']
@@ -185,7 +185,7 @@ export interface BlogPost {
   Se a sua empresa também enfrenta desafios na gestão de frota ou na visibilidade da rentabilidade, entre em contacto com a Datawise e descubra como podemos ajudar a transformar os seus dados em decisões mais eficientes.
       `,
       date: '15 de Outubro de 2024',
-      coverImage: '/photo-1449965408869-eaa3f722e40d.jpeg',
+      coverImage: '/images/photo-1449965408869-eaa3f722e40d.jpeg',
       readingTime: '10 min',
       category: 'Caso de Sucesso',
       tags: ['TVDE', 'Dashboards', 'Business Intelligence', 'Analytics', 'Mobilidade', 'Rentabilidade']

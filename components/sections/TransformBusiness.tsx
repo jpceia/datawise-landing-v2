@@ -79,7 +79,7 @@ const TransformBusiness = () => {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-full h-full opacity-80">
                   <Image
-                    src="/photo-1556514767-5c270b96a005.jpeg"
+                    src="/images/photo-1556514767-5c270b96a005.jpeg"
                     alt="Analytics dashboard"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"

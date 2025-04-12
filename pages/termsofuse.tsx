@@ -17,7 +17,7 @@ const TermsOfUse: NextPage = () => {
         {/* Open Graph tags */}
         <meta property="og:title" content="Termos de Utilização | Datawise" />
         <meta property="og:description" content="Conheça os nossos termos de utilização do website e serviços da DataWise." />
-        <meta property="og:image" content="/pexels-photo-6153354.jpeg" />
+        <meta property="og:image" content="/images/pexels-photo-6153354.jpeg" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.datawise.pt/termsofuse" />
         <meta property="og:site_name" content="DataWise" />

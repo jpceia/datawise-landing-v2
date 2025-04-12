@@ -24,7 +24,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:title" content="Datawise | Consultoria em Ciência de Dados" />
         <meta property="og:description" content="Transformamos dados em decisões estratégicas para o seu negócio" />
-        <meta property="og:image" content="/pexels-photo-6153354.jpeg" />
+        <meta property="og:image" content="/images/pexels-photo-6153354.jpeg" />
         <meta property="og:url" content="https://datawise.pt" />
         <meta property="og:type" content="website" />
       </Head>

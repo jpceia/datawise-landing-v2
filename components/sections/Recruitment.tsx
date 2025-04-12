@@ -78,7 +78,7 @@ const Recruitment = () => {
             <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden">
               <div className="relative h-[500px] w-full">
                 <Image
-                  src="/photo-1522071820081-009f0129c71c.jpeg"
+                  src="/images/photo-1522071820081-009f0129c71c.jpeg"
                   alt="Team working together"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
