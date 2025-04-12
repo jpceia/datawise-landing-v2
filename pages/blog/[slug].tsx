@@ -26,7 +26,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
   return (
     <>
       <Head>
-        <title>{post.title} | Blog Datawise</title>
+        <title>{`${post.title} | Blog Datawise`}</title>
         <meta name="description" content={post.excerpt} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
