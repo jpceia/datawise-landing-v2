@@ -36,7 +36,7 @@ const Technologies = () => {
     { 
       id: 7, 
       name: 'Microsoft Cognitive Services', 
-      logo: '/tech-logos/Microsoft_logo_(2012).svg.png'
+      logo: '/tech-logos/cognitive.gif'
     },
     { 
       id: 8, 
