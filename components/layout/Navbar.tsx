@@ -8,11 +8,26 @@ import ContactData from '../../utils/ContactData';
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
+  const [visible, setVisible] = useState<boolean>(true);
   const [activeSection, setActiveSection] = useState<string>('');
+  const [lastScrollY, setLastScrollY] = useState<number>(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
+      const currentScrollY = window.scrollY;
+      
+      // Check if we should show/hide navbar based on scroll position
+      const heroSectionHeight = window.innerHeight; // Assuming hero is full viewport height
+      
+      // Hide navbar when scrolling past the hero section
+      if (currentScrollY > heroSectionHeight) {
+        setVisible(false);
+      } else {
+        setVisible(true);
+      }
+      
+      // Change navbar style when scrolled
+      if (currentScrollY > 20) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -30,11 +45,13 @@ const Navbar: React.FC = () => {
           }
         }
       }
+      
+      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const navItems: NavItem[] = [
     // { href: '#home', label: 'Início' },
@@ -42,16 +59,18 @@ const Navbar: React.FC = () => {
     { href: '/#about', label: 'Sobre Nós' },
     { href: '/#services', label: 'Serviços' },
     { href: '/#success-cases', label: 'Casos de Sucesso' },
-    // { href: '/#technologies', label: 'Tecnologias' },
-    // { href: '/#methodology', label: 'Metodologia' },
-    // { href: '/#values', label: 'Valores' },
-    // { href: '/#careers', label: 'Carreiras' },
+    // { href: '#technologies', label: 'Tecnologias' },
+    // { href: '#methodology', label: 'Metodologia' },
+    // { href: '#values', label: 'Valores' },
+    // { href: '#careers', label: 'Carreiras' },
   ];
 
   return (
     <motion.nav 
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
+      animate={{ 
+        opacity: visible ? 1 : 0 
+      }}
+      transition={{ duration: 0.3 }}
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled 
           ? 'bg-white shadow-lg py-2' 
@@ -59,21 +78,22 @@ const Navbar: React.FC = () => {
       }`}
     >
       <div className="container mx-auto px-4">
+        {/* Rest of the navbar component remains the same */}
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image 
-              src="/datawise-logo.webp" 
-              alt="Datawise" 
-              width={300} 
-              height={80} 
-              className="h-20 w-auto" 
+              src="/Datawise_Principal.png" 
+              alt="DataWise" 
+              width={600}
+              height={160} 
+              className="my-4 h-12 w-auto" 
               priority
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-1">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -103,7 +123,7 @@ const Navbar: React.FC = () => {
           {/* Mobile Menu Button */}
           <motion.button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-md hover:bg-gray-100 focus:outline-none"
+            className="lg:hidden p-2 rounded-md hover:bg-gray-100 focus:outline-none"
             whileTap={{ scale: 0.95 }}
           >
             <div className="w-6 h-5 flex flex-col justify-between">
@@ -131,7 +151,7 @@ const Navbar: React.FC = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden overflow-hidden bg-white border-t"
+            className="lg:hidden overflow-hidden bg-white border-t"
           >
             <div className="container mx-auto px-4 py-4 space-y-2">
               {navItems.map((item) => (

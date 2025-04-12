@@ -74,7 +74,7 @@ const TransformBusiness = () => {
             </div>
           </div>
 
-          <div className="relative h-full">
+          <div className="hidden lg:block relative h-full">
             <div className="relative h-full w-full bg-white/5 rounded-2xl backdrop-blur-sm p-6 overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-full h-full opacity-80">
