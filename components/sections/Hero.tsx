@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Globe3D from '../ui/Globe3D';
 import { motion } from 'framer-motion';
 import ContactData from '../../utils/ContactData';
+import Link from 'next/link';
 
 const Hero: React.FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -56,12 +57,12 @@ const Hero: React.FC = () => {
             >
               Agende uma Consulta Gratuita
             </a>
-            <a
+            <Link
               href="#services"
               className="px-8 py-4 bg-transparent border border-blue-600 text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition-all transform hover:scale-105"
             >
               Conheça os Nossos Serviços
-            </a>
+            </Link>
           </motion.div>
 
           {/* Trust indicators 
