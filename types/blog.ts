@@ -116,7 +116,7 @@ export interface BlogPost {
       date: '28 de Outubro de 2024',
       coverImage: '/images/photo-1545987796-200677ee1011.jpeg',
       readingTime: '8 min',
-      category: 'Estudos de Caso',
+      category: 'Casos de Sucesso',
       tags: ['Logística', 'Otimização', 'Machine Learning', 'Planeamento', 'Last Mile', 'Sustentabilidade']
     },
     {
