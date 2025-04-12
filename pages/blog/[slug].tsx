@@ -26,18 +26,24 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
   return (
     <>
       <Head>
-        <title>{post.title} | DataWise Blog</title>
+        <title>{post.title} | Blog Datawise</title>
         <meta name="description" content={post.excerpt} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        {/* Font Inter do Google Fonts */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:image" content={post.coverImage} />
+        <meta property="og:url" content={`https://datawise.pt/blog/${post.slug}`} />
+        <meta property="og:type" content="article" />
+        <meta property="article:published_time" content={post.date} />
+        <meta property="article:section" content={post.category} />
+        {post.tags.map(tag => (
+          <meta key={tag} property="article:tag" content={tag} />
+        ))}
       </Head>
 
       <Navbar />
-      
+
       <main>
         <section className="pt-36 pb-20 bg-gray-50">
           <div className="container mx-auto px-4">
@@ -47,35 +53,42 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center text-sm text-gray-500">
                     <span className="mr-4">{formattedDate}</span>
-                    <Link 
+                    <Link
                       href={`/blog/categoria/${post.category.toLowerCase().replace(/ /g, '-')}`}
                       className="inline-flex items-center text-primary hover:text-primary-dark"
                     >
-                      <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">
-                        {post.category}
-                      </span>
+                      <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">{post.category}</span>
                     </Link>
                   </div>
                   <div>
                     <Link href="/blog" className="inline-flex items-center text-primary hover:underline text-sm">
-                      <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <svg
+                        className="w-4 h-4 mr-1"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                       </svg>
                       Voltar ao blog
                     </Link>
                   </div>
                 </div>
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                  {post.title}
-                </h1>
-                
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">{post.title}</h1>
+
                 {/* Author information */}
                 <div className="flex items-center mb-8">
                   <div>
                     <div className="text-sm text-gray-500 flex items-center">
                       <div className="flex items-center">
                         <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                          ></path>
                         </svg>
                         {post.readingTime} de leitura
                       </div>
@@ -97,11 +110,8 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="flex flex-wrap gap-2">
-                    {post.tags.map((tag) => (
-                      <span 
-                        key={tag}
-                        className="bg-primary-light/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm text-white"
-                      >
+                    {post.tags.map(tag => (
+                      <span key={tag} className="bg-primary-light/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm text-white">
                         {tag}
                       </span>
                     ))}
@@ -132,7 +142,11 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
                   <div className="flex space-x-3">
                     <button className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600">
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd"></path>
+                        <path
+                          fillRule="evenodd"
+                          d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                          clipRule="evenodd"
+                        ></path>
                       </svg>
                     </button>
                     <button className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600">
@@ -142,7 +156,11 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
                     </button>
                     <button className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600">
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fillRule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clipRule="evenodd"></path>
+                        <path
+                          fillRule="evenodd"
+                          d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                          clipRule="evenodd"
+                        ></path>
                       </svg>
                     </button>
                   </div>
@@ -156,7 +174,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
                       Artigo anterior
                     </Link>
                   )}
-                  
+
                   {nextPost !== null && (
                     <Link href={`/blog/${nextPost.slug}`} className="inline-flex items-center text-gray-600 hover:text-primary">
                       Próximo artigo
@@ -180,7 +198,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
 export const getStaticPaths: GetStaticPaths = async () => {
   // Em produção, você buscaria todos os posts do seu CMS ou API
   // Aqui estamos usando os dados de exemplo
-  const paths = sampleBlogPosts.map((post) => ({
+  const paths = sampleBlogPosts.map(post => ({
     params: { slug: post.slug },
   }));
 
@@ -189,7 +207,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({ params }) => {
   const slug = params?.slug as string;
-  
+
   // Em produção, você buscaria os dados do seu CMS ou API
   // Aqui estamos usando os dados de exemplo
   const post = sampleBlogPosts.find(p => p.slug === slug);
@@ -202,21 +220,21 @@ export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({ params
 
   // Encontrar o próximo e o anterior post para navegação
   const currentIndex = sampleBlogPosts.findIndex(p => p.slug === slug);
-  
+
   // Criando objetos simples e serializáveis para nextPost e prevPost
   let nextPost = null;
   if (currentIndex < sampleBlogPosts.length - 1) {
     nextPost = {
       slug: sampleBlogPosts[currentIndex + 1].slug,
-      title: sampleBlogPosts[currentIndex + 1].title
+      title: sampleBlogPosts[currentIndex + 1].title,
     };
   }
-  
+
   let prevPost = null;
   if (currentIndex > 0) {
     prevPost = {
       slug: sampleBlogPosts[currentIndex - 1].slug,
-      title: sampleBlogPosts[currentIndex - 1].title
+      title: sampleBlogPosts[currentIndex - 1].title,
     };
   }
 
@@ -227,7 +245,7 @@ export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({ params
     props: {
       post: serializedPost,
       nextPost,
-      prevPost
+      prevPost,
     },
     // Revalidate a cada 1 hora
     revalidate: 3600,
