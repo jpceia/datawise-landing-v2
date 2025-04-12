@@ -1,8 +1,10 @@
 import Script from 'next/script';
 import Footer from '../components/layout/Footer';
 import Navbar from '../components/layout/Navbar';
-import '../styles/globals.css';
 import type { AppProps } from 'next/app';
+import { Analytics } from '@vercel/analytics/next';
+import '../styles/globals.css';
+
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -19,6 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           gtag('config', 'G-6FHQECXHNX');
         `}
       </Script>
+      <Analytics />
     </>
   );
 }
