@@ -196,7 +196,7 @@ const BlogIndex: NextPage<BlogIndexProps> = ({ posts, categories }) => {
               </div>
             )}
 
-            {/* Newsletter signup */}
+            {/* Newsletter signup 
             <div className="max-w-4xl mx-auto mt-16">
               <div className="bg-primary rounded-xl shadow-lg overflow-hidden">
                 <div className="md:flex">
@@ -231,6 +231,7 @@ const BlogIndex: NextPage<BlogIndexProps> = ({ posts, categories }) => {
                 </div>
               </div>
             </div>
+            */}
           </div>
         </section>
       </main>
