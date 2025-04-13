@@ -1,4 +1,4 @@
-import Script from 'next/script';
+import { GoogleAnalytics } from '@next/third-parties/google'
 import Footer from '../components/layout/Footer';
 import Navbar from '../components/layout/Navbar';
 import type { AppProps } from 'next/app';
@@ -12,15 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Navbar />
       <Component {...pageProps} />
       <Footer />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || []
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-6FHQECXHNX');
-        `}
-      </Script>
+      <GoogleAnalytics gaId="G-6FHQECXHNX" />
       <Analytics />
     </>
   );
