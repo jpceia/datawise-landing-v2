@@ -46,32 +46,33 @@ const Technologies = () => {
   ];
 
   return (
-    <section id="technologies" className="py-24 bg-white relative overflow-hidden">
-      {/* Background patterns */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute left-0 top-0 h-full w-1/3" style={{ backgroundImage: 'radial-gradient(#0D47A1 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
-        <div className="absolute right-0 top-0 h-full w-1/3" style={{ backgroundImage: 'radial-gradient(#0D47A1 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
+    <section id="technologies" className="py-24 bg-gradient-to-br from-primary-dark to-primary text-white relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0 overflow-hidden opacity-10">
+        <div className="absolute -right-40 -top-40 w-96 h-96 rounded-full border-4 border-white"></div>
+        <div className="absolute -left-20 -bottom-20 w-80 h-80 rounded-full border-4 border-white"></div>
+        <div className="absolute left-1/3 top-20 w-12 h-12 rounded-full bg-white"></div>
+        <div className="absolute right-1/4 bottom-10 w-16 h-16 rounded-full bg-white"></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+          <div className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4">
             AS NOSSAS FERRAMENTAS
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             As tecnologias que nos permitem entregar resultados excecionais
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-white/80">
             Utilizamos as mais avançadas ferramentas e plataformas para desenvolver soluções de classe mundial.
           </p>
         </div>
         
         {/* Technology logos */}
         <div className="relative">
-          <div className="absolute top-0 left-0 right-0 h-10 bg-gradient-to-b from-white to-transparent z-10"></div>
-          <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white to-transparent z-10"></div>
+          {/* Removed gradient overlays */}
           
-          <div className="bg-white/50 backdrop-blur-sm rounded-2xl py-12 px-8 shadow-lg">
+          <div className="bg-white rounded-2xl py-12 px-8 shadow-lg">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
               {technologies.map((tech) => (
                 <div key={tech.id} className="group transform transition-all hover:scale-110">
