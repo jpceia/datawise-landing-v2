@@ -9,6 +9,7 @@ import Recruitment from '../components/sections/Recruitment';
 import TechMaturity from '../components/sections/TechMaturity';
 import MissionValues from '../components/sections/MissionValues';
 import Technologies from '../components/sections/Technologies';
+import CallToAction from '../components/sections/CallToAction';
 import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
@@ -39,6 +40,7 @@ const Home: NextPage = () => {
         <MissionValues />
         <Recruitment />
         <Technologies />
+        <CallToAction />
       </main>
     </>
   );
