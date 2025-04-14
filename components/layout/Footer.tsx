@@ -159,7 +159,7 @@ const Footer: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center">
             <p className="text-white/70 text-sm mr-4">Cofinanciado por:</p>
-            <img src="https://via.placeholder.com/200x50" alt="União Europeia" className="h-10 object-contain" />
+            <img src="/cofinanciamento.png" alt="Cofinanciamento" className="h-10 object-contain" />
           </div>
         </div>
       </div>
