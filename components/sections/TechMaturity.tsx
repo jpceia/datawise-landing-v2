@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const TechMaturity = () => {
   const [activeStage, setActiveStage] = useState(0);
@@ -48,14 +49,93 @@ const TechMaturity = () => {
       ]
     },
   ];
+  
+  // Animation variants for various elements
+  const timelineVariants = {
+    initial: { width: "0%" },
+    animate: (activeIndex: number) => ({
+      width: `${((activeIndex + 1) / maturityStages.length) * 100}%`,
+      transition: { duration: 0.8, ease: "easeInOut" }
+    })
+  };
+  
+  const contentVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.5,
+        ease: "easeOut"
+      } 
+    },
+    exit: { 
+      opacity: 0, 
+      y: -30,
+      transition: { 
+        duration: 0.3,
+        ease: "easeIn"
+      } 
+    }
+  };
+  
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      transition: { 
+        duration: 0.6,
+        ease: "easeOut",
+        delay: 0.2
+      } 
+    },
+    exit: { 
+      opacity: 0, 
+      scale: 0.9,
+      transition: { 
+        duration: 0.3,
+        ease: "easeIn"
+      } 
+    }
+  };
+  
+  const buttonVariants = {
+    idle: { scale: 1 },
+    hover: { scale: 1.1, transition: { duration: 0.3 } },
+    tap: { scale: 0.95 }
+  };
+  
+  const featureVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: (i: number) => ({ 
+      opacity: 1, 
+      x: 0,
+      transition: { 
+        duration: 0.4,
+        delay: 0.3 + (i * 0.1),
+        ease: "easeOut"
+      } 
+    })
+  };
+
+  const handleStageChange = (index: number) => {
+    setActiveStage(index);
+  };
 
   return (
     <section id="methodology" className="py-24 bg-gray-100 relative overflow-hidden">
-      {/* Elementos decorativos */}
+      {/* Decorative elements */}
       <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white to-transparent"></div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <motion.div 
+          className="max-w-3xl mx-auto text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
             A NOSSA METODOLOGIA
           </div>
@@ -63,115 +143,177 @@ const TechMaturity = () => {
           <p className="text-lg text-gray-600">
             Do levantamento de dados à automação: o nosso caminho para a inovação e transformação digital.
           </p>
-        </div>
+        </motion.div>
         
-        {/* Timeline com botões fixos */}
+        {/* Timeline with fixed buttons */}
         <div className="flex justify-center mb-10 relative">
           <div className="bg-gray-300 h-1 absolute top-1/2 left-0 right-0"></div>
+          <motion.div 
+            className="bg-primary h-1 absolute top-1/2 left-0"
+            initial="initial"
+            animate="animate"
+            custom={activeStage}
+            variants={timelineVariants}
+          ></motion.div>
           <div className="flex justify-between relative z-10 w-full max-w-3xl">
             {maturityStages.map((stage, index) => (
               <div key={stage.id} className="flex flex-col items-center">
-                <button 
-                  className={`bg-white rounded-full focus:outline-none transition-all box-content
+                <motion.button 
+                  className={`bg-white rounded-full focus:outline-none transition-all box-content flex items-center justify-center
                              ${activeStage === index 
                                 ? 'border-4 border-primary-light text-primary' 
                                 : 'border-4 border-white text-gray-500 hover:text-gray-700'}`}
                   style={{width: '52px', height: '52px'}}
-                  onClick={() => setActiveStage(index)}
+                  onClick={() => handleStageChange(index)}
+                  variants={buttonVariants}
+                  initial="idle"
+                  whileHover="hover"
+                  whileTap="tap"
                 >
                   <svg 
-                    className="w-6 h-6 mx-auto" 
+                    className="w-6 h-6" 
                     fill="none" 
                     stroke="currentColor" 
                     viewBox="0 0 24 24"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={stage.icon}></path>
                   </svg>
-                </button>
+                </motion.button>
               </div>
             ))}
           </div>
         </div>
         
-        {/* Títulos abaixo dos botões com altura fixa */}
+        {/* Titles below buttons with fixed height */}
         <div className="flex justify-between max-w-3xl mx-auto mb-16">
           {maturityStages.map((stage, index) => (
             <div key={`label-${stage.id}`} className="w-1/3 text-center px-4 mx-5">
-              {/* Contentor com altura fixa para evitar deslocamentos */}
+              {/* Container with fixed height to avoid displacements */}
               <div className="h-16">
-                <h4 
+                <motion.h4 
                   className={`font-bold transition-all ${activeStage === index ? 'text-primary text-lg' : 'text-gray-500'}`}
+                  animate={{ 
+                    fontSize: activeStage === index ? "1.125rem" : "1rem",
+                    color: activeStage === index ? "#0D47A1" : "#6B7280",
+                    transition: { duration: 0.4 }
+                  }}
                 >
                   {stage.title}
-                </h4>
-                <p className={`text-sm transition-all ${activeStage === index ? 'text-gray-800' : 'text-gray-500'}`}>
+                </motion.h4>
+                <motion.p 
+                  className={`text-sm transition-all ${activeStage === index ? 'text-gray-800' : 'text-gray-500'}`}
+                  animate={{ 
+                    color: activeStage === index ? "#1F2937" : "#6B7280",
+                    transition: { duration: 0.4 }
+                  }}
+                >
                   {stage.subtitle}
-                </p>
+                </motion.p>
               </div>
             </div>
           ))}
         </div>
         
-        {/* Conteúdo detalhado */}
+        {/* Detailed content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <h3 className="text-2xl font-bold mb-4 text-primary">
-                {maturityStages[activeStage].title}: {maturityStages[activeStage].subtitle}
-              </h3>
-              <p className="text-gray-600 mb-6">
-                {maturityStages[activeStage].description}
-              </p>
-              
-              <div className="space-y-4">
-                {maturityStages[activeStage].features.map((feature, idx) => (
-                  <div key={idx} className="flex items-start">
-                    <div className="bg-primary/10 rounded-full p-1 mr-4">
-                      <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                      </svg>
-                    </div>
-                    <span className="text-gray-700">{feature}</span>
-                  </div>
-                ))}
-              </div>
-              
-              {/* Indicador de progresso */}
-              <div className="mt-8 bg-gray-200 h-2 rounded-full overflow-hidden">
-                <div 
-                  className="bg-primary h-full rounded-full transition-all duration-500"
-                  style={{ width: `${((activeStage + 1) / maturityStages.length) * 100}%` }}
-                ></div>
-              </div>
-              <div className="mt-2 text-right text-sm text-gray-500">
-                Fase {activeStage + 1} de {maturityStages.length}
-              </div>
-            </div>
+            <AnimatePresence mode="wait">
+              <motion.div 
+                key={`content-${activeStage}`}
+                className="bg-white rounded-xl shadow-lg p-8"
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                variants={contentVariants}
+              >
+                <h3 className="text-2xl font-bold mb-4 text-primary">
+                  {maturityStages[activeStage].title}: {maturityStages[activeStage].subtitle}
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  {maturityStages[activeStage].description}
+                </p>
+                
+                <div className="space-y-4">
+                  {maturityStages[activeStage].features.map((feature, idx) => (
+                    <motion.div 
+                      key={idx} 
+                      className="flex items-start"
+                      custom={idx}
+                      initial="hidden"
+                      animate="visible"
+                      variants={featureVariants}
+                    >
+                      <div className="bg-primary/10 rounded-full p-1 mr-4">
+                        <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                      </div>
+                      <span className="text-gray-700">{feature}</span>
+                    </motion.div>
+                  ))}
+                </div>
+                
+                {/* Progress indicator */}
+                <div className="mt-8 bg-gray-200 h-2 rounded-full overflow-hidden">
+                  <motion.div 
+                    className="bg-primary h-full rounded-full"
+                    initial={{ width: `${((activeStage) / maturityStages.length) * 100}%` }}
+                    animate={{ width: `${((activeStage + 1) / maturityStages.length) * 100}%` }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                  ></motion.div>
+                </div>
+                <div className="mt-2 text-right text-sm text-gray-500">
+                  Fase {activeStage + 1} de {maturityStages.length}
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
           
           <div className="order-1 lg:order-2">
-            <div className="relative rounded-xl overflow-hidden shadow-lg h-[400px]">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary-dark/60"></div>
-              <Image
-                src={maturityStages[activeStage].imageUrl}
-                alt={maturityStages[activeStage].title}
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover transition-all duration-500"
-              />
-              
-              {/* Icon overlay */}
-              <div className="absolute top-6 right-6 bg-white/90 rounded-full p-4">
-                <svg 
-                  className="w-8 h-8 text-primary" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
+            <AnimatePresence mode="wait">
+              <motion.div 
+                key={`image-${activeStage}`}
+                className="relative rounded-xl overflow-hidden shadow-lg h-[400px]"
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                variants={imageVariants}
+              >
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary-dark/60"></div>
+                <Image
+                  src={maturityStages[activeStage].imageUrl}
+                  alt={maturityStages[activeStage].title}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+                
+                {/* Icon overlay */}
+                <motion.div 
+                  className="absolute top-6 right-6 bg-white/90 rounded-full p-4"
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ 
+                    opacity: 1, 
+                    scale: 1,
+                    transition: { 
+                      type: "spring",
+                      stiffness: 260,
+                      damping: 20,
+                      delay: 0.4
+                    }
+                  }}
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={maturityStages[activeStage].icon}></path>
-                </svg>
-              </div>
-            </div>
+                  <svg 
+                    className="w-8 h-8 text-primary" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={maturityStages[activeStage].icon}></path>
+                  </svg>
+                </motion.div>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>
