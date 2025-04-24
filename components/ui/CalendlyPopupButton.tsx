@@ -10,18 +10,18 @@ interface CalendlyPopupButtonProps {
 declare global {
   interface Window {
     Calendly: {
-      initPopupWidget: (options: {
-        url: string;
-      }) => void;
+      initPopupWidget: (options: { url: string }) => void;
     };
   }
 }
 
-const CalendlyPopupButton: React.FC<CalendlyPopupButtonProps> = ({ 
-  children, 
+const CalendlyPopupButton: React.FC<CalendlyPopupButtonProps> = ({
+  children,
   className = '',
-  buttonText = 'Marque uma consulta gratuita'
+  buttonText = 'Marque uma consulta gratuita',
 }) => {
+  const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || '';
+
   useEffect(() => {
     // Add Calendly styles
     const link = document.createElement('link');
@@ -38,7 +38,7 @@ const CalendlyPopupButton: React.FC<CalendlyPopupButtonProps> = ({
   const handleClick = () => {
     if (window.Calendly) {
       window.Calendly.initPopupWidget({
-        url: 'https://calendly.com/guilhermemendes-datawise/30min?hide_landing_page_details=1&hide_gdpr_banner=1&primary_color=2563EB0',
+        url: calendlyUrl,
       });
     }
   };
@@ -56,17 +56,14 @@ const CalendlyPopupButton: React.FC<CalendlyPopupButtonProps> = ({
   // Determine the correct element to render and its classes
   const isCustomElement = !!children;
   const ElementType = isCustomElement ? 'span' : 'button';
-  
-  const elementClasses = isCustomElement 
-    ? className 
+
+  const elementClasses = isCustomElement
+    ? className
     : `inline-flex items-center justify-center px-8 py-4 rounded-lg font-medium text-lg transition-all transform hover:scale-105 shadow-lg bg-primary text-white hover:bg-primary-dark hover:shadow-primary/25 ${className}`;
 
   return (
     <>
-      <Script
-        src="https://assets.calendly.com/assets/external/widget.js"
-        strategy="lazyOnload"
-      />
+      <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
       <ElementType
         onClick={handleClick}
         className={elementClasses}
