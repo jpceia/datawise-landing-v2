@@ -12,7 +12,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Navbar />
       <Component {...pageProps} />
       <Footer />
-      <GoogleAnalytics gaId="G-6FHQECXHNX" />
+      {process.env.NEXT_PUBLIC_GA_ID && (
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+      )}
       <Analytics />
     </>
   );
