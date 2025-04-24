@@ -17,7 +17,7 @@ const PrivacyPolicy: NextPage = () => {
         <meta property="og:description" content="Conheça a nossa política de privacidade e proteção de dados pessoais." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.datawise.pt/privacy" />
-        <meta property="og:image" content="/images/pexels-photo-6153354.jpeg" />
+        <meta property="og:image" content="/images/web-app-manifest-512x512.png" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

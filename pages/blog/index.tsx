@@ -44,7 +44,7 @@ const BlogIndex: NextPage<BlogIndexProps> = ({ posts, categories }) => {
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:title" content="Blog | Datawise" />
         <meta property="og:description" content="Insights e conhecimentos sobre ciência de dados e inteligência artificial" />
-        <meta property="og:image" content="/images/pexels-photo-6153354.jpeg" />
+        <meta property="og:image" content="/images/web-app-manifest-512x512.png" />
         <meta property="og:url" content="https://datawise.pt/blog" />
         <meta property="og:type" content="website" />
       </Head>
