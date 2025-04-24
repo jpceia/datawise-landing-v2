@@ -1,4 +1,4 @@
-# DataWise Landing Page
+# Datawise Landing Page
 
 Landing page moderna para uma empresa de consultoria em ciência de dados, desenvolvida com Next.js e Tailwind CSS.
 

@@ -10,17 +10,17 @@ const TermsOfUse: NextPage = () => {
     <>
       <Head>
         <title>Termos de Utilização | Datawise</title>
-        <meta name="description" content="Conheça os nossos termos de utilização do website e serviços da DataWise." />
+        <meta name="description" content="Conheça os nossos termos de utilização do website e serviços da Datawise." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
 
         {/* Open Graph tags */}
         <meta property="og:title" content="Termos de Utilização | Datawise" />
-        <meta property="og:description" content="Conheça os nossos termos de utilização do website e serviços da DataWise." />
+        <meta property="og:description" content="Conheça os nossos termos de utilização do website e serviços da Datawise." />
         <meta property="og:image" content="/images/pexels-photo-6153354.jpeg" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.datawise.pt/termsofuse" />
-        <meta property="og:site_name" content="DataWise" />
+        <meta property="og:site_name" content="Datawise" />
       </Head>
 
       <main>
@@ -30,7 +30,7 @@ const TermsOfUse: NextPage = () => {
             <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden mb-10">
               <div className="bg-primary p-8 text-white">
                 <h1 className="text-3xl md:text-4xl font-bold mb-2">Termos de Utilização</h1>
-                <p className="text-lg opacity-90">Condições gerais de utilização do website e serviços da DataWise</p>
+                <p className="text-lg opacity-90">Condições gerais de utilização do website e serviços da Datawise</p>
               </div>
             </div>
 
@@ -39,7 +39,7 @@ const TermsOfUse: NextPage = () => {
               <div className="p-8">
                 <div className="prose prose-blue max-w-none">
                   <p className="text-lg mb-8">
-                    A sua privacidade é importante para nós. É política da DataWise respeitar a sua privacidade e cumprir todas as leis e
+                    A sua privacidade é importante para nós. É política da Datawise respeitar a sua privacidade e cumprir todas as leis e
                     regulamentos aplicáveis em relação a qualquer informação pessoal que possamos recolher sobre si, incluindo no nosso
                     site, https://www.datawise.pt e noutros sites que possuímos e operamos.
                   </p>
