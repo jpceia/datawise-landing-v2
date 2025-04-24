@@ -17,6 +17,7 @@ const TransformBusiness = () => {
       </div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
+          <div className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4">PROPOSTA DE VALOR</div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Transforme o Seu Negócio</h2>
           <p className="text-xl max-w-3xl mx-auto">
             Descubra como as nossas soluções personalizadas podem impulsionar a eficiência e a rentabilidade do seu negócio.
