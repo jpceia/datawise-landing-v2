@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
   }, [lastScrollY]);
 
   const navItems: NavItem[] = [
-    // { href: '#home', label: 'Início' },
+    // { href: '#hero', label: 'Início' },
 
     { href: '/#about', label: 'Sobre Nós' },
     { href: '/#services', label: 'Serviços' },
