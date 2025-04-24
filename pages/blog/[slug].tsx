@@ -1,13 +1,11 @@
 import Head from 'next/head';
-import Navbar from '../../components/layout/Navbar';
-import Footer from '../../components/layout/Footer';
 import React from 'react';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BlogPost, sampleBlogPosts } from '../../types/blog';
 import MarkdownContent from '../../components/MarkdownContent';
-import ContactData from '../../utils/ContactData';
+import CalendlyPopupButton from '../../components/ui/CalendlyPopupButton';
 
 interface BlogPostPageProps {
   post: BlogPost;
@@ -125,14 +123,11 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
                 <div className="flex flex-col md:flex-row items-center justify-between bg-primary/5 p-8 rounded-xl">
                   <div className="mb-6 md:mb-0 md:mr-6">
                     <h3 className="text-xl font-bold mb-2">Precisa de otimizar as suas operações?</h3>
-                    <p className="text-gray-600">Marque uma consulta gratuita com a nossa equipa de especialistas.</p>
+                    <p className="text-gray-600">Marque um diagnóstico gratuito com a nossa equipa de especialistas.</p>
                   </div>
-                  <a
-                    href={`mailto:${ContactData.general.email}`}
-                    className="text-white bg-primary hover:bg-primary-dark transition-colors px-6 py-3 rounded-lg font-medium"
-                  >
+                  <CalendlyPopupButton className="text-white bg-primary hover:bg-primary-dark transition-colors px-6 py-3 rounded-lg font-medium">
                     Contacte-nos
-                  </a>
+                  </CalendlyPopupButton>
                 </div>
               </div>
 

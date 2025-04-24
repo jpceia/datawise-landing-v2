@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Globe3D from '../ui/Globe3D';
 import { motion } from 'framer-motion';
-import ContactData from '../../utils/ContactData';
 import Link from 'next/link';
+import CalendlyPopupButton from '../ui/CalendlyPopupButton';
 
 const Hero: React.FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -51,12 +51,9 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
           >
-            <a
-              href={`mailto:${ContactData.general.email}`}
-              className="px-8 py-4 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-blue-500/30"
-            >
-              Agende uma Consulta Gratuita
-            </a>
+            <CalendlyPopupButton className="px-8 py-4 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-blue-500/30">
+              Agende um Diagnóstico Gratuito
+            </CalendlyPopupButton>
             <Link
               href="#services"
               className="px-8 py-4 bg-transparent border border-blue-600 text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition-all transform hover:scale-105"

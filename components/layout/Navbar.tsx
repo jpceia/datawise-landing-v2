@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NavItem } from '../../types';
-import ContactData from '../../utils/ContactData';
+import CalendlyPopupButton from '../ui/CalendlyPopupButton';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -15,17 +15,17 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       // Check if we should show/hide navbar based on scroll position
       const heroSectionHeight = window.innerHeight; // Assuming hero is full viewport height
-      
+
       // Hide navbar when scrolling past the hero section
       if (currentScrollY > heroSectionHeight) {
         setVisible(false);
       } else {
         setVisible(true);
       }
-      
+
       // Change navbar style when scrolled
       if (currentScrollY > 20) {
         setScrolled(true);
@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
           }
         }
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
 
   const navItems: NavItem[] = [
     // { href: '#home', label: 'Início' },
-    
+
     { href: '/#about', label: 'Sobre Nós' },
     { href: '/#services', label: 'Serviços' },
     { href: '/#success-cases', label: 'Casos de Sucesso' },
@@ -66,15 +66,13 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <motion.nav 
-      animate={{ 
-        opacity: visible ? 1 : 0 
+    <motion.nav
+      animate={{
+        opacity: visible ? 1 : 0,
       }}
       transition={{ duration: 0.3 }}
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-white shadow-lg py-2' 
-          : 'bg-white/80 backdrop-blur-md py-4'
+        scrolled ? 'bg-white shadow-lg py-2' : 'bg-white/80 backdrop-blur-md py-4'
       }`}
     >
       <div className="container mx-auto px-4">
@@ -82,19 +80,12 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <Image 
-              src="/Datawise_Principal.png" 
-              alt="DataWise" 
-              width={600}
-              height={160} 
-              className="my-4 h-12 w-auto" 
-              priority
-            />
+            <Image src="/Datawise_Principal.png" alt="Datawise" width={600} height={160} className="my-4 h-12 w-auto" priority />
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
-            {navItems.map((item) => (
+            {navItems.map(item => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -106,18 +97,15 @@ const Navbar: React.FC = () => {
                     layoutId="activeSection"
                     className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600"
                     initial={false}
-                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                   />
                 )}
                 <div className="absolute inset-0 bg-blue-50 scale-0 group-hover:scale-100 transition-transform rounded-md -z-10" />
               </Link>
             ))}
-            <Link 
-              href={`mailto:${ContactData.general.email}`} 
-              className="ml-4 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-md font-medium transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 active:scale-95"
-            >
+            <CalendlyPopupButton className="ml-4 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-md font-medium transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 active:scale-95">
               Contacte-nos
-            </Link>
+            </CalendlyPopupButton>
           </div>
 
           {/* Mobile Menu Button */}
@@ -131,10 +119,7 @@ const Navbar: React.FC = () => {
                 animate={isOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
                 className="w-full h-0.5 bg-gray-600 origin-left transition-all"
               />
-              <motion.div
-                animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-                className="w-full h-0.5 bg-gray-600 transition-all"
-              />
+              <motion.div animate={isOpen ? { opacity: 0 } : { opacity: 1 }} className="w-full h-0.5 bg-gray-600 transition-all" />
               <motion.div
                 animate={isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
                 className="w-full h-0.5 bg-gray-600 origin-left transition-all"
@@ -154,13 +139,8 @@ const Navbar: React.FC = () => {
             className="lg:hidden overflow-hidden bg-white border-t"
           >
             <div className="container mx-auto px-4 py-4 space-y-2">
-              {navItems.map((item) => (
-                <motion.div
-                  key={item.href}
-                  initial={{ x: -20, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  exit={{ x: -20, opacity: 0 }}
-                >
+              {navItems.map(item => (
+                <motion.div key={item.href} initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} exit={{ x: -20, opacity: 0 }}>
                   <Link
                     href={item.href}
                     className="block w-full text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-2 px-3 rounded-md font-medium transition-colors"
@@ -170,18 +150,10 @@ const Navbar: React.FC = () => {
                   </Link>
                 </motion.div>
               ))}
-              <motion.div
-                initial={{ x: -20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -20, opacity: 0 }}
-              >
-                <Link
-                  href={`mailto:${ContactData.general.email}`}
-                  className="block w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-3 rounded-md font-medium text-center transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
+              <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} exit={{ x: -20, opacity: 0 }}>
+                <CalendlyPopupButton className="block w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-3 rounded-md font-medium text-center transition-colors">
                   Contacte-nos
-                </Link>
+                </CalendlyPopupButton>
               </motion.div>
             </div>
           </motion.div>
