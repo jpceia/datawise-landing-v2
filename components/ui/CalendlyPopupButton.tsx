@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Script from 'next/script';
+import { sendGTMEvent } from '@next/third-parties/google';
 
 interface CalendlyPopupButtonProps {
   children?: React.ReactNode;
@@ -37,6 +38,13 @@ const CalendlyPopupButton: React.FC<CalendlyPopupButtonProps> = ({
 
   const handleClick = () => {
     if (window.Calendly) {
+
+      // Sending Google Tag Manager Event
+      sendGTMEvent({
+        event: 'calendly_popup',
+        value: 1
+      })
+
       window.Calendly.initPopupWidget({
         url: calendlyUrl,
       });
