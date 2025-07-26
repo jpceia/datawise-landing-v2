@@ -5,7 +5,7 @@ export const ContactData = {
     // General contact
     general: {
       email: "geral@datawise.pt",
-      phone: "+351 967 341 421",
+      phone: "+351 928 371 073",
       addressLine1: "Av. Infante D. Henrique, nº 77",
       addressLine2: "7350-100 Elvas, Portugal"
     },
