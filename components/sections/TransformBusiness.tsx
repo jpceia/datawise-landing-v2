@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import CalendlyPopupButton from '../ui/CalendlyPopupButton';
+import CalendlyPopupButton from '@/components/ui/CalendlyPopupButton';
 
 const TransformBusiness = () => {
   return (

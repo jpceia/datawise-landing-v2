@@ -1,9 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-import Badge from '../ui/Badge';
-import FeatureCard from '../ui/FeatureCard';
-import SectionTitle from '../ui/SectionTitle';
-import ContactData from '../../lib/data/ContactData';
+import Badge from '@/components/ui/Badge';
+import FeatureCard from '@/components/ui/FeatureCard';
+import SectionTitle from '@/components/ui/SectionTitle';
+import ContactData from '@/lib/data/ContactData';
 
 const Recruitment = () => {
   const benefits = [

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Globe3D from '../ui/Globe3D';
+import Globe3D from '@/components/ui/Globe3D';
+import CalendlyPopupButton from '@/components/ui/CalendlyPopupButton';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import CalendlyPopupButton from '../ui/CalendlyPopupButton';
 
 const Hero: React.FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
