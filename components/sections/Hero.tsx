@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="hero" className="relative w-full h-screen bg-white overflow-hidden">
+    <section id="hero" className="relative w-full h-screen bg-white overflow-hidden pt-11">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-10">

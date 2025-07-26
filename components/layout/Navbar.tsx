@@ -19,8 +19,9 @@ const Navbar: React.FC = () => {
       // Check if we should show/hide navbar based on scroll position
       const heroSectionHeight = window.innerHeight; // Assuming hero is full viewport height
 
-      // Hide navbar when scrolling past the hero section
-      if (currentScrollY > heroSectionHeight) {
+      // Hide navbar when scrolling past the hero section (accounting for top banner)
+      const topBannerHeight = 44; // 11 * 4 = 44px (top-11)
+      if (currentScrollY > heroSectionHeight - topBannerHeight) {
         setVisible(false);
       } else {
         setVisible(true);
@@ -71,7 +72,7 @@ const Navbar: React.FC = () => {
         opacity: visible ? 1 : 0,
       }}
       transition={{ duration: 0.3 }}
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed w-full z-40 transition-all duration-300 top-11 ${
         scrolled ? 'bg-white shadow-lg py-2' : 'bg-white/80 backdrop-blur-md py-4'
       }`}
     >
