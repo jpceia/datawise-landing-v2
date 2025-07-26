@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 
 const TechMaturity = () => {
   const [activeStage, setActiveStage] = useState(0);
@@ -51,7 +51,7 @@ const TechMaturity = () => {
   ];
   
   // Animation variants for various elements
-  const timelineVariants = {
+  const timelineVariants: Variants = {
     initial: { width: "0%" },
     animate: (activeIndex: number) => ({
       width: `${((activeIndex + 1) / maturityStages.length) * 100}%`,
@@ -59,7 +59,7 @@ const TechMaturity = () => {
     })
   };
   
-  const contentVariants = {
+  const contentVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { 
       opacity: 1, 
@@ -79,7 +79,7 @@ const TechMaturity = () => {
     }
   };
   
-  const imageVariants = {
+  const imageVariants: Variants = {
     hidden: { opacity: 0, scale: 0.9 },
     visible: { 
       opacity: 1, 
@@ -106,7 +106,7 @@ const TechMaturity = () => {
     tap: { scale: 0.95 }
   };
   
-  const featureVariants = {
+  const featureVariants: Variants = {
     hidden: { opacity: 0, x: -20 },
     visible: (i: number) => ({ 
       opacity: 1, 
@@ -163,7 +163,7 @@ const TechMaturity = () => {
                              ${activeStage === index 
                                 ? 'border-4 border-primary-light text-primary' 
                                 : 'border-4 border-white text-gray-500 hover:text-gray-700'}`}
-                  style={{width: '52px', height: '52px'}}
+                  style={{width: '52px', height: '52px'} as React.CSSProperties}
                   onClick={() => handleStageChange(index)}
                   variants={buttonVariants}
                   initial="idle"

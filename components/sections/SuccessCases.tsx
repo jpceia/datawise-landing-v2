@@ -10,7 +10,7 @@ const SuccessCases = () => {
       id: 1,
       title: 'Empresa de Aluguer de Auto-Caravanas',
       subtitle: 'Otimização de One-Way Fees',
-      imageUrl: '/images/photo-1515876305430-f06edab8282a.jpeg',
+      imageUrl: 'https://cdn.sanity.io/images/if94fhok/production/0fc7372f09f4ee34775156ca935a9e8c9d71cb64-1000x667.jpg',
       stats: [
         { value: 'Maior', label: 'Rentabilidade' },
         { value: 'Redução', label: 'Custos logísticos' },
@@ -24,7 +24,7 @@ const SuccessCases = () => {
       id: 2,
       title: 'Transportadora Last-Mile Delivery',
       subtitle: 'Planeamento de Rotas',
-      imageUrl: '/images/photo-1545987796-200677ee1011.jpeg',
+      imageUrl: 'https://cdn.sanity.io/images/if94fhok/production/8d4ecf73e960d00bc8579feae4ba7a01032a6b88-1000x667.jpg',
       stats: [
         { value: 'Redução', label: 'Tempo de entrega' },
         { value: 'Economia', label: 'Combustível' },
@@ -38,7 +38,7 @@ const SuccessCases = () => {
       id: 3,
       title: 'Empresa TVDE',
       subtitle: 'Dashboard de Rentabilidade',
-      imageUrl: '/images/photo-1449965408869-eaa3f722e40d.jpeg',
+      imageUrl: 'https://cdn.sanity.io/images/if94fhok/production/e8107648ebf85e8665e2681f6add20c149373d63-1000x667.jpg',
       stats: [
         { value: 'Aumento', label: 'Rentabilidade por motorista' },
         { value: 'Otimização', label: 'Horas de trabalho' },

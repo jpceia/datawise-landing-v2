@@ -3,10 +3,12 @@ import React from 'react';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { BlogPost, sampleBlogPosts } from '../../types/blog';
-import MarkdownContent from '../../components/MarkdownContent';
-import CalendlyPopupButton from '../../components/ui/CalendlyPopupButton';
+import { BlogPost } from '@/types/sanity';
+import { getFullPostBySlug, getAllPostSlugs, getPosts } from '@/lib/sanity/client';
+import PortableTextContent from '@/components/ui/PortableTextContent';
+import CalendlyPopupButton from '@/components/ui/CalendlyPopupButton';
 
+// Interface for the blog post page props
 interface BlogPostPageProps {
   post: BlogPost;
   nextPost: { slug: string; title: string } | null;
@@ -14,47 +16,63 @@ interface BlogPostPageProps {
 }
 
 const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost }) => {
+  // Handle case when post is not found
   if (!post) {
     return <div>Artigo não encontrado</div>;
   }
 
-  // Formatação da data
-  const formattedDate = post.date;
+  // Format date to Portuguese locale
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('pt-PT', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
+  };
+
+  const formattedDate = formatDate(post.publishedAt);
 
   return (
     <>
+      {/* SEO and meta tags for the blog post */}
       <Head>
         <title>{`${post.title} | Blog Datawise`}</title>
         <meta name="description" content={post.excerpt} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        {/* Open Graph meta tags for social media sharing */}
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
-        <meta property="og:image" content={post.coverImage} />
-        <meta property="og:url" content={`https://datawise.pt/blog/${post.slug}`} />
+        <meta property="og:image" content={post.coverImage || ''} />
+        <meta property="og:url" content={`https://datawise.pt/blog/${post.slug.current}`} />
         <meta property="og:type" content="article" />
-        <meta property="article:published_time" content={post.date} />
-        <meta property="article:section" content={post.category} />
-        {post.tags.map(tag => (
+        <meta property="article:published_time" content={post.publishedAt} />
+        <meta property="article:section" content={post.category || ''} />
+        {/* Article tags for better SEO */}
+        {post.tags?.map((tag: string) => (
           <meta key={tag} property="article:tag" content={tag} />
         ))}
       </Head>
 
       <main>
+        {/* Main blog post content section */}
         <section className="pt-36 pb-20 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
-              {/* Header with date and category */}
+              {/* Blog post header with date and category */}
               <div className="mb-8">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center text-sm text-gray-500">
                     <span className="mr-4">{formattedDate}</span>
-                    <Link
-                      href={`/blog/categoria/${post.category.toLowerCase().replace(/ /g, '-')}`}
-                      className="inline-flex items-center text-primary hover:text-primary-dark"
-                    >
-                      <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">{post.category}</span>
-                    </Link>
+                    {post.category && (
+                      <Link
+                        href={`/blog/categoria/${post.category.toLowerCase().replace(/ /g, '-')}`}
+                        className="inline-flex items-center text-primary hover:text-primary-dark"
+                      >
+                        <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">{post.category}</span>
+                      </Link>
+                    )}
                   </div>
                   <div>
                     <Link href="/blog" className="inline-flex items-center text-primary hover:underline text-sm">
@@ -73,7 +91,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
                 </div>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">{post.title}</h1>
 
-                {/* Author information */}
+                {/* Reading time and author information */}
                 <div className="flex items-center mb-8">
                   <div>
                     <div className="text-sm text-gray-500 flex items-center">
@@ -93,10 +111,10 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
                 </div>
               </div>
 
-              {/* Featured image */}
+              {/* Featured image with overlay and tags */}
               <div className="relative w-full h-[400px] md:h-[500px] mb-10 rounded-xl overflow-hidden shadow-lg">
                 <Image
-                  src={post.coverImage}
+                  src={post.coverImage || '/images/photo-1515876305430-f06edab8282a.jpeg'}
                   alt={post.title}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
@@ -104,21 +122,23 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                <div className="absolute bottom-6 left-6 right-6">
-                  <div className="flex flex-wrap gap-2">
-                    {post.tags.map(tag => (
-                      <span key={tag} className="bg-primary-light/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm text-white">
-                        {tag}
-                      </span>
-                    ))}
+                {post.tags && post.tags.length > 0 && (
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div className="flex flex-wrap gap-2">
+                      {post.tags.map((tag: string) => (
+                        <span key={tag} className="bg-primary-light/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm text-white">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
 
-              {/* Markdown content */}
-              <MarkdownContent content={post.content} />
+              {/* Blog post content using Portable Text */}
+              {post.body && <PortableTextContent content={post.body} />}
 
-              {/* Call to action */}
+              {/* Call to action section */}
               <div className="mt-12 border-t border-gray-200 pt-10">
                 <div className="flex flex-col md:flex-row items-center justify-between bg-primary/5 p-8 rounded-xl">
                   <div className="mb-6 md:mb-0 md:mr-6">
@@ -131,14 +151,14 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
                 </div>
               </div>
 
-              {/* Share and navigation */}
+              {/* Social media sharing and navigation */}
               <div className="mt-10 flex flex-col sm:flex-row justify-between items-center">
-                <div className="flex items-center mb-6 sm:mb-0">
-                  <span className="text-gray-600 mr-4">Partilhar:</span>
-                  <div className="flex space-x-3">
-                    {/* Facebook Share Button */}
-                    <a
-                      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://datawise.pt/blog/${post.slug}`)}`}
+                                  <div className="flex items-center mb-6 sm:mb-0">
+                    <span className="text-gray-600 mr-4">Partilhar:</span>
+                    <div className="flex space-x-3">
+                      {/* Facebook share button */}
+                      <a
+                      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://datawise.pt/blog/${post.slug.current}`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 transition-colors"
@@ -153,10 +173,10 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
                       </svg>
                     </a>
 
-                    {/* Twitter/X Share Button */}
-                    <a
+                                          {/* Twitter/X share button */}
+                      <a
                       href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
-                        `https://datawise.pt/blog/${post.slug}`
+                        `https://datawise.pt/blog/${post.slug.current}`
                       )}&text=${encodeURIComponent(post.title)}`}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -168,10 +188,10 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
                       </svg>
                     </a>
 
-                    {/* LinkedIn Share Button */}
-                    <a
+                                          {/* LinkedIn share button */}
+                      <a
                       href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
-                        `https://datawise.pt/blog/${post.slug}`
+                        `https://datawise.pt/blog/${post.slug.current}`
                       )}&title=${encodeURIComponent(post.title)}`}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -188,7 +208,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
                     </a>
                   </div>
                 </div>
-                <div className="flex space-x-4">{/* Código de navegação que já existe mantém-se igual */}</div>
+                <div className="flex space-x-4">{/* Navigation code remains the same */}</div>
               </div>
             </div>
           </div>
@@ -198,61 +218,69 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
   );
 };
 
+// Generate static paths for all blog posts
 export const getStaticPaths: GetStaticPaths = async () => {
-  // Em produção, você buscaria todos os posts do seu CMS ou API
-  // Aqui estamos usando os dados de exemplo
-  const paths = sampleBlogPosts.map(post => ({
-    params: { slug: post.slug },
-  }));
+  try {
+    const posts = await getAllPostSlugs();
+    const paths = posts.map((post: any) => ({
+      params: { slug: post.slug },
+    }));
 
-  return { paths, fallback: 'blocking' };
+    return { paths, fallback: 'blocking' };
+  } catch (error) {
+    console.error('Error fetching post slugs:', error);
+    return { paths: [], fallback: 'blocking' };
+  }
 };
 
+// Get static props for individual blog post
 export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({ params }) => {
-  const slug = params?.slug as string;
+  try {
+    const slug = params?.slug as string;
+    const post = await getFullPostBySlug(slug);
 
-  // Em produção, você buscaria os dados do seu CMS ou API
-  // Aqui estamos usando os dados de exemplo
-  const post = sampleBlogPosts.find(p => p.slug === slug);
+    if (!post) {
+      return {
+        notFound: true,
+      };
+    }
 
-  if (!post) {
+    // Fetch all posts for navigation
+    const allPosts = await getPosts();
+    const currentIndex = allPosts.findIndex((p: any) => p.slug.current === slug);
+
+    // Find next and previous posts for navigation
+    let nextPost = null;
+    if (currentIndex < allPosts.length - 1) {
+      nextPost = {
+        slug: allPosts[currentIndex + 1].slug.current,
+        title: allPosts[currentIndex + 1].title,
+      };
+    }
+
+    let prevPost = null;
+    if (currentIndex > 0) {
+      prevPost = {
+        slug: allPosts[currentIndex - 1].slug.current,
+        title: allPosts[currentIndex - 1].title,
+      };
+    }
+
+    return {
+      props: {
+        post,
+        nextPost,
+        prevPost,
+      },
+      // Revalidate every hour
+      revalidate: 3600,
+    };
+  } catch (error) {
+    console.error('Error fetching post:', error);
     return {
       notFound: true,
     };
   }
-
-  // Encontrar o próximo e o anterior post para navegação
-  const currentIndex = sampleBlogPosts.findIndex(p => p.slug === slug);
-
-  // Criando objetos simples e serializáveis para nextPost e prevPost
-  let nextPost = null;
-  if (currentIndex < sampleBlogPosts.length - 1) {
-    nextPost = {
-      slug: sampleBlogPosts[currentIndex + 1].slug,
-      title: sampleBlogPosts[currentIndex + 1].title,
-    };
-  }
-
-  let prevPost = null;
-  if (currentIndex > 0) {
-    prevPost = {
-      slug: sampleBlogPosts[currentIndex - 1].slug,
-      title: sampleBlogPosts[currentIndex - 1].title,
-    };
-  }
-
-  // Converte o post para um formato JSON seguro
-  const serializedPost = JSON.parse(JSON.stringify(post));
-
-  return {
-    props: {
-      post: serializedPost,
-      nextPost,
-      prevPost,
-    },
-    // Revalidate a cada 1 hora
-    revalidate: 3600,
-  };
 };
 
 export default BlogPostPage;

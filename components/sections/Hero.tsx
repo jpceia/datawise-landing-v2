@@ -87,7 +87,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.8 }}
             transition={{ duration: 1, delay: 0.4 }}
             className="relative"
-            style={{ top: '-50px' }} // Adicione um valor negativo para mover para cima
+            style={{ top: '-50px' } as React.CSSProperties}
           >
             <div>
               <Globe3D />
