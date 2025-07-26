@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Badge from '../ui/Badge';
 import FeatureCard from '../ui/FeatureCard';
 import SectionTitle from '../ui/SectionTitle';
-import ContactData from '../../utils/ContactData';
+import ContactData from '../../lib/data/ContactData';
 
 const Recruitment = () => {
   const benefits = [
