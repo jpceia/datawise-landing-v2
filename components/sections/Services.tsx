@@ -7,18 +7,15 @@ interface ServiceCardProps {
 }
 
 const ServiceCard = ({ icon, title, description }: ServiceCardProps) => (
-  <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group">
-    <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary-light/80 opacity-90 group-hover:opacity-100 transition-opacity"></div>
-      <div className="relative p-6 text-white z-10">
-        <div className="bg-white/20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={icon}></path>
-          </svg>
-        </div>
-        <h3 className="text-xl font-bold mb-2">{title}</h3>
-        <p className="opacity-90">{description}</p>
+  <div className="bg-gradient-to-r from-primary/80 to-primary-light/80 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group h-full">
+    <div className="p-6 text-white">
+      <div className="bg-white/20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={icon}></path>
+        </svg>
       </div>
+      <h3 className="text-xl font-bold mb-2">{title}</h3>
+      <p className="opacity-90">{description}</p>
     </div>
   </div>
 );
@@ -80,7 +77,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {services.map((service) => (
             <ServiceCard 
               key={service.id}
