@@ -1,6 +1,4 @@
 import Head from 'next/head';
-import Navbar from '../components/layout/Navbar';
-import Footer from '../components/layout/Footer';
 import Hero from '../components/sections/Hero';
 import Services from '../components/sections/Services';
 import TransformBusiness from '../components/sections/TransformBusiness';
@@ -10,7 +8,7 @@ import TechMaturity from '../components/sections/TechMaturity';
 import MissionValues from '../components/sections/MissionValues';
 import Technologies from '../components/sections/Technologies';
 import CallToAction from '../components/sections/CallToAction';
-import { useMultipleScrollDepths } from '../utils/hooks/useScrollTracking';
+import { useMultipleScrollDepths } from '../lib/hooks/useScrollTracking';
 import type { NextPage } from 'next';
 
 

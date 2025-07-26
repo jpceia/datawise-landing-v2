@@ -1,9 +1,7 @@
 import Head from 'next/head';
-import Navbar from '../components/layout/Navbar';
-import Footer from '../components/layout/Footer';
 import React from 'react';
 import { NextPage } from 'next';
-import ContactData from '../utils/ContactData';
+import ContactData from '../lib/data/ContactData';
 
 const PrivacyPolicy: NextPage = () => {
   return (

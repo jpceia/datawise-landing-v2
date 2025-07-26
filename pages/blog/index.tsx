@@ -1,6 +1,4 @@
 import Head from 'next/head';
-import Navbar from '../../components/layout/Navbar';
-import Footer from '../../components/layout/Footer';
 import React, { useState } from 'react';
 import { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
