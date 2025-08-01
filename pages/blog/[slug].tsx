@@ -57,7 +57,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
 
       <main>
         {/* Main blog post content section */}
-        <section className="pt-36 pb-20 bg-gray-50">
+        <section className="pt-44 pb-20 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               {/* Blog post header with date and category */}

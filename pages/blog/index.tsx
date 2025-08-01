@@ -200,7 +200,7 @@ const BlogIndex: NextPage<BlogIndexProps> = ({ posts }) => {
         <meta property="og:type" content="website" />
       </Head>
       <main>
-        <section className="pt-36 pb-20 bg-gray-50">
+        <section className="pt-44 pb-20 bg-gray-50">
           <div className="container mx-auto px-4">
             {posts.length > 0 ? (
               <>
