@@ -234,7 +234,7 @@ const BlogIndex: NextPage<BlogIndexProps> = ({ posts }) => {
 };
 
 export const getStaticProps: GetStaticProps<BlogIndexProps> = async ({ locale }) => {
-  const messages = (await import(`@/messages/${locale || 'pt'}.json`)).default;
+  const messages = (await import(`@/messages/${locale}.json`)).default;
   try {
     const posts = await getPosts();
 

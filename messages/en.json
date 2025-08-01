@@ -1,0 +1,311 @@
+{
+      "Metadata": {
+    "title": "DATAWISE | Data Science Consultancy",
+    "description": "Datawise helps companies transform data into strategic decisions. Data science, machine learning and AI solutions to optimize your business.",
+    "ogTitle": "Datawise | Data Science Consultancy",
+    "ogDescription": "We transform data into strategic decisions for your business"
+  },
+  "TopBanner": {
+    "message": "Only 5 spots remaining → reserve yours this month!"
+  },
+    "Navbar": {
+      "aboutUs": "About Us",
+      "services": "Services",
+      "successCases": "Success Cases",
+      "contactUs": "Contact Us"
+    },
+    "Hero": {
+      "title": "Partners in AI for your company",
+      "subtitle": "We combine <span class=\"text-blue-600 font-semibold\">artificial intelligence</span> and <span class=\"text-blue-600 font-semibold\">business knowledge</span> to transform your company's data and processes into growth engines.",
+      "ctaSchedule": "Schedule a Free Diagnostic",
+      "ctaServices": "Discover Our Services",
+      "scrollToExplore": "Scroll to explore"
+    },
+    "TransformBusiness": {
+      "badge": "VALUE PROPOSITION",
+      "title": "Transform Your Business",
+      "subtitle": "Discover how our personalized solutions can boost your business efficiency and profitability.",
+      "productivity": {
+        "title": "Increase Productivity",
+        "description": "Automate processes and reduce time spent on repetitive tasks, allowing your team to focus on what really matters."
+      },
+      "decisions": {
+        "title": "Optimize Decisions",
+        "description": "Transform data into actionable insights that enable smarter and more strategic decisions for your business."
+      },
+      "costs": {
+        "title": "Reduce Costs",
+        "description": "Identify optimization areas and eliminate waste, increasing operational efficiency and maximizing return on investment."
+      },
+      "scheduleMeeting": "Schedule a meeting"
+    },
+    "Services": {
+      "badge": "OUR SERVICES",
+      "title": "Services",
+      "subtitle": "Tailored solutions to optimize your operations and drive tangible results through data science and artificial intelligence.",
+      "items": [
+        {
+          "title": "Predictive Models",
+          "description": "We develop models that anticipate trends and behaviors based on historical patterns, enabling proactive decisions: identification of customers at risk of churn, sales forecasting and preventive maintenance."
+        },
+        {
+          "title": "Competitive Intelligence and Media Monitoring",
+          "description": "Automatic collection and analysis of information about competitors, market trends and public sentiment through continuous monitoring of digital sources for more informed decisions."
+        },
+        {
+          "title": "Workflow Automation",
+          "description": "Development of automated systems that orchestrate complex processes, connecting different departments and applications to eliminate bottlenecks and ensure efficient and error-free workflows."
+        },
+        {
+          "title": "Operational Optimization",
+          "description": "We optimize delivery routes, team planning, resource scheduling and workload distribution. Intelligent solutions that find the best way to increasing operational efficiency."
+        },
+        {
+          "title": "Intelligent Classification and Information Organization",
+          "description": "Automatic organization of documents, emails, CVs or orders, directing or grouping according to context, theme or priority."
+        },
+        {
+          "title": "Structure and Normalization",
+          "description": "Standardization of data and automatic extraction of relevant information from documents in multiple formats and sources, creating consistent databases ready for analysis."
+        }
+      ]
+    },
+    "SuccessCases": {
+      "badge": "REAL RESULTS",
+      "title": "Success Cases",
+      "subtitle": "Real business transformations through successful partnerships with our team.",
+      "readFullArticle": "Read full article",
+      "stats": {
+        "increase": "Increase",
+        "decrease": "Reduction",
+        "improvement": "Improvement",
+        "profitability": "Profitability",
+        "logisticCosts": "Logistics costs",
+        "occupancyRate": "Occupancy rate",
+        "deliveryTime": "Delivery time",
+        "fuelSavings": "Savings",
+        "customerSatisfaction": "Customer satisfaction",
+        "fuelLabel": "Fuel",
+        "perDriverProfitability": "Profitability per driver",
+        "workHoursOptimization": "Work hours",
+        "operationalCosts": "Operational costs"
+      },
+      "cases": [
+        {
+          "title": "Motorhome Rental Company",
+          "subtitle": "One-Way Fee Optimization",
+          "description": "This is a success story of a motorhome rental company, where we managed to optimize the fleet management process and consequently improve their operational results.",
+          "stats": [
+            { "value": "Higher", "label": "Profitability" },
+            { "value": "Reduction", "label": "Logistics costs" },
+            { "value": "Improvement", "label": "Occupancy rate" }
+          ],
+          "tags": ["Data analysis", "Machine Learning", "Python"]
+        },
+        {
+          "title": "Last-Mile Delivery Carrier",
+          "subtitle": "Route Planning",
+          "description": "Another success story with a carrier specialized in last-mile delivery, where we helped solve a very specific operational challenge.",
+          "stats": [
+            { "value": "Reduction", "label": "Delivery time" },
+            { "value": "Savings", "label": "Fuel" },
+            { "value": "Increase", "label": "Customer satisfaction" }
+          ],
+          "tags": ["Optimization", "Georeferencing", "Python"]
+        },
+        {
+          "title": "Ride-Hailing Company",
+          "subtitle": "Profitability Dashboard",
+          "description": "The story of how we helped a ride-hailing company solve a critical challenge related to profitability visibility.",
+          "stats": [
+            { "value": "Increase", "label": "Profitability per driver" },
+            { "value": "Optimization", "label": "Work hours" },
+            { "value": "Reduction", "label": "Operational costs" }
+          ],
+          "tags": ["Management Control", "Analytical Accounting", "PowerBI"]
+        }
+      ]
+    },
+    "TechMaturity": {
+      "badge": "OUR METHODOLOGY",
+      "title": "Technological Maturity",
+      "subtitle": "From data collection to automation: our path to innovation and digital transformation.",
+      "phase": "Phase",
+      "of": "of",
+      "stages": [
+        {
+          "title": "Data",
+          "subtitle": "Sources, Collection and Storage",
+          "description": "In this phase, we focus on identifying and organizing relevant Data Sources for the business. These may include operational, financial, customer data, among others.",
+          "features": [
+            "Data source mapping",
+            "Systems integration",
+            "Storage infrastructure",
+            "Data quality assurance"
+          ]
+        },
+        {
+          "title": "Research",
+          "subtitle": "Analytics and Descriptive Statistics",
+          "description": "From this stage, we begin exploring the data we've collected. Through Analytics and Descriptive Statistics, we discover patterns and trends, helping us identify areas for improvement and optimization within the operation.",
+          "features": [
+            "Exploratory data analysis",
+            "Advanced visualization",
+            "Pattern and correlation detection",
+            "Interactive reports"
+          ]
+        },
+        {
+          "title": "Automation",
+          "subtitle": "Artificial Intelligence and Algorithms",
+          "description": "Through Artificial Intelligence, Algorithms, and Optimization, we ensure maximum results with minimum resources, guaranteeing operational efficiency and better results for our clients.",
+          "features": [
+            "Machine learning algorithms",
+            "Automated decision systems",
+            "Continuous optimization",
+            "Integration with existing systems"
+          ]
+        }
+      ]
+    },
+    "MissionValues": {
+      "badge": "OUR IDENTITY",
+      "title": "The Pillars that Define Us",
+      "subtitle": "We build our identity on three fundamental pillars that guide all our actions and decisions.",
+      "pillars": [
+        {
+          "title": "100% National",
+          "description": "A Portuguese company, with Portuguese DNA, focused on the national market and the specific needs of Portuguese companies.",
+          "features": [
+            "Deep knowledge of the local market",
+            "Technical support in Portuguese",
+            "Proximity to the customer"
+          ]
+        },
+        {
+          "title": "Agility",
+          "description": "We adapt quickly to market changes and each client's specific needs.",
+          "features": [
+            "Agile methodologies",
+            "Quick responses",
+            "Customized solutions"
+          ]
+        },
+        {
+          "title": "Commitment to Results",
+          "description": "Our clients' success is our success. We focus on delivering real and measurable value.",
+          "features": [
+            "Measurable objectives",
+            "Proven results",
+            "Long-term partnership"
+          ]
+        }
+      ]
+    },
+    "Recruitment": {
+      "badge": "JOIN US",
+      "title": "Want to work with us?",
+      "subtitle": "We're looking for talents passionate about data and analytics who want to be part of an innovative team.",
+      "sendCV": "Send us your CV",
+      "cultureTitle": "A culture of excellence",
+      "cultureDescription": "We value creativity, collaboration, and continuous learning in all our teams.",
+      "benefits": [
+        {
+          "title": "Innovative Environment",
+          "description": "Work with the latest technologies in data science and machine learning."
+        },
+        {
+          "title": "Continuous Development",
+          "description": "We offer constant training and learning opportunities for your evolution."
+        },
+        {
+          "title": "Challenging Projects",
+          "description": "Participate in challenging projects with real impact across various industries."
+        },
+        {
+          "title": "Exceptional Team",
+          "description": "Join a diverse group of talented and passionate professionals."
+        }
+      ]
+    },
+    "Technologies": {
+      "badge": "OUR TOOLS",
+      "title": "The technologies that enable us to deliver exceptional results",
+      "subtitle": "Cutting-edge technologies for exceptional results.",
+      "features": {
+        "secure": {
+          "title": "Secure Solutions",
+          "description": "We guarantee the highest level of security for your data and applications."
+        },
+        "performance": {
+          "title": "High Performance",
+          "description": "Optimized technologies to ensure speed and efficiency in analyses."
+        },
+        "scalability": {
+          "title": "Scalability",
+          "description": "Solutions that grow with your business, adapting to your needs."
+        }
+      }
+    },
+    "CallToAction": {
+      "title": "Empower your business today",
+      "subtitle": "Schedule a diagnostic consultation to discover how our data science services can transform your company",
+      "buttonText": "Book a free consultation"
+    },
+    "Footer": {
+      "description": "We transform data into strategic decisions, empowering our clients to operate with maximum efficiency.",
+      "company": "Company",
+      "services": "Services",
+    "servicesList": [
+  "Predictive Models",
+  "Generative AI",
+  "Analytical Dashboards",
+  "Optimization",
+  "Price Setting",
+  "Planning"
+],
+      "contact": "Contact",
+      "allRightsReserved": "All rights reserved.",
+      "fundedBy": "Co-funded by:",
+      "links": {
+        "aboutUs": "About us",
+        "services": "Services",
+        "successCases": "Success Cases",
+        "blog": "Blog",
+        "careers": "Careers",
+        "privacyPolicy": "Privacy Policy",
+        "termsOfUse": "Terms of Use"
+      }
+    },
+    "Blog": {
+      "title": "Blog | Datawise",
+      "description": "Articles, guides and news about data science, machine learning and Datawise success cases.",
+      "ogDescription": "Insights and knowledge about data science and artificial intelligence",
+      "featured": "FEATURED",
+      "readFullArticle": "Read full article",
+      "readMore": "Read more",
+      "noResults": "No results found",
+      "noResultsDescription": "We couldn't find any articles that match your search criteria.",
+      "clearFilters": "Clear filters",
+      "backToBlog": "Back to blog",
+      "readingTime": "reading time",
+      "share": "Share:",
+      "contactUs": "Contact us",
+      "ctaTitle": "Need to optimize your operations?",
+      "ctaDescription": "Schedule a free diagnostic with our team of experts."
+    },
+    "Privacy": {
+      "title": "Privacy Policy | Datawise",
+      "description": "Learn about our privacy policy and personal data protection.",
+      "headerTitle": "Privacy Policy and Data Protection",
+      "headerSubtitle": "Transparency and security in the treatment of your data",
+      "lastUpdated": "Last updated"
+    },
+    "TermsOfUse": {
+      "title": "Terms of Use | Datawise",
+      "description": "Learn about our terms of use for the Datawise website and services.",
+      "headerTitle": "Terms of Use",
+      "headerSubtitle": "General conditions of use for the Datawise website and services",
+      "lastUpdated": "Last updated"
+    }
+  }

@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-5xl lg:text-5xl mt-10 lg:mt-0 font-bold text-gray-800 mb-6"
+            className="text-5xl lg:text-6xl mt-10 lg:mt-0 font-bold text-gray-800 mb-6"
           >
             {t('title')}
           </motion.h1>

@@ -238,7 +238,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 // Get static props for individual blog post
 export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({ params, locale   }) => {
-  const messages = (await import(`@/messages/${locale || 'pt'}.json`)).default;
+  const messages = (await import(`@/messages/${locale}.json`)).default;
   try {
     const slug = params?.slug as string;
     const post = await getFullPostBySlug(slug);
@@ -284,6 +284,7 @@ export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({ params
     console.error('Error fetching post:', error);
     return {
       notFound: true,
+      messages
     };
   }
 };

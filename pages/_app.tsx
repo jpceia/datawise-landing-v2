@@ -6,14 +6,14 @@ import TopBanner from '@/components/layout/TopBanner';
 import type { AppProps } from 'next/app';
 import { Analytics } from '@vercel/analytics/next';
 import '@/styles/globals.css';
+import { useRouter } from 'next/router';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  // Força o idioma para português
-  const locale = 'pt';
+  const router = useRouter();
+  const locale = router.locale; // Change this to test different locales
   
-  // Verifica se está em desenvolvimento
+  // Check if in development mode
   const isDevelopment = process.env.NODE_ENV === 'development';
-  console.log("Is development: ", isDevelopment);
   
   return (
     <NextIntlClientProvider
@@ -23,9 +23,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     >
       <TopBanner />
       <Navbar />
-      <Component {...pageProps} />
+      <Component {...pageProps} locale={locale} />
       <Footer />
-      {/* Google Analytics e Tag Manager apenas em produção */}
+      {/* Google Analytics and Tag Manager only in production */}
       {!isDevelopment && (
         <>
           <GoogleAnalytics gaId="G-6FHQECXHNX" />
