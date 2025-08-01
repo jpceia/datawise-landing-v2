@@ -6,6 +6,7 @@ const Technologies = () => {
   const t = useTranslations('Technologies');
 
   const technologies = [
+    // Programming languages and frameworks
     { 
       id: 1, 
       name: 'Python', 
@@ -13,29 +14,33 @@ const Technologies = () => {
     },
     { 
       id: 2, 
+      name: 'FastAPI', 
+      logo: '/tech-logos/fast-api.png'
+    },
+    
+    // Development tools and ML
+    { 
+      id: 3, 
       name: 'Jupyter', 
       logo: '/tech-logos/Jupyter_logo.svg.webp'
     },
     { 
-      id: 3, 
+      id: 4, 
       name: 'scikit-learn', 
       logo: '/tech-logos/Scikit_learn_logo_small.svg.png'
     },
     { 
-      id: 4, 
+      id: 5, 
       name: 'XGBoost', 
       logo: '/tech-logos/XGBoost_logo.png'
     },
     { 
-      id: 5, 
+      id: 6, 
       name: 'TensorFlow', 
       logo: '/tech-logos/Tensorflow_logo.svg.png'
     },
-    { 
-      id: 6, 
-      name: 'Azure', 
-      logo: '/tech-logos/Microsoft_Azure.svg.png'
-    },
+    
+    // AI models and LLMs
     { 
       id: 7, 
       name: 'OpenAI', 
@@ -43,28 +48,49 @@ const Technologies = () => {
     },
     { 
       id: 8, 
-      name: 'Databricks', 
-      logo: '/tech-logos/databricks-logo-1.png'
+      name: 'DeepSeek', 
+      logo: '/tech-logos/DeepSeek_logo_icon.png'
     },
     { 
       id: 9, 
-      name: 'Docker', 
-      logo: '/tech-logos/docker-mark-blue-scaled.webp'
-    },
-    { 
-      id: 10, 
       name: 'Gemini', 
       logo: '/tech-logos/gemini-icon-logo-png_seeklogo-611605.png'
     },
     { 
+      id: 10, 
+      name: 'Hugging Face', 
+      logo: '/tech-logos/huggingface-color.png'
+    },
+    
+    // Cloud and infrastructure
+    { 
       id: 11, 
-      name: 'PostgreSQL', 
-      logo: '/tech-logos/postgresql.png'
+      name: 'Azure', 
+      logo: '/tech-logos/Microsoft_Azure.svg.png'
     },
     { 
       id: 12, 
-      name: 'DeepSeek', 
-      logo: '/tech-logos/DeepSeek_logo_icon.png'
+      name: 'Databricks', 
+      logo: '/tech-logos/databricks-logo-1.png'
+    },
+    { 
+      id: 13, 
+      name: 'Docker', 
+      logo: '/tech-logos/docker-mark-blue-scaled.webp'
+    },
+    
+    // Databases
+    { 
+      id: 14, 
+      name: 'PostgreSQL', 
+      logo: '/tech-logos/postgresql.png'
+    },
+    
+    // Automation
+    { 
+      id: 15, 
+      name: 'n8n', 
+      logo: '/tech-logos/n8n-color.svg'
     },
   ];
 
@@ -96,7 +122,7 @@ const Technologies = () => {
           {/* Removed gradient overlays */}
           
           <div className="bg-white rounded-2xl py-12 px-8 shadow-lg">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-4 gap-y-8 justify-items-center">
               {technologies.map((tech) => (
                 <div key={tech.id} className="group transform transition-all hover:scale-110">
                   <div className="h-24 flex items-center justify-center transition-all">
@@ -105,9 +131,9 @@ const Technologies = () => {
                         src={tech.logo}
                         alt={`${tech.name} logo`}
                         fill
-                        sizes="(max-width: 768px) 50vw, 25vw"
+                        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
                         className="object-contain"
-                        priority={tech.id <= 4} // Priorizar carregamento das primeiras 4 imagens
+                        priority={tech.id <= 5} // Priorizar carregamento das primeiras 5 imagens
                       />
                     </div>
                   </div>
