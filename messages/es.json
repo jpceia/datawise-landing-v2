@@ -1,0 +1,311 @@
+{
+  "Metadata": {
+    "title": "DATAWISE | Consultoría en Ciencia de Datos",
+    "description": "Datawise ayuda a las empresas a transformar datos en decisiones estratégicas. Soluciones de ciencia de datos, machine learning e IA para optimizar tu negocio.",
+    "ogTitle": "Datawise | Consultoría en Ciencia de Datos",
+    "ogDescription": "Transformamos datos en decisiones estratégicas para tu negocio"
+  },
+  "TopBanner": {
+    "message": "¡Solo quedan 5 plazas → reserva la tuya este mes!"
+  },
+  "Navbar": {
+    "aboutUs": "Sobre Nosotros",
+    "services": "Servicios",
+    "successCases": "Casos de Éxito",
+    "contactUs": "Contáctanos"
+  },
+  "Hero": {
+    "title": "Socios en IA para tu empresa",
+    "subtitle": "Combinamos <span class=\"text-blue-600 font-semibold\">inteligencia artificial</span> y <span class=\"text-blue-600 font-semibold\">conocimiento empresarial</span> para transformar los datos y procesos de tu empresa en motores de crecimiento.",
+    "ctaSchedule": "Programar un Diagnóstico Gratuito",
+    "ctaServices": "Descubre Nuestros Servicios",
+    "scrollToExplore": "Desplázate para explorar"
+  },
+  "TransformBusiness": {
+    "badge": "PROPUESTA DE VALOR",
+    "title": "Transforma tu Negocio",
+    "subtitle": "Descubre cómo nuestras soluciones personalizadas pueden impulsar la eficiencia y rentabilidad de tu negocio.",
+    "productivity": {
+      "title": "Aumentar la Productividad",
+      "description": "Automatiza procesos y reduce el tiempo dedicado a tareas repetitivas, permitiendo que tu equipo se enfoque en lo que realmente importa."
+    },
+    "decisions": {
+      "title": "Optimizar Decisiones",
+      "description": "Transforma datos en insights accionables que permiten tomar decisiones más inteligentes y estratégicas para tu negocio."
+    },
+    "costs": {
+      "title": "Reducir Costos",
+      "description": "Identifica áreas de optimización y elimina desperdicios, aumentando la eficiencia operacional y maximizando el retorno sobre la inversión."
+    },
+    "scheduleMeeting": "Programar una reunión"
+  },
+  "Services": {
+    "badge": "NUESTROS SERVICIOS",
+    "title": "Servicios",
+    "subtitle": "Soluciones a medida para optimizar tus operaciones e impulsar resultados tangibles a través de la ciencia de datos e inteligencia artificial.",
+    "items": [
+      {
+        "title": "Modelos Predictivos",
+        "description": "Desarrollamos modelos que anticipan tendencias y comportamientos basados en patrones históricos, permitiendo decisiones proactivas: identificación de clientes en riesgo de abandono, pronóstico de ventas y mantenimiento preventivo."
+      },
+      {
+        "title": "Inteligencia Competitiva y Monitoreo de Medios",
+        "description": "Recolección y análisis automático de información sobre competidores, tendencias del mercado y sentimiento público a través de monitoreo continuo de fuentes digitales para decisiones más informadas."
+      },
+      {
+        "title": "Automatización de Flujos de Trabajo",
+        "description": "Desarrollo de sistemas automatizados que orquestan procesos complejos, conectando diferentes departamentos y aplicaciones para eliminar cuellos de botella y asegurar flujos de trabajo eficientes y sin errores."
+      },
+      {
+        "title": "Optimización Operacional",
+        "description": "Optimizamos rutas de entrega, planificación de equipos, programación de recursos y distribución de cargas de trabajo. Soluciones inteligentes que encuentran la mejor manera de aumentar la eficiencia operacional."
+      },
+      {
+        "title": "Clasificación Inteligente y Organización de Información",
+        "description": "Organización automática de documentos, correos electrónicos, CVs u órdenes, dirigiendo o agrupando según contexto, tema o prioridad."
+      },
+      {
+        "title": "Estructura y Normalización",
+        "description": "Estandarización de datos y extracción automática de información relevante desde documentos en múltiples formatos y fuentes, creando bases de datos consistentes listas para análisis."
+      }
+    ]
+  },
+  "SuccessCases": {
+    "badge": "RESULTADOS REALES",
+    "title": "Casos de Éxito",
+    "subtitle": "Transformaciones reales de negocios a través de asociaciones exitosas con nuestro equipo.",
+    "readFullArticle": "Leer artículo completo",
+    "stats": {
+      "increase": "Aumento",
+      "decrease": "Reducción",
+      "improvement": "Mejora",
+      "profitability": "Rentabilidad",
+      "logisticCosts": "Costos logísticos",
+      "occupancyRate": "Tasa de ocupación",
+      "deliveryTime": "Tiempo de entrega",
+      "fuelSavings": "Ahorro",
+      "customerSatisfaction": "Satisfacción del cliente",
+      "fuelLabel": "Combustible",
+      "perDriverProfitability": "Rentabilidad por conductor",
+      "workHoursOptimization": "Horas de trabajo",
+      "operationalCosts": "Costos operacionales"
+    },
+    "cases": [
+      {
+        "title": "Empresa de Alquiler de Autocaravanas",
+        "subtitle": "Optimización de Tarifas de Ida",
+        "description": "Esta es una historia de éxito de una empresa de alquiler de autocaravanas, donde logramos optimizar el proceso de gestión de flota y consecuentemente mejorar sus resultados operacionales.",
+        "stats": [
+          { "value": "Mayor", "label": "Rentabilidad" },
+          { "value": "Reducción", "label": "Costos logísticos" },
+          { "value": "Mejora", "label": "Tasa de ocupación" }
+        ],
+        "tags": ["Análisis de datos", "Machine Learning", "Python"]
+      },
+      {
+        "title": "Transportista de Entrega Last-Mile",
+        "subtitle": "Planificación de Rutas",
+        "description": "Otra historia de éxito con un transportista especializado en entrega last-mile, donde ayudamos a resolver un desafío operacional muy específico.",
+        "stats": [
+          { "value": "Reducción", "label": "Tiempo de entrega" },
+          { "value": "Ahorro", "label": "Combustible" },
+          { "value": "Aumento", "label": "Satisfacción del cliente" }
+        ],
+        "tags": ["Optimización", "Georreferenciación", "Python"]
+      },
+      {
+        "title": "Empresa de Transporte por Aplicación",
+        "subtitle": "Dashboard de Rentabilidad",
+        "description": "La historia de cómo ayudamos a una empresa de transporte por aplicación a resolver un desafío crítico relacionado con la visibilidad de la rentabilidad.",
+        "stats": [
+          { "value": "Aumento", "label": "Rentabilidad por conductor" },
+          { "value": "Optimización", "label": "Horas de trabajo" },
+          { "value": "Reducción", "label": "Costos operacionales" }
+        ],
+        "tags": ["Control de Gestión", "Contabilidad Analítica", "PowerBI"]
+      }
+    ]
+  },
+  "TechMaturity": {
+    "badge": "NUESTRA METODOLOGÍA",
+    "title": "Madurez Tecnológica",
+    "subtitle": "Desde la recolección de datos hasta la automatización: nuestro camino hacia la innovación y transformación digital.",
+    "phase": "Fase",
+    "of": "de",
+    "stages": [
+      {
+        "title": "Datos",
+        "subtitle": "Fuentes, Recolección y Almacenamiento",
+        "description": "En esta fase nos enfocamos en identificar y organizar las Fuentes de Datos relevantes para el negocio. Estas pueden incluir datos operacionales, financieros, de clientes, entre otros.",
+        "features": [
+          "Mapeo de fuentes de datos",
+          "Integración de sistemas",
+          "Infraestructura de almacenamiento",
+          "Garantía de calidad de datos"
+        ]
+      },
+      {
+        "title": "Investigación",
+        "subtitle": "Analytics y Estadística Descriptiva",
+        "description": "A partir de esta etapa comenzamos a explorar los datos que hemos recolectado. A través de Analytics y Estadística Descriptiva, descubrimos patrones y tendencias, ayudándonos a identificar áreas de mejora y optimización dentro de la operación.",
+        "features": [
+          "Análisis exploratorio de datos",
+          "Visualización avanzada",
+          "Detección de patrones y correlaciones",
+          "Reportes interactivos"
+        ]
+      },
+      {
+        "title": "Automatización",
+        "subtitle": "Inteligencia Artificial y Algoritmos",
+        "description": "A través de la Inteligencia Artificial, Algoritmos y Optimización, aseguramos resultados máximos con recursos mínimos, garantizando eficiencia operacional y mejores resultados para nuestros clientes.",
+        "features": [
+          "Algoritmos de machine learning",
+          "Sistemas de decisión automatizados",
+          "Optimización continua",
+          "Integración con sistemas existentes"
+        ]
+      }
+    ]
+  },
+  "MissionValues": {
+    "badge": "NUESTRA IDENTIDAD",
+    "title": "Los Pilares que Nos Definen",
+    "subtitle": "Construimos nuestra identidad en tres pilares fundamentales que guían todas nuestras acciones y decisiones.",
+    "pillars": [
+      {
+        "title": "100% Europeo",
+        "description": "Una empresa portuguesa, con ADN portugués, enfocada en el mercado europeo y las necesidades específicas de las empresas europeas.",
+        "features": [
+          "Conocimiento profundo del mercado europeo",
+          "Soporte técnico en múltiples idiomas europeos",
+          "Proximidad con el cliente"
+        ]
+      },
+      {
+        "title": "Agilidad",
+        "description": "Nos adaptamos rápidamente a los cambios del mercado y a las necesidades específicas de cada cliente.",
+        "features": [
+          "Metodologías ágiles",
+          "Respuestas rápidas",
+          "Soluciones personalizadas"
+        ]
+      },
+      {
+        "title": "Compromiso con Resultados",
+        "description": "El éxito de nuestros clientes es nuestro éxito. Nos enfocamos en entregar valor real y medible.",
+        "features": [
+          "Objetivos medibles",
+          "Resultados comprobados",
+          "Asociación a largo plazo"
+        ]
+      }
+    ]
+  },
+  "Recruitment": {
+    "badge": "ÚNETE A NOSOTROS",
+    "title": "¿Quieres trabajar con nosotros?",
+    "subtitle": "Buscamos talentos apasionados por los datos y análisis que quieran ser parte de un equipo innovador.",
+    "sendCV": "Envíanos tu CV",
+    "cultureTitle": "Una cultura de excelencia",
+    "cultureDescription": "Valoramos la creatividad, colaboración y aprendizaje continuo en todos nuestros equipos.",
+    "benefits": [
+      {
+        "title": "Ambiente Innovador",
+        "description": "Trabaja con las últimas tecnologías en ciencia de datos y machine learning."
+      },
+      {
+        "title": "Desarrollo Continuo",
+        "description": "Ofrecemos formación constante y oportunidades de aprendizaje para tu evolución."
+      },
+      {
+        "title": "Proyectos Desafiantes",
+        "description": "Participa en proyectos desafiantes con impacto real en diversas industrias."
+      },
+      {
+        "title": "Equipo Excepcional",
+        "description": "Únete a un grupo diverso de profesionales talentosos y apasionados."
+      }
+    ]
+  },
+  "Technologies": {
+    "badge": "NUESTRAS HERRAMIENTAS",
+    "title": "Las tecnologías que nos permiten entregar resultados excepcionales",
+    "subtitle": "Tecnologías de vanguardia para resultados excepcionales.",
+    "features": {
+      "secure": {
+        "title": "Soluciones Seguras",
+        "description": "Garantizamos el más alto nivel de seguridad para tus datos y aplicaciones."
+      },
+      "performance": {
+        "title": "Alto Rendimiento",
+        "description": "Tecnologías optimizadas para asegurar velocidad y eficiencia en los análisis."
+      },
+      "scalability": {
+        "title": "Escalabilidad",
+        "description": "Soluciones que crecen con tu negocio, adaptándose a tus necesidades."
+      }
+    }
+  },
+  "CallToAction": {
+    "title": "Potencia tu negocio hoy mismo",
+    "subtitle": "Programa una consulta de diagnóstico para descubrir cómo nuestros servicios de ciencia de datos pueden transformar tu empresa",
+    "buttonText": "Reserva una consulta gratuita"
+  },
+  "Footer": {
+    "description": "Transformamos datos en decisiones estratégicas, capacitando a nuestros clientes para operar con máxima eficiencia.",
+    "company": "Empresa",
+    "services": "Servicios",
+    "servicesList": [
+      "Modelos Predictivos",
+      "IA Generativa",
+      "Dashboards Analíticos",
+      "Optimización",
+      "Definición de Precios",
+      "Planificación"
+    ],
+    "contact": "Contacto",
+    "allRightsReserved": "Todos los derechos reservados.",
+    "fundedBy": "Cofinanciado por:",
+    "links": {
+      "aboutUs": "Sobre nosotros",
+      "services": "Servicios",
+      "successCases": "Casos de Éxito",
+      "blog": "Blog",
+      "careers": "Carreras",
+      "privacyPolicy": "Política de Privacidad",
+      "termsOfUse": "Términos de Uso"
+    }
+  },
+  "Blog": {
+    "title": "Blog | Datawise",
+    "description": "Artículos, guías y noticias sobre ciencia de datos, machine learning y casos de éxito de Datawise.",
+    "ogDescription": "Insights y conocimientos sobre ciencia de datos e inteligencia artificial",
+    "featured": "DESTACADO",
+    "readFullArticle": "Leer artículo completo",
+    "readMore": "Leer más",
+    "noResults": "No se encontraron resultados",
+    "noResultsDescription": "No encontramos ningún artículo que coincida con tus criterios de búsqueda.",
+    "clearFilters": "Limpiar filtros",
+    "backToBlog": "Volver al blog",
+    "readingTime": "de lectura",
+    "share": "Compartir:",
+    "contactUs": "Contáctanos",
+    "ctaTitle": "¿Necesitas optimizar tus operaciones?",
+    "ctaDescription": "Reserva un diagnóstico gratuito con nuestro equipo de expertos."
+  },
+  "Privacy": {
+    "title": "Política de Privacidad | Datawise",
+    "description": "Conoce nuestra política de privacidad y protección de datos personales.",
+    "headerTitle": "Política de Privacidad y Protección de Datos",
+    "headerSubtitle": "Transparencia y seguridad en el tratamiento de tus datos",
+    "lastUpdated": "Última actualización"
+  },
+  "TermsOfUse": {
+    "title": "Términos de Uso | Datawise",
+    "description": "Conoce nuestros términos de uso para el sitio web y servicios de Datawise.",
+    "headerTitle": "Términos de Uso",
+    "headerSubtitle": "Condiciones generales de uso para el sitio web y servicios de Datawise",
+    "lastUpdated": "Última actualización"
+  }
+} 

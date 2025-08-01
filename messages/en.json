@@ -173,15 +173,15 @@
       "title": "The Pillars that Define Us",
       "subtitle": "We build our identity on three fundamental pillars that guide all our actions and decisions.",
       "pillars": [
-        {
-          "title": "100% National",
-          "description": "A Portuguese company, with Portuguese DNA, focused on the national market and the specific needs of Portuguese companies.",
-          "features": [
-            "Deep knowledge of the local market",
-            "Technical support in Portuguese",
-            "Proximity to the customer"
-          ]
-        },
+              {
+        "title": "100% European",
+        "description": "A Portuguese company, with Portuguese DNA, focused on the European market and the specific needs of European companies.",
+        "features": [
+          "Deep knowledge of the European market",
+          "Technical support in multiple European languages",
+          "Proximity to the customer"
+        ]
+      },
         {
           "title": "Agility",
           "description": "We adapt quickly to market changes and each client's specific needs.",

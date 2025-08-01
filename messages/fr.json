@@ -1,0 +1,311 @@
+{
+  "Metadata": {
+    "title": "DATAWISE | Conseil en Science des Données",
+    "description": "Datawise aide les entreprises à transformer les données en décisions stratégiques. Solutions de science des données, machine learning et IA pour optimiser votre entreprise.",
+    "ogTitle": "Datawise | Conseil en Science des Données",
+    "ogDescription": "Nous transformons les données en décisions stratégiques pour votre entreprise"
+  },
+  "TopBanner": {
+    "message": "Seulement 5 places restantes → réservez la vôtre ce mois-ci !"
+  },
+  "Navbar": {
+    "aboutUs": "À Propos",
+    "services": "Services",
+    "successCases": "Cas de Succès",
+    "contactUs": "Contactez-nous"
+  },
+  "Hero": {
+    "title": "Partenaires en IA pour votre entreprise",
+    "subtitle": "Nous combinons <span class=\"text-blue-600 font-semibold\">l'intelligence artificielle</span> et <span class=\"text-blue-600 font-semibold\">la connaissance métier</span> pour transformer les données et processus de votre entreprise en moteurs de croissance.",
+    "ctaSchedule": "Planifier un Diagnostic Gratuit",
+    "ctaServices": "Découvrir Nos Services",
+    "scrollToExplore": "Faites défiler pour explorer"
+  },
+  "TransformBusiness": {
+    "badge": "PROPOSITION DE VALEUR",
+    "title": "Transformez Votre Entreprise",
+    "subtitle": "Découvrez comment nos solutions personnalisées peuvent stimuler l'efficacité et la rentabilité de votre entreprise.",
+    "productivity": {
+      "title": "Augmenter la Productivité",
+      "description": "Automatisez les processus et réduisez le temps consacré aux tâches répétitives, permettant à votre équipe de se concentrer sur ce qui compte vraiment."
+    },
+    "decisions": {
+      "title": "Optimiser les Décisions",
+      "description": "Transformez les données en insights exploitables qui permettent de prendre des décisions plus intelligentes et stratégiques pour votre entreprise."
+    },
+    "costs": {
+      "title": "Réduire les Coûts",
+      "description": "Identifiez les domaines d'optimisation et éliminez les gaspillages, augmentant l'efficacité opérationnelle et maximisant le retour sur investissement."
+    },
+    "scheduleMeeting": "Planifier une réunion"
+  },
+  "Services": {
+    "badge": "NOS SERVICES",
+    "title": "Services",
+    "subtitle": "Solutions sur mesure pour optimiser vos opérations et générer des résultats tangibles grâce à la science des données et l'intelligence artificielle.",
+    "items": [
+      {
+        "title": "Modèles Prédictifs",
+        "description": "Nous développons des modèles qui anticipent les tendances et comportements basés sur des modèles historiques, permettant des décisions proactives : identification des clients à risque de désabonnement, prévision des ventes et maintenance préventive."
+      },
+      {
+        "title": "Veille Concurrentielle et Surveillance Média",
+        "description": "Collecte et analyse automatique d'informations sur les concurrents, tendances du marché et sentiment public grâce à une surveillance continue des sources numériques pour des décisions plus éclairées."
+      },
+      {
+        "title": "Automatisation des Workflows",
+        "description": "Développement de systèmes automatisés qui orchestrent des processus complexes, connectant différents départements et applications pour éliminer les goulots d'étranglement et assurer des workflows efficaces et sans erreur."
+      },
+      {
+        "title": "Optimisation Opérationnelle",
+        "description": "Nous optimisons les itinéraires de livraison, la planification d'équipe, la planification des ressources et la distribution de la charge de travail. Solutions intelligentes qui trouvent la meilleure façon d'augmenter l'efficacité opérationnelle."
+      },
+      {
+        "title": "Classification Intelligente et Organisation de l'Information",
+        "description": "Organisation automatique de documents, e-mails, CV ou commandes, les dirigeant ou les regroupant selon le contexte, le thème ou la priorité."
+      },
+      {
+        "title": "Structure et Normalisation",
+        "description": "Standardisation des données et extraction automatique d'informations pertinentes à partir de documents dans de multiples formats et sources, créant des bases de données cohérentes prêtes pour l'analyse."
+      }
+    ]
+  },
+  "SuccessCases": {
+    "badge": "RÉSULTATS RÉELS",
+    "title": "Cas de Succès",
+    "subtitle": "Transformations réelles d'entreprises grâce à des partenariats réussis avec notre équipe.",
+    "readFullArticle": "Lire l'article complet",
+    "stats": {
+      "increase": "Augmentation",
+      "decrease": "Réduction",
+      "improvement": "Amélioration",
+      "profitability": "Rentabilité",
+      "logisticCosts": "Coûts logistiques",
+      "occupancyRate": "Taux d'occupation",
+      "deliveryTime": "Temps de livraison",
+      "fuelSavings": "Économies",
+      "customerSatisfaction": "Satisfaction client",
+      "fuelLabel": "Carburant",
+      "perDriverProfitability": "Rentabilité par chauffeur",
+      "workHoursOptimization": "Heures de travail",
+      "operationalCosts": "Coûts opérationnels"
+    },
+    "cases": [
+      {
+        "title": "Entreprise de Location de Camping-Cars",
+        "subtitle": "Optimisation des Frais Aller-Simple",
+        "description": "Ceci est une histoire de succès d'une entreprise de location de camping-cars, où nous avons réussi à optimiser le processus de gestion de flotte et par conséquent améliorer leurs résultats opérationnels.",
+        "stats": [
+          { "value": "Plus élevée", "label": "Rentabilité" },
+          { "value": "Réduction", "label": "Coûts logistiques" },
+          { "value": "Amélioration", "label": "Taux d'occupation" }
+        ],
+        "tags": ["Analyse de données", "Machine Learning", "Python"]
+      },
+      {
+        "title": "Transporteur de Livraison Last-Mile",
+        "subtitle": "Planification d'Itinéraires",
+        "description": "Une autre histoire de succès avec un transporteur spécialisé dans la livraison last-mile, où nous avons aidé à résoudre un défi opérationnel très spécifique.",
+        "stats": [
+          { "value": "Réduction", "label": "Temps de livraison" },
+          { "value": "Économies", "label": "Carburant" },
+          { "value": "Augmentation", "label": "Satisfaction client" }
+        ],
+        "tags": ["Optimisation", "Géoréférencement", "Python"]
+      },
+      {
+        "title": "Entreprise de VTC",
+        "subtitle": "Tableau de Bord de Rentabilité",
+        "description": "L'histoire de comment nous avons aidé une entreprise de VTC à résoudre un défi critique lié à la visibilité de la rentabilité.",
+        "stats": [
+          { "value": "Augmentation", "label": "Rentabilité par chauffeur" },
+          { "value": "Optimisation", "label": "Heures de travail" },
+          { "value": "Réduction", "label": "Coûts opérationnels" }
+        ],
+        "tags": ["Contrôle de Gestion", "Comptabilité Analytique", "PowerBI"]
+      }
+    ]
+  },
+  "TechMaturity": {
+    "badge": "NOTRE MÉTHODOLOGIE",
+    "title": "Maturité Technologique",
+    "subtitle": "De la collecte de données à l'automatisation : notre chemin vers l'innovation et la transformation numérique.",
+    "phase": "Phase",
+    "of": "sur",
+    "stages": [
+      {
+        "title": "Données",
+        "subtitle": "Sources, Collecte et Stockage",
+        "description": "Dans cette phase, nous nous concentrons sur l'identification et l'organisation des Sources de Données pertinentes pour l'entreprise. Celles-ci peuvent inclure des données opérationnelles, financières, clients, entre autres.",
+        "features": [
+          "Cartographie des sources de données",
+          "Intégration de systèmes",
+          "Infrastructure de stockage",
+          "Assurance de la qualité des données"
+        ]
+      },
+      {
+        "title": "Recherche",
+        "subtitle": "Analytics et Statistiques Descriptives",
+        "description": "À partir de cette étape, nous commençons à explorer les données que nous avons collectées. Grâce à l'Analytics et aux Statistiques Descriptives, nous découvrons des modèles et tendances, nous aidant à identifier les domaines d'amélioration et d'optimisation au sein de l'opération.",
+        "features": [
+          "Analyse exploratoire des données",
+          "Visualisation avancée",
+          "Détection de modèles et corrélations",
+          "Rapports interactifs"
+        ]
+      },
+      {
+        "title": "Automatisation",
+        "subtitle": "Intelligence Artificielle et Algorithmes",
+        "description": "Grâce à l'Intelligence Artificielle, aux Algorithmes et à l'Optimisation, nous assurons des résultats maximaux avec des ressources minimales, garantissant l'efficacité opérationnelle et de meilleurs résultats pour nos clients.",
+        "features": [
+          "Algorithmes de machine learning",
+          "Systèmes de décision automatisés",
+          "Optimisation continue",
+          "Intégration avec les systèmes existants"
+        ]
+      }
+    ]
+  },
+  "MissionValues": {
+    "badge": "NOTRE IDENTITÉ",
+    "title": "Les Piliers qui Nous Définissent",
+    "subtitle": "Nous construisons notre identité sur trois piliers fondamentaux qui guident toutes nos actions et décisions.",
+    "pillars": [
+      {
+        "title": "100% Européen",
+        "description": "Une entreprise portugaise, avec l'ADN portugais, axée sur le marché européen et les besoins spécifiques des entreprises européennes.",
+        "features": [
+          "Connaissance approfondie du marché européen",
+          "Support technique en plusieurs langues européennes",
+          "Proximité avec le client"
+        ]
+      },
+      {
+        "title": "Agilité",
+        "description": "Nous nous adaptons rapidement aux changements du marché et aux besoins spécifiques de chaque client.",
+        "features": [
+          "Méthodologies agiles",
+          "Réponses rapides",
+          "Solutions personnalisées"
+        ]
+      },
+      {
+        "title": "Engagement envers les Résultats",
+        "description": "Le succès de nos clients est notre succès. Nous nous concentrons sur la livraison de valeur réelle et mesurable.",
+        "features": [
+          "Objectifs mesurables",
+          "Résultats prouvés",
+          "Partenariat à long terme"
+        ]
+      }
+    ]
+  },
+  "Recruitment": {
+    "badge": "REJOIGNEZ-NOUS",
+    "title": "Vous voulez travailler avec nous ?",
+    "subtitle": "Nous recherchons des talents passionnés par les données et l'analyse qui veulent faire partie d'une équipe innovante.",
+    "sendCV": "Envoyez-nous votre CV",
+    "cultureTitle": "Une culture d'excellence",
+    "cultureDescription": "Nous valorisons la créativité, la collaboration et l'apprentissage continu dans toutes nos équipes.",
+    "benefits": [
+      {
+        "title": "Environnement Innovant",
+        "description": "Travaillez avec les dernières technologies en science des données et machine learning."
+      },
+      {
+        "title": "Développement Continu",
+        "description": "Nous offrons une formation constante et des opportunités d'apprentissage pour votre évolution."
+      },
+      {
+        "title": "Projets Défis",
+        "description": "Participez à des projets défis avec un impact réel dans diverses industries."
+      },
+      {
+        "title": "Équipe Exceptionnelle",
+        "description": "Rejoignez un groupe diversifié de professionnels talentueux et passionnés."
+      }
+    ]
+  },
+  "Technologies": {
+    "badge": "NOS OUTILS",
+    "title": "Les technologies qui nous permettent de livrer des résultats exceptionnels",
+    "subtitle": "Technologies de pointe pour des résultats exceptionnels.",
+    "features": {
+      "secure": {
+        "title": "Solutions Sécurisées",
+        "description": "Nous garantissons le plus haut niveau de sécurité pour vos données et applications."
+      },
+      "performance": {
+        "title": "Haute Performance",
+        "description": "Technologies optimisées pour assurer vitesse et efficacité dans les analyses."
+      },
+      "scalability": {
+        "title": "Évolutivité",
+        "description": "Solutions qui grandissent avec votre entreprise, s'adaptant à vos besoins."
+      }
+    }
+  },
+  "CallToAction": {
+    "title": "Donnez du pouvoir à votre entreprise aujourd'hui",
+    "subtitle": "Planifiez une consultation de diagnostic pour découvrir comment nos services de science des données peuvent transformer votre entreprise",
+    "buttonText": "Réserver une consultation gratuite"
+  },
+  "Footer": {
+    "description": "Nous transformons les données en décisions stratégiques, donnant à nos clients les moyens d'opérer avec une efficacité maximale.",
+    "company": "Entreprise",
+    "services": "Services",
+    "servicesList": [
+      "Modèles Prédictifs",
+      "IA Générative",
+      "Tableaux de Bord Analytiques",
+      "Optimisation",
+      "Fixation de Prix",
+      "Planification"
+    ],
+    "contact": "Contact",
+    "allRightsReserved": "Tous droits réservés.",
+    "fundedBy": "Cofinancé par :",
+    "links": {
+      "aboutUs": "À propos de nous",
+      "services": "Services",
+      "successCases": "Cas de Succès",
+      "blog": "Blog",
+      "careers": "Carrières",
+      "privacyPolicy": "Politique de Confidentialité",
+      "termsOfUse": "Conditions d'Utilisation"
+    }
+  },
+  "Blog": {
+    "title": "Blog | Datawise",
+    "description": "Articles, guides et actualités sur la science des données, le machine learning et les cas de succès de Datawise.",
+    "ogDescription": "Insights et connaissances sur la science des données et l'intelligence artificielle",
+    "featured": "EN VEDETTE",
+    "readFullArticle": "Lire l'article complet",
+    "readMore": "Lire plus",
+    "noResults": "Aucun résultat trouvé",
+    "noResultsDescription": "Nous n'avons trouvé aucun article correspondant à vos critères de recherche.",
+    "clearFilters": "Effacer les filtres",
+    "backToBlog": "Retour au blog",
+    "readingTime": "temps de lecture",
+    "share": "Partager :",
+    "contactUs": "Contactez-nous",
+    "ctaTitle": "Besoin d'optimiser vos opérations ?",
+    "ctaDescription": "Planifiez un diagnostic gratuit avec notre équipe d'experts."
+  },
+  "Privacy": {
+    "title": "Politique de Confidentialité | Datawise",
+    "description": "Apprenez-en plus sur notre politique de confidentialité et la protection des données personnelles.",
+    "headerTitle": "Politique de Confidentialité et Protection des Données",
+    "headerSubtitle": "Transparence et sécurité dans le traitement de vos données",
+    "lastUpdated": "Dernière mise à jour"
+  },
+  "TermsOfUse": {
+    "title": "Conditions d'Utilisation | Datawise",
+    "description": "Apprenez-en plus sur nos conditions d'utilisation pour le site web et les services Datawise.",
+    "headerTitle": "Conditions d'Utilisation",
+    "headerSubtitle": "Conditions générales d'utilisation pour le site web et les services Datawise",
+    "lastUpdated": "Dernière mise à jour"
+  }
+} 
