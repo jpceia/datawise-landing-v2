@@ -3,6 +3,7 @@ import React from 'react';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { BlogPost } from '@/types/sanity';
 import { getFullPostBySlug, getAllPostSlugs, getPosts } from '@/lib/sanity/client';
 import PortableTextContent from '@/components/ui/PortableTextContent';
@@ -16,6 +17,8 @@ interface BlogPostPageProps {
 }
 
 const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost }) => {
+  const t = useTranslations('Blog');
+  
   // Handle case when post is not found
   if (!post) {
     return <div>Artigo não encontrado</div>;
@@ -85,7 +88,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                       </svg>
-                      Voltar ao blog
+                      {t('backToBlog')}
                     </Link>
                   </div>
                 </div>
@@ -234,7 +237,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 // Get static props for individual blog post
-export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({ params, locale   }) => {
+  const messages = (await import(`@/messages/${locale || 'pt'}.json`)).default;
   try {
     const slug = params?.slug as string;
     const post = await getFullPostBySlug(slug);
@@ -271,6 +275,7 @@ export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({ params
         post,
         nextPost,
         prevPost,
+        messages
       },
       // Revalidate every hour
       revalidate: 3600,

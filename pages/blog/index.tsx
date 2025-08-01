@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { BlogEntry } from '@/types/sanity';
 import { getPosts } from '@/lib/sanity/client';
 
@@ -12,6 +13,8 @@ interface BlogIndexProps {
 
 // Component for the featured post
 const FeaturedPostCard = ({ post }: { post: BlogEntry }) => {
+  const t = useTranslations('Blog');
+  
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('pt-PT', {
@@ -40,7 +43,7 @@ const FeaturedPostCard = ({ post }: { post: BlogEntry }) => {
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent md:bg-gradient-to-t"></div>
               <div className="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold">
-                EM DESTAQUE
+                {t('featured')}
               </div>
             </div>
           </div>
@@ -69,7 +72,7 @@ const FeaturedPostCard = ({ post }: { post: BlogEntry }) => {
             </h2>
             <p className="text-gray-600 mb-6">{post.excerpt}</p>
             <div className="inline-flex items-center text-primary font-medium group-hover:underline">
-              Ler artigo completo
+              {t('readFullArticle')}
               <svg
                 className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"
                 fill="none"
@@ -88,6 +91,8 @@ const FeaturedPostCard = ({ post }: { post: BlogEntry }) => {
 
 // Component for grid posts
 const PostCard = ({ post }: { post: BlogEntry }) => {
+  const t = useTranslations('Blog');
+
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('pt-PT', {
@@ -141,7 +146,7 @@ const PostCard = ({ post }: { post: BlogEntry }) => {
           </h3>
           <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
           <div className="inline-flex items-center text-primary font-medium group-hover:underline">
-            Ler mais
+            {t('readMore')}
             <svg
               className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1"
               fill="none"
@@ -159,6 +164,7 @@ const PostCard = ({ post }: { post: BlogEntry }) => {
 
 // Component for when no results are found
 const NoResults = () => {
+  const t = useTranslations('Blog');
   return (
     <div className="text-center py-12">
       <div className="inline-block p-6 rounded-full bg-gray-100 mb-6">
@@ -171,14 +177,16 @@ const NoResults = () => {
           ></path>
         </svg>
       </div>
-      <h2 className="text-2xl font-bold text-gray-700 mb-2">Nenhum resultado encontrado</h2>
-      <p className="text-gray-600 mb-6">Não encontrámos nenhum artigo que corresponda aos seus critérios de pesquisa.</p>
+      <h2 className="text-2xl font-bold text-gray-700 mb-2">{t('noResults')}</h2>
+      <p className="text-gray-600 mb-6">{t('noResultsDescription')}</p>
       <p className="text-gray-600">Tente novamente mais tarde.</p>
     </div>
   );
 };
 
 const BlogIndex: NextPage<BlogIndexProps> = ({ posts }) => {
+  const t = useTranslations('Blog');
+  
   // Separating the featured post (most recent) from the remaining posts
   const featuredPost = posts[0];
   const remainingPosts = posts.slice(1);
@@ -225,13 +233,15 @@ const BlogIndex: NextPage<BlogIndexProps> = ({ posts }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps<BlogIndexProps> = async () => {
+export const getStaticProps: GetStaticProps<BlogIndexProps> = async ({ locale }) => {
+  const messages = (await import(`@/messages/${locale || 'pt'}.json`)).default;
   try {
     const posts = await getPosts();
 
     return {
       props: {
         posts,
+        messages
       },
       // Revalidate every hour
       revalidate: 3600,
@@ -241,6 +251,7 @@ export const getStaticProps: GetStaticProps<BlogIndexProps> = async () => {
     return {
       props: {
         posts: [],
+        messages
       },
       revalidate: 3600,
     };
