@@ -292,7 +292,8 @@
       "share": "Share:",
       "contactUs": "Contact us",
       "ctaTitle": "Need to optimize your operations?",
-      "ctaDescription": "Schedule a free diagnostic with our team of experts."
+      "ctaDescription": "Schedule a free diagnostic with our team of experts.",
+      "articleNotFound": "Article not found"
     },
     "Privacy": {
       "title": "Privacy Policy | Datawise",

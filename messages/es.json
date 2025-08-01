@@ -292,7 +292,8 @@
     "share": "Compartir:",
     "contactUs": "Contáctanos",
     "ctaTitle": "¿Necesitas optimizar tus operaciones?",
-    "ctaDescription": "Reserva un diagnóstico gratuito con nuestro equipo de expertos."
+    "ctaDescription": "Reserva un diagnóstico gratuito con nuestro equipo de expertos.",
+    "articleNotFound": "Artículo no encontrado"
   },
   "Privacy": {
     "title": "Política de Privacidad | Datawise",
