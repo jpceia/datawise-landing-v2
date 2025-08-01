@@ -11,6 +11,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   // Força o idioma para português
   const locale = 'pt';
   
+  // Verifica se está em desenvolvimento
+  const isDevelopment = process.env.NODE_ENV === 'development';
+  console.log("Is development: ", isDevelopment);
+  
   return (
     <NextIntlClientProvider
       locale={locale}
@@ -21,8 +25,13 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Navbar />
       <Component {...pageProps} />
       <Footer />
-      <GoogleAnalytics gaId="G-6FHQECXHNX" />
-      <GoogleTagManager gtmId="GTM-KP2R8PR" />
+      {/* Google Analytics e Tag Manager apenas em produção */}
+      {!isDevelopment && (
+        <>
+          <GoogleAnalytics gaId="G-6FHQECXHNX" />
+          <GoogleTagManager gtmId="GTM-KP2R8PR" />
+        </>
+      )}
       <Analytics />
     </NextIntlClientProvider>
   );
