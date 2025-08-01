@@ -307,5 +307,15 @@
       "headerTitle": "Terms of Use",
       "headerSubtitle": "General conditions of use for the Datawise website and services",
       "lastUpdated": "Last updated"
+    },
+    "Error404": {
+      "title": "404 - Page not found | DATAWISE",
+      "description": "The page you are looking for was not found. Return to the Datawise homepage.",
+      "ogTitle": "404 - Page not found | DATAWISE",
+      "ogDescription": "The page you are looking for was not found. Return to the Datawise homepage.",
+      "pageTitle": "Oops! Page not found",
+      "pageDescription": "The page you are looking for doesn't exist or has been moved. Don't worry, we're here to help you find what you need.",
+      "backButton": "← Go back",
+      "homeButton": "Go to homepage"
     }
   }

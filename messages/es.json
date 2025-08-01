@@ -307,5 +307,15 @@
     "headerTitle": "Términos de Uso",
     "headerSubtitle": "Condiciones generales de uso para el sitio web y servicios de Datawise",
     "lastUpdated": "Última actualización"
+  },
+  "Error404": {
+    "title": "404 - Página no encontrada | DATAWISE",
+    "description": "La página que buscas no fue encontrada. Regresa a la página principal de Datawise.",
+    "ogTitle": "404 - Página no encontrada | DATAWISE",
+    "ogDescription": "La página que buscas no fue encontrada. Regresa a la página principal de Datawise.",
+    "pageTitle": "¡Ups! Página no encontrada",
+    "pageDescription": "La página que buscas no existe o ha sido movida. No te preocupes, estamos aquí para ayudarte a encontrar lo que necesitas.",
+    "backButton": "← Volver atrás",
+    "homeButton": "Ir a la página principal"
   }
 } 
