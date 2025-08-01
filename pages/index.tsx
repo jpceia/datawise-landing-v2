@@ -57,7 +57,7 @@ const Home: NextPage<HomeProps> = () => {
 export const getStaticProps: GetStaticProps<HomeProps> = async ({ locale }) => {
   return {
     props: {
-      messages: (await import(`@/messages/${locale || 'pt'}.json`)).default
+      messages: (await import(`@/messages/${locale}.json`)).default
     }
   };
 };
