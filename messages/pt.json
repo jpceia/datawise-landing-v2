@@ -5,6 +5,9 @@
     "ogTitle": "Datawise | Consultoria em Ciência de Dados",
     "ogDescription": "Transformamos dados em decisões estratégicas para o seu negócio"
   },
+  "TopBanner": {
+    "message": "Apenas 5 vagas restantes → reserve a sua este mês!"
+  },
   "Navbar": {
     "aboutUs": "Sobre Nós",
     "services": "Serviços",
@@ -12,7 +15,7 @@
     "contactUs": "Contacte-nos"
   },
   "Hero": {
-    "title": "Parceiros estratégicos para a sua empresa em IA",
+    "title": "Parceiros estratégicos em IA para a sua empresa",
     "subtitle": "Combinamos <span class=\"text-blue-600 font-semibold\">inteligência artificial</span> e <span class=\"text-blue-600 font-semibold\">conhecimento de negócio</span> para transformar os dados e processos da sua empresa em motores de crescimento.",
     "ctaSchedule": "Agende um Diagnóstico Gratuito",
     "ctaServices": "Conheça os Nossos Serviços",
