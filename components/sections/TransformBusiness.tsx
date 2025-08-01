@@ -1,8 +1,11 @@
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import CalendlyPopupButton from '@/components/ui/CalendlyPopupButton';
 
 const TransformBusiness = () => {
+  const t = useTranslations('TransformBusiness');
+
   return (
     <section id="about" className="py-24 bg-gradient-to-r from-primary-dark to-primary text-white overflow-hidden relative">
       {/* Elementos decorativos */}
@@ -17,10 +20,10 @@ const TransformBusiness = () => {
       </div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
-          <div className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4">PROPOSTA DE VALOR</div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Transforme o Seu Negócio</h2>
+          <div className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4">{t('badge')}</div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">{t('title')}</h2>
           <p className="text-xl max-w-3xl mx-auto">
-            Descubra como as nossas soluções personalizadas podem impulsionar a eficiência e a rentabilidade do seu negócio.
+            {t('subtitle')}
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -39,10 +42,9 @@ const TransformBusiness = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Aumente a Produtividade</h3>
+                  <h3 className="text-xl font-bold mb-2">{t('productivity.title')}</h3>
                   <p>
-                    Automatize processos e reduza o tempo dedicado a tarefas repetitivas, permitindo que a sua equipa se concentre no que
-                    realmente importa.
+                    {t('productivity.description')}
                   </p>
                 </div>
               </div>
@@ -66,9 +68,9 @@ const TransformBusiness = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Otimize Decisões</h3>
+                  <h3 className="text-xl font-bold mb-2">{t('decisions.title')}</h3>
                   <p>
-                    Transforme dados em insights acionáveis que permitem tomar decisões mais inteligentes e estratégicas para o seu negócio.
+                    {t('decisions.description')}
                   </p>
                 </div>
               </div>
@@ -92,17 +94,16 @@ const TransformBusiness = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Reduza Custos</h3>
+                  <h3 className="text-xl font-bold mb-2">{t('costs.title')}</h3>
                   <p>
-                    Identifique áreas de otimização e elimine desperdícios, aumentando a eficiência operacional e maximizando o retorno
-                    sobre o investimento.
+                    {t('costs.description')}
                   </p>
                 </div>
               </div>
             </div>
             <div className="text-center mt-4">
               <CalendlyPopupButton className="inline-flex items-center justify-center px-6 py-3 bg-white text-primary rounded-lg font-medium hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg">
-                Agende uma reunião
+                {t('scheduleMeeting')}
               </CalendlyPopupButton>
             </div>
           </div>

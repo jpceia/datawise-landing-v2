@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import ContactData from '../../lib/data/ContactData';
@@ -14,26 +15,28 @@ interface FooterSection {
 }
 
 const Footer: React.FC = () => {
+  const t = useTranslations('Footer');
+  
   // Obter o ano atual dinamicamente
   const currentYear = new Date().getFullYear();
 
   // Links da empresa modificados para apontar para secções internas
   const companyLinks: FooterLink[] = [
-    { href: '/#about', label: 'Sobre nós' },
-    { href: '/#services', label: 'Serviços' },
-    { href: '/#success-cases', label: 'Casos de Sucesso' },
-    { href: '/blog', label: 'Blog' }, // Mantém-se externo
-    { href: '/#careers', label: 'Carreiras' },
+    { href: '/#about', label: t('links.aboutUs') },
+    { href: '/#services', label: t('links.services') },
+    { href: '/#success-cases', label: t('links.successCases') },
+    { href: '/blog', label: t('links.blog') }, // Mantém-se externo
+    { href: '/#careers', label: t('links.careers') },
   ];
 
   // Links de serviços atualizados com base nos serviços exibidos na secção Services.tsx
   const serviceLinks: FooterLink[] = [
-    { href: '/#services', label: 'Modelos Preditivos' },
-    { href: '/#services', label: 'IA Generativa' },
-    { href: '/#services', label: 'Dashboards Analíticos' },
-    { href: '/#services', label: 'Otimização' },
-    { href: '/#services', label: 'Definição de Preços' },
-    { href: '/#services', label: 'Planeamento' },
+    { href: '/#services', label: t('servicesList.0') },
+    { href: '/#services', label: t('servicesList.1') },
+    { href: '/#services', label: t('servicesList.2') },
+    { href: '/#services', label: t('servicesList.3') },
+    { href: '/#services', label: t('servicesList.4') },
+    { href: '/#services', label: t('servicesList.5') },
   ];
 
   return (
@@ -63,7 +66,7 @@ const Footer: React.FC = () => {
               </Link>
             </div>
             <p className="text-white/90 mb-6">
-              Transformamos dados em decisões estratégicas, capacitando nossos clientes a operar com máxima eficiência.
+              {t('description')}
             </p>
             <div className="flex space-x-4">
               <a href={ContactData.social.facebook} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white">
@@ -89,7 +92,7 @@ const Footer: React.FC = () => {
 
           {/* Links rápidos - Aqui atualizamos os hrefs */}
           <div className="md:col-span-2">
-            <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-4">Empresa</h3>
+            <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-4">{t('company')}</h3>
             <ul className="space-y-3">
               {companyLinks.map((link, index) => (
                 <li key={index}>
@@ -103,7 +106,7 @@ const Footer: React.FC = () => {
 
           {/* Serviços - Aqui atualizamos os hrefs */}
           <div className="md:col-span-2">
-            <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-4">Serviços</h3>
+            <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-4">{t('services')}</h3>
             <ul className="space-y-3">
               {serviceLinks.map((link, index) => (
                 <li key={index}>
@@ -117,7 +120,7 @@ const Footer: React.FC = () => {
 
           {/* Contacto */}
           <div className="md:col-span-4">
-            <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-4">Contacto</h3>
+            <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-4">{t('contact')}</h3>
             <p className="text-white/70 mb-3">
               {ContactData.general.addressLine1}
               <br />
@@ -141,13 +144,13 @@ const Footer: React.FC = () => {
       <div className="border-t border-white/10 py-6 relative z-10">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="text-white/70 text-sm mb-4 md:mb-0">© {currentYear} Datawise. Todos os direitos reservados.</div>
+            <div className="text-white/70 text-sm mb-4 md:mb-0">© {currentYear} Datawise. {t('allRightsReserved')}</div>
             <div className="flex space-x-6">
               <Link href="/privacy" className="text-white/70 hover:text-white text-sm transition-colors">
-                Política de Privacidade
+                {t('links.privacyPolicy')}
               </Link>
               <Link href="/termsofuse" className="text-white/70 hover:text-white text-sm transition-colors">
-                Termos de Utilização
+                {t('links.termsOfUse')}
               </Link>
             </div>
           </div>
@@ -158,7 +161,7 @@ const Footer: React.FC = () => {
       <div className="bg-primary-dark py-4 relative z-10">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center">
-            <p className="text-white/70 text-sm mr-4">Cofinanciado por:</p>
+            <p className="text-white/70 text-sm mr-4">{t('fundedBy')}</p>
             <img src="/cofinanciamento.png" alt="Cofinanciamento" className="h-10 object-contain" />
           </div>
         </div>

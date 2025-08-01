@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import Globe3D from '@/components/ui/Globe3D';
 import CalendlyPopupButton from '@/components/ui/CalendlyPopupButton';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 const Hero: React.FC = () => {
+  const t = useTranslations('Hero');
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {
@@ -30,9 +32,9 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-5xl lg:text-6xl mt-10 lg:mt-0 font-bold text-gray-800 mb-6"
+            className="text-5xl lg:text-5xl mt-10 lg:mt-0 font-bold text-gray-800 mb-6"
           >
-            Potencie os dados da sua empresa
+            {t('title')}
           </motion.h1>
 
           <motion.p
@@ -40,10 +42,8 @@ const Hero: React.FC = () => {
             animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : -20 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-xl md:text-2xl text-gray-600 mb-10"
-          >
-            Transformamos dados em <span className="text-blue-600 font-semibold">insights valiosos</span> para impulsionar o seu negócio
-            rumo a novos patamares de eficiência e rentabilidade.
-          </motion.p>
+            dangerouslySetInnerHTML={{ __html: t('subtitle') }}
+          />
 
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -52,13 +52,13 @@ const Hero: React.FC = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
           >
             <CalendlyPopupButton className="px-8 py-4 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-blue-500/30">
-              Agende um Diagnóstico Gratuito
+              {t('ctaSchedule')}
             </CalendlyPopupButton>
             <Link
               href="#services"
               className="px-8 py-4 bg-transparent border border-blue-600 text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition-all transform hover:scale-105"
             >
-              Conheça os Nossos Serviços
+              {t('ctaServices')}
             </Link>
           </motion.div>
 
@@ -104,7 +104,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 1.2 }}
           className="flex flex-col items-center"
         >
-          <span className="text-gray-500 text-sm mb-2">Scroll para explorar</span>
+          <span className="text-gray-500 text-sm mb-2">{t('scrollToExplore')}</span>
           <div className="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center p-1">
             <motion.div
               animate={{ y: [0, 12, 0] }}

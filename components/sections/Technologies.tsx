@@ -1,7 +1,10 @@
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 const Technologies = () => {
+  const t = useTranslations('Technologies');
+
   const technologies = [
     { 
       id: 1, 
@@ -58,13 +61,13 @@ const Technologies = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4">
-            AS NOSSAS FERRAMENTAS
+            {t('badge')}
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-            As tecnologias que nos permitem entregar resultados excecionais
+            {t('title')}
           </h2>
           <p className="text-lg text-white/80">
-            Utilizamos as mais avançadas ferramentas e plataformas para desenvolver soluções de classe mundial.
+            {t('subtitle')}
           </p>
         </div>
         
@@ -101,8 +104,8 @@ const Technologies = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">Soluções Seguras</h3>
-                <p className="text-gray-600">Garantimos o mais alto nível de segurança para os seus dados e aplicações.</p>
+                <h3 className="text-lg font-bold text-gray-800 mb-2">{t('features.secure.title')}</h3>
+                <p className="text-gray-600">{t('features.secure.description')}</p>
               </div>
               
               <div className="text-center">
@@ -111,8 +114,8 @@ const Technologies = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">Alta Performance</h3>
-                <p className="text-gray-600">Tecnologias otimizadas para garantir velocidade e eficiência nas análises.</p>
+                <h3 className="text-lg font-bold text-gray-800 mb-2">{t('features.performance.title')}</h3>
+                <p className="text-gray-600">{t('features.performance.description')}</p>
               </div>
               
               <div className="text-center">
@@ -121,8 +124,8 @@ const Technologies = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">Escalabilidade</h3>
-                <p className="text-gray-600">Soluções que crescem com o seu negócio, adaptando-se às suas necessidades.</p>
+                <h3 className="text-lg font-bold text-gray-800 mb-2">{t('features.scalability.title')}</h3>
+                <p className="text-gray-600">{t('features.scalability.description')}</p>
               </div>
             </div>
           </div>

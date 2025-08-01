@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import CalendlyPopupButton from '@/components/ui/CalendlyPopupButton';
 
 interface CallToActionProps {
@@ -6,6 +7,7 @@ interface CallToActionProps {
 }
 
 const CallToAction: React.FC<CallToActionProps> = ({ variant = 'light' }) => {
+  const t = useTranslations('CallToAction');
   const isDark = variant === 'dark';
 
   return (
@@ -42,12 +44,14 @@ const CallToAction: React.FC<CallToActionProps> = ({ variant = 'light' }) => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-800'}`}>
-            Potencialize o seu negócio hoje mesmo
+            {t('title')}
           </h2>
           <p className={`text-xl mb-8 ${isDark ? 'text-white/80' : 'text-gray-600'}`}>
-            Agende uma consulta de diagnóstico para descobrir como os nossos serviços de ciência de dados podem transformar a sua empresa
+            {t('subtitle')}
           </p>
-          <CalendlyPopupButton />
+          <CalendlyPopupButton className="px-8 py-4 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-blue-500/30">
+            {t('buttonText')}
+          </CalendlyPopupButton>
         </div>
       </div>
     </section>

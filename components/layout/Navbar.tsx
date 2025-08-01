@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -6,6 +7,7 @@ import { NavItem } from '../../types';
 import CalendlyPopupButton from '../ui/CalendlyPopupButton';
 
 const Navbar: React.FC = () => {
+  const t = useTranslations('Navbar');
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [visible, setVisible] = useState<boolean>(true);
@@ -57,9 +59,9 @@ const Navbar: React.FC = () => {
   const navItems: NavItem[] = [
     // { href: '#hero', label: 'Início' },
 
-    { href: '/#about', label: 'Sobre Nós' },
-    { href: '/#services', label: 'Serviços' },
-    { href: '/#success-cases', label: 'Casos de Sucesso' },
+    { href: '/#about', label: t('aboutUs') },
+    { href: '/#services', label: t('services') },
+    { href: '/#success-cases', label: t('successCases') },
     // { href: '#technologies', label: 'Tecnologias' },
     // { href: '#methodology', label: 'Metodologia' },
     // { href: '#values', label: 'Valores' },
@@ -105,7 +107,7 @@ const Navbar: React.FC = () => {
               </Link>
             ))}
             <CalendlyPopupButton className="ml-4 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-md font-medium transition-all transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 active:scale-95">
-              Contacte-nos
+              {t('contactUs')}
             </CalendlyPopupButton>
           </div>
 
@@ -153,7 +155,7 @@ const Navbar: React.FC = () => {
               ))}
               <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} exit={{ x: -20, opacity: 0 }}>
                 <CalendlyPopupButton className="block w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-3 rounded-md font-medium text-center transition-colors">
-                  Contacte-nos
+                  {t('contactUs')}
                 </CalendlyPopupButton>
               </motion.div>
             </div>

@@ -1,52 +1,42 @@
 import React, { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const SuccessCases = () => {
+  const t = useTranslations('SuccessCases');
   const [activeCase, setActiveCase] = useState(0);
 
   const cases = [
     {
       id: 1,
-      title: 'Empresa de Aluguer de Auto-Caravanas',
-      subtitle: 'Otimização de One-Way Fees',
+      title: t('cases.0.title'),
+      subtitle: t('cases.0.subtitle'),
       imageUrl: 'https://cdn.sanity.io/images/if94fhok/production/0fc7372f09f4ee34775156ca935a9e8c9d71cb64-1000x667.jpg',
-      stats: [
-        { value: 'Maior', label: 'Rentabilidade' },
-        { value: 'Redução', label: 'Custos logísticos' },
-        { value: 'Melhoria', label: 'Taxa de ocupação' },
-      ],
-      description: 'Este é um exemplo de sucesso de uma empresa de aluguer de auto-caravanas, onde conseguimos otimizar o processo de gestão de frota e, consequentemente, melhorar os seus resultados operacionais.',
+      stats: t.raw('cases.0.stats'),
+      description: t('cases.0.description'),
       link: '/blog/auto-caravanas',
-      tags: ['Análise de dados', 'Machine Learning', 'Python']
+      tags: t.raw('cases.0.tags')
     },
     {
       id: 2,
-      title: 'Transportadora Last-Mile Delivery',
-      subtitle: 'Planeamento de Rotas',
+      title: t('cases.1.title'),
+      subtitle: t('cases.1.subtitle'),
       imageUrl: 'https://cdn.sanity.io/images/if94fhok/production/8d4ecf73e960d00bc8579feae4ba7a01032a6b88-1000x667.jpg',
-      stats: [
-        { value: 'Redução', label: 'Tempo de entrega' },
-        { value: 'Economia', label: 'Combustível' },
-        { value: 'Aumento', label: 'Satisfação do cliente' },
-      ],
-      description: 'Mais um caso de sucesso com uma transportadora especializada em last-mile delivery, onde ajudámos a resolver um desafio operacional bastante específico.',
+      stats: t.raw('cases.1.stats'),
+      description: t('cases.1.description'),
       link: '/blog/last-mile',
-      tags: ['Otimização', 'Georreferenciação', 'Python']
+      tags: t.raw('cases.1.tags')
     },
     {
       id: 3,
-      title: 'Empresa TVDE',
-      subtitle: 'Dashboard de Rentabilidade',
+      title: t('cases.2.title'),
+      subtitle: t('cases.2.subtitle'),
       imageUrl: 'https://cdn.sanity.io/images/if94fhok/production/e8107648ebf85e8665e2681f6add20c149373d63-1000x667.jpg',
-      stats: [
-        { value: 'Aumento', label: 'Rentabilidade por motorista' },
-        { value: 'Otimização', label: 'Horas de trabalho' },
-        { value: 'Redução', label: 'Custos operacionais' },
-      ],
-      description: 'A história de como auxiliámos uma empresa de TVDE a resolver um desafio crítico relacionado com a visibilidade da rentabilidade.',
+      stats: t.raw('cases.2.stats'),
+      description: t('cases.2.description'),
       link: '/blog/tvde',
-      tags: ['Controlo de Gestão', 'Contabilidade Analítica', 'PowerBI']
+      tags: t.raw('cases.2.tags')
     },
   ];
 
@@ -62,11 +52,11 @@ const SuccessCases = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4">
-            RESULTADOS REAIS
+            {t('badge')}
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Casos de Sucesso</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('title')}</h2>
           <p className="text-lg opacity-80">
-            Transformações reais de negócios através de parcerias bem-sucedidas com a nossa equipa.
+            {t('subtitle')}
           </p>
         </div>
 
@@ -92,7 +82,7 @@ const SuccessCases = () => {
               <p className="text-white/70 mb-8">{cases[activeCase].description}</p>
               
               <div className="grid grid-cols-3 gap-4 mb-8">
-                {cases[activeCase].stats.map((stat, index) => (
+                {cases[activeCase].stats.map((stat: any, index: number) => (
                   <div key={index} className="bg-white/10 rounded-lg p-4 text-center">
                     <div className="text-2xl font-bold text-primary-light">{stat.value}</div>
                     <div className="text-sm text-white/70">{stat.label}</div>
@@ -104,7 +94,7 @@ const SuccessCases = () => {
                 href={cases[activeCase].link}
                 className="inline-flex items-center text-white bg-primary-light/20 hover:bg-primary-light/30 px-5 py-3 rounded-lg transition-colors"
               >
-                Ler artigo completo
+                {t('readFullArticle')}
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                 </svg>
@@ -127,7 +117,7 @@ const SuccessCases = () => {
               {/* Badges */}
               <div className="absolute bottom-6 left-6 right-6 z-20">
                 <div className="flex flex-wrap gap-3">
-                  {cases[activeCase].tags.map((tag, index) => (
+                  {cases[activeCase].tags.map((tag: string, index: number) => (
                     <span key={index} className="bg-primary-light/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm">{tag}</span>
                   ))}
                 </div>

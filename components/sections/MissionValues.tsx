@@ -1,36 +1,27 @@
 import React from 'react';
+import { useTranslations } from 'next-intl';
 
 const MissionValues = () => {
+  const t = useTranslations('MissionValues');
+
   const pillars = [
     {
       icon: 'M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9',
-      title: '100% Nacional',
-      description: 'Uma empresa portuguesa, com ADN português, focada no mercado nacional e nas necessidades específicas das empresas portuguesas.',
-      features: [
-        'Conhecimento profundo do mercado local',
-        'Suporte técnico em português',
-        'Proximidade com o cliente'
-      ]
+      title: t('pillars.0.title'),
+      description: t('pillars.0.description'),
+      features: t.raw('pillars.0.features')
     },
     {
       icon: 'M13 10V3L4 14h7v7l9-11h-7z',
-      title: 'Agilidade',
-      description: 'Adaptamo-nos rapidamente às mudanças do mercado e às necessidades específicas de cada cliente.',
-      features: [
-        'Metodologias ágeis',
-        'Respostas rápidas',
-        'Soluções personalizadas'
-      ]
+      title: t('pillars.1.title'),
+      description: t('pillars.1.description'),
+      features: t.raw('pillars.1.features')
     },
     {
       icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z',
-      title: 'Compromisso com Resultados',
-      description: 'O sucesso dos nossos clientes é o nosso sucesso. Focamo-nos em entregar valor real e mensurável.',
-      features: [
-        'Objetivos mensuráveis',
-        'Resultados comprovados',
-        'Parceria de longo prazo'
-      ]
+      title: t('pillars.2.title'),
+      description: t('pillars.2.description'),
+      features: t.raw('pillars.2.features')
     }
   ];
 
@@ -47,11 +38,11 @@ const MissionValues = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4">
-            A NOSSA IDENTIDADE
+            {t('badge')}
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Os Pilares que nos Definem</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('title')}</h2>
           <p className="text-lg opacity-80">
-            Construímos a nossa identidade em três pilares fundamentais que orientam todas as nossas ações e decisões.
+            {t('subtitle')}
           </p>
         </div>
         
@@ -72,7 +63,7 @@ const MissionValues = () => {
               </p>
               
               <div className="mt-8 pt-6 border-t border-white/20">
-                {pillar.features.map((feature, featureIndex) => (
+                {pillar.features.map((feature: string, featureIndex: number) => (
                   <div key={featureIndex} className="flex items-center mt-2 first:mt-0">
                     <svg className="w-5 h-5 text-primary-light mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
