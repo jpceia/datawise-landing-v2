@@ -11,12 +11,12 @@ export default function Document() {
         <meta name="msapplication-TileColor" content="#0D47A1" />
         <meta name="theme-color" content="#ffffff" />
 
-        {/* Pré-carregamento de fontes */}
+        {/* Font preloading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-        {/* Metadados globais */}
+        {/* Global metadata */}
         <meta charSet="utf-8" />
         <meta property="og:site_name" content="Datawise" />
       </Head>
