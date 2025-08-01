@@ -12,7 +12,7 @@
     "contactUs": "Contacte-nos"
   },
   "Hero": {
-    "title": "Parceiros para a sua empresa em IA",
+    "title": "Parceiros estratégicos para a sua empresa em IA",
     "subtitle": "Combinamos <span class=\"text-blue-600 font-semibold\">inteligência artificial</span> e <span class=\"text-blue-600 font-semibold\">conhecimento de negócio</span> para transformar os dados e processos da sua empresa em motores de crescimento.",
     "ctaSchedule": "Agende um Diagnóstico Gratuito",
     "ctaServices": "Conheça os Nossos Serviços",
@@ -41,30 +41,30 @@
     "title": "Serviços",
     "subtitle": "Soluções feitas à medida para otimizar as suas operações e impulsionar resultados tangíveis através da ciência de dados e inteligência artificial.",
     "items": [
-      {
-        "title": "Modelos Preditivos",
-        "description": "Desenvolvemos modelos que antecipam tendências e comportamentos, permitindo decisões proativas baseadas em previsões de qualidade."
-      },
-      {
-        "title": "Inteligência Artificial Generativa",
-        "description": "Criamos soluções baseadas em IA generativa para automatizar processos criativos, gerar conteúdo e desenvolver assistentes virtuais personalizados."
-      },
-      {
-        "title": "Dashboards Analíticos",
-        "description": "Desenvolvemos dashboards interativos e personalizados que transformam dados complexos em visualizações intuitivas para tomada de decisões."
-      },
-      {
-        "title": "Otimização",
-        "description": "Utilizamos algoritmos avançados para otimizar recursos, maximizar a eficiência operacional e reduzir custos em toda a cadeia de valor do seu negócio."
-      },
-      {
-        "title": "Definição de Preços",
-        "description": "A partir de algoritmos avançados, auxiliamos as empresas a otimizar as políticas de preços, adaptando-as à procura e maximizando as margens."
-      },
-      {
-        "title": "Planeamento",
-        "description": "O planeamento eficaz é crucial para garantir que todos os recursos – humanos, materiais e financeiros – são utilizados da melhor forma possível."
-      }
+              {
+          "title": "Modelos Preditivos",
+          "description": "Desenvolvemos modelos que antecipam tendências e comportamentos com base em padrões históricos, permitindo decisões proativas: identificação de clientes em risco de abandono, previsão de vendas e manutenção preventiva."
+        },
+              {
+          "title": "Inteligência Competitiva e Monitorização de Media",
+          "description": "Recolha e análise automática de informação sobre concorrentes, tendências de mercado e sentimento público através de monitorização contínua de fontes digitais para decisões mais informadas."
+        },
+              {
+          "title": "Automação de Workflows",
+          "description": "Desenvolvimento de sistemas automatizados que orquestram processos complexos, conectando diferentes departamentos e aplicações para eliminar gargalos e garantir fluxos de trabalho eficientes e sem falhas."
+        },
+              {
+          "title": "Otimização Operacional",
+          "description": "Otimizamos rotas de entrega, planeamento de equipas, calendarização de recursos e distribuição de cargas de trabalho. Soluções inteligentes que encontram a melhor forma de aumentando a eficiência operacional."
+        },
+              {
+          "title": "Classificação Inteligente e Organização de Informação",
+          "description": "Organização automática de documentos, e-mails, CVs ou pedidos, direcionando ou agrupando conforme contexto, tema ou prioridade."
+        },
+              {
+          "title": "Normalização e estruturação",
+          "description": "Padronização de dados e extração automática de informação relevante a partir de documentos em múltiplos formatos e fontes, criando bases de dados consistentes e prontas para análise."
+        }
     ]
   },
   "SuccessCases": {
