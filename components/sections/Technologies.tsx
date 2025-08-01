@@ -38,13 +38,33 @@ const Technologies = () => {
     },
     { 
       id: 7, 
-      name: 'Microsoft Cognitive Services', 
-      logo: '/tech-logos/cognitive.gif'
+      name: 'OpenAI', 
+      logo: '/tech-logos/openai-icon-2021x2048-4rpe5x7n.png'
     },
     { 
       id: 8, 
-      name: 'OpenAI', 
-      logo: '/tech-logos/openai-icon-2021x2048-4rpe5x7n.png'
+      name: 'Databricks', 
+      logo: '/tech-logos/databricks-logo-1.png'
+    },
+    { 
+      id: 9, 
+      name: 'Docker', 
+      logo: '/tech-logos/docker-mark-blue-scaled.webp'
+    },
+    { 
+      id: 10, 
+      name: 'Gemini', 
+      logo: '/tech-logos/gemini-icon-logo-png_seeklogo-611605.png'
+    },
+    { 
+      id: 11, 
+      name: 'PostgreSQL', 
+      logo: '/tech-logos/postgresql.png'
+    },
+    { 
+      id: 12, 
+      name: 'DeepSeek', 
+      logo: '/tech-logos/DeepSeek_logo_icon.png'
     },
   ];
 
@@ -76,7 +96,7 @@ const Technologies = () => {
           {/* Removed gradient overlays */}
           
           <div className="bg-white rounded-2xl py-12 px-8 shadow-lg">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-8">
               {technologies.map((tech) => (
                 <div key={tech.id} className="group transform transition-all hover:scale-110">
                   <div className="h-24 flex items-center justify-center transition-all">

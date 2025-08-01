@@ -204,7 +204,7 @@
         "description": "Oferecemos formação e oportunidades de aprendizagem constantes para a sua evolução."
       },
       {
-        "title": "Projetos Globais",
+        "title": "Projetos Desafiantes",
         "description": "Participa em projetos desafiantes com impacto real em diversas indústrias."
       },
       {
@@ -216,7 +216,7 @@
   "Technologies": {
     "badge": "AS NOSSAS FERRAMENTAS",
     "title": "As tecnologias que nos permitem entregar resultados excecionais",
-    "subtitle": "Utilizamos as mais avançadas ferramentas e plataformas para desenvolver soluções de classe mundial.",
+          "subtitle": "Tecnologias de ponta para resultados excepcionais.",
     "features": {
       "secure": {
         "title": "Soluções Seguras",
