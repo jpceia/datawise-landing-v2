@@ -11,21 +11,21 @@ interface Custom404Props {
 }
 
 const Custom404: NextPage<Custom404Props> = () => {
-  const t = useTranslations();
+  const t = useTranslations('Error404');
   const router = useRouter();
 
   return (
     <>
       <Head>
-        <title>{t('Error404.title')}</title>
+        <title>{t('title')}</title>
         <meta
           name="description"
-          content={t('Error404.description')}
+          content={t('description')}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <meta property="og:title" content={t('Error404.ogTitle')} />
-        <meta property="og:description" content={t('Error404.ogDescription')} />
+        <meta property="og:title" content={t('ogTitle')} />
+        <meta property="og:description" content={t('ogDescription')} />
         <meta property="og:image" content="/images/web-app-manifest-512x512.png" />
         <meta property="og:url" content="https://datawise.pt/404" />
         <meta property="og:type" content="website" />
@@ -43,10 +43,10 @@ const Custom404: NextPage<Custom404Props> = () => {
           {/* Main Content */}
           <div className="mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              {t('Error404.pageTitle')}
+              {t('pageTitle')}
             </h2>
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              {t('Error404.pageDescription')}
+              {t('pageDescription')}
             </p>
           </div>
 
@@ -58,7 +58,7 @@ const Custom404: NextPage<Custom404Props> = () => {
               size="lg"
               className="w-full sm:w-auto"
             >
-              {t('Error404.backButton')}
+              {t('backButton')}
             </Button>
             <Link href="/" passHref>
               <Button
@@ -66,7 +66,7 @@ const Custom404: NextPage<Custom404Props> = () => {
                 size="lg"
                 className="w-full sm:w-auto"
               >
-                {t('Error404.homeButton')}
+                {t('homeButton')}
               </Button>
             </Link>
           </div>
@@ -79,7 +79,7 @@ const Custom404: NextPage<Custom404Props> = () => {
 export const getStaticProps: GetStaticProps<Custom404Props> = async ({ locale }) => {
   return {
     props: {
-      messages: (await import(`@/messages/${locale || 'pt'}.json`)).default
+      messages: (await import(`@/messages/${locale}.json`)).default
     }
   };
 };
