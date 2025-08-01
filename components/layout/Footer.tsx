@@ -17,10 +17,10 @@ interface FooterSection {
 const Footer: React.FC = () => {
   const t = useTranslations('Footer');
   
-  // Obter o ano atual dinamicamente
+  // Get current year dynamically
   const currentYear = new Date().getFullYear();
 
-  // Links da empresa modificados para apontar para secções internas
+  // Company links modified to point to internal sections
   const companyLinks: FooterLink[] = [
     { href: '/#about', label: t('links.aboutUs') },
     { href: '/#services', label: t('links.services') },
@@ -29,24 +29,25 @@ const Footer: React.FC = () => {
     { href: '/#careers', label: t('links.careers') },
   ];
 
-  // Links de serviços atualizados com base nos serviços exibidos na secção Services.tsx
+  // Service links updated based on services displayed in Services.tsx section
+  // Following the same order as the cards: 1, 2, 0, 3, 4, 5
   const serviceLinks: FooterLink[] = [
-    { href: '/#services', label: t('servicesList.0') },
-    { href: '/#services', label: t('servicesList.1') },
-    { href: '/#services', label: t('servicesList.2') },
-    { href: '/#services', label: t('servicesList.3') },
-    { href: '/#services', label: t('servicesList.4') },
-    { href: '/#services', label: t('servicesList.5') },
+    { href: '/#services', label: t('servicesList.1') }, // Competitive Intelligence
+    { href: '/#services', label: t('servicesList.2') }, // Workflow Automation
+    { href: '/#services', label: t('servicesList.0') }, // Predictive Models
+    { href: '/#services', label: t('servicesList.3') }, // Operational Optimization
+    { href: '/#services', label: t('servicesList.4') }, // Intelligent Classification
+    { href: '/#services', label: t('servicesList.5') }, // Data Normalization
   ];
 
   return (
     <footer className="bg-primary text-white relative overflow-hidden">
-      {/* Elementos decorativos (esferas) - permanecem inalterados */}
+      {/* Decorative elements (spheres) - remain unchanged */}
       <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-blue-600/20 -translate-y-1/2 translate-x-1/3"></div>
       <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-blue-400/10 translate-y-1/3 -translate-x-1/4"></div>
       <div className="absolute top-1/4 left-1/4 w-24 h-24 rounded-full bg-blue-400/10"></div>
 
-      {/* Padrão de pontos - permanece inalterado */}
+      {/* Dot pattern - remains unchanged */}
       <div className="absolute inset-0 opacity-5">
         <div
           className="absolute inset-0"
@@ -54,10 +55,10 @@ const Footer: React.FC = () => {
         ></div>
       </div>
 
-      {/* Seção principal do footer */}
+      {/* Main footer section */}
       <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-          {/* Logo e descrição da empresa */}
+          {/* Logo and company description */}
           <div className="md:col-span-4">
             <div className="flex items-center mb-4">
               {/* Logo */}
@@ -90,7 +91,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Links rápidos - Aqui atualizamos os hrefs */}
+          {/* Quick links - Here we update the hrefs */}
           <div className="md:col-span-2">
             <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-4">{t('company')}</h3>
             <ul className="space-y-3">
@@ -104,8 +105,8 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Serviços - Aqui atualizamos os hrefs */}
-          <div className="md:col-span-2">
+          {/* Services - Here we update the hrefs */}
+          <div className="md:col-span-3">
             <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-4">{t('services')}</h3>
             <ul className="space-y-3">
               {serviceLinks.map((link, index) => (
@@ -118,8 +119,8 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Contacto */}
-          <div className="md:col-span-4">
+          {/* Contact */}
+          <div className="md:col-span-3">
             <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-4">{t('contact')}</h3>
             <p className="text-white/70 mb-3">
               {ContactData.general.addressLine1}
@@ -140,7 +141,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      {/* Rodapé do footer */}
+      {/* Footer bottom */}
       <div className="border-t border-white/10 py-6 relative z-10">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between">
@@ -157,7 +158,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      {/* Financiamento */}
+      {/* Funding */}
       <div className="bg-primary-dark py-4 relative z-10">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center">
