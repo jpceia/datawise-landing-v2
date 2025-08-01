@@ -6,7 +6,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { NavItem } from '../../types';
 import CalendlyPopupButton from '../ui/CalendlyPopupButton';
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  hasTopBanner?: boolean;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ hasTopBanner = false }) => {
   const t = useTranslations('Navbar');
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -22,7 +26,7 @@ const Navbar: React.FC = () => {
       const heroSectionHeight = window.innerHeight; // Assuming hero is full viewport height
 
       // Hide navbar when scrolling past the hero section (accounting for top banner)
-      const topBannerHeight = 44; // 11 * 4 = 44px (top-11)
+      const topBannerHeight = hasTopBanner ? 44 : 0; // 11 * 4 = 44px (top-11) if banner exists
       if (currentScrollY > heroSectionHeight - topBannerHeight) {
         setVisible(false);
       } else {
@@ -74,7 +78,9 @@ const Navbar: React.FC = () => {
         opacity: visible ? 1 : 0,
       }}
       transition={{ duration: 0.3 }}
-      className={`fixed w-full z-40 transition-all duration-300 top-11 ${
+      className={`fixed w-full z-40 transition-all duration-300 ${
+        hasTopBanner ? 'top-11' : 'top-0'
+      } ${
         scrolled ? 'bg-white shadow-lg py-2' : 'bg-white/80 backdrop-blur-md py-4'
       }`}
     >

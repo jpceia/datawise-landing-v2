@@ -15,14 +15,17 @@ function MyApp({ Component, pageProps }: AppProps) {
   // Check if in development mode
   const isDevelopment = process.env.NODE_ENV === 'development';
   
+  // Check if we're on the landing page (index)
+  const isLandingPage = router.pathname === '/';
+  
   return (
     <NextIntlClientProvider
       locale={locale}
       timeZone="Europe/Lisbon"
       messages={pageProps.messages}
     >
-      <TopBanner />
-      <Navbar />
+      {isLandingPage && <TopBanner />}
+      <Navbar hasTopBanner={isLandingPage} />
       <Component {...pageProps} locale={locale} />
       <Footer />
       {/* Google Analytics and Tag Manager only in production */}
