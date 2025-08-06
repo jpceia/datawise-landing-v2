@@ -1,25 +1,6 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
-
-interface ServiceCardProps {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-const ServiceCard = ({ icon, title, description }: ServiceCardProps) => (
-  <div className="bg-gradient-to-r from-primary/80 to-primary-light/80 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group h-full">
-    <div className="p-6 text-white">
-      <div className="bg-white/20 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={icon}></path>
-        </svg>
-      </div>
-      <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="opacity-90">{description}</p>
-    </div>
-  </div>
-);
+import ServiceCard from '../ui/ServiceCard';
 
 const Services = () => {
   const t = useTranslations('Services');
@@ -30,36 +11,42 @@ const Services = () => {
       title: t('items.1.title'),
       icon: 'M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z',
       description: t('items.1.description'),
+      link: '/blog/competitive-intelligence',
     },
     {
       id: 2,
       title: t('items.2.title'),
       icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z',
       description: t('items.2.description'),
+      link: '/blog/workflow-automation',
     },
     {
       id: 3,
       title: t('items.0.title'),
       icon: 'M12 4a8 8 0 100 16 8 8 0 000-16z M9 9c1-1 2-1 3-1 M5 20h14',
       description: t('items.0.description'),
+      link: '/blog/predictive-models',
     },
     {
       id: 4,
       title: t('items.3.title'),
       icon: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6',
       description: t('items.3.description'),
+      link: '/blog/operational-optimization',
     },
     {
       id: 5,
       title: t('items.4.title'),
       icon: 'M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707L13 15v4a1 1 0 01-.553.894l-2 1A1 1 0 019 20v-5L1.293 7.293A1 1 0 011 6.586V4z',
       description: t('items.4.description'),
+      link: '/blog/document-classification',
     },
     {
       id: 6,
       title: t('items.5.title'),
       icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
       description: t('items.5.description'),
+      link: '/blog/information-normalization',
     },
   ];
 
@@ -87,6 +74,7 @@ const Services = () => {
               icon={service.icon}
               title={service.title}
               description={service.description}
+              link={service.link}
             />
           ))}
         </div>
