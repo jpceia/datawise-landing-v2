@@ -7,8 +7,8 @@ Allow: /blog/
 Allow: /blog/tvde/
 Allow: /blog/auto-caravanas/
 Allow: /blog/last-mile/
-Allow: /privacy/
-Allow: /termsofuse/
+Allow: /blog/privacy-policy/
+Allow: /blog/terms-of-use/
 
 # Common directories and files to disallow
 Disallow: /wp-admin/

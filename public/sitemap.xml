@@ -22,7 +22,7 @@
 
     <!-- Privacy Policy -->
     <url>
-        <loc>https://www.datawise.pt/privacy</loc>
+        <loc>https://www.datawise.pt/blog/privacy-policy</loc>
         <lastmod>2025-01-27</lastmod>
         <priority>0.3</priority>
         <changefreq>yearly</changefreq>
@@ -30,7 +30,7 @@
 
     <!-- Terms of Use -->
     <url>
-        <loc>https://www.datawise.pt/termsofuse</loc>
+        <loc>https://www.datawise.pt/blog/terms-of-use</loc>
         <lastmod>2025-01-27</lastmod>
         <priority>0.3</priority>
         <changefreq>yearly</changefreq>

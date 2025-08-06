@@ -147,10 +147,10 @@ const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="text-white/70 text-sm mb-4 md:mb-0">© {currentYear} Datawise. {t('allRightsReserved')}</div>
             <div className="flex space-x-6">
-              <Link href="/privacy" className="text-white/70 hover:text-white text-sm transition-colors">
+              <Link href="/blog/privacy-policy" className="text-white/70 hover:text-white text-sm transition-colors">
                 {t('links.privacyPolicy')}
               </Link>
-              <Link href="/termsofuse" className="text-white/70 hover:text-white text-sm transition-colors">
+              <Link href="/blog/terms-of-use" className="text-white/70 hover:text-white text-sm transition-colors">
                 {t('links.termsOfUse')}
               </Link>
             </div>
