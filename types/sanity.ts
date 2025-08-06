@@ -45,6 +45,7 @@ export interface Post extends SanityDocument {
 export interface BlogEntry {
   _id: string;
   title: string;
+  subtitle?: string;
   slug: Slug;
   publishedAt: string;
   excerpt: string;
@@ -58,6 +59,7 @@ export interface BlogEntry {
 export interface BlogPost {
   _id: string;
   title: string;
+  subtitle?: string;
   slug: Slug;
   publishedAt: string;
   excerpt: string;

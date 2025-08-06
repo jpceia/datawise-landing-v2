@@ -14,10 +14,10 @@ export const client = createClient({
 // Helper function to fetch all posts with full details
 export async function getPosts(): Promise<BlogEntry[]> {
   const result = await client.fetch(groq`
-    *[_type == "post" 
-      && category->name != "Legal"] | order(publishedAt desc) {
+    *[_type == "post" && category->name != "Legal"] | order(publishedAt desc) {
       _id,
       title,
+      subtitle,
       slug,
       publishedAt,
       excerpt,
@@ -36,6 +36,7 @@ export async function getPostBySlug(slug: string): Promise<BlogEntry | null> {
     *[_type == "post" && slug.current == $slug][0] {
       _id,
       title,
+      subtitle,
       slug,
       publishedAt,
       excerpt,
@@ -55,6 +56,7 @@ export async function getFullPostBySlug(slug: string): Promise<BlogPost | null> 
     *[_type == "post" && slug.current == $slug][0] {
       _id,
       title,
+      subtitle,
       slug,
       publishedAt,
       excerpt,
