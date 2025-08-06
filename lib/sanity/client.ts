@@ -14,7 +14,8 @@ export const client = createClient({
 // Helper function to fetch all posts with full details
 export async function getPosts(): Promise<BlogEntry[]> {
   const result = await client.fetch(groq`
-    *[_type == "post"] | order(publishedAt desc) {
+    *[_type == "post" 
+      && category->name != "Legal"] | order(publishedAt desc) {
       _id,
       title,
       slug,
