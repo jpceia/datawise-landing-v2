@@ -46,7 +46,10 @@ const BlogPostHeader: React.FC<{ post: BlogPost; formattedDate: string; t: any }
         </Link>
       </div>
     </div>
-    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">{post.title}</h1>
+    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">{post.title}</h1>
+    {post.subtitle && (
+      <h2 className="text-xl md:text-2xl text-gray-600 mb-6 font-medium">{post.subtitle}</h2>
+    )}
 
     {/* Reading time and author information */}
     <div className="flex items-center mb-8">
