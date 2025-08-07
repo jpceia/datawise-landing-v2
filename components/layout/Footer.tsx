@@ -32,12 +32,12 @@ const Footer: React.FC = () => {
   // Service links updated based on services displayed in Services.tsx section
   // Following the same order as the cards: 1, 2, 0, 3, 4, 5
   const serviceLinks: FooterLink[] = [
-    { href: '/#services', label: t('servicesList.1') }, // Competitive Intelligence
-    { href: '/#services', label: t('servicesList.2') }, // Workflow Automation
-    { href: '/#services', label: t('servicesList.0') }, // Predictive Models
-    { href: '/#services', label: t('servicesList.3') }, // Operational Optimization
-    { href: '/#services', label: t('servicesList.4') }, // Intelligent Classification
-    { href: '/#services', label: t('servicesList.5') }, // Data Normalization
+    { href: '/blog/competitive-intelligence', label: t('servicesList.1') }, // Competitive Intelligence
+    { href: '/blog/workflow-automation', label: t('servicesList.2') }, // Workflow Automation
+    { href: '/blog/predictive-models', label: t('servicesList.0') }, // Predictive Models
+    { href: '/blog/operational-optimization', label: t('servicesList.3') }, // Operational Optimization
+    { href: '/blog/document-classification', label: t('servicesList.4') }, // Intelligent Classification
+    { href: '/blog/information-normalization', label: t('servicesList.5') }, // Data Normalization
   ];
 
   return (
