@@ -4,10 +4,12 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import { useRouter } from 'next/router';
 import { BlogPost } from '@/types/sanity';
 import { getFullPostBySlug, getAllPostSlugs, getPosts } from '@/lib/sanity/client';
 import PortableTextContent from '@/components/ui/PortableTextContent';
 import CalendlyPopupButton from '@/components/ui/CalendlyPopupButton';
+import { formatDate } from '@/lib/utils/date';
 
 // Interface for the blog post page props
 interface BlogPostPageProps {
@@ -173,48 +175,44 @@ const SocialSharing: React.FC<{ post: BlogPost; t: any }> = ({ post, t }) => (
 );
 
 // Component for post navigation
-const PostNavigation: React.FC<{ nextPost: any; prevPost: any }> = ({ nextPost, prevPost }) => (
-  <div className="flex space-x-4">
-    {prevPost && (
-      <Link
-        href={`/blog/${prevPost.slug}`}
-        className="flex-1 bg-gray-50 hover:bg-gray-100 p-4 rounded-lg transition-colors"
-      >
-        <div className="text-sm text-gray-500 mb-1">← Previous</div>
-        <div className="font-medium text-gray-900">{prevPost.title}</div>
-      </Link>
-    )}
-    {nextPost && (
-      <Link
-        href={`/blog/${nextPost.slug}`}
-        className="flex-1 bg-gray-50 hover:bg-gray-100 p-4 rounded-lg transition-colors text-right"
-      >
-        <div className="text-sm text-gray-500 mb-1">Next →</div>
-        <div className="font-medium text-gray-900">{nextPost.title}</div>
-      </Link>
-    )}
-  </div>
-);
+const PostNavigation: React.FC<{ nextPost: any; prevPost: any }> = ({ nextPost, prevPost }) => {
+  const router = useRouter();
+  const t = useTranslations('Blog');
+  
+  return (
+    <div className="flex space-x-4">
+      {prevPost && (
+        <Link
+          href={`/blog/${prevPost.slug}`}
+          className="flex-1 bg-gray-50 hover:bg-gray-100 p-4 rounded-lg transition-colors"
+        >
+          <div className="text-sm text-gray-500 mb-1">← {t('previous')}</div>
+          <div className="font-medium text-gray-900">{prevPost.title}</div>
+        </Link>
+      )}
+      {nextPost && (
+        <Link
+          href={`/blog/${nextPost.slug}`}
+          className="flex-1 bg-gray-50 hover:bg-gray-100 p-4 rounded-lg transition-colors text-right"
+        >
+          <div className="text-sm text-gray-500 mb-1">{t('next')} →</div>
+          <div className="font-medium text-gray-900">{nextPost.title}</div>
+        </Link>
+      )}
+    </div>
+  );
+};
 
 const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost }) => {
   const t = useTranslations('Blog');
+  const router = useRouter();
   
   // Handle case when post is not found
   if (!post) {
     return <div>{t('articleNotFound')}</div>;
   }
 
-  // Format date to Portuguese locale
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('pt-PT', {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric'
-    });
-  };
-
-  const formattedDate = formatDate(post.publishedAt);
+  const formattedDate = formatDate(post.publishedAt, router.locale || 'pt');
 
   return (
     <>
@@ -284,7 +282,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 // Get static props for individual blog post
-export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({ params, locale   }) => {
+export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({ params, locale }) => {
   const messages = (await import(`@/messages/${locale}.json`)).default;
   try {
     const slug = params?.slug as string;
@@ -303,17 +301,19 @@ export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({ params
     // Find next and previous posts for navigation
     let nextPost = null;
     if (currentIndex < allPosts.length - 1) {
+      const nextPostData = allPosts[currentIndex + 1];
       nextPost = {
-        slug: allPosts[currentIndex + 1].slug.current,
-        title: allPosts[currentIndex + 1].title,
+        slug: nextPostData.slug.current,
+        title: nextPostData.title,
       };
     }
 
     let prevPost = null;
     if (currentIndex > 0) {
+      const prevPostData = allPosts[currentIndex - 1];
       prevPost = {
-        slug: allPosts[currentIndex - 1].slug.current,
-        title: allPosts[currentIndex - 1].title,
+        slug: prevPostData.slug.current,
+        title: prevPostData.title,
       };
     }
 

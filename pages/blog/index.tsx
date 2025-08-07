@@ -3,9 +3,11 @@ import React, { useState } from 'react';
 import { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { useTranslations } from 'next-intl';
 import { BlogEntry } from '@/types/sanity';
 import { getPosts } from '@/lib/sanity/client';
+import { formatDate } from '@/lib/utils/date';
 
 interface BlogIndexProps {
   posts: BlogEntry[];
@@ -14,15 +16,7 @@ interface BlogIndexProps {
 // Component for the featured post
 const FeaturedPostCard = ({ post }: { post: BlogEntry }) => {
   const t = useTranslations('Blog');
-  
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('pt-PT', {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric'
-    });
-  };
+  const router = useRouter();
 
   const formatReadingTime = (minutes: number) => {
     return `${minutes} min`;
@@ -49,7 +43,7 @@ const FeaturedPostCard = ({ post }: { post: BlogEntry }) => {
           </div>
           <div className="md:flex-1 p-6 md:p-8">
             <div className="flex items-center text-sm text-gray-500 mb-3">
-              <span className="mr-4">{formatDate(post.publishedAt)}</span>
+              <span className="mr-4">{formatDate(post.publishedAt, router.locale || 'pt')}</span>
               {post.category && (
                 <span className="bg-primary/10 text-primary px-2 py-0.5 rounded-full text-xs">
                   {post.category}
@@ -92,15 +86,7 @@ const FeaturedPostCard = ({ post }: { post: BlogEntry }) => {
 // Component for grid posts
 const PostCard = ({ post }: { post: BlogEntry }) => {
   const t = useTranslations('Blog');
-
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('pt-PT', {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric'
-    });
-  };
+  const router = useRouter();
 
   const formatReadingTime = (minutes: number) => {
     return `${minutes} min`;
@@ -128,7 +114,7 @@ const PostCard = ({ post }: { post: BlogEntry }) => {
         </div>
         <div className="p-6">
           <div className="flex items-center text-sm text-gray-500 mb-3">
-            <span className="mr-4">{formatDate(post.publishedAt)}</span>
+            <span className="mr-4">{formatDate(post.publishedAt, router.locale || 'pt')}</span>
             <span className="flex items-center">
               <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
