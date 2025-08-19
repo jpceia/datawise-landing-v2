@@ -1,9 +1,9 @@
 {
       "Metadata": {
-    "title": "DATAWISE | Data Science Consultancy",
-    "description": "Datawise helps companies transform data into strategic decisions. Data science, machine learning and AI solutions to optimize your business.",
-    "ogTitle": "Datawise | Data Science Consultancy",
-    "ogDescription": "We transform data into strategic decisions for your business"
+    "title": "DATAWISE | Partners in AI for your company",
+    "description": "We combine artificial intelligence and business knowledge to transform your company's data and processes into growth engines.",
+    "ogTitle": "DATAWISE | Partners in AI for your company",
+    "ogDescription": "We combine artificial intelligence and business knowledge to transform your company's data and processes into growth engines."
   },
   "TopBanner": {
     "message": "Only 5 spots remaining → reserve yours this month!"
@@ -129,7 +129,7 @@
     "TechMaturity": {
       "badge": "OUR METHODOLOGY",
       "title": "Technological Maturity",
-      "subtitle": "From data collection to automation: our path to innovation and digital transformation.",
+      "subtitle": "We accompany your company through each stage of digital transformation, from data organization to intelligent automation, ensuring measurable results at every phase.",
       "phase": "Phase",
       "of": "of",
       "stages": [

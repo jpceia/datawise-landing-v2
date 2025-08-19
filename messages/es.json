@@ -1,9 +1,9 @@
 {
   "Metadata": {
-    "title": "DATAWISE | Consultoría en Ciencia de Datos",
-    "description": "Datawise ayuda a las empresas a transformar datos en decisiones estratégicas. Soluciones de ciencia de datos, machine learning e IA para optimizar tu negocio.",
-    "ogTitle": "Datawise | Consultoría en Ciencia de Datos",
-    "ogDescription": "Transformamos datos en decisiones estratégicas para tu negocio"
+    "title": "DATAWISE | Socios en IA para tu empresa",
+    "description": "Combinamos inteligencia artificial y conocimiento empresarial para transformar los datos y procesos de tu empresa en motores de crecimiento.",
+    "ogTitle": "DATAWISE | Socios en IA para tu empresa",
+    "ogDescription": "Combinamos inteligencia artificial y conocimiento empresarial para transformar los datos y procesos de tu empresa en motores de crecimiento."
   },
   "TopBanner": {
     "message": "¡Solo quedan 5 plazas → reserva la tuya este mes!"
@@ -129,7 +129,7 @@
   "TechMaturity": {
     "badge": "NUESTRA METODOLOGÍA",
     "title": "Madurez Tecnológica",
-    "subtitle": "Desde la recolección de datos hasta la automatización: nuestro camino hacia la innovación y transformación digital.",
+    "subtitle": "Acompañamos a su empresa en cada etapa de la transformación digital, desde la organización de datos hasta la automatización inteligente, garantizando resultados medibles en cada fase.",
     "phase": "Fase",
     "of": "de",
     "stages": [
