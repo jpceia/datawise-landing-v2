@@ -22,9 +22,7 @@ const TransformBusiness = () => {
         <div className="text-center mb-12">
           <div className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4">{t('badge')}</div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">{t('title')}</h2>
-          <p className="text-xl max-w-3xl mx-auto">
-            {t('subtitle')}
-          </p>
+          <p className="text-xl max-w-3xl mx-auto">{t('subtitle')}</p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col space-y-8">
@@ -38,14 +36,17 @@ const TransformBusiness = () => {
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0 M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"
+                    ></path>
                   </svg>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2">{t('productivity.title')}</h3>
-                  <p>
-                    {t('productivity.description')}
-                  </p>
+                  <p>{t('productivity.description')}</p>
                 </div>
               </div>
             </div>
@@ -63,15 +64,13 @@ const TransformBusiness = () => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="2"
-                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      d="M11 10.27 7 3.34 M11 13.73l-4 6.93 M12 22v-2 M12 2v2 M14 12h8 M17 20.66l-1-1.73 M17 3.34l-1 1.73 M2 12h2 M20.66 17l-1.73-1 M20.66 7l-1.73 1 M3.34 17l1.73-1 M3.34 7l1.73 1 M12 12m-2 0a2 2 0 1 1 4 0a2 2 0 1 1-4 0 M12 12m-8 0a8 8 0 1 1 16 0a8 8 0 1 1-16 0"
                     ></path>
                   </svg>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2">{t('decisions.title')}</h3>
-                  <p>
-                    {t('decisions.description')}
-                  </p>
+                  <p>{t('decisions.description')}</p>
                 </div>
               </div>
             </div>
@@ -89,15 +88,13 @@ const TransformBusiness = () => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="2"
-                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                      d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978 M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978 M18 9h1.5a1 1 0 0 0 0-5H18 M4 22h16 M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z M6 9H4.5a1 1 0 0 1 0-5H6"
                     ></path>
                   </svg>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2">{t('costs.title')}</h3>
-                  <p>
-                    {t('costs.description')}
-                  </p>
+                  <p>{t('costs.description')}</p>
                 </div>
               </div>
             </div>
