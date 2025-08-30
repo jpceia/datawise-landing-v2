@@ -24,18 +24,18 @@
   "TransformBusiness": {
     "badge": "PROPOSTA DE VALOR",
     "title": "Transforme o Seu Negócio",
-    "subtitle": "Descubra como as nossas soluções personalizadas podem impulsionar a eficiência e a rentabilidade do seu negócio.",
+    "subtitle": "Descubra como as nossas soluções desenvolvidas à medida podem ajudar o seu negócio.",
     "productivity": {
-      "title": "Aumente a Produtividade",
-      "description": "Automatize processos e reduza o tempo dedicado a tarefas repetitivas, permitindo que a sua equipa se concentre no que realmente importa."
+      "title": "Acelere resultados",
+      "description": "Veja resultados tangíveis em apenas 3-6 semanas com MVPs de alto impacto, desenvolvidos e validados em conjunto com a sua equipa."
     },
     "decisions": {
-      "title": "Otimize Decisões",
-      "description": "Transforme dados em insights acionáveis que permitem tomar decisões mais inteligentes e estratégicas para o seu negócio."
+      "title": "Aumente a Produtividade",
+      "description": "Automatize processos e elimine tarefas repetitivas, libertando a sua equipa para focar no que realmente importa para o negócio."
     },
     "costs": {
-      "title": "Reduza Custos",
-      "description": "Identifique áreas de otimização e elimine desperdícios, aumentando a eficiência operacional e maximizando o retorno sobre o investimento."
+      "title": "Lidere através da diferenciação",
+      "description": "Destaque-se no mercado com investimento em soluções de IA personalizadas que vão tornar o seu negócio verdadeiramente diferenciado no sector."
     },
     "scheduleMeeting": "Agende uma reunião"
   },

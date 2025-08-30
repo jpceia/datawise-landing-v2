@@ -24,18 +24,18 @@
     "TransformBusiness": {
       "badge": "VALUE PROPOSITION",
       "title": "Transform Your Business",
-      "subtitle": "Discover how our personalized solutions can boost your business efficiency and profitability.",
+      "subtitle": "Discover how our custom-developed solutions can help your business.",
       "productivity": {
-        "title": "Increase Productivity",
-        "description": "Automate processes and reduce time spent on repetitive tasks, allowing your team to focus on what really matters."
+        "title": "Accelerate results",
+        "description": "See tangible results in just 3-6 weeks with high-impact MVPs, developed and validated in partnership with your team."
       },
       "decisions": {
-        "title": "Optimize Decisions",
-        "description": "Transform data into actionable insights that enable smarter and more strategic decisions for your business."
+        "title": "Increase Productivity",
+        "description": "Automate processes and eliminate repetitive tasks, freeing your team to focus on what really matters for the business."
       },
       "costs": {
-        "title": "Reduce Costs",
-        "description": "Identify optimization areas and eliminate waste, increasing operational efficiency and maximizing return on investment."
+        "title": "Lead through differentiation",
+        "description": "Stand out in the market with investment in custom AI solutions that will make your business truly differentiated in the sector."
       },
       "scheduleMeeting": "Schedule a meeting"
     },
