@@ -14,6 +14,17 @@ const nextConfig = {
     defaultLocale: 'pt',
     localeDetection: false,
   },
+  env: {
+    SITE_URL: 'https://www.datawise.pt',
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/sitemap.xml',
+        destination: '/api/sitemap',
+      },
+    ];
+  },
 }
 
 module.exports = nextConfig;

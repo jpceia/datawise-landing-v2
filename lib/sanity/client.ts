@@ -11,10 +11,50 @@ export const client = createClient({
   perspective: 'published',
 });
 
+// Interface for getPosts options
+interface GetPostsOptions {
+  filterLegal?: boolean;      // If true, exclude posts in "Legal" category (default: true)
+  limit?: number;             // Limit number of posts returned
+  category?: string;          // Filter by specific category
+  orderBy?: 'publishedAt' | 'title' | 'readingTime';  // Field to order by
+  orderDirection?: 'asc' | 'desc';                     // Sort direction
+}
+
 // Helper function to fetch all posts with full details
-export async function getPosts(): Promise<BlogEntry[]> {
-  const result = await client.fetch(groq`
-    *[_type == "post" && category->name != "Legal"] | order(publishedAt desc) {
+// 
+// Examples:
+// - getPosts() - Get all non-legal posts, ordered by publishedAt desc
+// - getPosts({ filterLegal: false }) - Get all posts including legal ones
+// - getPosts({ limit: 5, category: 'AI' }) - Get 5 AI posts
+// - getPosts({ orderBy: 'title', orderDirection: 'asc' }) - Get posts ordered by title A-Z
+// - getPosts({ limit: 10, orderBy: 'readingTime', orderDirection: 'desc' }) - Get 10 longest posts
+export async function getPosts(options: GetPostsOptions = {}): Promise<BlogEntry[]> {
+  const {
+    filterLegal = true,
+    limit,
+    category,
+    orderBy = 'publishedAt',
+    orderDirection = 'desc'
+  } = options;
+
+  // Build filters
+  let filters = ['_type == "post"'];
+  
+  if (filterLegal) {
+    filters.push('category->name != "Legal"');
+  }
+  
+  if (category) {
+    filters.push(`category->name == "${category}"`);
+  }
+
+  // Build query
+  const filterString = filters.join(' && ');
+  const orderString = `| order(${orderBy} ${orderDirection})`;
+  const limitString = limit ? `[0...${limit}]` : '';
+  
+  const query = groq`
+    *[${filterString}] ${orderString} ${limitString} {
       _id,
       title,
       subtitle,
@@ -26,8 +66,13 @@ export async function getPosts(): Promise<BlogEntry[]> {
       tags,
       "readingTime": round(length(pt::text(body)) / 500)
     }
-  `)
-  return result || []
+  `;
+
+  // Fetch posts from Sanity
+  const result = await client.fetch(query);
+
+  // Return an empty array if result is falsy
+  return result || [];
 }
 
 // Helper function to fetch a single post by slug (for listings)
