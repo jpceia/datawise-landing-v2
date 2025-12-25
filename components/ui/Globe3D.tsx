@@ -9,6 +9,7 @@ const InteractiveGlobe = () => {
   const popupRef = useRef(null);
 
   const [coordinates, setCoordinates] = useState('');
+  const [webGLError, setWebGLError] = useState(false);
 
   useEffect(() => {
     let renderer: THREE.WebGLRenderer;
@@ -22,13 +23,44 @@ const InteractiveGlobe = () => {
     let globeMesh: THREE.Mesh;
     let earthTexture: THREE.Texture;
     let mapMaterial: THREE.ShaderMaterial;
+    let particles: THREE.Points;
+
+    const checkWebGLSupport = () => {
+      try {
+        const canvas = document.createElement('canvas');
+        const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+        return !!gl;
+      } catch (e) {
+        return false;
+      }
+    };
 
     const initScene = () => {
-      renderer = new THREE.WebGLRenderer({
-        canvas: canvasRef.current!,
-        alpha: true,
-      });
-      renderer.setPixelRatio(2);
+      if (!canvasRef.current) {
+        console.error('Canvas ref not available');
+        setWebGLError(true);
+        return false;
+      }
+
+      if (!checkWebGLSupport()) {
+        console.error('WebGL is not supported in this browser');
+        setWebGLError(true);
+        return false;
+      }
+
+      try {
+        renderer = new THREE.WebGLRenderer({
+          canvas: canvasRef.current,
+          alpha: true,
+          antialias: true,
+          failIfMajorPerformanceCaveat: false,
+        });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      } catch (error) {
+        console.error('Error creating WebGL context:', error);
+        setWebGLError(true);
+        return false;
+      }
 
       scene = new THREE.Scene();
       camera = new THREE.OrthographicCamera(-1.1, 1.1, 1.1, -1.1, 0, 3);
@@ -41,15 +73,25 @@ const InteractiveGlobe = () => {
       createOrbitControls();
 
       const textureLoader = new THREE.TextureLoader();
-      textureLoader.load('https://ksenia-k.com/img/earth-map-colored.png', mapTex => {
-        earthTexture = mapTex;
-        earthTexture.repeat.set(1, 1);
-        createGlobe();
-        createPointer();
-        addCanvasEvents();
-        updateSize();
-        render();
-      });
+      textureLoader.load(
+        'https://ksenia-k.com/img/earth-map-colored.png',
+        mapTex => {
+          earthTexture = mapTex;
+          earthTexture.repeat.set(1, 1);
+          createGlobe();
+          createPointer();
+          addCanvasEvents();
+          updateSize();
+          render();
+        },
+        undefined,
+        (error) => {
+          console.error('Error loading texture:', error);
+          setWebGLError(true);
+        }
+      );
+
+      return true;
     };
 
     const createOrbitControls = () => {
@@ -218,8 +260,11 @@ const InteractiveGlobe = () => {
       }
     };
 
-    window.addEventListener('resize', updateSize);
-    initScene();
+    const initialized = initScene();
+
+    if (initialized) {
+      window.addEventListener('resize', updateSize);
+    }
 
     return () => {
       window.removeEventListener('resize', updateSize);
@@ -237,8 +282,82 @@ const InteractiveGlobe = () => {
         globeMesh.geometry.dispose();
         (globeMesh.material as THREE.Material).dispose();
       }
+      if (controls) {
+        controls.dispose();
+      }
     };
   }, []);
+
+  if (webGLError) {
+    // Gerar partículas aleatórias
+    const particleCount = 50;
+    const particlesArray = Array.from({ length: particleCount }, (_, i) => ({
+      id: i,
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      size: Math.random() * 4 + 2,
+      duration: Math.random() * 3 + 2,
+      delay: Math.random() * 2
+    }));
+
+    return (
+      <div ref={containerRef} className="globe-wrapper" style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        aspectRatio: '1',
+        maxWidth: '70vmin',
+        maxHeight: '70vmin',
+        margin: '0 auto',
+        position: 'relative'
+      }}>
+        {/* Partículas de fundo */}
+        {particlesArray.map((particle) => (
+          <div
+            key={particle.id}
+            style={{
+              position: 'absolute',
+              left: particle.left,
+              top: particle.top,
+              width: `${particle.size}px`,
+              height: `${particle.size}px`,
+              background: 'linear-gradient(135deg, #4a90e2, #64b5f6)',
+              borderRadius: '50%',
+              opacity: 0.6,
+              animation: `float ${particle.duration}s ease-in-out infinite`,
+              animationDelay: `${particle.delay}s`,
+              pointerEvents: 'none'
+            }}
+          />
+        ))}
+
+        <img
+          src="/images/chip.png"
+          alt="AI Chip"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'contain',
+            position: 'relative',
+            zIndex: 10
+          }}
+        />
+
+        <style jsx>{`
+          @keyframes float {
+            0%, 100% {
+              transform: translateY(0px) translateX(0px);
+              opacity: 0.6;
+            }
+            50% {
+              transform: translateY(-20px) translateX(10px);
+              opacity: 0.3;
+            }
+          }
+        `}</style>
+      </div>
+    );
+  }
 
   return (
     <div ref={containerRef} className="globe-wrapper">
