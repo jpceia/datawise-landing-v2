@@ -155,6 +155,9 @@ const Footer: React.FC = () => {
               <Link href="/terms-of-use" className="text-white/70 hover:text-white text-sm transition-colors">
                 {t('links.termsOfUse')}
               </Link>
+              <a href="https://www.livroreclamacoes.pt/inicio" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white text-sm transition-colors">
+                {t('links.complaintsBook')}
+              </a>
             </div>
           </div>
         </div>
