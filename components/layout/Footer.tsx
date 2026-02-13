@@ -32,12 +32,12 @@ const Footer: React.FC = () => {
   // Service links updated based on services displayed in Services.tsx section
   // Following the same order as the cards: 1, 2, 0, 3, 4, 5
   const serviceLinks: FooterLink[] = [
-    { href: '/blog/competitive-intelligence', label: t('servicesList.1') }, // Competitive Intelligence
-    { href: '/blog/workflow-automation', label: t('servicesList.2') }, // Workflow Automation
-    { href: '/blog/predictive-models', label: t('servicesList.0') }, // Predictive Models
-    { href: '/blog/operational-optimization', label: t('servicesList.3') }, // Operational Optimization
-    { href: '/blog/document-classification', label: t('servicesList.4') }, // Intelligent Classification
-    { href: '/blog/information-normalization', label: t('servicesList.5') }, // Data Normalization
+    { href: '/competitive-intelligence', label: t('servicesList.1') }, // Competitive Intelligence
+    { href: '/workflow-automation', label: t('servicesList.2') }, // Workflow Automation
+    { href: '/predictive-models', label: t('servicesList.0') }, // Predictive Models
+    { href: '/operational-optimization', label: t('servicesList.3') }, // Operational Optimization
+    { href: '/document-classification', label: t('servicesList.4') }, // Intelligent Classification
+    { href: '/information-normalization', label: t('servicesList.5') }, // Data Normalization
   ];
 
   return (
@@ -147,10 +147,10 @@ const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="text-white/70 text-sm mb-4 md:mb-0">© {currentYear} Datawise. {t('allRightsReserved')}</div>
             <div className="flex space-x-6">
-              <Link href="/blog/privacy-policy" className="text-white/70 hover:text-white text-sm transition-colors">
+              <Link href="/privacy-policy" className="text-white/70 hover:text-white text-sm transition-colors">
                 {t('links.privacyPolicy')}
               </Link>
-              <Link href="/blog/terms-of-use" className="text-white/70 hover:text-white text-sm transition-colors">
+              <Link href="/terms-of-use" className="text-white/70 hover:text-white text-sm transition-colors">
                 {t('links.termsOfUse')}
               </Link>
             </div>

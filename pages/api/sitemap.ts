@@ -73,7 +73,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // Dynamic URLs from posts
     const blogUrls: SitemapUrl[] = blogPosts.map((post: BlogEntry) => ({
-      loc: `${SITE_URL}/blog/${post.slug.current}`,
+      loc: `${SITE_URL}/${post.slug.current}`,
       changefreq: 'monthly',
       priority: '0.8',
       lastModified: post.publishedAt,

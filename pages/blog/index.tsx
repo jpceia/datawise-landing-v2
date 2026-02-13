@@ -23,7 +23,7 @@ const FeaturedPostCard = ({ post }: { post: BlogEntry }) => {
   };
 
   return (
-    <Link href={`/blog/${post.slug.current}`} className="block group">
+    <Link href={`/${post.slug.current}`} className="block group">
       <div className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1">
         <div className="md:flex">
           <div className="md:flex-1">
@@ -93,7 +93,7 @@ const PostCard = ({ post }: { post: BlogEntry }) => {
   };
 
   return (
-    <Link href={`/blog/${post.slug.current}`} className="block group">
+    <Link href={`/${post.slug.current}`} className="block group">
       <div className="bg-white rounded-xl shadow-md overflow-hidden h-full transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1">
         <div className="relative h-48">
           <Image

@@ -15,7 +15,7 @@ const SuccessCases = () => {
       imageUrl: 'https://cdn.sanity.io/images/if94fhok/production/0fc7372f09f4ee34775156ca935a9e8c9d71cb64-1000x667.jpg',
       stats: t.raw('cases.0.stats'),
       description: t('cases.0.description'),
-      link: '/blog/auto-caravanas',
+      link: '/auto-caravanas',
       tags: t.raw('cases.0.tags')
     },
     {
@@ -25,7 +25,7 @@ const SuccessCases = () => {
       imageUrl: 'https://cdn.sanity.io/images/if94fhok/production/8d4ecf73e960d00bc8579feae4ba7a01032a6b88-1000x667.jpg',
       stats: t.raw('cases.1.stats'),
       description: t('cases.1.description'),
-      link: '/blog/last-mile',
+      link: '/last-mile',
       tags: t.raw('cases.1.tags')
     },
     {
@@ -35,7 +35,7 @@ const SuccessCases = () => {
       imageUrl: 'https://cdn.sanity.io/images/if94fhok/production/e8107648ebf85e8665e2681f6add20c149373d63-1000x667.jpg',
       stats: t.raw('cases.2.stats'),
       description: t('cases.2.description'),
-      link: '/blog/tvde',
+      link: '/tvde',
       tags: t.raw('cases.2.tags')
     },
   ];

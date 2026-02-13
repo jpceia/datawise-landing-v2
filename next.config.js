@@ -18,12 +18,21 @@ const nextConfig = {
     SITE_URL: 'https://www.datawise.pt',
   },
   async rewrites() {
-    return [
-      {
-        source: '/sitemap.xml',
-        destination: '/api/sitemap',
-      },
-    ];
+    return {
+      beforeFiles: [],
+      afterFiles: [
+        {
+          source: '/:slug((?!blog|api|_next).*)',
+          destination: '/blog/:slug',
+        },
+      ],
+      fallback: [
+        {
+          source: '/sitemap.xml',
+          destination: '/api/sitemap',
+        },
+      ],
+    };
   },
 }
 

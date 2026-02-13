@@ -122,7 +122,7 @@ const SocialSharing: React.FC<{ post: BlogPost; t: any }> = ({ post, t }) => (
     <div className="flex space-x-3">
       {/* Facebook share button */}
       <a
-        href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://datawise.pt/blog/${post.slug.current}`)}`}
+        href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://datawise.pt/${post.slug.current}`)}`}
         target="_blank"
         rel="noopener noreferrer"
         className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 transition-colors"
@@ -140,7 +140,7 @@ const SocialSharing: React.FC<{ post: BlogPost; t: any }> = ({ post, t }) => (
       {/* Twitter/X share button */}
       <a
         href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
-          `https://datawise.pt/blog/${post.slug.current}`
+          `https://datawise.pt/${post.slug.current}`
         )}&text=${encodeURIComponent(post.title)}`}
         target="_blank"
         rel="noopener noreferrer"
@@ -155,7 +155,7 @@ const SocialSharing: React.FC<{ post: BlogPost; t: any }> = ({ post, t }) => (
       {/* LinkedIn share button */}
       <a
         href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
-          `https://datawise.pt/blog/${post.slug.current}`
+          `https://datawise.pt/${post.slug.current}`
         )}&title=${encodeURIComponent(post.title)}`}
         target="_blank"
         rel="noopener noreferrer"
@@ -183,7 +183,7 @@ const PostNavigation: React.FC<{ nextPost: any; prevPost: any }> = ({ nextPost, 
     <div className="flex space-x-4">
       {prevPost && (
         <Link
-          href={`/blog/${prevPost.slug}`}
+          href={`/${prevPost.slug}`}
           className="flex-1 bg-gray-50 hover:bg-gray-100 p-4 rounded-lg transition-colors"
         >
           <div className="text-sm text-gray-500 mb-1">← {t('previous')}</div>
@@ -192,7 +192,7 @@ const PostNavigation: React.FC<{ nextPost: any; prevPost: any }> = ({ nextPost, 
       )}
       {nextPost && (
         <Link
-          href={`/blog/${nextPost.slug}`}
+          href={`/${nextPost.slug}`}
           className="flex-1 bg-gray-50 hover:bg-gray-100 p-4 rounded-lg transition-colors text-right"
         >
           <div className="text-sm text-gray-500 mb-1">{t('next')} →</div>
@@ -226,7 +226,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post, nextPost, prevPost })
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:image" content={post.coverImage || ''} />
-        <meta property="og:url" content={`https://datawise.pt/blog/${post.slug.current}`} />
+        <meta property="og:url" content={`https://datawise.pt/${post.slug.current}`} />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={post.publishedAt} />
         <meta property="article:section" content={post.category || ''} />
