@@ -131,6 +131,8 @@ const Footer: React.FC = () => {
               <a href={`tel:${ContactData.general.phone}`} className="hover:text-white transition-colors">
                 {ContactData.general.phone}
               </a>
+              <br />
+              <span className="text-white/40 text-xs">Chamada para a rede móvel nacional</span>
             </p>
             <p className="text-white/70 mb-6">
               <a href={`mailto:${ContactData.general.email}`} className="hover:text-white transition-colors">
