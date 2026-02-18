@@ -122,7 +122,9 @@ const Footer: React.FC = () => {
           {/* Contact */}
           <div className="md:col-span-3">
             <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-4">{t('contact')}</h3>
-            <p className="text-white/70 mb-3">
+            <p className="text-white/70 text-sm font-medium">{ContactData.general.companyName}</p>
+            <p className="text-white/70 text-sm mb-3">NIPC {ContactData.general.nipc}</p>
+            <p className="text-white/70 text-xs mb-3">
               {ContactData.general.addressLine1}
               <br />
               {ContactData.general.addressLine2}
@@ -132,7 +134,7 @@ const Footer: React.FC = () => {
                 {ContactData.general.phone}
               </a>
               <br />
-              <span className="text-white/40 text-xs">Chamada para a rede móvel nacional</span>
+              <span className="text-white/50 text-xs">Chamada para a rede móvel nacional</span>
             </p>
             <p className="text-white/70 mb-6">
               <a href={`mailto:${ContactData.general.email}`} className="hover:text-white transition-colors">
