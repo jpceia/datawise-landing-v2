@@ -66,7 +66,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['var(--font-plus-jakarta-sans)', 'sans-serif'],
       },
       spacing: {
         '4.5': '1.125rem',

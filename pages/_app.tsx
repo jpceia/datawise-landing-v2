@@ -7,6 +7,14 @@ import type { AppProps } from 'next/app';
 import { Analytics } from '@vercel/analytics/next';
 import '@/styles/globals.css';
 import { useRouter } from 'next/router';
+import { Plus_Jakarta_Sans } from 'next/font/google';
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-plus-jakarta-sans',
+  display: 'swap',
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -19,6 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const isLandingPage = router.pathname === '/';
   
   return (
+    <div className={`${plusJakartaSans.variable} font-sans`}>
     <NextIntlClientProvider
       locale={locale}
       timeZone="Europe/Lisbon"
@@ -37,6 +46,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       )}
       <Analytics />
     </NextIntlClientProvider>
+    </div>
   );
 }
 
