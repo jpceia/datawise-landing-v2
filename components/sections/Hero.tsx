@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-gradient-to-r from-primary-dark to-primary"
+      className="relative z-10 w-full h-screen flex items-center justify-center bg-gradient-to-r from-primary-dark to-primary"
     >
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center">
