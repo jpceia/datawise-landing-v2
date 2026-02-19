@@ -170,7 +170,9 @@ const Footer: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center">
             <p className="text-white/70 text-sm mr-4">{t('fundedBy')}</p>
-            <img src="/cofinanciamento.png" alt="Cofinanciamento" className="h-10 object-contain" />
+            <div className="relative h-10 w-48">
+              <Image src="/cofinanciamento.png" alt="Cofinanciamento" fill className="object-contain object-left" />
+            </div>
           </div>
         </div>
       </div>
