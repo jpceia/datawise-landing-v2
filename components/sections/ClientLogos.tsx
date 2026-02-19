@@ -43,7 +43,7 @@ const ClientLogos: React.FC = () => {
         <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 lg:w-48 bg-gradient-to-l from-primary to-transparent z-10 pointer-events-none" />
 
         {/* Scrolling track - hover pauses animation */}
-        <div className="flex animate-marquee">
+        <div className="flex animate-marquee will-change-transform">
           {/* First set */}
           <div className="flex shrink-0 items-center gap-10 sm:gap-14 lg:gap-20 px-5 sm:px-7 lg:px-10">
             {clients.map((client) => (
