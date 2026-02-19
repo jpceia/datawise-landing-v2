@@ -21,6 +21,7 @@ const LogoItem = ({ client, isDuplicate }: { client: typeof clients[0]; isDuplic
       src={client.logo}
       alt={isDuplicate ? '' : client.name}
       fill
+      sizes="144px"
       className="object-contain"
     />
   </div>

@@ -152,6 +152,7 @@ const TechMaturity = () => {
                                 : 'border-4 border-white text-gray-500 hover:text-gray-700'}`}
                   style={{width: '52px', height: '52px'} as React.CSSProperties}
                   onClick={() => handleStageChange(index)}
+                  aria-label={stage.title}
                   variants={buttonVariants}
                   initial="idle"
                   whileHover="hover"

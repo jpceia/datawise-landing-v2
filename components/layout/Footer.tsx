@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
               {t('description')}
             </p>
             <div className="flex space-x-4">
-              <a href={ContactData.social.facebook} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white">
+              <a href={ContactData.social.facebook} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white" aria-label="Datawise no Facebook">
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path
                     fillRule="evenodd"
@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
                   ></path>
                 </svg>
               </a>
-              <a href={ContactData.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white">
+              <a href={ContactData.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white" aria-label="Datawise no LinkedIn">
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path
                     fillRule="evenodd"

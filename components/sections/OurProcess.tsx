@@ -127,6 +127,7 @@ const OurProcess = () => {
                       : 'border-4 border-white text-gray-500 hover:text-gray-700'}`}
                   style={{ width: '52px', height: '52px' } as React.CSSProperties}
                   onClick={() => setActiveStage(index)}
+                  aria-label={stage.title}
                   variants={buttonVariants}
                   initial="idle"
                   whileHover="hover"
@@ -146,7 +147,7 @@ const OurProcess = () => {
           {stages.map((stage, index) => (
             <div key={`label-${stage.id}`} className="w-1/3 text-center px-4 mx-5">
               <div className="h-16">
-                <motion.h4
+                <motion.h3
                   className={`font-bold transition-all ${activeStage === index ? 'text-primary text-lg' : 'text-gray-500'}`}
                   animate={{
                     fontSize: activeStage === index ? '1.125rem' : '1rem',
@@ -155,7 +156,7 @@ const OurProcess = () => {
                   }}
                 >
                   {stage.title}
-                </motion.h4>
+                </motion.h3>
                 <motion.p
                   className={`text-sm transition-all ${activeStage === index ? 'text-gray-800' : 'text-gray-500'}`}
                   animate={{
