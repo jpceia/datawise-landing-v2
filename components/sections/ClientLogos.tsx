@@ -14,7 +14,7 @@ const clients = [
 
 const LogoItem = ({ client, isDuplicate }: { client: typeof clients[0]; isDuplicate?: boolean }) => (
   <div
-    className="relative h-10 w-28 sm:h-12 sm:w-36 shrink-0 brightness-0 invert opacity-40 hover:opacity-80 transition-all duration-300"
+    className="relative h-10 w-28 sm:h-12 sm:w-36 shrink-0 brightness-0 invert opacity-40"
     aria-hidden={isDuplicate}
   >
     <Image
@@ -43,7 +43,7 @@ const ClientLogos: React.FC = () => {
         <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 lg:w-48 bg-gradient-to-l from-primary to-transparent z-10 pointer-events-none" />
 
         {/* Scrolling track - hover pauses animation */}
-        <div className="flex animate-marquee hover:[animation-play-state:paused]">
+        <div className="flex animate-marquee">
           {/* First set */}
           <div className="flex shrink-0 items-center gap-10 sm:gap-14 lg:gap-20 px-5 sm:px-7 lg:px-10">
             {clients.map((client) => (
