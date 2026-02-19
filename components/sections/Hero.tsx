@@ -50,7 +50,6 @@ const Hero: React.FC = () => {
 
       </div>
 
-      {/* Wave image - anchored to section bottom, centered horizontally */}
       <img
         src="/LandingBackground.png"
         alt=""

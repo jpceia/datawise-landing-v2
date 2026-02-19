@@ -40,7 +40,7 @@ const Home: NextPage<HomeProps> = () => {
 
       <main>
         <Hero />
-
+        
         <TransformBusiness />
         <Services />
         <SuccessCases />
