@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 const clients = [
   { name: 'Mars Petcare', logo: '/client-logos/mars-petcare.png' },
@@ -16,12 +17,11 @@ const LogoItem = ({ client, isDuplicate }: { client: typeof clients[0]; isDuplic
     className="relative h-10 w-28 sm:h-12 sm:w-36 shrink-0 brightness-0 invert opacity-40 hover:opacity-80 transition-all duration-300"
     aria-hidden={isDuplicate}
   >
-    {/* eslint-disable-next-line @next/next/no-img-element */}
-    <img
+    <Image
       src={client.logo}
       alt={isDuplicate ? '' : client.name}
-      className="h-full w-full object-contain"
-      loading="lazy"
+      fill
+      className="object-contain"
     />
   </div>
 );
