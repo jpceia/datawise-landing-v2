@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center mb-4">
               {/* Logo */}
               <Link href="/">
-                <Image src="/datawise-logo.webp" alt="Datawise" width={150} height={40} className="h-10 w-auto brightness-0 invert" />
+                <Image src="/Datawise_Secundario.png" alt="Datawise" width={200} height={50} className="h-5 w-auto mb-2" />
               </Link>
             </div>
             <p className="text-white/90 mb-6">
@@ -129,7 +129,7 @@ const Footer: React.FC = () => {
               <br />
               {ContactData.general.addressLine2}
             </p>
-            <p className="text-white/70">
+            <p className="text-white/70 mb-4">
               <a href={`tel:${ContactData.general.phone}`} className="hover:text-white transition-colors">
                 {ContactData.general.phone}
               </a>
