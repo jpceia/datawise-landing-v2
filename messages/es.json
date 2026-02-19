@@ -21,6 +21,9 @@
     "ctaServices": "Descubre Nuestros Servicios",
     "scrollToExplore": "Desplázate para explorar"
   },
+  "ClientLogos": {
+    "title": "Empresas que confían en nosotros"
+  },
   "TransformBusiness": {
     "badge": "PROPUESTA DE VALOR",
     "title": "Transforma tu Negocio",
@@ -312,6 +315,129 @@
     "headerSubtitle": "Condiciones generales de uso para el sitio web y servicios de Datawise",
     "lastUpdated": "Última actualización"
   },
+  "ProductEmails": {
+    "meta": {
+      "title": "Gestión de Emails Empresariales con IA | Datawise",
+      "description": "Automatice y organice la bandeja de entrada de su empresa con inteligencia artificial. Clasificación automática, respuestas inteligentes e insights en tiempo real."
+    },
+    "hero": {
+      "badge": "Producto IA — Emails",
+      "title": "La bandeja de entrada de su empresa, <span class=\"text-primary\">gestionada por IA</span>",
+      "subtitle": "Automatice la clasificación y respuesta de emails empresariales con inteligencia artificial. Reduzca el tiempo en el correo y céntrese en lo que realmente importa.",
+      "ctaPrimary": "Solicitar una demo",
+      "ctaSecondary": "Ver cómo funciona",
+      "inbox": {
+        "title": "Mi bandeja de entrada",
+        "aiLabel": "IA activa",
+        "email1": {
+          "sender": "Juan García — Cliente VIP",
+          "tag": "Urgente",
+          "subject": "Propuesta de renovación de contrato — respuesta necesaria"
+        },
+        "email2": {
+          "sender": "newsletter@proveedor.es",
+          "tag": "Newsletter",
+          "subject": "Novedades de marzo: promociones y nuevos productos"
+        },
+        "email3": {
+          "sender": "rrhh@empresa.es",
+          "tag": "Interno",
+          "subject": "Recordatorio: evaluación trimestral de desempeño"
+        },
+        "aiSummary": "La IA resumió 3 emails prioritarios para usted"
+      }
+    },
+    "demo": {
+      "title": "Vea cómo funciona",
+      "subtitle": "Una demostración práctica de cómo la IA organiza y responde automáticamente a los emails de su empresa.",
+      "placeholder": "Demo próximamente",
+      "cta": "Solicitar acceso anticipado"
+    },
+    "features": {
+      "title": "Todo lo que necesita para <span class=\"text-primary\">dominar su bandeja de entrada</span>",
+      "subtitle": "Funcionalidades diseñadas para equipos que reciben cientos de emails al día.",
+      "cta": "Probarlo ahora",
+      "items": [
+        {
+          "title": "Clasificación inteligente",
+          "description": "La IA lee, interpreta y categoriza automáticamente cada email recibido — urgente, informativo, newsletter o spam — sin ninguna configuración manual."
+        },
+        {
+          "title": "Respuestas automáticas",
+          "description": "Genere borradores de respuesta personalizados basados en el contexto del email, listos para enviar con un solo clic."
+        },
+        {
+          "title": "Analytics de email",
+          "description": "Dashboards con métricas de volumen, tiempos de respuesta y temas más frecuentes para optimizar la comunicación de su equipo."
+        }
+      ]
+    },
+    "process": {
+      "title": "Cómo <span class=\"text-primary\">empezar en 3 pasos</span>",
+      "subtitle": "Integración simple y rápida, sin necesidad de conocimientos técnicos.",
+      "cta": "Empezar ahora",
+      "steps": [
+        {
+          "title": "Conexión",
+          "subtitle": "Conecte su bandeja de entrada",
+          "description": "Integración con Gmail, Outlook o cualquier servidor IMAP en menos de 5 minutos."
+        },
+        {
+          "title": "Configuración",
+          "subtitle": "Defina sus reglas",
+          "description": "Personalice categorías, prioridades y reglas de respuesta automática según su negocio."
+        },
+        {
+          "title": "Resultados",
+          "subtitle": "La IA se encarga del resto",
+          "description": "A partir de ahí, la IA clasifica, resume y sugiere respuestas automáticamente — 24 horas al día."
+        }
+      ]
+    },
+    "socialProof": {
+      "title": "Resultados que hablan por sí solos",
+      "subtitle": "Empresas que usan nuestra solución de gestión de email con IA.",
+      "cta": "Quiero estos resultados",
+      "stats": [
+        {
+          "value": "70%",
+          "label": "Reducción en tiempo dedicado al email"
+        },
+        {
+          "value": "3×",
+          "label": "Más rápido al responder a clientes"
+        },
+        {
+          "value": "95%",
+          "label": "Precisión en la clasificación automática"
+        }
+      ]
+    },
+    "contactForm": {
+      "title": "Solicite una demostración",
+      "subtitle": "Déjenos sus datos y nos pondremos en contacto para mostrarle cómo funciona la solución en su contexto.",
+      "submit": "Enviar solicitud",
+      "privacy": "Sus datos se tratan con confidencialidad y nunca se comparten con terceros.",
+      "fields": {
+        "name": "Nombre",
+        "email": "Email profesional",
+        "company": "Empresa",
+        "phone": "Teléfono (opcional)",
+        "message": "Mensaje"
+      },
+      "placeholders": {
+        "name": "Su nombre",
+        "email": "nombre@empresa.es",
+        "company": "Nombre de la empresa",
+        "phone": "+34 000 000 000",
+        "message": "Describa brevemente su caso de uso..."
+      },
+      "success": {
+        "title": "¡Solicitud recibida!",
+        "message": "Nuestro equipo se pondrá en contacto con usted próximamente para programar la demostración."
+      }
+    }
+  },
   "Error404": {
     "title": "404 - Página no encontrada | DATAWISE",
     "description": "La página que buscas no fue encontrada. Regresa a la página principal de Datawise.",
@@ -322,4 +448,4 @@
     "backButton": "← Volver atrás",
     "homeButton": "Ir a la página principal"
   }
-} 
+}

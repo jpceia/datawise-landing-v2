@@ -21,6 +21,9 @@
       "ctaServices": "Discover Our Services",
       "scrollToExplore": "Scroll to explore"
     },
+    "ClientLogos": {
+      "title": "Trusted by leading companies"
+    },
     "TransformBusiness": {
       "badge": "VALUE PROPOSITION",
       "title": "Transform Your Business",
@@ -312,7 +315,130 @@
       "headerSubtitle": "General conditions of use for the Datawise website and services",
       "lastUpdated": "Last updated"
     },
-    "Error404": {
+    "ProductEmails": {
+    "meta": {
+      "title": "AI-Powered Email Management for Businesses | Datawise",
+      "description": "Automate and organize your company's inbox with artificial intelligence. Automatic classification, smart replies, and real-time insights."
+    },
+    "hero": {
+      "badge": "AI Product — Emails",
+      "title": "Your company's inbox, <span class=\"text-primary\">managed by AI</span>",
+      "subtitle": "Automate the triage, classification, and response of business emails with artificial intelligence. Reduce time spent on email and focus on what truly matters.",
+      "ctaPrimary": "Request a demo",
+      "ctaSecondary": "See how it works",
+      "inbox": {
+        "title": "My inbox",
+        "aiLabel": "AI active",
+        "email1": {
+          "sender": "John Smith — VIP Client",
+          "tag": "Urgent",
+          "subject": "Contract renewal proposal — response needed"
+        },
+        "email2": {
+          "sender": "newsletter@supplier.com",
+          "tag": "Newsletter",
+          "subject": "March news: promotions and new products"
+        },
+        "email3": {
+          "sender": "hr@company.com",
+          "tag": "Internal",
+          "subject": "Reminder: quarterly performance review"
+        },
+        "aiSummary": "AI summarised 3 priority emails for you"
+      }
+    },
+    "demo": {
+      "title": "See how it works",
+      "subtitle": "A practical demonstration of how AI organises and responds to your business emails automatically.",
+      "placeholder": "Demo coming soon",
+      "cta": "Request early access"
+    },
+    "features": {
+      "title": "Everything you need to <span class=\"text-primary\">master your inbox</span>",
+      "subtitle": "Features designed for teams that receive hundreds of emails per day.",
+      "cta": "Try it now",
+      "items": [
+        {
+          "title": "Smart Classification",
+          "description": "AI reads, interprets, and automatically categorises each incoming email — urgent, informational, newsletter, or spam — without any manual configuration."
+        },
+        {
+          "title": "Automatic Replies",
+          "description": "Generate personalised reply drafts based on the email context, ready to send with a single click."
+        },
+        {
+          "title": "Email Analytics",
+          "description": "Dashboards with volume metrics, response times, and most frequent topics to optimise your team's communication."
+        }
+      ]
+    },
+    "process": {
+      "title": "How to <span class=\"text-primary\">get started in 3 steps</span>",
+      "subtitle": "Simple and fast integration, no technical knowledge required.",
+      "cta": "Get started now",
+      "steps": [
+        {
+          "title": "Connect",
+          "subtitle": "Link your inbox",
+          "description": "Integrate with Gmail, Outlook, or any IMAP server in less than 5 minutes."
+        },
+        {
+          "title": "Configure",
+          "subtitle": "Set your rules",
+          "description": "Customise categories, priorities, and automatic reply rules to fit your business."
+        },
+        {
+          "title": "Results",
+          "subtitle": "AI handles the rest",
+          "description": "From then on, AI classifies, summarises, and suggests replies automatically — 24 hours a day."
+        }
+      ]
+    },
+    "socialProof": {
+      "title": "Results that speak for themselves",
+      "subtitle": "Companies using our AI email management solution.",
+      "cta": "I want these results",
+      "stats": [
+        {
+          "value": "70%",
+          "label": "Reduction in time spent on email"
+        },
+        {
+          "value": "3×",
+          "label": "Faster response to clients"
+        },
+        {
+          "value": "95%",
+          "label": "Accuracy in automatic classification"
+        }
+      ]
+    },
+    "contactForm": {
+      "title": "Request a demonstration",
+      "subtitle": "Leave your details and we'll get in touch to show how the solution works in your context.",
+      "submit": "Send request",
+      "privacy": "Your data is treated confidentially and never shared with third parties.",
+      "fields": {
+        "name": "Name",
+        "email": "Professional email",
+        "company": "Company",
+        "phone": "Phone (optional)",
+        "message": "Message"
+      },
+      "placeholders": {
+        "name": "Your name",
+        "email": "name@company.com",
+        "company": "Company name",
+        "phone": "+44 000 000 000",
+        "message": "Briefly describe your use case..."
+      },
+      "success": {
+        "title": "Request received!",
+        "message": "Our team will contact you shortly to schedule the demonstration."
+      }
+    }
+  },
+  "Error404": {
       "title": "404 - Page not found | DATAWISE",
       "description": "The page you are looking for was not found. Return to the Datawise homepage.",
       "ogTitle": "404 - Page not found | DATAWISE",
@@ -321,5 +447,5 @@
       "pageDescription": "The page you are looking for doesn't exist or has been moved. Don't worry, we're here to help you find what you need.",
       "backButton": "← Go back",
       "homeButton": "Go to homepage"
-    }
   }
+}

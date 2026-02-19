@@ -129,7 +129,7 @@ const Footer: React.FC = () => {
               <br />
               {ContactData.general.addressLine2}
             </p>
-            <p className="text-white/70 mb-3">
+            <p className="text-white/70">
               <a href={`tel:${ContactData.general.phone}`} className="hover:text-white transition-colors">
                 {ContactData.general.phone}
               </a>

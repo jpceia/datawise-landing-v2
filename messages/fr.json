@@ -21,6 +21,9 @@
     "ctaServices": "Découvrir Nos Services",
     "scrollToExplore": "Faites défiler pour explorer"
   },
+  "ClientLogos": {
+    "title": "Des entreprises qui nous font confiance"
+  },
   "TransformBusiness": {
     "badge": "PROPOSITION DE VALEUR",
     "title": "Transformez Votre Entreprise",
@@ -312,6 +315,129 @@
     "headerSubtitle": "Conditions générales d'utilisation pour le site web et les services Datawise",
     "lastUpdated": "Dernière mise à jour"
   },
+  "ProductEmails": {
+    "meta": {
+      "title": "Gestion des emails d'entreprise par IA | Datawise",
+      "description": "Automatisez et organisez la boîte de réception de votre entreprise grâce à l'intelligence artificielle. Classification automatique, réponses intelligentes et insights en temps réel."
+    },
+    "hero": {
+      "badge": "Produit IA — Emails",
+      "title": "La boîte de réception de votre entreprise, <span class=\"text-primary\">gérée par IA</span>",
+      "subtitle": "Automatisez le tri, la classification et les réponses aux emails professionnels grâce à l'intelligence artificielle. Réduisez le temps passé sur les emails et concentrez-vous sur l'essentiel.",
+      "ctaPrimary": "Demander une démo",
+      "ctaSecondary": "Voir comment ça fonctionne",
+      "inbox": {
+        "title": "Ma boîte de réception",
+        "aiLabel": "IA active",
+        "email1": {
+          "sender": "Jean Dupont — Client VIP",
+          "tag": "Urgent",
+          "subject": "Proposition de renouvellement de contrat — réponse requise"
+        },
+        "email2": {
+          "sender": "newsletter@fournisseur.fr",
+          "tag": "Newsletter",
+          "subject": "Actualités de mars : promotions et nouveaux produits"
+        },
+        "email3": {
+          "sender": "rh@entreprise.fr",
+          "tag": "Interne",
+          "subject": "Rappel : évaluation trimestrielle des performances"
+        },
+        "aiSummary": "L'IA a résumé 3 emails prioritaires pour vous"
+      }
+    },
+    "demo": {
+      "title": "Voir comment ça fonctionne",
+      "subtitle": "Une démonstration pratique de la façon dont l'IA organise et répond automatiquement aux emails de votre entreprise.",
+      "placeholder": "Démo bientôt disponible",
+      "cta": "Demander un accès anticipé"
+    },
+    "features": {
+      "title": "Tout ce dont vous avez besoin pour <span class=\"text-primary\">maîtriser votre boîte de réception</span>",
+      "subtitle": "Des fonctionnalités conçues pour les équipes qui reçoivent des centaines d'emails par jour.",
+      "cta": "Essayer maintenant",
+      "items": [
+        {
+          "title": "Classification intelligente",
+          "description": "L'IA lit, interprète et catégorise automatiquement chaque email reçu — urgent, informatif, newsletter ou spam — sans aucune configuration manuelle."
+        },
+        {
+          "title": "Réponses automatiques",
+          "description": "Générez des brouillons de réponse personnalisés selon le contexte de l'email, prêts à envoyer en un clic."
+        },
+        {
+          "title": "Analytics email",
+          "description": "Tableaux de bord avec métriques de volume, délais de réponse et sujets les plus fréquents pour optimiser la communication de votre équipe."
+        }
+      ]
+    },
+    "process": {
+      "title": "Comment <span class=\"text-primary\">commencer en 3 étapes</span>",
+      "subtitle": "Intégration simple et rapide, sans connaissances techniques requises.",
+      "cta": "Commencer maintenant",
+      "steps": [
+        {
+          "title": "Connexion",
+          "subtitle": "Connectez votre boîte de réception",
+          "description": "Intégration avec Gmail, Outlook ou tout serveur IMAP en moins de 5 minutes."
+        },
+        {
+          "title": "Configuration",
+          "subtitle": "Définissez vos règles",
+          "description": "Personnalisez les catégories, priorités et règles de réponse automatique selon votre activité."
+        },
+        {
+          "title": "Résultats",
+          "subtitle": "L'IA s'occupe du reste",
+          "description": "Dès lors, l'IA classe, résume et suggère des réponses automatiquement — 24 heures sur 24."
+        }
+      ]
+    },
+    "socialProof": {
+      "title": "Des résultats qui parlent d'eux-mêmes",
+      "subtitle": "Des entreprises qui utilisent notre solution de gestion d'emails par IA.",
+      "cta": "Je veux ces résultats",
+      "stats": [
+        {
+          "value": "70%",
+          "label": "Réduction du temps passé sur les emails"
+        },
+        {
+          "value": "3×",
+          "label": "Plus rapide pour répondre aux clients"
+        },
+        {
+          "value": "95%",
+          "label": "Précision de la classification automatique"
+        }
+      ]
+    },
+    "contactForm": {
+      "title": "Demandez une démonstration",
+      "subtitle": "Laissez vos coordonnées et nous vous contacterons pour vous montrer comment la solution fonctionne dans votre contexte.",
+      "submit": "Envoyer la demande",
+      "privacy": "Vos données sont traitées de manière confidentielle et ne sont jamais partagées avec des tiers.",
+      "fields": {
+        "name": "Nom",
+        "email": "Email professionnel",
+        "company": "Entreprise",
+        "phone": "Téléphone (optionnel)",
+        "message": "Message"
+      },
+      "placeholders": {
+        "name": "Votre nom",
+        "email": "nom@entreprise.fr",
+        "company": "Nom de l'entreprise",
+        "phone": "+33 0 00 00 00 00",
+        "message": "Décrivez brièvement votre cas d'usage..."
+      },
+      "success": {
+        "title": "Demande reçue !",
+        "message": "Notre équipe vous contactera prochainement pour planifier la démonstration."
+      }
+    }
+  },
   "Error404": {
     "title": "404 - Page non trouvée | DATAWISE",
     "description": "La page que vous recherchez n'a pas été trouvée. Retournez à la page d'accueil de Datawise.",
@@ -322,4 +448,4 @@
     "backButton": "← Retour",
     "homeButton": "Aller à la page d'accueil"
   }
-} 
+}

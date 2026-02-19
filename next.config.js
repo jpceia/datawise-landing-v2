@@ -22,7 +22,7 @@ const nextConfig = {
       beforeFiles: [],
       afterFiles: [
         {
-          source: '/:slug((?!blog|api|_next).*)',
+          source: '/:slug((?!blog|api|_next|product-emails).*)',
           destination: '/blog/:slug',
         },
       ],
