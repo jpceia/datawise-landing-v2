@@ -6,7 +6,7 @@ import Services from '@/components/sections/Services';
 import TransformBusiness from '@/components/sections/TransformBusiness';
 import SuccessCases from '@/components/sections/SuccessCases';
 import Recruitment from '@/components/sections/Recruitment';
-import TechMaturity from '@/components/sections/TechMaturity';
+import OurProcess from '@/components/sections/OurProcess';
 import MissionValues from '@/components/sections/MissionValues';
 import Technologies from '@/components/sections/Technologies';
 import CallToAction from '@/components/sections/CallToAction';
@@ -44,7 +44,7 @@ const Home: NextPage<HomeProps> = () => {
         <TransformBusiness />
         <Services />
         <SuccessCases />
-        <TechMaturity />
+        <OurProcess />
         <MissionValues />
         <Recruitment />
         <Technologies />

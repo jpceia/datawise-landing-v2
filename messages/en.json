@@ -171,6 +171,48 @@
         }
       ]
     },
+    "OurProcess": {
+      "badge": "OUR METHODOLOGY",
+      "title": "How we work with you",
+      "subtitle": "Every project starts by understanding your business. We follow a structured process that guarantees fast, measurable results aligned with your objectives.",
+      "phase": "Phase",
+      "of": "of",
+      "stages": [
+        {
+          "title": "Strategic Diagnosis",
+          "subtitle": "Assessment, Analysis and Recommendations",
+          "description": "We start by deeply understanding the business — processes, systems and available data. We identify opportunities, prioritize use cases and deliver a clear roadmap with estimated impact.",
+          "features": [
+            "Interviews with leadership and team managers",
+            "Analysis of processes, systems and documentation",
+            "Mapping of pain-points and needs",
+            "Use case prioritization and ROI estimation"
+          ]
+        },
+        {
+          "title": "Tailored Development",
+          "subtitle": "Analysis, Modelling and Integration",
+          "description": "We build the solutions — predictive models, AI algorithms and automations — in short iterative cycles. The client validates throughout the process, ensuring the final result is aligned with the business reality.",
+          "features": [
+            "Rapid prototyping and continuous validation",
+            "Models and algorithms adapted to the business",
+            "Intelligent process automation",
+            "Integration with existing systems"
+          ]
+        },
+        {
+          "title": "Support and Evolution",
+          "subtitle": "Implementation, Training and Evolution",
+          "description": "After delivery, we don't disappear. We monitor, adjust and evolve solutions — and we arrive before the problem appears. Client success is our main metric.",
+          "features": [
+            "Deployment and production integration",
+            "Internal team training",
+            "Continuous performance monitoring",
+            "Solution evolution with the business"
+          ]
+        }
+      ]
+    },
     "MissionValues": {
       "badge": "OUR IDENTITY",
       "title": "The Pillars that Define Us",

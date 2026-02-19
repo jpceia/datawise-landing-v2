@@ -171,6 +171,48 @@
       }
     ]
   },
+  "OurProcess": {
+    "badge": "NUESTRA METODOLOGÍA",
+    "title": "Cómo trabajamos con usted",
+    "subtitle": "Cada proyecto comienza por entender su negocio. Seguimos un proceso estructurado que garantiza resultados rápidos, medibles y alineados con sus objetivos.",
+    "phase": "Fase",
+    "of": "de",
+    "stages": [
+      {
+        "title": "Diagnóstico Estratégico",
+        "subtitle": "Levantamiento, Análisis y Recomendaciones",
+        "description": "Comenzamos por comprender el negocio en profundidad — procesos, sistemas y datos disponibles. Identificamos oportunidades, priorizamos casos de uso y entregamos una hoja de ruta clara con estimación de impacto.",
+        "features": [
+          "Entrevistas con dirección y responsables de equipos",
+          "Análisis de procesos, sistemas y documentación",
+          "Mapeo de puntos de dolor y necesidades",
+          "Priorización de casos de uso y estimación de ROI"
+        ]
+      },
+      {
+        "title": "Desarrollo a Medida",
+        "subtitle": "Análisis, Modelado e Integración",
+        "description": "Construimos las soluciones — modelos predictivos, algoritmos de IA y automatizaciones — en ciclos iterativos cortos. El cliente valida a lo largo del proceso, garantizando que el resultado final está alineado con la realidad del negocio.",
+        "features": [
+          "Prototipado rápido y validación continua",
+          "Modelos y algoritmos adaptados al negocio",
+          "Automatización inteligente de procesos",
+          "Integración con sistemas ya existentes"
+        ]
+      },
+      {
+        "title": "Soporte y Evolución",
+        "subtitle": "Implementación, Formación y Evolución",
+        "description": "Tras la entrega, no desaparecemos. Monitorizamos, ajustamos y evolucionamos las soluciones — y llegamos antes de que aparezca el problema. El éxito del cliente es nuestra métrica principal.",
+        "features": [
+          "Despliegue e integración en producción",
+          "Formación del equipo interno",
+          "Monitorización continua del rendimiento",
+          "Evolución de las soluciones con el negocio"
+        ]
+      }
+    ]
+  },
   "MissionValues": {
     "badge": "NUESTRA IDENTIDAD",
     "title": "Los Pilares que Nos Definen",

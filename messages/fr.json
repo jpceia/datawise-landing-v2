@@ -171,6 +171,48 @@
       }
     ]
   },
+  "OurProcess": {
+    "badge": "NOTRE MÉTHODOLOGIE",
+    "title": "Comment nous travaillons avec vous",
+    "subtitle": "Chaque projet commence par comprendre votre entreprise. Nous suivons un processus structuré qui garantit des résultats rapides, mesurables et alignés sur vos objectifs.",
+    "phase": "Phase",
+    "of": "sur",
+    "stages": [
+      {
+        "title": "Diagnostic Stratégique",
+        "subtitle": "Évaluation, Analyse et Recommandations",
+        "description": "Nous commençons par comprendre l'entreprise en profondeur — processus, systèmes et données disponibles. Nous identifions les opportunités, priorisons les cas d'usage et livrons une feuille de route claire avec une estimation de l'impact.",
+        "features": [
+          "Entretiens avec la direction et les responsables d'équipes",
+          "Analyse des processus, systèmes et documentation",
+          "Cartographie des points de douleur et des besoins",
+          "Priorisation des cas d'usage et estimation du ROI"
+        ]
+      },
+      {
+        "title": "Développement Sur Mesure",
+        "subtitle": "Analyse, Modélisation et Intégration",
+        "description": "Nous construisons les solutions — modèles prédictifs, algorithmes d'IA et automatisations — en cycles itératifs courts. Le client valide tout au long du processus, garantissant que le résultat final est aligné sur la réalité métier.",
+        "features": [
+          "Prototypage rapide et validation continue",
+          "Modèles et algorithmes adaptés à l'entreprise",
+          "Automatisation intelligente des processus",
+          "Intégration avec les systèmes existants"
+        ]
+      },
+      {
+        "title": "Support et Évolution",
+        "subtitle": "Implémentation, Formation et Évolution",
+        "description": "Après la livraison, nous ne disparaissons pas. Nous surveillons, ajustons et faisons évoluer les solutions — et nous intervenons avant que le problème n'apparaisse. Le succès du client est notre principale métrique.",
+        "features": [
+          "Déploiement et intégration en production",
+          "Formation de l'équipe interne",
+          "Surveillance continue des performances",
+          "Évolution des solutions avec l'entreprise"
+        ]
+      }
+    ]
+  },
   "MissionValues": {
     "badge": "NOTRE IDENTITÉ",
     "title": "Les Piliers qui Nous Définissent",
