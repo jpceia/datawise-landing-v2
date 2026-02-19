@@ -15,8 +15,8 @@
       "contactUs": "Contact Us"
     },
     "Hero": {
-      "title": "Partners in AI for your company",
-      "subtitle": "We combine <span class=\"text-blue-600 font-semibold\">artificial intelligence</span> and <span class=\"text-blue-600 font-semibold\">business knowledge</span> to transform your company's data and processes into growth engines.",
+      "title": "Partners in AI<br>for your company",
+      "subtitle": "We combine <span class=\"font-bold text-white\">artificial intelligence</span> and <span class=\"font-bold text-white\">business knowledge</span> to transform your company's data and processes into growth engines.",
       "ctaSchedule": "Schedule a Free Diagnostic",
       "ctaServices": "Discover Our Services",
       "scrollToExplore": "Scroll to explore"

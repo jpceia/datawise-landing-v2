@@ -15,8 +15,8 @@
     "contactUs": "Contactez-nous"
   },
   "Hero": {
-    "title": "Partenaires en IA pour votre entreprise",
-    "subtitle": "Nous combinons <span class=\"text-blue-600 font-semibold\">l'intelligence artificielle</span> et <span class=\"text-blue-600 font-semibold\">la connaissance métier</span> pour transformer les données et processus de votre entreprise en moteurs de croissance.",
+    "title": "Partenaires en IA<br>pour votre entreprise",
+    "subtitle": "Nous combinons <span class=\"font-bold text-white\">l'intelligence artificielle</span> et <span class=\"font-bold text-white\">la connaissance métier</span> pour transformer les données et processus de votre entreprise en moteurs de croissance.",
     "ctaSchedule": "Planifier un Diagnostic Gratuit",
     "ctaServices": "Découvrir Nos Services",
     "scrollToExplore": "Faites défiler pour explorer"

@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       messages={pageProps.messages}
     >
       {isLandingPage && <TopBanner />}
-      <Navbar hasTopBanner={isLandingPage} />
+      <Navbar hasTopBanner={isLandingPage} variant={isLandingPage ? 'dark' : 'light'} />
       <Component {...pageProps} locale={locale} />
       <Footer />
       {/* Google Analytics and Tag Manager only in production */}
