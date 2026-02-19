@@ -15,8 +15,8 @@
     "contactUs": "Contáctanos"
   },
   "Hero": {
-    "title": "Socios en IA para tu empresa",
-    "subtitle": "Combinamos <span class=\"text-blue-600 font-semibold\">inteligencia artificial</span> y <span class=\"text-blue-600 font-semibold\">conocimiento empresarial</span> para transformar los datos y procesos de tu empresa en motores de crecimiento.",
+    "title": "Socios en IA<br>para tu empresa",
+    "subtitle": "Combinamos <span class=\"font-bold text-white\">inteligencia artificial</span> y <span class=\"font-bold text-white\">conocimiento empresarial</span> para transformar los datos y procesos de tu empresa en motores de crecimiento.",
     "ctaSchedule": "Programar un Diagnóstico Gratuito",
     "ctaServices": "Descubre Nuestros Servicios",
     "scrollToExplore": "Desplázate para explorar"
