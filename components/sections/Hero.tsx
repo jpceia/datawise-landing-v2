@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative z-10 w-full h-screen flex items-center justify-center bg-gradient-to-r from-primary-dark to-primary"
+      className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-gradient-to-r from-primary-dark to-primary"
     >
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center">
@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-5xl md:text-6xl font-bold text-white mb-6"
+          className="text-5xl md:text-6xl font-bold text-white mb-6 font-sans"
           dangerouslySetInnerHTML={{ __html: t('title') }}
         />
 
