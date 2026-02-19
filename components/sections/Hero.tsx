@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
       </div>
 
       <motion.img
-        src="/LandingBackground.png"
+        src="/Data-Wise_Hero-Section-Website-1440px.svg"
         alt=""
         aria-hidden="true"
         initial={{ opacity: 0 }}
