@@ -50,10 +50,13 @@ const Hero: React.FC = () => {
 
       </div>
 
-      <img
+      <motion.img
         src="/LandingBackground.png"
         alt=""
         aria-hidden="true"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.8, delay: 1.0, ease: 'easeInOut' }}
         className="absolute -bottom-32 left-1/2 -translate-x-1/2 h-[60vh] lg:h-[56vh] w-auto max-w-none pointer-events-none hidden sm:block"
       />
 
