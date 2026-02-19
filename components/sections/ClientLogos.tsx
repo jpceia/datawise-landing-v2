@@ -2,18 +2,18 @@ import React from 'react';
 import { useTranslations } from 'next-intl';
 
 const clients = [
-  { name: 'Mars Petcare', logo: '/client-logos/mars-petcare.svg' },
-  { name: 'Andela', logo: '/client-logos/andela.svg' },
-  { name: 'Autoridade da Concorrência', logo: '/client-logos/autoridade-concorrencia.svg' },
-  { name: 'Porto de Sines', logo: '/client-logos/porto-de-sines.svg' },
-  { name: 'Dingoo', logo: '/client-logos/dingoo.svg' },
-  { name: 'IndieCampers', logo: '/client-logos/indiecampers.svg' },
-  { name: 'SulInvest', logo: '/client-logos/sulinvest.svg' },
+  { name: 'Mars Petcare', logo: '/client-logos/mars-petcare.png' },
+  { name: 'Andela', logo: '/client-logos/andela.png' },
+  { name: 'Autoridade da Concorrência', logo: '/client-logos/autoridade-concorrencia.png' },
+  { name: 'Porto de Sines', logo: '/client-logos/porto-de-sines.png' },
+  { name: 'Dingoo', logo: '/client-logos/dingoo.png' },
+  { name: 'IndieCampers', logo: '/client-logos/indiecampers.png' },
+  { name: 'SulInvest', logo: '/client-logos/sulinvest.png' },
 ];
 
 const LogoItem = ({ client, isDuplicate }: { client: typeof clients[0]; isDuplicate?: boolean }) => (
   <div
-    className="relative h-10 w-28 sm:h-12 sm:w-36 shrink-0 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+    className="relative h-10 w-28 sm:h-12 sm:w-36 shrink-0 brightness-0 invert opacity-40 hover:opacity-80 transition-all duration-300"
     aria-hidden={isDuplicate}
   >
     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -30,17 +30,17 @@ const ClientLogos: React.FC = () => {
   const t = useTranslations('ClientLogos');
 
   return (
-    <section className="relative py-10 sm:py-14 bg-white overflow-hidden">
+    <section className="relative py-10 sm:py-14 bg-gradient-to-r from-primary-dark to-primary overflow-hidden">
       {/* Section title */}
-      <p className="text-center text-xs sm:text-sm font-medium uppercase tracking-[0.2em] text-gray-400 mb-8 sm:mb-10">
+      <p className="text-center text-white/50 text-sm mb-8 sm:mb-10">
         {t('title')}
       </p>
-
+      
       {/* Marquee container */}
       <div className="relative">
         {/* Fade overlays */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 lg:w-48 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 lg:w-48 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 lg:w-48 bg-gradient-to-r from-primary-dark to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 lg:w-48 bg-gradient-to-l from-primary to-transparent z-10 pointer-events-none" />
 
         {/* Scrolling track - hover pauses animation */}
         <div className="flex animate-marquee hover:[animation-play-state:paused]">
