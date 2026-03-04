@@ -20,10 +20,10 @@ module.exports = {
   				'700': '#1976D2',
   				'800': '#1565C0',
   				'900': '#0D47A1',
-  				DEFAULT: 'hsl(var(--primary))',
+  				DEFAULT: '#0D47A1',
   				light: '#2196F3',
   				dark: '#0D2B5E',
-  				foreground: 'hsl(var(--primary-foreground))'
+  				foreground: '#FFFFFF'
   			},
   			secondary: {
   				'50': '#ECEFF1',
@@ -36,10 +36,10 @@ module.exports = {
   				'700': '#455A64',
   				'800': '#37474F',
   				'900': '#263238',
-  				DEFAULT: 'hsl(var(--secondary))',
+  				DEFAULT: '#455A64',
   				light: '#78909C',
   				dark: '#1C313A',
-  				foreground: 'hsl(var(--secondary-foreground))'
+  				foreground: '#ECEFF1'
   			},
   			success: {
   				DEFAULT: '#4CAF50',
