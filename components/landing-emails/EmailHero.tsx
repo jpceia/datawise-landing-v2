@@ -22,7 +22,7 @@ const EmailHero: React.FC = () => {
   const heroTitle = t.raw('hero.title').replace(/text-emerald-400/g, 'text-primary');
 
   return (
-    <section className="relative w-full min-h-screen bg-white overflow-hidden pt-40 md:pt-44 lg:pt-64 pb-24">
+    <section className="relative w-full bg-white overflow-hidden pt-40 md:pt-44 lg:pt-64 pb-24">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full filter blur-3xl" />
