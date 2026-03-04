@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -29,23 +29,7 @@ export function Hero() {
         }}
       />
 
-      <div className="relative mx-auto max-w-5xl text-center">
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-8 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
-          style={{
-            backgroundColor: "var(--landing-accent-light)",
-            color: "var(--landing-accent)",
-            border: "1px solid var(--landing-accent)",
-          }}
-        >
-          <Sparkles size={16} />
-          Automatização inteligente para RH
-        </motion.div>
-
+      <div className="relative mx-auto max-w-5xl pt-12 text-center sm:pt-16">
         {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -99,8 +83,20 @@ export function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mx-auto mt-16 max-w-4xl"
+          className="relative mx-auto mt-16 max-w-4xl pt-6"
         >
+          <div
+            className="absolute left-1/2 top-0 z-10 inline-flex -translate-x-1/2 items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
+            style={{
+              backgroundColor: "var(--landing-accent-light)",
+              color: "var(--landing-accent)",
+              border: "1px solid var(--landing-accent)",
+            }}
+          >
+            <Sparkles size={16} />
+            Automatização inteligente para RH
+          </div>
+
           <div
             className="landing-card overflow-hidden rounded-2xl p-1"
             style={{
@@ -220,3 +216,4 @@ export function Hero() {
     </section>
   );
 }
+
