@@ -1,15 +1,43 @@
 
 import { createClient } from '@sanity/client'
+import type { QueryParams } from '@sanity/client'
 import type { BlogEntry, BlogPost } from '../../types/sanity'
 import { groq } from 'next-sanity';
 
-export const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '',
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || '',
-  apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION || '',
-  useCdn: process.env.NODE_ENV === 'production',
-  perspective: 'published',
-});
+const sanityProjectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+const sanityDataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
+const sanityApiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION;
+
+const hasSanityConfig = Boolean(sanityProjectId && sanityDataset && sanityApiVersion);
+let hasWarnedMissingConfig = false;
+
+export const client = hasSanityConfig
+  ? createClient({
+      projectId: sanityProjectId!,
+      dataset: sanityDataset!,
+      apiVersion: sanityApiVersion!,
+      useCdn: process.env.NODE_ENV === 'production',
+      perspective: 'published',
+    })
+  : null;
+
+async function safeFetch<T>(query: string, params?: QueryParams): Promise<T | null> {
+  if (!client) {
+    if (!hasWarnedMissingConfig) {
+      hasWarnedMissingConfig = true;
+      console.warn(
+        'Sanity client not configured. Set NEXT_PUBLIC_SANITY_PROJECT_ID, NEXT_PUBLIC_SANITY_DATASET, and NEXT_PUBLIC_SANITY_API_VERSION.'
+      );
+    }
+    return null;
+  }
+
+  if (params) {
+    return client.fetch<T>(query, params);
+  }
+
+  return client.fetch<T>(query);
+}
 
 // Interface for getPosts options
 interface GetPostsOptions {
@@ -69,7 +97,7 @@ export async function getPosts(options: GetPostsOptions = {}): Promise<BlogEntry
   `;
 
   // Fetch posts from Sanity
-  const result = await client.fetch(query);
+  const result = await safeFetch<BlogEntry[]>(query);
 
   // Return an empty array if result is falsy
   return result || [];
@@ -77,7 +105,7 @@ export async function getPosts(options: GetPostsOptions = {}): Promise<BlogEntry
 
 // Helper function to fetch a single post by slug (for listings)
 export async function getPostBySlug(slug: string): Promise<BlogEntry | null> {
-  const result = await client.fetch(groq`
+  const result = await safeFetch<BlogEntry>(groq`
     *[_type == "post" && slug.current == $slug][0] {
       _id,
       title,
@@ -97,7 +125,7 @@ export async function getPostBySlug(slug: string): Promise<BlogEntry | null> {
 
 // Helper function to fetch a full post with body content
 export async function getFullPostBySlug(slug: string): Promise<BlogPost | null> {
-  const result = await client.fetch(groq`
+  const result = await safeFetch<BlogPost>(groq`
     *[_type == "post" && slug.current == $slug][0] {
       _id,
       title,
@@ -118,7 +146,7 @@ export async function getFullPostBySlug(slug: string): Promise<BlogPost | null> 
 
 // Helper function to get all post slugs for static paths
 export async function getAllPostSlugs(): Promise<{ slug: string }[]> {
-  const result = await client.fetch(groq`
+  const result = await safeFetch<{ slug: string }[]>(groq`
     *[_type == "post"] {
       "slug": slug.current
     }
