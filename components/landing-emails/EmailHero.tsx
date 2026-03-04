@@ -18,7 +18,6 @@ const scrollTo = (id: string) => {
 
 const EmailHero: React.FC = () => {
   const t = useTranslations('ProductEmails');
-  const tHero = useTranslations('Hero');
   const heroTitle = t.raw('hero.title').replace(/text-emerald-400/g, 'text-primary');
 
   return (
@@ -161,27 +160,6 @@ const EmailHero: React.FC = () => {
             </div>
           </motion.div>
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <motion.button
-          type="button"
-          onClick={() => scrollTo('demo')}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.1 }}
-          className="flex flex-col items-center"
-        >
-          <span className="text-gray-500 text-sm mb-2">{tHero('scrollToExplore')}</span>
-          <div className="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center p-1">
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-              className="w-1 h-1 bg-gray-400 rounded-full"
-            />
-          </div>
-        </motion.button>
       </div>
     </section>
   );
