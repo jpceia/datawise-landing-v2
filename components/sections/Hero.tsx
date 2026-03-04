@@ -19,16 +19,22 @@ const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-5xl md:text-6xl font-bold text-white mb-6 font-sans"
-          dangerouslySetInnerHTML={{ __html: t('title') }}
-        />
+        >
+          {t.rich('title', {
+            br: () => <br />
+          })}
+        </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-base md:text-lg text-white/80 mb-10 max-w-lg"
-          dangerouslySetInnerHTML={{ __html: t('subtitle') }}
-        />
+        >
+          {t.rich('subtitle', {
+            strong: chunks => <span className="font-bold text-white">{chunks}</span>
+          })}
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: -20 }}

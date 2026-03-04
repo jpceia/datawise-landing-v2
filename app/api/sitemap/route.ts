@@ -1,9 +1,8 @@
-// pages/api/sitemap.ts
-import { NextApiRequest, NextApiResponse } from 'next';
-import { getPosts } from '@/lib/sanity/client';
-import { BlogEntry } from '@/types/sanity';
+import {NextResponse} from 'next/server';
+import {getPosts} from '@/lib/sanity/client';
+import {BlogEntry} from '@/types/sanity';
 
-const SITE_URL = process.env.SITE_URL!;
+const SITE_URL = process.env.SITE_URL || 'https://www.datawise.pt';
 
 interface SitemapUrl {
   loc: string;
@@ -12,7 +11,6 @@ interface SitemapUrl {
   priority?: string;
 }
 
-// Function to generate sitemap XML
 function generateSitemapXML(urls: SitemapUrl[]) {
   const xmlHeader = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -38,57 +36,47 @@ function generateSitemapXML(urls: SitemapUrl[]) {
   return `${xmlHeader}\n${urlEntries}\n${xmlFooter}`;
 }
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'GET') {
-    return res.status(405).json({ message: 'Method not allowed' });
-  }
-
+export async function GET() {
   try {
-    // Cache: 1 hour in CDN, 1 day for stale revalidate
-    res.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400');
-    res.setHeader('Content-Type', 'application/xml');
-
-    // Get posts from Sanity
-    const blogPosts = await getPosts({ 
-      filterLegal: false, // Include all posts including Legal category for sitemap
+    const blogPosts = await getPosts({
+      filterLegal: false,
       orderBy: 'publishedAt',
       orderDirection: 'desc'
     });
 
-    // Static URLs
     const staticPages: SitemapUrl[] = [
       {
         loc: `${SITE_URL}/`,
         changefreq: 'daily',
         priority: '1.0',
-        lastModified: new Date().toISOString(),
+        lastModified: new Date().toISOString()
       },
       {
         loc: `${SITE_URL}/blog`,
         changefreq: 'daily',
         priority: '0.9',
-        lastModified: new Date().toISOString(),
-      },
+        lastModified: new Date().toISOString()
+      }
     ];
 
-    // Dynamic URLs from posts
     const blogUrls: SitemapUrl[] = blogPosts.map((post: BlogEntry) => ({
       loc: `${SITE_URL}/${post.slug.current}`,
       changefreq: 'monthly',
       priority: '0.8',
-      lastModified: post.publishedAt,
+      lastModified: post.publishedAt
     }));
 
-    // Combine all URLs
-    const allUrls: SitemapUrl[] = [...staticPages, ...blogUrls];
+    const sitemapXML = generateSitemapXML([...staticPages, ...blogUrls]);
 
-    // Generate XML
-    const sitemapXML = generateSitemapXML(allUrls);
-
-    // Send response
-    res.status(200).send(sitemapXML);
+    return new NextResponse(sitemapXML, {
+      headers: {
+        'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
+        'Content-Type': 'application/xml'
+      }
+    });
   } catch (error) {
     console.error('Error generating sitemap:', error);
-    res.status(500).json({ message: 'Error generating sitemap' });
+
+    return NextResponse.json({message: 'Error generating sitemap'}, {status: 500});
   }
 }

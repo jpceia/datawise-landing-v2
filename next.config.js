@@ -1,3 +1,6 @@
+const createNextIntlPlugin = require('next-intl/plugin');
+const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -9,23 +12,13 @@ const nextConfig = {
       },
     ],
   },
-  i18n: {
-    locales: ['pt', 'en'],
-    defaultLocale: 'pt',
-    localeDetection: false,
-  },
   env: {
     SITE_URL: 'https://www.datawise.pt',
   },
   async rewrites() {
     return {
       beforeFiles: [],
-      afterFiles: [
-        {
-          source: '/:slug((?!blog|api|_next|product-emails).*)',
-          destination: '/blog/:slug',
-        },
-      ],
+      afterFiles: [],
       fallback: [
         {
           source: '/sitemap.xml',
@@ -34,6 +27,6 @@ const nextConfig = {
       ],
     };
   },
-}
+};
 
-module.exports = nextConfig;
+module.exports = withNextIntl(nextConfig);
