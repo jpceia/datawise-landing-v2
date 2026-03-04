@@ -6,7 +6,7 @@ Multi-language marketing website for Datawise, an AI/Data Science consulting sta
 ## Tech Stack
 - **Framework:** Next.js 14.2.30 + React 18 + TypeScript
 - **Styling:** Tailwind CSS 3.4.1
-- **i18n:** next-intl (pt, en, fr, es)
+- **i18n:** next-intl (pt, en)
 - **CMS:** Sanity (blog posts)
 - **3D:** Three.js + React Three Fiber (Globe)
 - **Animation:** Framer Motion, GSAP
@@ -32,8 +32,6 @@ NEXT_PUBLIC_SANITY_API_VERSION
 ## Languages
 - Portuguese (pt) - default
 - English (en)
-- French (fr)
-- Spanish (es)
 
 ## Production URL
 https://www.datawise.pt

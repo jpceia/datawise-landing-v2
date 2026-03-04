@@ -8,9 +8,7 @@ export function formatDate(dateString: string, locale: string = 'pt'): string {
   const date = new Date(dateString);
   const localeMap: { [key: string]: string } = {
     'pt': 'pt-PT',
-    'en': 'en-US',
-    'fr': 'fr-FR',
-    'es': 'es-ES'
+    'en': 'en-US'
   };
   
   return date.toLocaleDateString(localeMap[locale] || localeMap['pt'], {

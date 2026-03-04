@@ -5,8 +5,6 @@ Translation files for next-intl.
 ## Structure
 - `pt.json` - Portuguese (default)
 - `en.json` - English
-- `fr.json` - French
-- `es.json` - Spanish
 
 ## Namespaces
 Each component has a namespace:
