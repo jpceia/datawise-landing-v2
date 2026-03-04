@@ -2,12 +2,12 @@ import Head from 'next/head';
 import { useTranslations } from 'next-intl';
 import { GetStaticProps } from 'next';
 import type { NextPage } from 'next';
-import EmailHero from '@/components/sections/product-emails/EmailHero';
-import EmailDemo from '@/components/sections/product-emails/EmailDemo';
-import EmailFeatures from '@/components/sections/product-emails/EmailFeatures';
-import EmailProcess from '@/components/sections/product-emails/EmailProcess';
-import EmailSocialProof from '@/components/sections/product-emails/EmailSocialProof';
-import EmailContactForm from '@/components/sections/product-emails/EmailContactForm';
+import EmailHero from '@/components/landing-emails/EmailHero';
+import EmailDemo from '@/components/landing-emails/EmailDemo';
+import EmailFeatures from '@/components/landing-emails/EmailFeatures';
+import EmailProcess from '@/components/landing-emails/EmailProcess';
+import EmailSocialProof from '@/components/landing-emails/EmailSocialProof';
+import EmailContactForm from '@/components/landing-emails/EmailContactForm';
 
 interface ProductEmailsProps {
   messages: any;
