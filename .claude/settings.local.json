@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(test -d \"c:/Workarea/saas-cvs\")",
+      "Bash(npm run dev)"
+    ]
+  }
+}

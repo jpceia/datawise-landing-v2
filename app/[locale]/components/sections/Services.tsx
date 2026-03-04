@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
-import ServiceCard from '../../../../components/ui/ServiceCard';
+import ServiceCard from '@/components/ServiceCard';
 
 const Services = () => {
   const t = useTranslations('Services');

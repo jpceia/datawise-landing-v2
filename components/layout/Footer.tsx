@@ -9,11 +9,6 @@ interface FooterLink {
   label: string;
 }
 
-interface FooterSection {
-  title: string;
-  links: FooterLink[];
-}
-
 const Footer: React.FC = () => {
   const t = useTranslations('Footer');
   

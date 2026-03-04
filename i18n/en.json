@@ -45,11 +45,11 @@
     "Services": {
       "badge": "OUR SERVICES",
       "title": "Services",
-      "subtitle": "Tailored solutions to optimize your operations and drive tangible results through data science and artificial intelligence.",
+      "subtitle": "We develop tailored solutions to optimize your operations and drive tangible results through data science and artificial intelligence.",
       "items": [
         {
           "title": "Predictive Models",
-          "description": "We develop models that anticipate trends and behaviors based on historical patterns, enabling proactive decisions: identification of customers at risk of churn, sales forecasting and preventive maintenance."
+          "description": "Models that anticipate trends and behaviors based on historical patterns, enabling proactive decisions: identification of customers at risk of churn, sales forecasting and preventive maintenance."
         },
         {
           "title": "Competitive Intelligence and Media Monitoring",
@@ -57,7 +57,7 @@
         },
         {
           "title": "Workflow Automation",
-          "description": "Development of automated systems that orchestrate complex processes, connecting different departments and applications to eliminate bottlenecks and ensure efficient and error-free workflows."
+          "description": "Automated systems that orchestrate complex processes, connecting different departments and applications to eliminate bottlenecks and ensure efficient and error-free workflows."
         },
         {
           "title": "Operational Optimization",

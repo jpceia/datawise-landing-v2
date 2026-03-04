@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import CalendlyPopupButton from '@/components/ui/CalendlyPopupButton';
+import CalendlyPopupButton from '@/components/CalendlyPopupButton';
 
 const TransformBusiness = () => {
   const t = useTranslations('TransformBusiness');

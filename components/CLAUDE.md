@@ -1,18 +1,38 @@
-# Components
+# UI Components
 
-React components organized in 3 categories:
+Reusable primitives and building blocks.
 
-## /layout
-Page structure components (Navbar, Footer, TopBanner)
+## Button.tsx
+3 variants (primary, secondary, outline), 3 sizes (sm, md, lg).
 
-## /sections
-Main page sections - Hero, Services, SuccessCases, etc.
+## Badge.tsx
+Status indicator labels.
 
-## /ui
-Reusable UI primitives - Button, Card, Badge, Globe3D, etc.
+## Card.tsx
+Generic card wrapper with consistent styling.
 
-## Conventions
-- All components use TypeScript
-- Styling via Tailwind CSS classes
-- Translations via `useTranslations()` hook from next-intl
-- Animations via Framer Motion
+## FeatureCard.tsx
+Feature display with icon, title, description.
+
+## ServiceCard.tsx
+Service display card with icon and details.
+
+## IconCircle.tsx
+Circular icon wrapper with background.
+
+## Section.tsx
+Page section wrapper with consistent padding/spacing.
+
+## SectionTitle.tsx
+Section title with optional subtitle and badge.
+
+## Globe3D.tsx
+Interactive 3D WebGL globe (Three.js + React Three Fiber).
+- Auto-rotation, click ripples, coordinate display
+- Fallback particle animation for non-WebGL browsers
+
+## CalendlyPopupButton.tsx
+Calendly scheduling popup trigger.
+
+## PortableTextContent.tsx
+Sanity Portable Text renderer for blog posts.

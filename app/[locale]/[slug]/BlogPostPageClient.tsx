@@ -5,8 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {useLocale, useTranslations} from 'next-intl';
 import {BlogPost} from '@/types/sanity';
-import PortableTextContent from '@/components/ui/PortableTextContent';
-import CalendlyPopupButton from '@/components/ui/CalendlyPopupButton';
+import PortableTextContent from '@/components/PortableTextContent';
+import CalendlyPopupButton from '@/components/CalendlyPopupButton';
 import {formatDate} from '@/lib/utils/date';
 
 interface BlogPostPageProps {

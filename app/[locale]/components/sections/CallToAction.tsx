@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
-import CalendlyPopupButton from '@/components/ui/CalendlyPopupButton';
+import CalendlyPopupButton from '@/components/CalendlyPopupButton';
 
 interface CallToActionProps {
   variant?: 'light' | 'dark';

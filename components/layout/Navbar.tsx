@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NavItem } from '../../types';
-import CalendlyPopupButton from '../ui/CalendlyPopupButton';
+import CalendlyPopupButton from '../CalendlyPopupButton';
 
 interface NavbarProps {
   hasTopBanner?: boolean;

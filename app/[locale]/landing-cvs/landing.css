@@ -1,0 +1,167 @@
+/* Landing page scoped styles — light/dark palettes */
+
+.landing {
+  --landing-bg: #FFFFFF;
+  --landing-bg-alt: #F4F6F9;
+  --landing-bg-card: #FFFFFF;
+  --landing-text: #1A1A1A;
+  --landing-text-muted: #6B6560;
+  --landing-accent: #2563EB;
+  --landing-accent-hover: #1D4ED8;
+  --landing-accent-light: #DBEAFE;
+  --landing-border: #E2E7EE;
+  --landing-gradient-from: #2563EB;
+  --landing-gradient-to: #2E7BD6;
+}
+
+:is(.dark) .landing {
+  --landing-bg: #0A0A0A;
+  --landing-bg-alt: #141414;
+  --landing-bg-card: #1A1A1A;
+  --landing-text: #F5F5F5;
+  --landing-text-muted: #A0A0A0;
+  --landing-accent: #3B82F6;
+  --landing-accent-hover: #60A5FA;
+  --landing-accent-light: #1E3A5F;
+  --landing-border: #2A2A2A;
+  --landing-gradient-from: #3B82F6;
+  --landing-gradient-to: #8B5CF6;
+}
+
+.landing {
+  background-color: var(--landing-bg);
+  color: var(--landing-text);
+}
+
+/* Smooth scroll for anchor links */
+.landing {
+  scroll-behavior: smooth;
+}
+
+/* Glassmorphism navbar */
+.landing-navbar {
+  background-color: color-mix(in srgb, var(--landing-bg) 80%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--landing-border);
+}
+
+/* Accent button */
+.landing-btn-primary {
+  background: linear-gradient(135deg, var(--landing-gradient-from), var(--landing-gradient-to));
+  color: #FFFFFF;
+  transition: all 0.2s ease;
+}
+
+.landing-btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--landing-accent) 40%, transparent);
+}
+
+/* Outline button */
+.landing-btn-outline {
+  border: 1px solid var(--landing-accent);
+  color: var(--landing-accent);
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.landing-btn-outline:hover {
+  background: var(--landing-accent);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+/* Feature card */
+.landing-card {
+  background-color: var(--landing-bg-card);
+  border: 1px solid var(--landing-border);
+  transition: all 0.3s ease;
+}
+
+.landing-card:hover {
+  border-color: var(--landing-accent);
+  box-shadow: 0 8px 30px color-mix(in srgb, var(--landing-accent) 10%, transparent);
+  transform: translateY(-4px);
+}
+
+/* Pricing card highlight */
+.landing-card-highlight {
+  border: 2px solid var(--landing-accent);
+  box-shadow: 0 8px 40px color-mix(in srgb, var(--landing-accent) 15%, transparent);
+  position: relative;
+}
+
+/* Gradient text */
+.landing-gradient-text {
+  background: linear-gradient(135deg, var(--landing-gradient-from), var(--landing-gradient-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section alternating backgrounds */
+.landing-section-alt {
+  background-color: var(--landing-bg-alt);
+}
+
+/* Animated gradient orb for hero */
+.landing-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+}
+
+:is(.dark) .landing-orb {
+  opacity: 0.15;
+}
+
+/* FAQ accordion styling override */
+.landing .landing-faq [data-state="open"] {
+  border-color: var(--landing-accent);
+}
+
+/* Pricing slider */
+.landing-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 9999px;
+  background: color-mix(in srgb, var(--landing-accent) 25%, var(--landing-border));
+  outline: none;
+}
+
+.landing-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--landing-accent);
+  cursor: pointer;
+  border: 2px solid var(--landing-bg-card);
+  box-shadow: 0 0 0 2px var(--landing-accent);
+  transition: box-shadow 0.15s ease;
+}
+
+.landing-slider::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--landing-accent) 25%, transparent);
+}
+
+.landing-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--landing-accent);
+  cursor: pointer;
+  border: 2px solid var(--landing-bg-card);
+  box-shadow: 0 0 0 2px var(--landing-accent);
+}
+
+.landing-slider::-moz-range-track {
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--landing-border);
+}

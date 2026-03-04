@@ -1,9 +1,9 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import Badge from '@/components/ui/Badge';
-import FeatureCard from '@/components/ui/FeatureCard';
-import SectionTitle from '@/components/ui/SectionTitle';
+import Badge from '@/components/Badge';
+import FeatureCard from '@/components/FeatureCard';
+import SectionTitle from '@/components/SectionTitle';
 import ContactData from '@/lib/data/ContactData';
 
 const Recruitment = () => {
