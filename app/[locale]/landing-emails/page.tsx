@@ -1,6 +1,11 @@
 import type {Metadata} from 'next';
 import {getTranslations} from 'next-intl/server';
-import LandingEmailsPageClient from '@/components/pages/LandingEmailsPageClient';
+import EmailHero from './components/EmailHero';
+import EmailDemo from './components/EmailDemo';
+import EmailFeatures from './components/EmailFeatures';
+import EmailProcess from './components/EmailProcess';
+import EmailSocialProof from './components/EmailSocialProof';
+import EmailContactForm from './components/EmailContactForm';
 
 export async function generateMetadata({
   params
@@ -23,5 +28,14 @@ export async function generateMetadata({
 }
 
 export default function LandingEmailsPage() {
-  return <LandingEmailsPageClient />;
+  return (
+    <main>
+      <EmailHero />
+      <EmailDemo />
+      <EmailFeatures />
+      <EmailProcess />
+      <EmailSocialProof />
+      <EmailContactForm />
+    </main>
+  );
 }

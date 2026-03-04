@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import {notFound} from 'next/navigation';
-import BlogPostPageClient from '@/components/pages/BlogPostPageClient';
+import BlogPostPageClient from './BlogPostPageClient';
 import {getAllPostSlugs, getFullPostBySlug, getPosts} from '@/lib/sanity/client';
 import {routing} from '@/i18n/routing';
 

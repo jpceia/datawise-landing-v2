@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import {getTranslations} from 'next-intl/server';
-import HomePageClient from '@/components/pages/HomePageClient';
+import HomePageClient from './components/HomePageClient';
 
 export async function generateMetadata({
   params

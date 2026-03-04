@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import {getPosts} from '@/lib/sanity/client';
-import BlogIndexPageClient from '@/components/pages/BlogIndexPageClient';
+import BlogIndexPageClient from './BlogIndexPageClient';
 
 export const revalidate = 3600;
 

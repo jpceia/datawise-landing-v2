@@ -22,7 +22,7 @@ export default async function LocaleLayout({
   }
 
   setRequestLocale(locale);
-  const messages = (await import(`@/messages/${locale}.json`)).default;
+  const messages = (await import(`@/i18n/${locale}.json`)).default;
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages} timeZone="Europe/Lisbon">
