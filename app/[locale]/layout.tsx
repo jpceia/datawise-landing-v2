@@ -2,6 +2,7 @@ import {hasLocale, NextIntlClientProvider} from 'next-intl';
 import {setRequestLocale} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import SiteFrame from '@/components/layout/SiteFrame';
+import {HubspotContactModalProvider} from '@/components/providers/HubspotContactModalProvider';
 import {routing} from '@/i18n/routing';
 
 export function generateStaticParams() {
@@ -26,7 +27,9 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages} timeZone="Europe/Lisbon">
-      <SiteFrame>{children}</SiteFrame>
+      <HubspotContactModalProvider>
+        <SiteFrame>{children}</SiteFrame>
+      </HubspotContactModalProvider>
     </NextIntlClientProvider>
   );
 }

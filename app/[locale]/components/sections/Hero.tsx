@@ -1,11 +1,14 @@
+"use client";
+
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import CalendlyPopupButton from '@/components/CalendlyPopupButton';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useHubspotContactModal } from '@/components/providers/HubspotContactModalProvider';
 
 const Hero: React.FC = () => {
   const t = useTranslations('Hero');
+  const contactModal = useHubspotContactModal();
 
   return (
     <section
@@ -45,12 +48,13 @@ const Hero: React.FC = () => {
           <CalendlyPopupButton className="px-8 py-4 bg-primary-800 text-white font-medium rounded-lg border border-white/30 hover:bg-primary-700 transition-all transform hover:scale-105 shadow-lg">
             {t('ctaSchedule')}
           </CalendlyPopupButton>
-          <Link
-            href="#services"
+          <button
+            type="button"
+            onClick={contactModal.openModal}
             className="px-8 py-4 bg-transparent border border-white text-white rounded-lg font-medium hover:bg-white/10 transition-all transform hover:scale-105"
           >
             {t('ctaServices')}
-          </Link>
+          </button>
         </motion.div>
 
 
