@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import Script from 'next/script';
+import React from 'react';
 import { sendGTMEvent } from '@next/third-parties/google';
 
 interface CalendlyPopupButtonProps {
@@ -16,6 +15,50 @@ declare global {
   }
 }
 
+let calendlyLoaderPromise: Promise<void> | null = null;
+
+function ensureCalendlyLoaded(): Promise<void> {
+  if (typeof window === 'undefined') {
+    return Promise.resolve();
+  }
+
+  if (window.Calendly) {
+    return Promise.resolve();
+  }
+
+  if (calendlyLoaderPromise) {
+    return calendlyLoaderPromise;
+  }
+
+  calendlyLoaderPromise = new Promise((resolve, reject) => {
+    if (!document.querySelector('link[data-calendly-css="true"]')) {
+      const link = document.createElement('link');
+      link.href = 'https://assets.calendly.com/assets/external/widget.css';
+      link.rel = 'stylesheet';
+      link.setAttribute('data-calendly-css', 'true');
+      document.head.appendChild(link);
+    }
+
+    const existingScript = document.querySelector('script[data-calendly-widget="true"]') as HTMLScriptElement | null;
+    if (existingScript) {
+      existingScript.addEventListener('load', () => resolve(), {once: true});
+      existingScript.addEventListener('error', () => reject(new Error('Failed to load Calendly script')), {once: true});
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    script.defer = true;
+    script.setAttribute('data-calendly-widget', 'true');
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error('Failed to load Calendly script'));
+    document.body.appendChild(script);
+  });
+
+  return calendlyLoaderPromise;
+}
+
 const CalendlyPopupButton: React.FC<CalendlyPopupButtonProps> = ({
   children,
   className = '',
@@ -23,31 +66,28 @@ const CalendlyPopupButton: React.FC<CalendlyPopupButtonProps> = ({
 }) => {
   const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || '';
 
-  useEffect(() => {
-    // Add Calendly styles
-    const link = document.createElement('link');
-    link.href = 'https://assets.calendly.com/assets/external/widget.css';
-    link.rel = 'stylesheet';
-    document.head.appendChild(link);
+  const handleClick = async () => {
+    if (!calendlyUrl) {
+      return;
+    }
 
-    return () => {
-      // Cleanup
-      document.head.removeChild(link);
-    };
-  }, []);
+    try {
+      await ensureCalendlyLoaded();
 
-  const handleClick = () => {
-    if (window.Calendly) {
+      if (!window.Calendly) {
+        return;
+      }
 
-      // Sending Google Tag Manager Event
       sendGTMEvent({
         event: 'calendly_popup',
         value: 1
-      })
+      });
 
       window.Calendly.initPopupWidget({
         url: calendlyUrl,
       });
+    } catch {
+      // Fail silently to avoid blocking UI interaction.
     }
   };
 
@@ -61,25 +101,18 @@ const CalendlyPopupButton: React.FC<CalendlyPopupButtonProps> = ({
     </>
   );
 
-  // Determine the correct element to render and its classes
-  const isCustomElement = !!children;
-  const ElementType = isCustomElement ? 'span' : 'button';
-
-  const elementClasses = isCustomElement
+  const elementClasses = children
     ? className
     : `inline-flex items-center justify-center px-8 py-4 rounded-lg font-medium text-lg transition-all transform hover:scale-105 shadow-lg bg-primary text-white hover:bg-primary-dark hover:shadow-primary/25 ${className}`;
 
   return (
-    <>
-      <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
-      <ElementType
-        onClick={handleClick}
-        className={elementClasses}
-        style={{ cursor: 'pointer' }} // Ensure cursor pointer for span elements
-      >
-        {buttonContent}
-      </ElementType>
-    </>
+    <button
+      type="button"
+      onClick={handleClick}
+      className={elementClasses}
+    >
+      {buttonContent}
+    </button>
   );
 };
 
