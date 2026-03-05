@@ -31,14 +31,15 @@ export default function HubspotContactModal({
 
   return (
     <>
-      <Script
-        src={HUBSPOT_FORM_SCRIPT_URL as string}
-        strategy="lazyOnload"
-      />
+      {open && (
+        <Script
+          src={HUBSPOT_FORM_SCRIPT_URL as string}
+          strategy="lazyOnload"
+        />
+      )}
 
       <Dialog open={open} onOpenChange={onOpenChange}>
         <DialogContent
-          forceMount
           className="max-w-3xl border-none bg-white p-0 sm:rounded-2xl"
         >
           <DialogTitle className="sr-only">Contacte-nos</DialogTitle>
