@@ -96,8 +96,8 @@ const Navbar: React.FC<NavbarProps> = ({ hasTopBanner = false, variant = 'dark' 
             <Image
               src={isDefault ? '/Datawise_Principal.png' : '/Datawise_Secundario.png'}
               alt="Datawise"
-              width={600}
-              height={160}
+              width={2664}
+              height={341}
               className="my-4 h-12 w-auto"
               priority
             />
