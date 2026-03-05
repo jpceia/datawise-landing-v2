@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { ArrowLeftRight, Brain, Bot, Building2, MessageSquare, Tag, TrendingUp } from "lucide-react";
 
 /* ── Mockup illustrations (pure JSX/CSS) ── */
@@ -216,7 +217,13 @@ const features = [
 export function RoadmapSection() {
   return (
     <section>
-      <div className="mb-16 text-center">
+      <motion.div
+        className="mb-16 text-center"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
         <p className="text-xs font-medium tracking-[0.18em] text-primary-700/80 uppercase dark:text-primary-100/70">
           Em desenvolvimento
         </p>
@@ -229,7 +236,7 @@ export function RoadmapSection() {
         <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-zinc-600 dark:text-zinc-500">
           Estamos a construir estas capacidades. Cada uma será lançada de forma incremental e validada com utilizadores reais.
         </p>
-      </div>
+      </motion.div>
 
       <div className="space-y-20 lg:space-y-28">
         {features.map((feature, index) => {
@@ -238,19 +245,35 @@ export function RoadmapSection() {
           const isReversed = index % 2 === 1;
 
           return (
-            <div
+            <motion.div
               key={feature.title}
               className={`grid items-center gap-10 lg:grid-cols-2 lg:gap-16 ${
                 isReversed ? "lg:[direction:rtl]" : ""
               }`}
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6 }}
             >
               {/* Mockup */}
-              <div className={isReversed ? "lg:[direction:ltr]" : ""}>
+              <motion.div
+                className={isReversed ? "lg:[direction:ltr]" : ""}
+                initial={{ opacity: 0, x: isReversed ? 30 : -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
                 <Mockup />
-              </div>
+              </motion.div>
 
               {/* Text */}
-              <div className={isReversed ? "lg:[direction:ltr]" : ""}>
+              <motion.div
+                className={isReversed ? "lg:[direction:ltr]" : ""}
+                initial={{ opacity: 0, x: isReversed ? -30 : 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
                 <span
                   className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-[11px] font-semibold ${feature.badgeColor}`}
                 >
@@ -265,8 +288,8 @@ export function RoadmapSection() {
                 <p className="mt-4 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
                   {feature.description}
                 </p>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           );
         })}
       </div>
