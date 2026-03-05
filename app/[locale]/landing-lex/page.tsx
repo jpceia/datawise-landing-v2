@@ -1,12 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import LandingPage from "./landing-page";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Datawise Lex — IA Jurídica Segura para Advogados e Escritórios",
@@ -32,9 +25,5 @@ export const metadata: Metadata = {
 };
 
 export default function LandingRoute() {
-  return (
-    <div className={inter.variable}>
-      <LandingPage />
-    </div>
-  );
+  return <LandingPage />;
 }
