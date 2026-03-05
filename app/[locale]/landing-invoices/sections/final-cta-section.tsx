@@ -1,5 +1,5 @@
-﻿import Link from "next/link";
-import { ArrowRight, Clock3 } from "lucide-react";
+﻿import { ArrowRight, Clock3 } from "lucide-react";
+import CalendlyPopupButton from "@/components/CalendlyPopupButton";
 
 export function FinalCtaSection() {
   return (
@@ -17,7 +17,7 @@ export function FinalCtaSection() {
         </p>
 
         <h3 className="mx-auto mt-6 max-w-2xl text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
-          Comeca hoje.{" "}
+          Começa hoje.{" "}
           <span className="bg-gradient-to-r from-primary-400 via-primary-300 to-violet-400 bg-clip-text text-transparent">
             Entrega mais previsibilidade financeira
           </span>{" "}
@@ -29,18 +29,15 @@ export function FinalCtaSection() {
         </p>
 
         <div className="mt-10 flex flex-wrap justify-center gap-4">
-          <Link
-            href="/register"
-            className="group inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-primary-600 to-primary-500 px-8 py-4 text-base font-bold text-white transition duration-300 hover:from-primary-500 hover:to-primary-400 hover:shadow-xl hover:shadow-primary-500/25"
-          >
-            Comecar grátis
+          <CalendlyPopupButton className="group inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-primary-600 to-primary-500 px-8 py-4 text-base font-bold text-white transition duration-300 hover:from-primary-500 hover:to-primary-400 hover:shadow-xl hover:shadow-primary-500/25">
+            Marcar demo
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-          </Link>
+          </CalendlyPopupButton>
           <a
-            href="mailto:sales@saasinvoice.app?subject=Pedido%20de%20demo"
+            href="mailto:sales@saasinvoice.app?subject=Pedido%20de%20Acesso"
             className="inline-flex items-center gap-2.5 rounded-xl border border-zinc-300 px-8 py-4 text-base font-semibold text-zinc-800 transition duration-300 hover:border-primary-300/60 hover:bg-zinc-100 dark:border-white/20 dark:text-zinc-100 dark:hover:border-primary-200/40 dark:hover:bg-white/[0.05]"
           >
-            Marcar demo
+            Pedir acesso
           </a>
         </div>
       </div>

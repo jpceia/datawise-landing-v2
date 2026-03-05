@@ -23,16 +23,16 @@ export type FaqItem = {
 
 export const stats: StatItem[] = [
   {
-    value: "Upload rapido",
+    value: "Upload rápido",
     label: "Carrega documentos e centraliza faturas em poucos cliques.",
   },
   {
     value: "Fluxo claro",
-    label: "Acompanha estados de cobranca com visibilidade ponta a ponta.",
+    label: "Acompanha estados de cobrança com visibilidade ponta a ponta.",
   },
   {
     value: "Controlo total",
-    label: "Permissoes por papel e separacao por workspace para equipas.",
+    label: "Permissões por papel e separação por workspace para equipas.",
   },
 ];
 
@@ -41,57 +41,52 @@ export const pillars: PillarItem[] = [
     icon: Upload,
     title: "Menos trabalho manual",
     description:
-      "OCR + extracao automatica reduzem tarefas repetitivas e aceleram o fecho financeiro.",
+      "OCR + extração automática reduzem tarefas repetitivas e aceleram o fecho financeiro.",
   },
   {
     icon: GitGraph,
     title: "Mais controlo de cashflow",
     description:
-      "Pipeline claro de faturas: triagem, outstanding, paid e historico auditavel.",
+      "Pipeline claro de faturas: triagem, outstanding, paid e histórico auditável.",
   },
   {
     icon: ShieldCheck,
-    title: "Confiavel para equipas",
+    title: "Confiável para equipas",
     description:
-      "Multi-workspace com RBAC por organizacao para operar com seguranca e separacao de dados.",
+      "Multi-workspace com RBAC por organização para operar com segurança e separação de dados.",
   },
 ];
 
 export const workflow: string[] = [
   "Carrega faturas em segundos e centraliza tudo por workspace.",
   "Extrai, valida e corrige os dados sem perder contexto operacional.",
-  "Acompanha cobranca ate ao pagamento com trilho claro de estados.",
+  "Acompanha cobrança até ao pagamento com trilho claro de estados.",
 ];
 
 export const faqs: FaqItem[] = [
   {
     question: "Que tipos de documentos posso carregar?",
     answer:
-      "Faturas em PDF, imagens (JPG/PNG) e documentos digitalizados. O OCR extrai automaticamente os campos relevantes como fornecedor, valor, data e referencia.",
+      "Faturas em PDF, imagens (JPG/PNG) e documentos digitalizados. O OCR extrai automaticamente os campos relevantes como fornecedor, valor, data e referência.",
   },
   {
-    question: "Como funciona a extracao automatica?",
+    question: "Como funciona a extração automática?",
     answer:
-      "Utilizamos OCR combinado com modelos de IA para identificar e extrair campos-chave de cada fatura. Os dados extraidos podem ser revistos e corrigidos antes de serem confirmados.",
+      "Utilizamos OCR combinado com modelos de IA para identificar e extrair campos-chave de cada fatura. Os dados extraídos podem ser revistos e corrigidos antes de serem confirmados.",
   },
   {
     question: "Posso usar a plataforma com a minha equipa?",
     answer:
-      "Sim. No plano Pro tens multi-utilizador por workspace com controlo de permissoes. No Enterprise, tens RBAC completo com SSO/SAML e auditoria avancada.",
+      "Sim. Todos os planos incluem multi-utilizador por workspace com controlo de permissões por papel.",
   },
   {
-    question: "Quanto custa o plano Pro?",
+    question: "Os meus dados estão seguros?",
     answer:
-      "O plano Pro tem uma base de 20€/mes mais 0,16€ por fatura processada. Podes simular o custo com o slider na seccao de precos. O plano Free permite ate 10 faturas/mes sem custo.",
+      "Sim. Cada workspace tem isolamento completo de dados. Os dados são encriptados e armazenados em servidores na União Europeia.",
   },
   {
-    question: "Os meus dados estao seguros?",
+    question: "Posso integrar com o meu ERP ou sistema de faturação?",
     answer:
-      "Sim. Cada workspace tem isolamento completo de dados. No plano Enterprise oferecemos SSO/SAML, auditoria avancada e SLA dedicado.",
-  },
-  {
-    question: "Posso integrar com o meu ERP ou sistema de faturacao?",
-    answer:
-      "Integracoes a medida estao disponiveis no plano Enterprise, incluindo ERP, Google Drive, sistemas de faturacao e outros.",
+      "Integrações à medida estão disponíveis no plano Enterprise, incluindo ERP, Google Drive, sistemas de faturação e outros.",
   },
 ];

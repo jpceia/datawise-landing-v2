@@ -9,7 +9,7 @@ function BankReconciliationMockup() {
       <div className="mb-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Building2 className="h-4 w-4 text-emerald-500 dark:text-emerald-400" />
-          <span className="text-xs font-semibold text-zinc-800 dark:text-zinc-100">Reconciliação Bancaria</span>
+          <span className="text-xs font-semibold text-zinc-800 dark:text-zinc-100">Reconciliação Bancária</span>
         </div>
         <span className="rounded-full bg-emerald-500/20 px-2.5 py-0.5 text-[10px] font-bold text-emerald-600 dark:text-emerald-300">
           3 matched
@@ -73,10 +73,10 @@ function ClassificationMockup() {
       {/* Category tags */}
       <div className="mb-4 flex flex-wrap gap-2">
         {[
-          { label: "Material Escritorio", color: "bg-blue-500/15 text-blue-700 border-blue-400/30 dark:text-blue-300 dark:border-blue-400/25" },
+          { label: "Material Escritório", color: "bg-blue-500/15 text-blue-700 border-blue-400/30 dark:text-blue-300 dark:border-blue-400/25" },
           { label: "Software & SaaS", color: "bg-violet-500/15 text-violet-700 border-violet-400/30 dark:text-violet-300 dark:border-violet-400/25" },
-          { label: "Telecomunicacoes", color: "bg-amber-500/15 text-amber-700 border-amber-400/30 dark:text-amber-300 dark:border-amber-400/25" },
-          { label: "Servicos Externos", color: "bg-emerald-500/15 text-emerald-700 border-emerald-400/30 dark:text-emerald-300 dark:border-emerald-400/25" },
+          { label: "Telecomunicações", color: "bg-amber-500/15 text-amber-700 border-amber-400/30 dark:text-amber-300 dark:border-amber-400/25" },
+          { label: "Serviços Externos", color: "bg-emerald-500/15 text-emerald-700 border-emerald-400/30 dark:text-emerald-300 dark:border-emerald-400/25" },
         ].map((tag) => (
           <span
             key={tag.label}
@@ -92,7 +92,7 @@ function ClassificationMockup() {
       <div className="space-y-2">
         <div className="rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2.5 dark:border-zinc-700/50 dark:bg-zinc-800/60">
           <div className="flex items-center justify-between">
-            <span className="text-[10px] font-medium text-zinc-500 uppercase dark:text-zinc-400">Regra automatica</span>
+            <span className="text-[10px] font-medium text-zinc-500 uppercase dark:text-zinc-400">Regra automática</span>
             <span className="rounded bg-emerald-500/20 px-1.5 py-0.5 text-[9px] font-bold text-emerald-600 dark:text-emerald-300">
               ATIVA
             </span>
@@ -103,13 +103,13 @@ function ClassificationMockup() {
         </div>
         <div className="rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2.5 dark:border-zinc-700/50 dark:bg-zinc-800/60">
           <div className="flex items-center justify-between">
-            <span className="text-[10px] font-medium text-zinc-500 uppercase dark:text-zinc-400">Regra automatica</span>
+            <span className="text-[10px] font-medium text-zinc-500 uppercase dark:text-zinc-400">Regra automática</span>
             <span className="rounded bg-emerald-500/20 px-1.5 py-0.5 text-[9px] font-bold text-emerald-600 dark:text-emerald-300">
               ATIVA
             </span>
           </div>
           <p className="mt-1 text-xs text-zinc-700 dark:text-zinc-200">
-            Se valor &gt; <span className="font-bold text-amber-600 dark:text-amber-300">€5.000</span> → Requer aprovacao
+            Se valor &gt; <span className="font-bold text-amber-600 dark:text-amber-300">€5.000</span> → Requer aprovação
           </p>
         </div>
       </div>
@@ -137,7 +137,7 @@ function ChatbotMockup() {
         {/* User message */}
         <div className="flex justify-end">
           <div className="max-w-[80%] rounded-2xl rounded-br-md bg-blue-600 px-3.5 py-2 dark:bg-blue-600/90">
-            <p className="text-xs font-medium text-white">Quantas faturas estao outstanding este mes?</p>
+            <p className="text-xs font-medium text-white">Quantas faturas estão outstanding este mês?</p>
           </div>
         </div>
 
@@ -145,7 +145,7 @@ function ChatbotMockup() {
         <div className="flex justify-start">
           <div className="max-w-[85%] rounded-2xl rounded-bl-md border border-zinc-200 bg-zinc-50 px-3.5 py-2.5 dark:border-zinc-700/50 dark:bg-zinc-800/60">
             <p className="text-xs leading-relaxed text-zinc-700 dark:text-zinc-200">
-              Este mes tens <span className="font-bold text-blue-700 dark:text-blue-300">23 faturas outstanding</span> no valor total de{" "}
+              Este mês tens <span className="font-bold text-blue-700 dark:text-blue-300">23 faturas outstanding</span> no valor total de{" "}
               <span className="font-bold text-blue-700 dark:text-blue-300">€ 18.450,00</span>. A mais antiga tem 12 dias.
             </p>
           </div>
@@ -154,7 +154,7 @@ function ChatbotMockup() {
         {/* User message */}
         <div className="flex justify-end">
           <div className="max-w-[80%] rounded-2xl rounded-br-md bg-blue-600 px-3.5 py-2 dark:bg-blue-600/90">
-            <p className="text-xs font-medium text-white">Quais estao perto do vencimento?</p>
+            <p className="text-xs font-medium text-white">Quais estão perto do vencimento?</p>
           </div>
         </div>
 
@@ -186,9 +186,9 @@ const features = [
     badge: "Reconciliação",
     badgeColor: "border-emerald-400/20 bg-emerald-500/10 text-emerald-300",
     badgeIcon: Building2,
-    title: "Reconciliação bancaria automatizada",
+    title: "Reconciliação bancária automatizada",
     description:
-      "Importacao de extratos bancarios com matching assistido por IA entre movimentos e faturas. Identifica correspondencias, sinaliza discrepancias e reduz o tempo de fecho mensal.",
+      "Importação de extratos bancários com matching assistido por IA entre movimentos e faturas. Identifica correspondências, sinaliza discrepâncias e reduz o tempo de fecho mensal.",
     mockup: BankReconciliationMockup,
   },
   {
@@ -197,7 +197,7 @@ const features = [
     badgeIcon: Brain,
     title: "Classificação custom por workspace",
     description:
-      "Categorias e regras configuraveis sem fricção técnica. Define categorias proprias, cria regras automáticas por fornecedor ou valor, e mantem consistencia na classificação de despesas.",
+      "Categorias e regras configuráveis sem fricção técnica. Define categorias próprias, cria regras automáticas por fornecedor ou valor, e mantém consistência na classificação de despesas.",
     mockup: ClassificationMockup,
   },
   {
@@ -206,7 +206,7 @@ const features = [
     badgeIcon: Bot,
     title: "Chatbot inteligente para operações",
     description:
-      "Perguntas em linguagem natural sobre faturas, estados, fornecedores e estatisticas operacionais. Respostas instantaneas com contexto do teu workspace, sem navegar menus.",
+      "Perguntas em linguagem natural sobre faturas, estados, fornecedores e estatísticas operacionais. Respostas instantâneas com contexto do teu workspace, sem navegar menus.",
     mockup: ChatbotMockup,
   },
 ];
@@ -227,7 +227,7 @@ export function RoadmapSection() {
           </span>
         </h3>
         <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-zinc-600 dark:text-zinc-500">
-          Estamos a construir estas capacidades. Cada uma sera lancada de forma incremental e validada com utilizadores reais.
+          Estamos a construir estas capacidades. Cada uma será lançada de forma incremental e validada com utilizadores reais.
         </p>
       </div>
 

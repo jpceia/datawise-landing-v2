@@ -1,5 +1,5 @@
-﻿import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+﻿import { ArrowRight } from "lucide-react";
+import CalendlyPopupButton from "@/components/CalendlyPopupButton";
 import type { StatItem } from "../data";
 
 type HeroSectionProps = {
@@ -24,22 +24,19 @@ export function HeroSection({ stats }: HeroSectionProps) {
         </h1>
 
         <p className="max-w-xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400 md:text-xl">
-          Centralize faturas, automatize extração e acompanhe cobrança com visibilidade real. Um fluxo unico para reduzir erro, acelerar recebimentos e aumentar controlo.
+          Centralize faturas, automatize extração e acompanhe cobrança com visibilidade real. Um fluxo único para reduzir erro, acelerar recebimentos e aumentar controlo.
         </p>
 
         <div className="flex flex-wrap items-center gap-4 pt-2">
-          <Link
-            href="/register"
-            className="group inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-primary-600 to-primary-500 px-7 py-3.5 text-base font-semibold text-white transition duration-300 hover:from-primary-500 hover:to-primary-400 hover:shadow-xl hover:shadow-primary-500/25"
-          >
-            Comecar grátis
+          <CalendlyPopupButton className="group inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-primary-600 to-primary-500 px-7 py-3.5 text-base font-semibold text-white transition duration-300 hover:from-primary-500 hover:to-primary-400 hover:shadow-xl hover:shadow-primary-500/25">
+            Marcar demo
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-          </Link>
+          </CalendlyPopupButton>
           <a
-            href="mailto:sales@saasinvoice.app?subject=Pedido%20de%20demo"
+            href="mailto:sales@saasinvoice.app?subject=Pedido%20de%20Acesso"
             className="inline-flex items-center gap-2.5 rounded-xl border border-zinc-300 px-7 py-3.5 text-base font-semibold text-zinc-800 transition duration-300 hover:border-primary-300/50 hover:bg-zinc-100 dark:border-white/15 dark:text-zinc-100 dark:hover:border-primary-200/40 dark:hover:bg-white/[0.05]"
           >
-            Marcar demo
+            Pedir acesso
           </a>
         </div>
       </div>
@@ -47,7 +44,7 @@ export function HeroSection({ stats }: HeroSectionProps) {
       {/* Right - Stats card */}
       <div className="rounded-3xl border border-zinc-200 bg-white/75 p-7 shadow-xl shadow-primary-100/40 backdrop-blur-xl dark:border-white/[0.08] dark:bg-zinc-950/60 dark:shadow-2xl dark:shadow-black/40 xl:p-9">
         <p className="mb-6 text-xs font-medium tracking-[0.18em] text-primary-700/80 uppercase dark:text-primary-100/70">
-          Como ajudamos a tua operacao
+          Como ajudamos a tua operação
         </p>
         <div className="space-y-4">
           {stats.map((item) => (

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NavItem } from '../../types';
-import CalendlyPopupButton from '../CalendlyPopupButton';
+import { useHubspotContactModal } from '@/components/providers/HubspotContactModalProvider';
 
 interface NavbarProps {
   hasTopBanner?: boolean;
@@ -13,6 +13,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ hasTopBanner = false, variant = 'dark' }) => {
   const t = useTranslations('Navbar');
+  const { openModal } = useHubspotContactModal();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [visible, setVisible] = useState<boolean>(true);
@@ -98,6 +99,11 @@ const Navbar: React.FC<NavbarProps> = ({ hasTopBanner = false, variant = 'dark' 
     ? 'text-gray-700 hover:text-primary hover:bg-primary/10'
     : 'text-white/90 hover:text-white hover:bg-white/10';
 
+  const handleContactClick = () => {
+    openModal();
+    setIsOpen(false);
+  };
+
   return (
     <motion.nav
       animate={{ opacity: visible ? 1 : 0 }}
@@ -139,13 +145,21 @@ const Navbar: React.FC<NavbarProps> = ({ hasTopBanner = false, variant = 'dark' 
               </Link>
             ))}
             {isDefault ? (
-              <CalendlyPopupButton className="ml-4 bg-primary text-white hover:bg-primary-dark px-6 py-2.5 rounded-md font-medium transition-all transform hover:scale-105 hover:shadow-lg active:scale-95">
+              <button
+                type="button"
+                onClick={handleContactClick}
+                className="ml-4 bg-primary text-white hover:bg-primary-dark px-6 py-2.5 rounded-md font-medium transition-all transform hover:scale-105 hover:shadow-lg active:scale-95"
+              >
                 {t('contactUs')}
-              </CalendlyPopupButton>
+              </button>
             ) : (
-              <CalendlyPopupButton className="ml-4 bg-white text-primary hover:bg-white/90 px-6 py-2.5 rounded-md font-medium transition-all transform hover:scale-105 hover:shadow-lg active:scale-95">
+              <button
+                type="button"
+                onClick={handleContactClick}
+                className="ml-4 bg-white text-primary hover:bg-white/90 px-6 py-2.5 rounded-md font-medium transition-all transform hover:scale-105 hover:shadow-lg active:scale-95"
+              >
                 {t('contactUs')}
-              </CalendlyPopupButton>
+              </button>
             )}
           </div>
 
@@ -196,13 +210,21 @@ const Navbar: React.FC<NavbarProps> = ({ hasTopBanner = false, variant = 'dark' 
               ))}
               <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} exit={{ x: -20, opacity: 0 }}>
                 {isDefault ? (
-                  <CalendlyPopupButton className="block w-full bg-primary text-white hover:bg-primary-dark py-3 px-3 rounded-md font-medium text-center transition-colors">
+                  <button
+                    type="button"
+                    onClick={handleContactClick}
+                    className="block w-full bg-primary text-white hover:bg-primary-dark py-3 px-3 rounded-md font-medium text-center transition-colors"
+                  >
                     {t('contactUs')}
-                  </CalendlyPopupButton>
+                  </button>
                 ) : (
-                  <CalendlyPopupButton className="block w-full bg-white text-primary hover:bg-white/90 py-3 px-3 rounded-md font-medium text-center transition-colors">
+                  <button
+                    type="button"
+                    onClick={handleContactClick}
+                    className="block w-full bg-white text-primary hover:bg-white/90 py-3 px-3 rounded-md font-medium text-center transition-colors"
+                  >
                     {t('contactUs')}
-                  </CalendlyPopupButton>
+                  </button>
                 )}
               </motion.div>
             </div>

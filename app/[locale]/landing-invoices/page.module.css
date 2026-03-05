@@ -46,6 +46,57 @@
   pointer-events: none;
 }
 
+/* Pricing slider */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 9999px;
+  background: rgba(33, 150, 243, 0.25);
+  outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #2196f3;
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px #2196f3;
+  transition: box-shadow 0.15s ease;
+}
+
+:global(.dark) .slider::-webkit-slider-thumb {
+  border-color: #18181b;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.25);
+}
+
+.slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #2196f3;
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px #2196f3;
+}
+
+:global(.dark) .slider::-moz-range-thumb {
+  border-color: #18181b;
+}
+
+.slider::-moz-range-track {
+  height: 6px;
+  border-radius: 9999px;
+  background: rgba(33, 150, 243, 0.25);
+}
+
 /* Shimmer effect on recommended badge */
 .shimmer {
   background: linear-gradient(
