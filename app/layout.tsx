@@ -1,5 +1,7 @@
 import type {Metadata} from 'next';
 import {Inter, Plus_Jakarta_Sans} from 'next/font/google';
+import {GoogleAnalytics, GoogleTagManager} from '@next/third-parties/google';
+import {Analytics} from '@vercel/analytics/next';
 import '@/styles/globals.css';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -42,6 +44,13 @@ export default function RootLayout({
     <html lang="pt-PT">
       <body className={`${plusJakartaSans.variable} ${inter.variable} font-sans`}>
         {children}
+        <Analytics />
+        {process.env.NODE_ENV !== 'development' && (
+          <>
+            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
+            <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID!} />
+          </>
+        )}
       </body>
     </html>
   );
