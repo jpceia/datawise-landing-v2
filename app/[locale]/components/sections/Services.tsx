@@ -1,9 +1,12 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import ServiceCard from '@/components/ServiceCard';
+import { useHubspotContactModal } from '@/components/providers/HubspotContactModalProvider';
+import SectionContactCTA from '@/components/SectionContactCTA';
 
 const Services = () => {
   const t = useTranslations('Services');
+  const contactModal = useHubspotContactModal();
 
   const services = [
     {
@@ -78,6 +81,12 @@ const Services = () => {
             />
           ))}
         </div>
+
+        <SectionContactCTA
+          text={t('ctaText')}
+          buttonLabel={t('ctaContactUs')}
+          onClick={contactModal.openModal}
+        />
       </div>
     </section>
   );

@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
+import { useHubspotContactModal } from '@/components/providers/HubspotContactModalProvider';
+import SectionContactCTA from '@/components/SectionContactCTA';
 
 const OurProcess = () => {
   const t = useTranslations('OurProcess');
+  const contactModal = useHubspotContactModal();
   const [activeStage, setActiveStage] = useState(0);
 
   const stages = [
@@ -260,6 +263,12 @@ const OurProcess = () => {
             </AnimatePresence>
           </div>
         </div>
+
+        <SectionContactCTA
+          text={t('ctaText')}
+          buttonLabel={t('ctaContactUs')}
+          onClick={contactModal.openModal}
+        />
       </div>
     </section>
   );

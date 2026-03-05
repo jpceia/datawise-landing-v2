@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
             onClick={contactModal.openModal}
             className="px-8 py-4 bg-transparent border border-white text-white rounded-lg font-medium hover:bg-white/10 transition-all transform hover:scale-105"
           >
-            {t('ctaServices')}
+            {t('ctaContactUs')}
           </button>
         </motion.div>
 
@@ -86,3 +86,4 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
+

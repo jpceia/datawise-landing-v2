@@ -15,10 +15,10 @@
     "contactUs": "Contacte-nos"
   },
   "Hero": {
-    "title": "Desenvolvemos IA com resultados para a sua empresa",
+    "title": "Parceiros em IA<br></br>para a sua empresa",
     "subtitle": "Combinamos <strong>inteligência artificial</strong> e <strong>conhecimento de negócio</strong> para transformar os dados e processos da sua empresa em motores de crescimento.",
     "ctaSchedule": "Agende um Diagnóstico Gratuito",
-    "ctaServices": "Fale connosco",
+    "ctaContactUs": "Fale connosco",
     "scrollToExplore": "Scroll para explorar"
   },
   "ClientLogos": {
@@ -46,6 +46,8 @@
     "badge": "OS NOSSOS SERVIÇOS",
     "title": "Serviços",
     "subtitle": "Desenvolvemos soluções de IA feitas à medida para otimizar as suas operações e impulsionar resultados tangíveis para a sua empresa.",
+    "ctaText": "Fale connosco e descubra onde a IA pode gerar mais impacto no seu negócio.",
+    "ctaContactUs": "Contacte-nos",
     "items": [
       {
         "title": "Modelos Preditivos",
@@ -172,6 +174,8 @@
     "badge": "A NOSSA METODOLOGIA",
     "title": "Como trabalhamos consigo",
     "subtitle": "Cada projeto começa por perceber o seu negócio. Seguimos um processo estruturado que garante resultados rápidos, mensuráveis e alinhados com os seus objetivos.",
+    "ctaText": "Vamos transformar este processo em resultados concretos para a sua empresa.",
+    "ctaContactUs": "Contacte-nos",
     "phase": "Fase",
     "of": "de",
     "stages": [
@@ -488,3 +492,4 @@
     "homeButton": "Ir para página inicial"
   }
 }
+

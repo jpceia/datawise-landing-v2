@@ -18,7 +18,7 @@
       "title": "Partners in AI<br></br>for your company",
       "subtitle": "We combine <strong>artificial intelligence</strong> and <strong>business knowledge</strong> to transform your company's data and processes into growth engines.",
       "ctaSchedule": "Schedule a Free Diagnostic",
-      "ctaServices": "Contact us",
+      "ctaContactUs": "Contact us",
       "scrollToExplore": "Scroll to explore"
     },
     "ClientLogos": {
@@ -46,6 +46,8 @@
       "badge": "OUR SERVICES",
       "title": "Services",
       "subtitle": "We develop tailored solutions to optimize your operations and drive tangible results through data science and artificial intelligence.",
+      "ctaText": "Contact us and discover where AI can drive the highest impact for your business.",
+      "ctaContactUs": "Contact us",
       "items": [
         {
           "title": "Predictive Models",
@@ -175,6 +177,8 @@
       "badge": "OUR METHODOLOGY",
       "title": "How we work with you",
       "subtitle": "Every project starts by understanding your business. We follow a structured process that guarantees fast, measurable results aligned with your objectives.",
+      "ctaText": "Let's turn this process into measurable results for your company.",
+      "ctaContactUs": "Contact us",
       "phase": "Phase",
       "of": "of",
       "stages": [
@@ -491,3 +495,4 @@
       "homeButton": "Go to homepage"
   }
 }
+
