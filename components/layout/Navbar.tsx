@@ -17,8 +17,6 @@ const Navbar: React.FC<NavbarProps> = ({ hasTopBanner = false, variant = 'dark' 
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [visible, setVisible] = useState<boolean>(true);
-  const [activeSection, setActiveSection] = useState<string>('');
-  const [lastScrollY, setLastScrollY] = useState<number>(0);
 
   const isDefault = variant === 'light';
 
@@ -38,31 +36,14 @@ const Navbar: React.FC<NavbarProps> = ({ hasTopBanner = false, variant = 'dark' 
       }
 
       // Change navbar style when scrolled
-      if (currentScrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-
-      // Update active section based on scroll position
-      const sections = ['servicos', 'casos-sucesso', 'tecnologias', 'sobre', 'contacto'];
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 100 && rect.bottom >= 100) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-
-      setLastScrollY(currentScrollY);
+      setScrolled(currentScrollY > 20);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, {passive: true});
+    handleScroll();
+
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY, isDefault, hasTopBanner]);
+  }, [isDefault, hasTopBanner]);
 
   const navItems: NavItem[] = [
     { href: '/#about', label: t('aboutUs') },
@@ -86,8 +67,6 @@ const Navbar: React.FC<NavbarProps> = ({ hasTopBanner = false, variant = 'dark' 
   const linkHoverBg = isDefault
     ? 'bg-primary/10'
     : 'bg-white/10';
-
-  const activeIndicatorColor = isDefault ? 'bg-primary' : 'bg-white';
 
   const hamburgerColor = isDefault ? 'bg-gray-700' : 'bg-white';
 
@@ -133,14 +112,6 @@ const Navbar: React.FC<NavbarProps> = ({ hasTopBanner = false, variant = 'dark' 
                 className={`relative px-4 py-2 font-medium transition-colors rounded-md group ${linkColor}`}
               >
                 {item.label}
-                {activeSection === item.href.slice(1) && (
-                  <motion.div
-                    layoutId="activeSection"
-                    className={`absolute bottom-0 left-0 right-0 h-0.5 ${activeIndicatorColor}`}
-                    initial={false}
-                    transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-                  />
-                )}
                 <div className={`absolute inset-0 ${linkHoverBg} scale-0 group-hover:scale-100 transition-transform rounded-md -z-10`} />
               </Link>
             ))}
