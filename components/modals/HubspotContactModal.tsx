@@ -42,12 +42,18 @@ export default function HubspotContactModal({
           className="max-w-3xl border-none bg-white p-0 sm:rounded-2xl"
         >
           <DialogTitle className="sr-only">Contacte-nos</DialogTitle>
-          <div className="max-h-[90vh] overflow-y-auto px-3 py-3 sm:px-4 sm:py-4">
+          <div className="relative">
+            <div className="max-h-[90vh] overflow-y-auto px-3 py-0 sm:px-4 sm:py-4">
+              <div
+                className="hs-form-frame"
+                data-region={HUBSPOT_REGION}
+                data-form-id={HUBSPOT_FORM_ID}
+                data-portal-id={HUBSPOT_PORTAL_ID}
+              />
+            </div>
             <div
-              className="hs-form-frame"
-              data-region={HUBSPOT_REGION}
-              data-form-id={HUBSPOT_FORM_ID}
-              data-portal-id={HUBSPOT_PORTAL_ID}
+              aria-hidden="true"
+              className="pointer-events-none absolute bottom-2 left-2 right-2 h-[60px] bg-white"
             />
           </div>
         </DialogContent>
