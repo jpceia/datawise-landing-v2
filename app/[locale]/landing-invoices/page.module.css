@@ -1,0 +1,68 @@
+/* Glow pulse on PRO pricing card */
+.glowPulse {
+  box-shadow:
+    0 0 0 1px rgba(34, 211, 238, 0.25),
+    0 0 40px -8px rgba(34, 211, 238, 0.15);
+  animation: glowPulseKf 4s ease-in-out infinite;
+}
+
+@keyframes glowPulseKf {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 1px rgba(34, 211, 238, 0.25),
+      0 0 40px -8px rgba(34, 211, 238, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(34, 211, 238, 0.35),
+      0 0 60px -4px rgba(34, 211, 238, 0.25);
+  }
+}
+
+/* Gradient border for featured card */
+.gradientBorder {
+  position: relative;
+  border: none;
+}
+
+.gradientBorder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(34, 211, 238, 0.5),
+    rgba(59, 130, 246, 0.3),
+    rgba(34, 211, 238, 0.5)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Shimmer effect on recommended badge */
+.shimmer {
+  background: linear-gradient(
+    110deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.12) 37%,
+    transparent 50%
+  );
+  background-size: 250% 100%;
+  animation: shimmerKf 3s ease-in-out infinite;
+}
+
+@keyframes shimmerKf {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -50% 0;
+  }
+}
