@@ -1,8 +1,8 @@
 /* Glow pulse on PRO pricing card */
 .glowPulse {
   box-shadow:
-    0 0 0 1px rgba(34, 211, 238, 0.25),
-    0 0 40px -8px rgba(34, 211, 238, 0.15);
+    0 0 0 1px rgba(33, 150, 243, 0.25),
+    0 0 40px -8px rgba(33, 150, 243, 0.15);
   animation: glowPulseKf 4s ease-in-out infinite;
 }
 
@@ -10,13 +10,13 @@
   0%,
   100% {
     box-shadow:
-      0 0 0 1px rgba(34, 211, 238, 0.25),
-      0 0 40px -8px rgba(34, 211, 238, 0.15);
+      0 0 0 1px rgba(33, 150, 243, 0.25),
+      0 0 40px -8px rgba(33, 150, 243, 0.15);
   }
   50% {
     box-shadow:
-      0 0 0 1px rgba(34, 211, 238, 0.35),
-      0 0 60px -4px rgba(34, 211, 238, 0.25);
+      0 0 0 1px rgba(33, 150, 243, 0.35),
+      0 0 60px -4px rgba(33, 150, 243, 0.25);
   }
 }
 
@@ -34,9 +34,9 @@
   padding: 1px;
   background: linear-gradient(
     135deg,
-    rgba(34, 211, 238, 0.5),
+    rgba(33, 150, 243, 0.5),
     rgba(59, 130, 246, 0.3),
-    rgba(34, 211, 238, 0.5)
+    rgba(33, 150, 243, 0.5)
   );
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,

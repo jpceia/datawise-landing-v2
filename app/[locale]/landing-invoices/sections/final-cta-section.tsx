@@ -3,22 +3,22 @@ import { ArrowRight, Clock3 } from "lucide-react";
 
 export function FinalCtaSection() {
   return (
-    <section className="relative overflow-hidden rounded-3xl border border-cyan-300/30 bg-gradient-to-br from-cyan-100/80 via-white to-blue-100/70 px-8 py-16 text-center dark:border-cyan-200/20 dark:from-cyan-950/60 dark:via-cyan-900/30 dark:to-blue-950/40 md:px-12 md:py-20">
+    <section className="relative overflow-hidden rounded-3xl border border-primary-300/30 bg-gradient-to-br from-primary-50/80 via-white to-primary-100/70 px-8 py-16 text-center dark:border-primary-200/20 dark:from-primary-dark/60 dark:via-primary-900/30 dark:to-primary-dark/40 md:px-12 md:py-20">
       {/* Background glow */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-0 h-64 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/15 blur-[100px]" />
-        <div className="absolute bottom-0 right-1/4 h-48 w-48 translate-y-1/2 rounded-full bg-blue-400/10 blur-[80px]" />
+        <div className="absolute left-1/2 top-0 h-64 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-400/15 blur-[100px]" />
+        <div className="absolute bottom-0 right-1/4 h-48 w-48 translate-y-1/2 rounded-full bg-primary-500/10 blur-[80px]" />
       </div>
 
       <div className="relative">
-        <p className="inline-flex items-center gap-2 rounded-full border border-cyan-300/40 bg-cyan-300/20 px-4 py-1.5 text-xs font-medium text-cyan-800 dark:border-cyan-100/20 dark:bg-cyan-300/10 dark:text-cyan-100">
+        <p className="inline-flex items-center gap-2 rounded-full border border-primary-300/40 bg-primary-300/20 px-4 py-1.5 text-xs font-medium text-primary-800 dark:border-primary-100/20 dark:bg-primary-300/10 dark:text-primary-100">
           <Clock3 className="h-3.5 w-3.5" />
           Setup em minutos
         </p>
 
         <h3 className="mx-auto mt-6 max-w-2xl text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
           Comeca hoje.{" "}
-          <span className="bg-gradient-to-r from-cyan-200 via-cyan-300 to-blue-300 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-primary-400 via-primary-300 to-violet-400 bg-clip-text text-transparent">
             Entrega mais previsibilidade financeira
           </span>{" "}
           já neste trimestre.
@@ -31,14 +31,14 @@ export function FinalCtaSection() {
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <Link
             href="/register"
-            className="group inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-cyan-300 to-cyan-200 px-8 py-4 text-base font-bold text-slate-950 transition duration-300 hover:from-cyan-200 hover:to-white hover:shadow-xl hover:shadow-cyan-400/25"
+            className="group inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-primary-600 to-primary-500 px-8 py-4 text-base font-bold text-white transition duration-300 hover:from-primary-500 hover:to-primary-400 hover:shadow-xl hover:shadow-primary-500/25"
           >
             Comecar grátis
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
           </Link>
           <a
             href="mailto:sales@saasinvoice.app?subject=Pedido%20de%20demo"
-            className="inline-flex items-center gap-2.5 rounded-xl border border-zinc-300 px-8 py-4 text-base font-semibold text-zinc-800 transition duration-300 hover:border-cyan-300/60 hover:bg-zinc-100 dark:border-white/20 dark:text-zinc-100 dark:hover:border-cyan-200/40 dark:hover:bg-white/[0.05]"
+            className="inline-flex items-center gap-2.5 rounded-xl border border-zinc-300 px-8 py-4 text-base font-semibold text-zinc-800 transition duration-300 hover:border-primary-300/60 hover:bg-zinc-100 dark:border-white/20 dark:text-zinc-100 dark:hover:border-primary-200/40 dark:hover:bg-white/[0.05]"
           >
             Marcar demo
           </a>

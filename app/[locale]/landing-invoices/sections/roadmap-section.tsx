@@ -4,14 +4,14 @@ import { ArrowLeftRight, Brain, Bot, Building2, MessageSquare, Tag, TrendingUp }
 
 function BankReconciliationMockup() {
   return (
-    <div className="rounded-2xl border border-zinc-200 bg-white/85 p-5 dark:border-white/[0.06] dark:bg-zinc-950/80">
+    <div className="rounded-2xl border border-zinc-200 bg-white/90 p-5 shadow-lg dark:border-zinc-700/60 dark:bg-zinc-900/90">
       {/* Header */}
       <div className="mb-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Building2 className="h-4 w-4 text-cyan-300/70" />
-          <span className="text-xs font-semibold text-zinc-700 dark:text-zinc-300">Reconciliação Bancaria</span>
+          <Building2 className="h-4 w-4 text-emerald-500 dark:text-emerald-400" />
+          <span className="text-xs font-semibold text-zinc-800 dark:text-zinc-100">Reconciliação Bancaria</span>
         </div>
-        <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[10px] font-bold text-emerald-400">
+        <span className="rounded-full bg-emerald-500/20 px-2.5 py-0.5 text-[10px] font-bold text-emerald-600 dark:text-emerald-300">
           3 matched
         </span>
       </div>
@@ -25,22 +25,22 @@ function BankReconciliationMockup() {
         ].map((row) => (
           <div
             key={row.desc}
-            className="flex items-center justify-between rounded-lg border border-white/[0.05] bg-white/[0.02] px-3 py-2.5"
+            className="flex items-center justify-between rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2.5 dark:border-zinc-700/50 dark:bg-zinc-800/60"
           >
             <div className="flex items-center gap-3">
               <div
-                className={`h-1.5 w-1.5 rounded-full ${
-                  row.status === "matched" ? "bg-emerald-400" : "bg-amber-400 animate-pulse"
+                className={`h-2 w-2 rounded-full ${
+                  row.status === "matched" ? "bg-emerald-500" : "bg-amber-500 animate-pulse"
                 }`}
               />
-              <span className="text-xs text-zinc-300">{row.desc}</span>
+              <span className="text-xs font-medium text-zinc-700 dark:text-zinc-200">{row.desc}</span>
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-xs font-medium text-zinc-400">{row.amount}</span>
+              <span className="text-xs font-semibold text-zinc-600 dark:text-zinc-300">{row.amount}</span>
               {row.status === "matched" ? (
-                <ArrowLeftRight className="h-3 w-3 text-emerald-400/60" />
+                <ArrowLeftRight className="h-3.5 w-3.5 text-emerald-500 dark:text-emerald-400" />
               ) : (
-                <span className="text-[9px] font-semibold text-amber-400/80">REVIEW</span>
+                <span className="rounded bg-amber-500/20 px-1.5 py-0.5 text-[9px] font-bold text-amber-600 dark:text-amber-300">REVIEW</span>
               )}
             </div>
           </div>
@@ -48,9 +48,9 @@ function BankReconciliationMockup() {
       </div>
 
       {/* Matching indicator */}
-      <div className="mt-3 flex items-center justify-center gap-2 rounded-lg border border-dashed border-cyan-300/15 bg-cyan-950/20 py-2">
-        <TrendingUp className="h-3.5 w-3.5 text-cyan-300/50" />
-        <span className="text-[10px] text-cyan-200/50">Matching assistido por IA</span>
+      <div className="mt-3 flex items-center justify-center gap-2 rounded-lg border border-dashed border-emerald-400/30 bg-emerald-500/10 py-2.5 dark:border-emerald-400/25 dark:bg-emerald-500/[0.07]">
+        <TrendingUp className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
+        <span className="text-[10px] font-medium text-emerald-700 dark:text-emerald-300">Matching assistido por IA</span>
       </div>
     </div>
   );
@@ -58,14 +58,14 @@ function BankReconciliationMockup() {
 
 function ClassificationMockup() {
   return (
-    <div className="rounded-2xl border border-zinc-200 bg-white/85 p-5 dark:border-white/[0.06] dark:bg-zinc-950/80">
+    <div className="rounded-2xl border border-zinc-200 bg-white/90 p-5 shadow-lg dark:border-zinc-700/60 dark:bg-zinc-900/90">
       {/* Header */}
       <div className="mb-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Brain className="h-4 w-4 text-violet-300/70" />
-          <span className="text-xs font-semibold text-zinc-700 dark:text-zinc-300">Categorias Custom</span>
+          <Brain className="h-4 w-4 text-violet-600 dark:text-violet-400" />
+          <span className="text-xs font-semibold text-zinc-800 dark:text-zinc-100">Categorias Custom</span>
         </div>
-        <span className="rounded-full bg-violet-500/15 px-2 py-0.5 text-[10px] font-bold text-violet-400">
+        <span className="rounded-full bg-violet-500/20 px-2.5 py-0.5 text-[10px] font-bold text-violet-600 dark:text-violet-300">
           workspace
         </span>
       </div>
@@ -73,14 +73,14 @@ function ClassificationMockup() {
       {/* Category tags */}
       <div className="mb-4 flex flex-wrap gap-2">
         {[
-          { label: "Material Escritorio", color: "bg-blue-500/20 text-blue-300 border-blue-400/20" },
-          { label: "Software & SaaS", color: "bg-violet-500/20 text-violet-300 border-violet-400/20" },
-          { label: "Telecomunicacoes", color: "bg-amber-500/20 text-amber-300 border-amber-400/20" },
-          { label: "Servicos Externos", color: "bg-emerald-500/20 text-emerald-300 border-emerald-400/20" },
+          { label: "Material Escritorio", color: "bg-blue-500/15 text-blue-700 border-blue-400/30 dark:text-blue-300 dark:border-blue-400/25" },
+          { label: "Software & SaaS", color: "bg-violet-500/15 text-violet-700 border-violet-400/30 dark:text-violet-300 dark:border-violet-400/25" },
+          { label: "Telecomunicacoes", color: "bg-amber-500/15 text-amber-700 border-amber-400/30 dark:text-amber-300 dark:border-amber-400/25" },
+          { label: "Servicos Externos", color: "bg-emerald-500/15 text-emerald-700 border-emerald-400/30 dark:text-emerald-300 dark:border-emerald-400/25" },
         ].map((tag) => (
           <span
             key={tag.label}
-            className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-[10px] font-medium ${tag.color}`}
+            className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-[10px] font-semibold ${tag.color}`}
           >
             <Tag className="h-2.5 w-2.5" />
             {tag.label}
@@ -90,26 +90,26 @@ function ClassificationMockup() {
 
       {/* Rule example */}
       <div className="space-y-2">
-        <div className="rounded-lg border border-white/[0.05] bg-white/[0.02] px-3 py-2.5">
+        <div className="rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2.5 dark:border-zinc-700/50 dark:bg-zinc-800/60">
           <div className="flex items-center justify-between">
-            <span className="text-[10px] text-zinc-500 uppercase">Regra automatica</span>
-            <span className="rounded bg-emerald-500/15 px-1.5 py-0.5 text-[9px] font-bold text-emerald-400">
+            <span className="text-[10px] font-medium text-zinc-500 uppercase dark:text-zinc-400">Regra automatica</span>
+            <span className="rounded bg-emerald-500/20 px-1.5 py-0.5 text-[9px] font-bold text-emerald-600 dark:text-emerald-300">
               ATIVA
             </span>
           </div>
-          <p className="mt-1 text-xs text-zinc-300">
-            Se fornecedor contém <span className="font-semibold text-violet-300">&quot;Microsoft&quot;</span> → Software & SaaS
+          <p className="mt-1 text-xs text-zinc-700 dark:text-zinc-200">
+            Se fornecedor contém <span className="font-bold text-violet-600 dark:text-violet-300">&quot;Microsoft&quot;</span> → Software & SaaS
           </p>
         </div>
-        <div className="rounded-lg border border-white/[0.05] bg-white/[0.02] px-3 py-2.5">
+        <div className="rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2.5 dark:border-zinc-700/50 dark:bg-zinc-800/60">
           <div className="flex items-center justify-between">
-            <span className="text-[10px] text-zinc-500 uppercase">Regra automatica</span>
-            <span className="rounded bg-emerald-500/15 px-1.5 py-0.5 text-[9px] font-bold text-emerald-400">
+            <span className="text-[10px] font-medium text-zinc-500 uppercase dark:text-zinc-400">Regra automatica</span>
+            <span className="rounded bg-emerald-500/20 px-1.5 py-0.5 text-[9px] font-bold text-emerald-600 dark:text-emerald-300">
               ATIVA
             </span>
           </div>
-          <p className="mt-1 text-xs text-zinc-300">
-            Se valor &gt; <span className="font-semibold text-amber-300">€5.000</span> → Requer aprovacao
+          <p className="mt-1 text-xs text-zinc-700 dark:text-zinc-200">
+            Se valor &gt; <span className="font-bold text-amber-600 dark:text-amber-300">€5.000</span> → Requer aprovacao
           </p>
         </div>
       </div>
@@ -119,15 +119,15 @@ function ClassificationMockup() {
 
 function ChatbotMockup() {
   return (
-    <div className="rounded-2xl border border-zinc-200 bg-white/85 p-5 dark:border-white/[0.06] dark:bg-zinc-950/80">
+    <div className="rounded-2xl border border-zinc-200 bg-white/90 p-5 shadow-lg dark:border-zinc-700/60 dark:bg-zinc-900/90">
       {/* Header */}
       <div className="mb-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Bot className="h-4 w-4 text-cyan-300/70" />
-          <span className="text-xs font-semibold text-zinc-700 dark:text-zinc-300">Assistente IA</span>
+          <Bot className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+          <span className="text-xs font-semibold text-zinc-800 dark:text-zinc-100">Assistente IA</span>
         </div>
-        <span className="flex items-center gap-1 text-[10px] text-emerald-400">
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+        <span className="flex items-center gap-1.5 text-[10px] font-medium text-emerald-600 dark:text-emerald-400">
+          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
           online
         </span>
       </div>
@@ -136,44 +136,44 @@ function ChatbotMockup() {
       <div className="space-y-3">
         {/* User message */}
         <div className="flex justify-end">
-          <div className="max-w-[80%] rounded-2xl rounded-br-md bg-cyan-500/15 px-3.5 py-2">
-            <p className="text-xs text-cyan-100">Quantas faturas estao outstanding este mes?</p>
+          <div className="max-w-[80%] rounded-2xl rounded-br-md bg-blue-600 px-3.5 py-2 dark:bg-blue-600/90">
+            <p className="text-xs font-medium text-white">Quantas faturas estao outstanding este mes?</p>
           </div>
         </div>
 
         {/* Bot response */}
         <div className="flex justify-start">
-          <div className="max-w-[85%] rounded-2xl rounded-bl-md border border-white/[0.06] bg-white/[0.03] px-3.5 py-2.5">
-            <p className="text-xs leading-relaxed text-zinc-300">
-              Este mes tens <span className="font-semibold text-cyan-200">23 faturas outstanding</span> no valor total de{" "}
-              <span className="font-semibold text-cyan-200">€ 18.450,00</span>. A mais antiga tem 12 dias.
+          <div className="max-w-[85%] rounded-2xl rounded-bl-md border border-zinc-200 bg-zinc-50 px-3.5 py-2.5 dark:border-zinc-700/50 dark:bg-zinc-800/60">
+            <p className="text-xs leading-relaxed text-zinc-700 dark:text-zinc-200">
+              Este mes tens <span className="font-bold text-blue-700 dark:text-blue-300">23 faturas outstanding</span> no valor total de{" "}
+              <span className="font-bold text-blue-700 dark:text-blue-300">€ 18.450,00</span>. A mais antiga tem 12 dias.
             </p>
           </div>
         </div>
 
         {/* User message */}
         <div className="flex justify-end">
-          <div className="max-w-[80%] rounded-2xl rounded-br-md bg-cyan-500/15 px-3.5 py-2">
-            <p className="text-xs text-cyan-100">Quais estao perto do vencimento?</p>
+          <div className="max-w-[80%] rounded-2xl rounded-br-md bg-blue-600 px-3.5 py-2 dark:bg-blue-600/90">
+            <p className="text-xs font-medium text-white">Quais estao perto do vencimento?</p>
           </div>
         </div>
 
         {/* Bot typing indicator */}
         <div className="flex justify-start">
-          <div className="rounded-2xl rounded-bl-md border border-white/[0.06] bg-white/[0.03] px-4 py-2.5">
+          <div className="rounded-2xl rounded-bl-md border border-zinc-200 bg-zinc-50 px-4 py-2.5 dark:border-zinc-700/50 dark:bg-zinc-800/60">
             <div className="flex items-center gap-1">
-              <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-zinc-400 [animation-delay:0ms]" />
-              <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-zinc-400 [animation-delay:150ms]" />
-              <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-zinc-400 [animation-delay:300ms]" />
+              <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-zinc-400 dark:bg-zinc-500 [animation-delay:0ms]" />
+              <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-zinc-400 dark:bg-zinc-500 [animation-delay:150ms]" />
+              <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-zinc-400 dark:bg-zinc-500 [animation-delay:300ms]" />
             </div>
           </div>
         </div>
       </div>
 
       {/* Input */}
-      <div className="mt-3 flex items-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.02] px-3 py-2">
-        <MessageSquare className="h-3.5 w-3.5 text-zinc-600" />
-        <span className="text-[11px] text-zinc-600">Pergunta sobre faturas, estados, fornecedores...</span>
+      <div className="mt-3 flex items-center gap-2 rounded-xl border border-zinc-200 bg-zinc-50 px-3 py-2.5 dark:border-zinc-700/50 dark:bg-zinc-800/40">
+        <MessageSquare className="h-3.5 w-3.5 text-zinc-400 dark:text-zinc-500" />
+        <span className="text-[11px] text-zinc-500 dark:text-zinc-400">Pergunta sobre faturas, estados, fornecedores...</span>
       </div>
     </div>
   );
@@ -202,7 +202,7 @@ const features = [
   },
   {
     badge: "Assistente IA",
-    badgeColor: "border-cyan-400/20 bg-cyan-500/10 text-cyan-300",
+    badgeColor: "border-primary-400/20 bg-primary-500/10 text-primary-300",
     badgeIcon: Bot,
     title: "Chatbot inteligente para operações",
     description:
@@ -217,12 +217,12 @@ export function RoadmapSection() {
   return (
     <section>
       <div className="mb-16 text-center">
-        <p className="text-xs font-medium tracking-[0.18em] text-cyan-700/80 uppercase dark:text-cyan-100/70">
+        <p className="text-xs font-medium tracking-[0.18em] text-primary-700/80 uppercase dark:text-primary-100/70">
           Em desenvolvimento
         </p>
         <h3 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
           Funcionalidades{" "}
-          <span className="bg-gradient-to-r from-cyan-200 to-blue-300 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-primary-400 to-violet-400 bg-clip-text text-transparent">
             Alpha
           </span>
         </h3>
