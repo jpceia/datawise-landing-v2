@@ -8,6 +8,13 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "browserslist": [
+    "chrome >= 111",
+    "edge >= 111",
+    "firefox >= 111",
+    "safari >= 16.4",
+    "ios_saf >= 16.4"
+  ],
   "dependencies": {
     "@next/third-parties": "^15.3.0",
     "@radix-ui/react-accordion": "^1.2.12",
