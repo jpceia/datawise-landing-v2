@@ -1,7 +1,5 @@
 'use client';
 
-import {GoogleAnalytics, GoogleTagManager} from '@next/third-parties/google';
-import {Analytics} from '@vercel/analytics/next';
 import {usePathname} from 'next/navigation';
 import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
@@ -19,7 +17,6 @@ function isLandingPath(pathname: string): boolean {
 
 export default function SiteFrame({children}: SiteFrameProps) {
   const pathname = usePathname();
-  const isDevelopment = process.env.NODE_ENV === 'development';
   const isLandingPage = isLandingPath(pathname || '/');
 
   return (
@@ -28,13 +25,6 @@ export default function SiteFrame({children}: SiteFrameProps) {
       <Navbar hasTopBanner={isLandingPage} variant={isLandingPage ? 'dark' : 'light'} />
       {children}
       <Footer />
-      {!isDevelopment && (
-        <>
-          <GoogleAnalytics gaId="G-6FHQECXHNX" />
-          <GoogleTagManager gtmId="GTM-KP2R8PR" />
-        </>
-      )}
-      <Analytics />
     </>
   );
 }
