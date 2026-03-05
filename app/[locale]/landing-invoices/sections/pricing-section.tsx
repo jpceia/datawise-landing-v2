@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Building2, Check, ChevronRight } from "lucide-react";
+import { useHubspotContactModal } from "@/components/providers/HubspotContactModalProvider";
 import styles from "../page.module.css";
 
 const invoiceTiers = [
@@ -32,6 +33,7 @@ const customFeatures = [
 function StandardCard() {
   const [selectedIndex, setSelectedIndex] = useState(1);
   const tier = invoiceTiers[selectedIndex];
+  const { openModal } = useHubspotContactModal();
 
   return (
     <motion.article
@@ -83,18 +85,21 @@ function StandardCard() {
         ))}
       </ul>
 
-      <a
-        href="mailto:sales@saasinvoice.app?subject=Plano%20Standard"
+      <button
+        type="button"
+        onClick={openModal}
         className="group inline-flex w-full items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-primary-600 to-primary-500 px-4 py-3 text-sm font-bold text-white transition duration-300 hover:from-primary-500 hover:to-primary-400 hover:shadow-lg hover:shadow-primary-500/20"
       >
         Pedir uma Demo
         <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-      </a>
+      </button>
     </motion.article>
   );
 }
 
 function CustomCard() {
+  const { openModal } = useHubspotContactModal();
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 30 }}
@@ -124,13 +129,14 @@ function CustomCard() {
         ))}
       </ul>
 
-      <a
-        href="mailto:sales@saasinvoice.app?subject=Plano%20Customizado"
+      <button
+        type="button"
+        onClick={openModal}
         className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-primary-500 px-4 py-3 text-sm font-semibold text-primary-600 transition duration-300 hover:bg-primary-50 dark:border-primary-400 dark:text-primary-300 dark:hover:bg-primary-400/10"
       >
         Falar connosco
         <ChevronRight className="h-4 w-4" />
-      </a>
+      </button>
     </motion.article>
   );
 }

@@ -1,10 +1,13 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import CalendlyPopupButton from "@/components/CalendlyPopupButton";
+import { useHubspotContactModal } from "@/components/providers/HubspotContactModalProvider";
 
 export function CTASection() {
+  const { openModal } = useHubspotContactModal();
+
   return (
     <section className="landing-section-alt py-24 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-4xl">
@@ -44,25 +47,18 @@ export function CTASection() {
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                href="/register"
-                className="inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-semibold transition-all hover:opacity-90 hover:-translate-y-0.5"
-                style={{ color: "var(--landing-gradient-from)" }}
-              >
-                Começar Grátis
+              <CalendlyPopupButton className="inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-semibold text-[var(--landing-gradient-from)] transition-all hover:opacity-90 hover:-translate-y-0.5">
+                Marcar Demo
                 <ArrowRight size={18} />
-              </Link>
-              <a
-                href="mailto:demo@datawise.pt"
+              </CalendlyPopupButton>
+              <button
+                type="button"
+                onClick={openModal}
                 className="inline-flex items-center gap-2 rounded-xl border-2 border-white/60 px-8 py-4 text-base font-semibold text-white transition-all hover:border-white hover:bg-white/10"
               >
-                Agendar Demo
-              </a>
+                Pedir acesso
+              </button>
             </div>
-
-            <p className="mt-6 text-sm text-white/60">
-              Plano gratuito disponível · Cancele a qualquer momento
-            </p>
           </div>
         </motion.div>
       </div>

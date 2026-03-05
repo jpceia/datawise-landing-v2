@@ -1,5 +1,6 @@
 ﻿import { ArrowRight } from "lucide-react";
 import CalendlyPopupButton from "@/components/CalendlyPopupButton";
+import { useHubspotContactModal } from "@/components/providers/HubspotContactModalProvider";
 import type { StatItem } from "../data";
 
 type HeroSectionProps = {
@@ -7,6 +8,8 @@ type HeroSectionProps = {
 };
 
 export function HeroSection({ stats }: HeroSectionProps) {
+  const { openModal } = useHubspotContactModal();
+
   return (
     <section className="grid gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
       {/* Left - Copy */}
@@ -32,12 +35,13 @@ export function HeroSection({ stats }: HeroSectionProps) {
             Marcar demo
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
           </CalendlyPopupButton>
-          <a
-            href="mailto:sales@saasinvoice.app?subject=Pedido%20de%20Acesso"
+          <button
+            type="button"
+            onClick={openModal}
             className="inline-flex items-center gap-2.5 rounded-xl border border-zinc-300 px-7 py-3.5 text-base font-semibold text-zinc-800 transition duration-300 hover:border-primary-300/50 hover:bg-zinc-100 dark:border-white/15 dark:text-zinc-100 dark:hover:border-primary-200/40 dark:hover:bg-white/[0.05]"
           >
             Pedir acesso
-          </a>
+          </button>
         </div>
       </div>
 

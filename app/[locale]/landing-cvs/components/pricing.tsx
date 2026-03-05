@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check, Zap, ChevronRight } from "lucide-react";
+import CalendlyPopupButton from "@/components/CalendlyPopupButton";
+import { useHubspotContactModal } from "@/components/providers/HubspotContactModalProvider";
 
 const cvTiers = [
   { label: "50", value: 50 },
@@ -33,6 +35,7 @@ const customFeatures = [
 function StandardCard() {
   const [selectedIndex, setSelectedIndex] = useState(1);
   const tier = cvTiers[selectedIndex];
+  const { openModal } = useHubspotContactModal();
 
   return (
     <motion.div
@@ -110,17 +113,16 @@ function StandardCard() {
         ))}
       </ul>
 
-      <a
-        href="mailto:info@datawise.pt"
-        className="landing-btn-primary block rounded-xl py-3 text-center text-sm font-semibold transition-all"
-      >
-        Pedir uma Demo
-      </a>
+      <CalendlyPopupButton className="landing-btn-primary block rounded-xl py-3 text-center text-sm font-semibold transition-all">
+        Marcar Demo
+      </CalendlyPopupButton>
     </motion.div>
   );
 }
 
 function CustomCard() {
+  const { openModal } = useHubspotContactModal();
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -148,13 +150,14 @@ function CustomCard() {
         ))}
       </ul>
 
-      <a
-        href="mailto:info@datawise.pt"
+      <button
+        type="button"
+        onClick={openModal}
         className="landing-btn-outline flex items-center justify-center gap-2 rounded-xl py-3 text-center text-sm font-semibold transition-all"
       >
         Falar com a equipa
         <ChevronRight size={16} />
-      </a>
+      </button>
     </motion.div>
   );
 }

@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check, ChevronRight } from "lucide-react";
+import CalendlyPopupButton from "@/components/CalendlyPopupButton";
+import { useHubspotContactModal } from "@/components/providers/HubspotContactModalProvider";
 
 const CREDIT_TIERS = [
   { label: "100", value: 100 },
@@ -28,6 +30,7 @@ const CUSTOM_FEATURES = [
 ];
 
 function StandardCard() {
+  const { openModal } = useHubspotContactModal();
   const [selectedIndex, setSelectedIndex] = useState(2);
   const tier = CREDIT_TIERS[selectedIndex];
 
@@ -78,14 +81,15 @@ function StandardCard() {
         ))}
       </ul>
 
-      <a href="/register" className="landing-btn-primary w-full justify-center text-center">
-        Comecar com Standard
-      </a>
+      <CalendlyPopupButton className="landing-btn-primary w-full justify-center text-center">
+        Marcar Demo
+      </CalendlyPopupButton>
     </motion.article>
   );
 }
 
 function CustomCard() {
+  const { openModal } = useHubspotContactModal();
   return (
     <motion.article
       initial={{ opacity: 0, y: 24 }}
@@ -116,13 +120,14 @@ function CustomCard() {
         ))}
       </ul>
 
-      <a
-        href="mailto:hello@datawise.pt?subject=Plano%20Customizado%20Datawise%20Lex"
+      <button
+        type="button"
+        onClick={openModal}
         className="landing-btn-outline inline-flex items-center justify-center gap-2 w-full"
       >
         Falar com a equipa
         <ChevronRight size={16} />
-      </a>
+      </button>
     </motion.article>
   );
 }

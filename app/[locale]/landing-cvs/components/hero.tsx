@@ -1,10 +1,13 @@
 ﻿"use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { Sparkles, ArrowRight } from "lucide-react";
+import CalendlyPopupButton from "@/components/CalendlyPopupButton";
+import { useHubspotContactModal } from "@/components/providers/HubspotContactModalProvider";
 
 export function Hero() {
+  const { openModal } = useHubspotContactModal();
+
   return (
     <section className="relative overflow-hidden px-4 pb-20 pt-32 sm:px-6 lg:px-8">
       {/* Background orbs */}
@@ -63,19 +66,17 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
-          <Link
-            href="/register"
-            className="landing-btn-primary inline-flex items-center gap-2 rounded-xl px-8 py-4 text-base font-semibold"
-          >
-            Começar Grátis
+          <CalendlyPopupButton className="landing-btn-primary inline-flex items-center gap-2 rounded-xl px-8 py-4 text-base font-semibold">
+            Marcar Demo
             <ArrowRight size={18} />
-          </Link>
-          <a
-            href="mailto:demo@datawise.pt"
+          </CalendlyPopupButton>
+          <button
+            type="button"
+            onClick={openModal}
             className="landing-btn-outline inline-flex items-center gap-2 rounded-xl px-8 py-4 text-base font-semibold"
           >
-            Agendar Demo
-          </a>
+            Pedir acesso
+          </button>
         </motion.div>
 
         {/* Platform mockup / visual */}
