@@ -29,7 +29,7 @@ export function PillarsSection({ pillars }: PillarsSectionProps) {
           Porquê nós
         </p>
         <h3 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
-          Três pilares para a tua operação
+          Capacidades centrais da solução
         </h3>
       </motion.div>
 

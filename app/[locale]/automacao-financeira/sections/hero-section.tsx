@@ -36,7 +36,7 @@ export function HeroSection({ stats }: HeroSectionProps) {
           className="inline-flex items-center gap-2 rounded-full border border-primary-300/30 bg-primary-400/10 px-4 py-1.5 text-xs font-medium tracking-wide text-primary-800 dark:border-primary-200/20 dark:bg-primary-300/10 dark:text-primary-100"
         >
           <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary-400" />
-          Feito para equipas financeiras (AR/AP)
+          Feito para equipas financeiras
         </motion.p>
 
         <motion.h1
@@ -53,7 +53,7 @@ export function HeroSection({ stats }: HeroSectionProps) {
           variants={itemVariants}
           className="max-w-xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400 md:text-xl"
         >
-          Centralize faturas, automatize extração e acompanhe cobrança com visibilidade real. Um fluxo único para reduzir erro, acelerar recebimentos e aumentar controlo.
+          A Datawise desenvolve soluções que lêem, classificam e cruzam faturas sem intervenção manual. Menos erros, menos tempo perdido, mais controlo sobre o que está por pagar.
         </motion.p>
 
         <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 pt-2">
@@ -80,7 +80,7 @@ export function HeroSection({ stats }: HeroSectionProps) {
         transition={{ duration: 0.8, delay: 0.3 }}
       >
         <p className="mb-6 text-xs font-medium tracking-[0.18em] text-primary-700/80 uppercase dark:text-primary-100/70">
-          Como ajudamos a tua operação
+          O que esta solução faz
         </p>
         <div className="space-y-4">
           {stats.map((item, index) => (

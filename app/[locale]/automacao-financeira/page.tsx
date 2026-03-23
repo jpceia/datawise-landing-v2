@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { LandingPage } from "./landing-page";
 
 export const metadata: Metadata = {
-  title: "Datawise Invoice — Gestão Inteligente de Faturas com IA",
+  title: "Automação Financeira com IA — Solução à Medida · Datawise",
   description:
-    "Centralize faturas, automatize extração com OCR e IA, e acompanhe cobrança com visibilidade real. Menos operação manual, mais controlo financeiro.",
+    "A Datawise desenvolve soluções que lêem, classificam e cruzam documentos financeiros automaticamente. Menos erros, menos tempo perdido, mais controlo.",
   openGraph: {
-    title: "Datawise Invoice — Gestão Inteligente de Faturas com IA",
+    title: "Automação Financeira com IA — Solução à Medida · Datawise",
     description:
-      "Automatize a gestão de faturas com OCR, classificação inteligente e pipeline de cobrança.",
+      "Solução desenvolvida à medida para leitura automática, classificação inteligente e cruzamento de faturas.",
     type: "website",
   },
 };

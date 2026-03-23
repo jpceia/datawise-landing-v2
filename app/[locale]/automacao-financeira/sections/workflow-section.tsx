@@ -4,7 +4,7 @@ type WorkflowSectionProps = {
   workflow: string[];
 };
 
-const stepLabels = ["Upload", "Processamento", "Cobrança"];
+const stepLabels = ["Receção", "Análise", "Acompanhamento"];
 
 export function WorkflowSection({ workflow }: WorkflowSectionProps) {
   return (
@@ -27,7 +27,7 @@ export function WorkflowSection({ workflow }: WorkflowSectionProps) {
             </span>
           </h3>
           <p className="mt-4 max-w-lg text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
-            Sem reinventar o teu processo. A plataforma encaixa no dia a dia da equipa e remove fricção onde hoje há mais custo operacional.
+            Desenvolvido à medida do processo existente, sem necessidade de alterar fluxos ou ferramentas já em uso.
           </p>
         </motion.div>
 

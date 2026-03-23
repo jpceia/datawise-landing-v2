@@ -36,25 +36,24 @@ export function FinalCtaSection() {
           className="inline-flex items-center gap-2 rounded-full border border-primary-300/40 bg-primary-300/20 px-4 py-1.5 text-xs font-medium text-primary-800 dark:border-primary-100/20 dark:bg-primary-300/10 dark:text-primary-100"
         >
           <Clock3 className="h-3.5 w-3.5" />
-          Setup em minutos
+          Desenvolvido pela Datawise
         </motion.p>
 
         <motion.h3
           variants={itemVariants}
           className="mx-auto mt-6 max-w-2xl text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl"
         >
-          Começa hoje.{" "}
+          Reduza o tempo gasto em processos manuais.{" "}
           <span className="bg-gradient-to-r from-primary-400 via-primary-300 to-violet-400 bg-clip-text text-transparent">
-            Entrega mais previsibilidade financeira
-          </span>{" "}
-          já neste trimestre.
+            Veja como esta solução se integra na sua operação.
+          </span>
         </motion.h3>
 
         <motion.p
           variants={itemVariants}
           className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-zinc-600 dark:text-zinc-400 md:text-lg"
         >
-          Experimenta com a tua equipa e mede o impacto no teu fluxo real de faturas e cobrança.
+          Mostramos como funciona com exemplos reais. Sem compromisso.
         </motion.p>
 
         <motion.div variants={itemVariants} className="mt-10 flex flex-wrap justify-center gap-4">
@@ -67,7 +66,7 @@ export function FinalCtaSection() {
             onClick={openModal}
             className="inline-flex items-center gap-2.5 rounded-xl border border-zinc-300 px-8 py-4 text-base font-semibold text-zinc-800 ring-2 ring-inset ring-primary-500 transition duration-300 hover:bg-zinc-100 dark:border-white/20 dark:text-zinc-100 dark:hover:bg-white/[0.05]"
           >
-            Pedir acesso
+            Falar com a equipa
           </button>
         </motion.div>
       </motion.div>

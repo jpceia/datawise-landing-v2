@@ -23,44 +23,44 @@ export type FaqItem = {
 
 export const stats: StatItem[] = [
   {
-    value: "Upload rápido",
-    label: "Carrega documentos e centraliza faturas em poucos cliques.",
+    value: "Leitura automática",
+    label: "Os documentos são analisados assim que chegam — sem copiar, sem reescrever.",
   },
   {
-    value: "Fluxo claro",
-    label: "Acompanha estados de cobrança com visibilidade ponta a ponta.",
+    value: "Classificação inteligente",
+    label: "Cada fatura é categorizada e associada ao contexto certo, sem regras manuais.",
   },
   {
-    value: "Controlo total",
-    label: "Permissões por papel e separação por workspace para equipas.",
+    value: "Cruzamento de dados",
+    label: "Valores, fornecedores e referências são cruzados automaticamente para detetar inconsistências.",
   },
 ];
 
 export const pillars: PillarItem[] = [
   {
     icon: Upload,
-    title: "Menos trabalho manual",
+    title: "Leitura sem esforço",
     description:
-      "OCR + extração automática reduzem tarefas repetitivas e aceleram o fecho financeiro.",
+      "A equipa intervém apenas em exceções — o restante é processado automaticamente.",
   },
   {
     icon: GitGraph,
-    title: "Mais controlo de cashflow",
+    title: "Tudo classificado no lugar certo",
     description:
-      "Pipeline claro de faturas: triagem, outstanding, paid e histórico auditável.",
+      "Cada documento é associado ao fornecedor, categoria e estado corretos, independentemente de quem o submeteu.",
   },
   {
     icon: ShieldCheck,
-    title: "Confiável para equipas",
+    title: "Deteção de inconsistências",
     description:
-      "Multi-workspace com RBAC por organização para operar com segurança e separação de dados.",
+      "Duplicados, divergências de valores e faturas em falta são sinalizados automaticamente antes de gerarem problemas.",
   },
 ];
 
 export const workflow: string[] = [
-  "Carrega faturas em segundos e centraliza tudo por workspace.",
-  "Extrai, valida e corrige os dados sem perder contexto operacional.",
-  "Acompanha cobrança até ao pagamento com trilho claro de estados.",
+  "Os documentos são submetidos via upload ou integração direta — a solução lê-os e processa-os automaticamente.",
+  "Campos extraídos, fornecedores identificados, valores cruzados com o que já existe.",
+  "Visibilidade sobre o estado de cada documento — o que está pendente, pago ou requer atenção.",
 ];
 
 export const faqs: FaqItem[] = [
@@ -75,9 +75,9 @@ export const faqs: FaqItem[] = [
       "Utilizamos OCR combinado com modelos de IA para identificar e extrair campos-chave de cada fatura. Os dados extraídos podem ser revistos e corrigidos antes de serem confirmados.",
   },
   {
-    question: "Posso usar a plataforma com a minha equipa?",
+    question: "Posso usar a solução com a minha equipa?",
     answer:
-      "Sim. Todos os planos incluem multi-utilizador por workspace com controlo de permissões por papel.",
+      "Sim. A solução é multi-utilizador e pode ser configurada com diferentes níveis de acesso por equipa ou departamento.",
   },
   {
     question: "Os meus dados estão seguros?",
@@ -87,6 +87,6 @@ export const faqs: FaqItem[] = [
   {
     question: "Posso integrar com o meu ERP ou sistema de faturação?",
     answer:
-      "Integrações à medida estão disponíveis no plano Enterprise, incluindo ERP, Google Drive, sistemas de faturação e outros.",
+      "Sim. Cada solução é desenvolvida à medida e pode incluir integrações com ERP, sistemas de faturação, Google Drive e outros.",
   },
 ];
