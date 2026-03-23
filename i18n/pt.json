@@ -490,6 +490,24 @@
     "pageDescription": "A página que procura não existe ou foi movida. Não se preocupe, estamos aqui para ajudar a encontrar o que precisa.",
     "backButton": "← Voltar atrás",
     "homeButton": "Ir para página inicial"
+  },
+  "ContactForm": {
+    "title": "Deixe o seu contacto",
+    "subtitle": "Tem dúvidas ou quer saber mais antes de agendar? Deixe os seus dados e nós entramos em contacto.",
+    "name": "Nome",
+    "company": "Empresa",
+    "email": "Email",
+    "phone": "Contacto telefónico",
+    "message": "Como podemos ajudar?",
+    "messagePlaceholder": "Descreva brevemente o que procura...",
+    "submit": "Enviar",
+    "submitting": "A enviar...",
+    "successTitle": "Mensagem enviada!",
+    "successMessage": "Obrigado pelo seu contacto. Entraremos em contacto consigo brevemente.",
+    "errorMessage": "Ocorreu um erro ao enviar. Por favor tente novamente.",
+    "requiredField": "Este campo é obrigatório",
+    "invalidEmail": "Email inválido",
+    "invalidPhone": "Número de telefone inválido"
   }
 }
 

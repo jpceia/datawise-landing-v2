@@ -493,6 +493,24 @@
       "pageDescription": "The page you are looking for doesn't exist or has been moved. Don't worry, we're here to help you find what you need.",
       "backButton": "← Go back",
       "homeButton": "Go to homepage"
+  },
+  "ContactForm": {
+    "title": "Leave your contact",
+    "subtitle": "Have questions or want to learn more before scheduling? Leave your details and we'll get in touch.",
+    "name": "Nome",
+    "company": "Company",
+    "email": "Email",
+    "phone": "Phone number",
+    "message": "How can we help?",
+    "messagePlaceholder": "Briefly describe what you're looking for...",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "successTitle": "Message sent!",
+    "successMessage": "Thank you for reaching out. We'll get back to you shortly.",
+    "errorMessage": "An error occurred. Please try again.",
+    "requiredField": "This field is required",
+    "invalidEmail": "Invalid email",
+    "invalidPhone": "Invalid phone number"
   }
 }
 
