@@ -65,7 +65,7 @@ export function FinalCtaSection() {
           <button
             type="button"
             onClick={openModal}
-            className="inline-flex items-center gap-2.5 rounded-xl border border-zinc-300 px-8 py-4 text-base font-semibold text-zinc-800 transition duration-300 hover:border-primary-300/60 hover:bg-zinc-100 dark:border-white/20 dark:text-zinc-100 dark:hover:border-primary-200/40 dark:hover:bg-white/[0.05]"
+            className="inline-flex items-center gap-2.5 rounded-xl border border-zinc-300 px-8 py-4 text-base font-semibold text-zinc-800 ring-2 ring-inset ring-primary-500 transition duration-300 hover:bg-zinc-100 dark:border-white/20 dark:text-zinc-100 dark:hover:bg-white/[0.05]"
           >
             Pedir acesso
           </button>
