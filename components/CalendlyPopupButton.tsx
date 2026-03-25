@@ -62,7 +62,7 @@ function ensureCalendlyLoaded(): Promise<void> {
 const CalendlyPopupButton: React.FC<CalendlyPopupButtonProps> = ({
   children,
   className = '',
-  buttonText = 'Marque uma consulta gratuita',
+  buttonText = 'Marque uma análise gratuita',
 }) => {
   const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || '';
 
