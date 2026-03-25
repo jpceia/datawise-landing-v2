@@ -6,7 +6,7 @@
     "ogDescription": "We combine artificial intelligence and business knowledge to transform your company's data and processes into growth engines."
   },
   "TopBanner": {
-    "message": "Only 5 spots remaining → reserve yours this month!"
+    "message": "Only {slots} {slots, plural, one {spot remaining} other {spots remaining}} → reserve yours this month!"
   },
     "Navbar": {
       "aboutUs": "About Us",
