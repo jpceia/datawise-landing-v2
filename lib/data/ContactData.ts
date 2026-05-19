@@ -4,7 +4,7 @@
 export const ContactData = {
     // General contact
     general: {
-      companyName: "DATAWISE, UNIPESSOAL LDA",
+      companyName: "DATAWISE",
       nipc: "517516691",
       email: "geral@datawise.pt",
       phone: "+351 928 371 073",

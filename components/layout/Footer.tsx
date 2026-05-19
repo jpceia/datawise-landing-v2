@@ -119,11 +119,6 @@ const Footer: React.FC = () => {
             <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-4">{t('contact')}</h3>
             <p className="text-white/70 text-sm font-medium">{ContactData.general.companyName}</p>
             <p className="text-white/70 text-sm mb-3">NIPC {ContactData.general.nipc}</p>
-            <p className="text-white/70 text-xs mb-3">
-              {ContactData.general.addressLine1}
-              <br />
-              {ContactData.general.addressLine2}
-            </p>
             <p className="text-white/70 mb-4">
               <a href={`tel:${ContactData.general.phone}`} className="hover:text-white transition-colors">
                 {ContactData.general.phone}
