@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useRef, useState, FormEvent } from "react";
 import { useTranslations } from "next-intl";
 import { sendGTMEvent } from "@next/third-parties/google";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
@@ -47,8 +47,11 @@ export default function ContactModal({
   const [form, setForm] = useState<FormData>(INITIAL_FORM);
   const [errors, setErrors] = useState<FormErrors>({});
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const lastPartialEmailRef = useRef<string | null>(null);
 
   const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || "";
+
+  const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (!enabled || !HUBSPOT_PORTAL_ID || !HUBSPOT_FORM_ID) {
     return null;
@@ -60,7 +63,7 @@ export default function ContactModal({
     if (!form.company.trim()) errs.company = t("requiredField");
     if (!form.email.trim()) {
       errs.email = t("requiredField");
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+    } else if (!EMAIL_REGEX.test(form.email)) {
       errs.email = t("invalidEmail");
     }
     if (!form.phone.trim()) {
@@ -69,6 +72,24 @@ export default function ContactModal({
       errs.phone = t("invalidPhone");
     }
     return errs;
+  }
+
+  async function submitPartialToHubspot() {
+    const email = form.email.trim();
+    if (!email || !EMAIL_REGEX.test(email)) return;
+    if (lastPartialEmailRef.current === email) return;
+    lastPartialEmailRef.current = email;
+
+    try {
+      const ok = await submitToHubspot();
+      if (ok) {
+        sendGTMEvent({ event: "lead_partial", value: 1 });
+      } else {
+        lastPartialEmailRef.current = null;
+      }
+    } catch {
+      lastPartialEmailRef.current = null;
+    }
   }
 
   async function submitToHubspot(): Promise<boolean> {
@@ -109,6 +130,7 @@ export default function ContactModal({
       sendGTMEvent({ event: "lead_contact", value: 1 });
       setStatus("success");
       setForm(INITIAL_FORM);
+      lastPartialEmailRef.current = null;
     } catch {
       setStatus("error");
     }
@@ -166,6 +188,7 @@ export default function ContactModal({
     if (!nextOpen) {
       setStatus("idle");
       setErrors({});
+      lastPartialEmailRef.current = null;
     }
     onOpenChange(nextOpen);
   }
@@ -222,6 +245,7 @@ export default function ContactModal({
                     type="email"
                     value={form.email}
                     onChange={(e) => handleChange("email", e.target.value)}
+                    onBlur={submitPartialToHubspot}
                     className={inputClass("email")}
                   />
                 </Field>
