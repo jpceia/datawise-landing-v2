@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import CalendlyPopupButton from '@/components/CalendlyPopupButton';
+import ContactButton from '@/components/ContactButton';
 
 const TransformBusiness = () => {
   const t = useTranslations('TransformBusiness');
@@ -99,9 +99,9 @@ const TransformBusiness = () => {
               </div>
             </div>
             <div className="text-center mt-4">
-              <CalendlyPopupButton className="inline-flex items-center justify-center px-6 py-3 bg-white text-primary rounded-lg font-medium hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg">
+              <ContactButton className="inline-flex items-center justify-center px-6 py-3 bg-white text-primary rounded-lg font-medium hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg">
                 {t('scheduleMeeting')}
-              </CalendlyPopupButton>
+              </ContactButton>
             </div>
           </div>
 

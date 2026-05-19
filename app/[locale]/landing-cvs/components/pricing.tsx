@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check, Zap, ChevronRight } from "lucide-react";
-import CalendlyPopupButton from "@/components/CalendlyPopupButton";
-import { useHubspotContactModal } from "@/components/providers/HubspotContactModalProvider";
+import ContactButton from "@/components/ContactButton";
+import { useContactModal } from "@/components/providers/ContactModalProvider";
 
 const cvTiers = [
   { label: "50", value: 50 },
@@ -35,7 +35,7 @@ const customFeatures = [
 function StandardCard() {
   const [selectedIndex, setSelectedIndex] = useState(1);
   const tier = cvTiers[selectedIndex];
-  const { openModal } = useHubspotContactModal();
+  const { openModal } = useContactModal();
 
   return (
     <motion.div
@@ -113,15 +113,15 @@ function StandardCard() {
         ))}
       </ul>
 
-      <CalendlyPopupButton className="landing-btn-primary block rounded-xl py-3 text-center text-sm font-semibold transition-all">
+      <ContactButton className="landing-btn-primary block rounded-xl py-3 text-center text-sm font-semibold transition-all">
         Marcar Demo
-      </CalendlyPopupButton>
+      </ContactButton>
     </motion.div>
   );
 }
 
 function CustomCard() {
-  const { openModal } = useHubspotContactModal();
+  const { openModal } = useContactModal();
 
   return (
     <motion.div
@@ -152,7 +152,7 @@ function CustomCard() {
 
       <button
         type="button"
-        onClick={openModal}
+        onClick={() => openModal()}
         className="landing-btn-outline flex items-center justify-center gap-2 rounded-xl py-3 text-center text-sm font-semibold transition-all"
       >
         Falar com a equipa

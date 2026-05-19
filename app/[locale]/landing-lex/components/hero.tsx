@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Shield, BookOpen } from "lucide-react";
-import CalendlyPopupButton from "@/components/CalendlyPopupButton";
-import { useHubspotContactModal } from "@/components/providers/HubspotContactModalProvider";
+import ContactButton from "@/components/ContactButton";
+import { useContactModal } from "@/components/providers/ContactModalProvider";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -12,7 +12,7 @@ const fadeUp = (delay = 0) => ({
 });
 
 export default function Hero() {
-  const { openModal } = useHubspotContactModal();
+  const { openModal } = useContactModal();
 
   return (
     <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
@@ -57,13 +57,13 @@ export default function Hero() {
             </motion.p>
 
             <motion.div {...fadeUp(0.3)} className="flex flex-wrap gap-3">
-              <CalendlyPopupButton className="landing-btn-primary">
+              <ContactButton className="landing-btn-primary">
                 Marcar Demo
                 <ArrowRight size={16} />
-              </CalendlyPopupButton>
+              </ContactButton>
               <button
                 type="button"
-                onClick={openModal}
+                onClick={() => openModal()}
                 className="landing-btn-outline"
               >
                 Pedir acesso

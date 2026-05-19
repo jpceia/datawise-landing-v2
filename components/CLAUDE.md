@@ -31,8 +31,8 @@ Interactive 3D WebGL globe (Three.js + React Three Fiber).
 - Auto-rotation, click ripples, coordinate display
 - Fallback particle animation for non-WebGL browsers
 
-## CalendlyPopupButton.tsx
-Calendly scheduling popup trigger.
+## ContactButton.tsx
+Opens the shared ContactModal (provided by `ContactModalProvider` in the locale layout). The modal offers both "contact me" (HubSpot form) and "schedule a meeting" (HubSpot + Calendly popup with prefilled name/email).
 
 ## PortableTextContent.tsx
 Sanity Portable Text renderer for blog posts.

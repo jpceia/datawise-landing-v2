@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import CalendlyPopupButton from "@/components/CalendlyPopupButton";
-import { useHubspotContactModal } from "@/components/providers/HubspotContactModalProvider";
+import ContactButton from "@/components/ContactButton";
+import { useContactModal } from "@/components/providers/ContactModalProvider";
 import type { StatItem } from "../data";
 
 type HeroSectionProps = {
@@ -19,7 +19,7 @@ const itemVariants = {
 };
 
 export function HeroSection({ stats }: HeroSectionProps) {
-  const { openModal } = useHubspotContactModal();
+  const { openModal } = useContactModal();
 
   return (
     <section className="grid gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
@@ -57,13 +57,13 @@ export function HeroSection({ stats }: HeroSectionProps) {
         </motion.p>
 
         <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 pt-2">
-          <CalendlyPopupButton className="group inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-primary-600 to-primary-500 px-7 py-3.5 text-base font-semibold text-white transition duration-300 hover:from-primary-500 hover:to-primary-400 hover:shadow-xl hover:shadow-primary-500/25">
+          <ContactButton className="group inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-primary-600 to-primary-500 px-7 py-3.5 text-base font-semibold text-white transition duration-300 hover:from-primary-500 hover:to-primary-400 hover:shadow-xl hover:shadow-primary-500/25">
             Marcar demo
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-          </CalendlyPopupButton>
+          </ContactButton>
           <button
             type="button"
-            onClick={openModal}
+            onClick={() => openModal()}
             className="inline-flex items-center gap-2.5 rounded-xl border border-zinc-300 px-7 py-3.5 text-base font-semibold text-zinc-800 ring-2 ring-inset ring-primary-500 transition duration-300 hover:bg-zinc-100 dark:border-white/15 dark:text-zinc-100 dark:hover:bg-white/[0.05]"
           >
             Pedir acesso

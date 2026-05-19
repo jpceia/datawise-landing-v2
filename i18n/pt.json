@@ -18,7 +18,7 @@
     "title": "Parceiros em IA<br></br>para a sua empresa",
     "subtitle": "Combinamos <strong>inteligência artificial</strong> e <strong>conhecimento de negócio</strong> para transformar os dados e processos da sua empresa em motores de crescimento.",
     "ctaSchedule": "Agende um Diagnóstico Gratuito",
-    "ctaContactUs": "Fale connosco",
+    "ctaMethodology": "Como trabalhamos",
     "scrollToExplore": "Scroll para explorar"
   },
   "ClientLogos": {
@@ -501,6 +501,8 @@
     "message": "Como podemos ajudar?",
     "messagePlaceholder": "Descreva brevemente o que procura...",
     "submit": "Enviar",
+    "submitContact": "Quero ser contactado",
+    "submitSchedule": "Agendar reunião",
     "submitting": "A enviar...",
     "successTitle": "Mensagem enviada!",
     "successMessage": "Obrigado pelo seu contacto. Entraremos em contacto consigo brevemente.",

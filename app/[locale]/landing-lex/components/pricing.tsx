@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check, ChevronRight } from "lucide-react";
-import CalendlyPopupButton from "@/components/CalendlyPopupButton";
-import { useHubspotContactModal } from "@/components/providers/HubspotContactModalProvider";
+import ContactButton from "@/components/ContactButton";
+import { useContactModal } from "@/components/providers/ContactModalProvider";
 
 const CREDIT_TIERS = [
   { label: "100", value: 100 },
@@ -30,7 +30,7 @@ const CUSTOM_FEATURES = [
 ];
 
 function StandardCard() {
-  const { openModal } = useHubspotContactModal();
+  const { openModal } = useContactModal();
   const [selectedIndex, setSelectedIndex] = useState(2);
   const tier = CREDIT_TIERS[selectedIndex];
 
@@ -81,15 +81,15 @@ function StandardCard() {
         ))}
       </ul>
 
-      <CalendlyPopupButton className="landing-btn-primary w-full justify-center text-center">
+      <ContactButton className="landing-btn-primary w-full justify-center text-center">
         Marcar Demo
-      </CalendlyPopupButton>
+      </ContactButton>
     </motion.article>
   );
 }
 
 function CustomCard() {
-  const { openModal } = useHubspotContactModal();
+  const { openModal } = useContactModal();
   return (
     <motion.article
       initial={{ opacity: 0, y: 24 }}
@@ -122,7 +122,7 @@ function CustomCard() {
 
       <button
         type="button"
-        onClick={openModal}
+        onClick={() => openModal()}
         className="landing-btn-outline inline-flex items-center justify-center gap-2 w-full"
       >
         Falar com a equipa

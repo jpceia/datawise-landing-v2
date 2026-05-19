@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Building2, Check, ChevronRight } from "lucide-react";
-import { useHubspotContactModal } from "@/components/providers/HubspotContactModalProvider";
+import { useContactModal } from "@/components/providers/ContactModalProvider";
 import styles from "../page.module.css";
 
 const invoiceTiers = [
@@ -33,7 +33,7 @@ const customFeatures = [
 function StandardCard() {
   const [selectedIndex, setSelectedIndex] = useState(1);
   const tier = invoiceTiers[selectedIndex];
-  const { openModal } = useHubspotContactModal();
+  const { openModal } = useContactModal();
 
   return (
     <motion.article
@@ -87,7 +87,7 @@ function StandardCard() {
 
       <button
         type="button"
-        onClick={openModal}
+        onClick={() => openModal()}
         className="group inline-flex w-full items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-primary-600 to-primary-500 px-4 py-3 text-sm font-bold text-white transition duration-300 hover:from-primary-500 hover:to-primary-400 hover:shadow-lg hover:shadow-primary-500/20"
       >
         Pedir uma Demo
@@ -98,7 +98,7 @@ function StandardCard() {
 }
 
 function CustomCard() {
-  const { openModal } = useHubspotContactModal();
+  const { openModal } = useContactModal();
 
   return (
     <motion.article
@@ -131,7 +131,7 @@ function CustomCard() {
 
       <button
         type="button"
-        onClick={openModal}
+        onClick={() => openModal()}
         className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-primary-500 px-4 py-3 text-sm font-semibold text-primary-600 transition duration-300 hover:bg-primary-50 dark:border-primary-400 dark:text-primary-300 dark:hover:bg-primary-400/10"
       >
         Falar connosco

@@ -2,13 +2,17 @@
 
 import { useState, FormEvent } from "react";
 import { useTranslations } from "next-intl";
+import { sendGTMEvent } from "@next/third-parties/google";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { CheckCircle } from "lucide-react";
+import { ensureCalendlyLoaded } from "@/lib/calendly";
 
-interface HubspotContactModalProps {
+interface ContactModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   enabled?: boolean;
+  title?: string;
+  subtitle?: string;
 }
 
 const HUBSPOT_PORTAL_ID = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID;
@@ -32,15 +36,19 @@ const INITIAL_FORM: FormData = {
   message: "",
 };
 
-export default function HubspotContactModal({
+export default function ContactModal({
   open,
   onOpenChange,
   enabled = true,
-}: HubspotContactModalProps) {
+  title,
+  subtitle,
+}: ContactModalProps) {
   const t = useTranslations("ContactForm");
   const [form, setForm] = useState<FormData>(INITIAL_FORM);
   const [errors, setErrors] = useState<FormErrors>({});
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+  const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || "";
 
   if (!enabled || !HUBSPOT_PORTAL_ID || !HUBSPOT_FORM_ID) {
     return null;
@@ -63,7 +71,31 @@ export default function HubspotContactModal({
     return errs;
   }
 
-  async function handleSubmit(e: FormEvent) {
+  async function submitToHubspot(): Promise<boolean> {
+    const res = await fetch(
+      `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fields: [
+            { name: "firstname", value: form.name },
+            { name: "company", value: form.company },
+            { name: "email", value: form.email },
+            { name: "phone", value: form.phone },
+            { name: "message", value: form.message },
+          ],
+          context: {
+            pageUri: window.location.href,
+            pageName: document.title,
+          },
+        }),
+      }
+    );
+    return res.ok;
+  }
+
+  async function handleContactSubmit(e: FormEvent) {
     e.preventDefault();
     const errs = validate();
     setErrors(errs);
@@ -72,30 +104,48 @@ export default function HubspotContactModal({
     setStatus("submitting");
 
     try {
-      const res = await fetch(
-        `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            fields: [
-              { name: "firstname", value: form.name },
-              { name: "company", value: form.company },
-              { name: "email", value: form.email },
-              { name: "phone", value: form.phone },
-              { name: "message", value: form.message },
-            ],
-            context: {
-              pageUri: window.location.href,
-              pageName: document.title,
-            },
-          }),
-        }
-      );
-
-      if (!res.ok) throw new Error("Submit failed");
+      const ok = await submitToHubspot();
+      if (!ok) throw new Error("Submit failed");
+      sendGTMEvent({ event: "lead_contact", value: 1 });
       setStatus("success");
       setForm(INITIAL_FORM);
+    } catch {
+      setStatus("error");
+    }
+  }
+
+  async function handleScheduleSubmit() {
+    const errs = validate();
+    setErrors(errs);
+    if (Object.keys(errs).length > 0) return;
+    if (!calendlyUrl) return;
+
+    setStatus("submitting");
+
+    submitToHubspot().catch(() => {
+      // Fire-and-forget: don't block scheduling on HubSpot errors.
+    });
+
+    try {
+      await ensureCalendlyLoaded();
+      if (!window.Calendly) {
+        setStatus("error");
+        return;
+      }
+
+      sendGTMEvent({ event: "lead_schedule", value: 1 });
+
+      window.Calendly.initPopupWidget({
+        url: calendlyUrl,
+        prefill: {
+          name: form.name,
+          email: form.email,
+        },
+      });
+
+      setForm(INITIAL_FORM);
+      setStatus("idle");
+      onOpenChange(false);
     } catch {
       setStatus("error");
     }
@@ -128,7 +178,7 @@ export default function HubspotContactModal({
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogContent className="max-w-lg border-none bg-white p-0 sm:rounded-2xl">
-        <DialogTitle className="sr-only">{t("title")}</DialogTitle>
+        <DialogTitle className="sr-only">{title ?? t("title")}</DialogTitle>
 
         <div className="max-h-[90vh] overflow-y-auto px-6 py-8 sm:px-8">
           {status === "success" ? (
@@ -143,12 +193,12 @@ export default function HubspotContactModal({
             <>
               <div className="mb-6">
                 <h2 className="text-2xl font-bold text-gray-900">
-                  {t("title")}
+                  {title ?? t("title")}
                 </h2>
-                <p className="mt-2 text-sm text-gray-600">{t("subtitle")}</p>
+                <p className="mt-2 text-sm text-gray-600">{subtitle ?? t("subtitle")}</p>
               </div>
 
-              <form onSubmit={handleSubmit} noValidate className="space-y-5">
+              <form onSubmit={handleContactSubmit} noValidate className="space-y-5">
                 <Field label={t("name")} required error={errors.name}>
                   <input
                     type="text"
@@ -200,13 +250,21 @@ export default function HubspotContactModal({
                   <p className="text-sm text-red-500">{t("errorMessage")}</p>
                 )}
 
-                <div className="flex justify-end">
+                <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
                   <button
                     type="submit"
                     disabled={status === "submitting"}
-                    className="rounded-lg bg-[#F87171] px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#EF4444] disabled:opacity-60"
+                    className="rounded-lg border-2 border-gray-400 bg-white px-7 py-3.5 text-base font-semibold text-gray-800 shadow-sm transition-all hover:-translate-y-0.5 hover:border-gray-500 hover:bg-gray-50 hover:shadow-md disabled:opacity-60"
                   >
-                    {status === "submitting" ? t("submitting") : t("submit")}
+                    {status === "submitting" ? t("submitting") : t("submitContact")}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleScheduleSubmit}
+                    disabled={status === "submitting" || !calendlyUrl}
+                    className="rounded-lg bg-[#EF4444] px-7 py-3.5 text-base font-semibold text-white shadow-md shadow-[#EF4444]/40 transition-all hover:-translate-y-0.5 hover:bg-[#DC2626] hover:shadow-lg hover:shadow-[#DC2626]/50 disabled:opacity-60"
+                  >
+                    {t("submitSchedule")}
                   </button>
                 </div>
               </form>

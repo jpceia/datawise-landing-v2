@@ -8,52 +8,67 @@ import {
   useMemo,
   useState,
 } from "react";
-import HubspotContactModal from "@/components/modals/HubspotContactModal";
+import ContactModal from "@/components/modals/ContactModal";
 
-type HubspotContactModalContextValue = {
+type ContactModalOverrides = {
+  title?: string;
+  subtitle?: string;
+};
+
+type ContactModalContextValue = {
   isOpen: boolean;
   enabled: boolean;
-  openModal: () => void;
+  openModal: (overrides?: ContactModalOverrides) => void;
   closeModal: () => void;
   setModalOpen: (open: boolean) => void;
   setEnabled: (enabled: boolean) => void;
 };
 
-const HubspotContactModalContext = createContext<HubspotContactModalContextValue | null>(null);
+const ContactModalContext = createContext<ContactModalContextValue | null>(null);
 
-interface HubspotContactModalProviderProps {
+interface ContactModalProviderProps {
   children: ReactNode;
   defaultEnabled?: boolean;
 }
 
-export function HubspotContactModalProvider({
+export function ContactModalProvider({
   children,
   defaultEnabled = true,
-}: HubspotContactModalProviderProps) {
+}: ContactModalProviderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [enabled, setEnabled] = useState(defaultEnabled);
+  const [overrides, setOverrides] = useState<ContactModalOverrides>({});
 
   const setModalOpen = useCallback(
     (open: boolean) => {
       setIsOpen(enabled ? open : false);
+      if (!open) {
+        setOverrides({});
+      }
     },
     [enabled]
   );
 
-  const openModal = useCallback(() => {
-    if (enabled) {
-      setIsOpen(true);
-    }
-  }, [enabled]);
+  const openModal = useCallback(
+    (next?: ContactModalOverrides) => {
+      if (enabled) {
+        setOverrides(next ?? {});
+        setIsOpen(true);
+      }
+    },
+    [enabled]
+  );
 
   const closeModal = useCallback(() => {
     setIsOpen(false);
+    setOverrides({});
   }, []);
 
   const handleSetEnabled = useCallback((nextEnabled: boolean) => {
     setEnabled(nextEnabled);
     if (!nextEnabled) {
       setIsOpen(false);
+      setOverrides({});
     }
   }, []);
 
@@ -70,23 +85,25 @@ export function HubspotContactModalProvider({
   );
 
   return (
-    <HubspotContactModalContext.Provider value={value}>
+    <ContactModalContext.Provider value={value}>
       {children}
-      <HubspotContactModal
+      <ContactModal
         open={isOpen}
         onOpenChange={setModalOpen}
         enabled={enabled}
+        title={overrides.title}
+        subtitle={overrides.subtitle}
       />
-    </HubspotContactModalContext.Provider>
+    </ContactModalContext.Provider>
   );
 }
 
-export function useHubspotContactModal() {
-  const context = useContext(HubspotContactModalContext);
+export function useContactModal() {
+  const context = useContext(ContactModalContext);
 
   if (!context) {
     throw new Error(
-      "useHubspotContactModal must be used within HubspotContactModalProvider"
+      "useContactModal must be used within ContactModalProvider"
     );
   }
 

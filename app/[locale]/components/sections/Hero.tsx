@@ -2,13 +2,11 @@
 
 import React from 'react';
 import { useTranslations } from 'next-intl';
-import CalendlyPopupButton from '@/components/CalendlyPopupButton';
+import ContactButton from '@/components/ContactButton';
 import { motion } from 'framer-motion';
-import { useHubspotContactModal } from '@/components/providers/HubspotContactModalProvider';
 
 const Hero: React.FC = () => {
   const t = useTranslations('Hero');
-  const contactModal = useHubspotContactModal();
 
   return (
     <section
@@ -45,16 +43,15 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <CalendlyPopupButton className="px-8 py-4 bg-primary-800 text-white font-medium rounded-lg border border-white/30 hover:bg-primary-700 transition-all transform hover:scale-105 shadow-lg">
+          <ContactButton className="px-8 py-4 bg-primary-800 text-white font-medium rounded-lg border border-white/30 hover:bg-primary-700 transition-all transform hover:scale-105 shadow-lg">
             {t('ctaSchedule')}
-          </CalendlyPopupButton>
-          <button
-            type="button"
-            onClick={contactModal.openModal}
-            className="px-8 py-4 bg-transparent border border-white text-white rounded-lg font-medium hover:bg-white/10 transition-all transform hover:scale-105"
+          </ContactButton>
+          <a
+            href="#methodology"
+            className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-white text-white rounded-lg font-medium hover:bg-white/10 transition-all transform hover:scale-105"
           >
-            {t('ctaContactUs')}
-          </button>
+            {t('ctaMethodology')}
+          </a>
         </motion.div>
 
 

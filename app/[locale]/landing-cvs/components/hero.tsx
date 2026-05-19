@@ -1,12 +1,12 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import { Sparkles, ArrowRight } from "lucide-react";
-import CalendlyPopupButton from "@/components/CalendlyPopupButton";
-import { useHubspotContactModal } from "@/components/providers/HubspotContactModalProvider";
+import ContactButton from "@/components/ContactButton";
+import { useContactModal } from "@/components/providers/ContactModalProvider";
 
 export function Hero() {
-  const { openModal } = useHubspotContactModal();
+  const { openModal } = useContactModal();
 
   return (
     <section className="relative overflow-hidden px-4 pb-20 pt-32 sm:px-6 lg:px-8">
@@ -66,13 +66,13 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
-          <CalendlyPopupButton className="landing-btn-primary inline-flex items-center gap-2 rounded-xl px-8 py-4 text-base font-semibold">
+          <ContactButton className="landing-btn-primary inline-flex items-center gap-2 rounded-xl px-8 py-4 text-base font-semibold">
             Marcar Demo
             <ArrowRight size={18} />
-          </CalendlyPopupButton>
+          </ContactButton>
           <button
             type="button"
-            onClick={openModal}
+            onClick={() => openModal()}
             className="landing-btn-outline inline-flex items-center gap-2 rounded-xl px-8 py-4 text-base font-semibold"
           >
             Pedir acesso

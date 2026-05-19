@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
-import CalendlyPopupButton from '@/components/CalendlyPopupButton';
+import ContactButton from '@/components/ContactButton';
 
 interface CallToActionProps {
   variant?: 'light' | 'dark';
@@ -49,9 +49,9 @@ const CallToAction: React.FC<CallToActionProps> = ({ variant = 'light' }) => {
           <p className={`text-xl mb-8 ${isDark ? 'text-white/80' : 'text-gray-600'}`}>
             {t('subtitle')}
           </p>
-          <CalendlyPopupButton className="px-8 py-4 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-blue-500/30">
+          <ContactButton className="px-8 py-4 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-blue-500/30">
             {t('buttonText')}
-          </CalendlyPopupButton>
+          </ContactButton>
         </div>
       </div>
     </section>

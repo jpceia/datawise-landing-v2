@@ -6,7 +6,7 @@ import Link from 'next/link';
 import {useLocale, useTranslations} from 'next-intl';
 import {BlogPost} from '@/types/sanity';
 import PortableTextContent from '@/components/PortableTextContent';
-import CalendlyPopupButton from '@/components/CalendlyPopupButton';
+import ContactButton from '@/components/ContactButton';
 import {formatDate} from '@/lib/utils/date';
 
 interface BlogPostPageProps {
@@ -81,9 +81,9 @@ const CallToAction: React.FC<{t: (key: string) => string}> = ({t}) => (
         <h3 className="text-xl font-bold mb-2">{t('ctaTitle')}</h3>
         <p className="text-gray-600">{t('ctaDescription')}</p>
       </div>
-      <CalendlyPopupButton className="text-white bg-primary hover:bg-primary-dark transition-colors px-6 py-3 rounded-lg font-medium">
+      <ContactButton className="text-white bg-primary hover:bg-primary-dark transition-colors px-6 py-3 rounded-lg font-medium">
         {t('contactUs')}
-      </CalendlyPopupButton>
+      </ContactButton>
     </div>
   </div>
 );

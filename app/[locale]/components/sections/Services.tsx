@@ -1,12 +1,12 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import ServiceCard from '@/components/ServiceCard';
-import { useHubspotContactModal } from '@/components/providers/HubspotContactModalProvider';
+import { useContactModal } from '@/components/providers/ContactModalProvider';
 import SectionContactCTA from '@/components/SectionContactCTA';
 
 const Services = () => {
   const t = useTranslations('Services');
-  const contactModal = useHubspotContactModal();
+  const contactModal = useContactModal();
 
   const services = [
     {

@@ -1,7 +1,7 @@
 import { ArrowRight, Clock3 } from "lucide-react";
 import { motion } from "framer-motion";
-import CalendlyPopupButton from "@/components/CalendlyPopupButton";
-import { useHubspotContactModal } from "@/components/providers/HubspotContactModalProvider";
+import ContactButton from "@/components/ContactButton";
+import { useContactModal } from "@/components/providers/ContactModalProvider";
 
 const containerVariants = {
   hidden: {},
@@ -14,7 +14,7 @@ const itemVariants = {
 };
 
 export function FinalCtaSection() {
-  const { openModal } = useHubspotContactModal();
+  const { openModal } = useContactModal();
 
   return (
     <section className="relative overflow-hidden rounded-3xl border border-primary-300/30 bg-gradient-to-br from-primary-50/80 via-white to-primary-100/70 px-8 py-16 text-center dark:border-primary-200/20 dark:from-primary-dark/60 dark:via-primary-900/30 dark:to-primary-dark/40 md:px-12 md:py-20">
@@ -57,13 +57,13 @@ export function FinalCtaSection() {
         </motion.p>
 
         <motion.div variants={itemVariants} className="mt-10 flex flex-wrap justify-center gap-4">
-          <CalendlyPopupButton className="group inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-primary-600 to-primary-500 px-8 py-4 text-base font-bold text-white transition duration-300 hover:from-primary-500 hover:to-primary-400 hover:shadow-xl hover:shadow-primary-500/25">
+          <ContactButton className="group inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-primary-600 to-primary-500 px-8 py-4 text-base font-bold text-white transition duration-300 hover:from-primary-500 hover:to-primary-400 hover:shadow-xl hover:shadow-primary-500/25">
             Marcar demo
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-          </CalendlyPopupButton>
+          </ContactButton>
           <button
             type="button"
-            onClick={openModal}
+            onClick={() => openModal()}
             className="inline-flex items-center gap-2.5 rounded-xl border border-zinc-300 px-8 py-4 text-base font-semibold text-zinc-800 ring-2 ring-inset ring-primary-500 transition duration-300 hover:bg-zinc-100 dark:border-white/20 dark:text-zinc-100 dark:hover:bg-white/[0.05]"
           >
             Falar com a equipa

@@ -18,7 +18,7 @@
       "title": "Partners in AI<br></br>for your company",
       "subtitle": "We combine <strong>artificial intelligence</strong> and <strong>business knowledge</strong> to transform your company's data and processes into growth engines.",
       "ctaSchedule": "Schedule a Free Diagnostic",
-      "ctaContactUs": "Contact us",
+      "ctaMethodology": "How we work",
       "scrollToExplore": "Scroll to explore"
     },
     "ClientLogos": {
@@ -504,6 +504,8 @@
     "message": "How can we help?",
     "messagePlaceholder": "Briefly describe what you're looking for...",
     "submit": "Submit",
+    "submitContact": "Contact me",
+    "submitSchedule": "Schedule a meeting",
     "submitting": "Submitting...",
     "successTitle": "Message sent!",
     "successMessage": "Thank you for reaching out. We'll get back to you shortly.",

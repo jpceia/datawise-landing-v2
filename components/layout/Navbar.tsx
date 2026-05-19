@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NavItem } from '../../types';
-import { useHubspotContactModal } from '@/components/providers/HubspotContactModalProvider';
+import { useContactModal } from '@/components/providers/ContactModalProvider';
 
 interface NavbarProps {
   hasTopBanner?: boolean;
@@ -13,7 +13,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ hasTopBanner = false, variant = 'dark' }) => {
   const t = useTranslations('Navbar');
-  const { openModal } = useHubspotContactModal();
+  const { openModal } = useContactModal();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [visible, setVisible] = useState<boolean>(true);

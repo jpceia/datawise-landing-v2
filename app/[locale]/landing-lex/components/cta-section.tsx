@@ -3,13 +3,13 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import CalendlyPopupButton from "@/components/CalendlyPopupButton";
-import { useHubspotContactModal } from "@/components/providers/HubspotContactModalProvider";
+import ContactButton from "@/components/ContactButton";
+import { useContactModal } from "@/components/providers/ContactModalProvider";
 
 export default function CtaSection() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-  const { openModal } = useHubspotContactModal();
+  const { openModal } = useContactModal();
 
   return (
     <section className="landing-section" ref={ref}>
@@ -62,13 +62,13 @@ export default function CtaSection() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="flex flex-wrap gap-3 justify-center"
             >
-              <CalendlyPopupButton className="landing-btn-primary text-base py-3 px-7">
+              <ContactButton className="landing-btn-primary text-base py-3 px-7">
                 Marcar Demo
                 <ArrowRight size={18} />
-              </CalendlyPopupButton>
+              </ContactButton>
               <button
                 type="button"
-                onClick={openModal}
+                onClick={() => openModal()}
                 className="landing-btn-outline text-base py-3 px-7"
               >
                 Pedir acesso

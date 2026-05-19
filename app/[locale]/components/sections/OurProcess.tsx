@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
-import { useHubspotContactModal } from '@/components/providers/HubspotContactModalProvider';
+import { useContactModal } from '@/components/providers/ContactModalProvider';
 import SectionContactCTA from '@/components/SectionContactCTA';
 
 const OurProcess = () => {
   const t = useTranslations('OurProcess');
-  const contactModal = useHubspotContactModal();
+  const contactModal = useContactModal();
   const [activeStage, setActiveStage] = useState(0);
 
   const stages = [
