@@ -46,9 +46,9 @@ const Navbar: React.FC<NavbarProps> = ({ hasTopBanner = false, variant = 'dark' 
   }, [isDefault, hasTopBanner]);
 
   const navItems: NavItem[] = [
-    { href: '/#about', label: t('aboutUs') },
-    { href: '/#services', label: t('services') },
-    { href: '/#success-cases', label: t('successCases') },
+    { href: '#about', label: t('aboutUs') },
+    { href: '#services', label: t('services') },
+    { href: '#success-cases', label: t('successCases') },
   ];
 
   // Style tokens per variant
