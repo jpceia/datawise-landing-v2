@@ -4,6 +4,7 @@ import {usePathname} from 'next/navigation';
 import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
 import TopBanner from '@/components/layout/TopBanner';
+import CallMeButton from '@/components/layout/CallMeButton';
 
 interface SiteFrameProps {
   children: React.ReactNode;
@@ -23,6 +24,7 @@ export default function SiteFrame({children}: SiteFrameProps) {
     <>
       {isLandingPage && <TopBanner />}
       <Navbar hasTopBanner={isLandingPage} variant={isLandingPage ? 'dark' : 'light'} />
+      {isLandingPage && <CallMeButton />}
       {children}
       <Footer />
     </>
