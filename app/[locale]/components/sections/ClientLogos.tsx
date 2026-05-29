@@ -31,7 +31,7 @@ const ClientLogos: React.FC = () => {
   const t = useTranslations('ClientLogos');
 
   return (
-    <section className="relative pt-10 sm:pt-14 bg-gradient-to-r from-primary-dark to-primary">
+    <section className="relative pt-32 pb-10 sm:pb-14 bg-gradient-to-r from-primary-dark to-primary">
       {/* Section title */}
       <p className="text-center text-white/50 text-sm mb-8 sm:mb-10">
         {t('title')}

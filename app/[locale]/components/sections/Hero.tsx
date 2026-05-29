@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative w-full h-screen flex items-center justify-center bg-gradient-to-r from-primary-dark to-primary"
+      className="relative w-full h-[calc(100vh-44px)] flex items-center justify-center bg-gradient-to-r from-primary-dark to-primary overflow-visible"
     >
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center">
@@ -64,11 +64,11 @@ const Hero: React.FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.8, delay: 1.0, ease: 'easeInOut' }}
-        className="absolute -bottom-32 left-1/2 -translate-x-1/2 h-[60vh] lg:h-[56vh] w-auto max-w-none pointer-events-none hidden sm:block"
+        className="absolute -bottom-32 left-1/2 -translate-x-1/2 h-[60vh] lg:h-[56vh] w-auto max-w-none pointer-events-none hidden sm:block z-10"
       />
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center">
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center z-20">
         <span className="text-white/60 text-sm mb-2">{t('scrollToExplore')}</span>
         <div className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center p-1">
           <motion.div
