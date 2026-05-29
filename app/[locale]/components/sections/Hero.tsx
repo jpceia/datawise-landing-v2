@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative w-full h-[calc(100vh-44px)] flex items-center justify-center bg-gradient-to-r from-primary-dark to-primary overflow-visible"
+      className="relative w-full min-h-screen flex items-center justify-center bg-gradient-to-r from-primary-dark to-primary overflow-visible pt-[120px] sm:pt-[88px]"
     >
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center">
@@ -19,11 +19,9 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-5xl md:text-6xl font-bold text-white mb-6 font-sans"
+          className="text-5xl md:text-6xl font-bold text-white mb-6 font-sans md:max-w-[36rem] mx-auto"
         >
-          {t.rich('title', {
-            br: () => <br />
-          })}
+          {t('title')}
         </motion.h1>
 
         <motion.p
