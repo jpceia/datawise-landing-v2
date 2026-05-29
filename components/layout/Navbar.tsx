@@ -98,7 +98,7 @@ const Navbar: React.FC<NavbarProps> = ({ hasTopBanner = false, variant = 'dark' 
               alt="Datawise"
               width={2664}
               height={341}
-              className="my-4 h-12 w-auto"
+              className="my-4 w-[250px] h-auto sm:w-auto sm:h-12"
               priority
             />
           </Link>
