@@ -6,92 +6,21 @@ const Technologies = () => {
   const t = useTranslations('Technologies');
 
   const technologies = [
-    // Programming languages and frameworks
-    { 
-      id: 1, 
-      name: 'Python', 
-      logo: '/tech-logos/python.png'
-    },
-    { 
-      id: 2, 
-      name: 'FastAPI', 
-      logo: '/tech-logos/fast-api.png'
-    },
-    
-    // Development tools and ML
-    { 
-      id: 3, 
-      name: 'Jupyter', 
-      logo: '/tech-logos/Jupyter_logo.svg.webp'
-    },
-    { 
-      id: 4, 
-      name: 'scikit-learn', 
-      logo: '/tech-logos/Scikit_learn_logo_small.svg.png'
-    },
-    { 
-      id: 5, 
-      name: 'XGBoost', 
-      logo: '/tech-logos/XGBoost_logo.png'
-    },
-    { 
-      id: 6, 
-      name: 'TensorFlow', 
-      logo: '/tech-logos/Tensorflow_logo.svg.png'
-    },
-    
-    // AI models and LLMs
-    { 
-      id: 7, 
-      name: 'OpenAI', 
-      logo: '/tech-logos/openai-icon-2021x2048-4rpe5x7n.png'
-    },
-    { 
-      id: 8, 
-      name: 'DeepSeek', 
-      logo: '/tech-logos/DeepSeek_logo_icon.png'
-    },
-    { 
-      id: 9, 
-      name: 'Gemini', 
-      logo: '/tech-logos/gemini-icon-logo-png_seeklogo-611605.png'
-    },
-    { 
-      id: 10, 
-      name: 'Hugging Face', 
-      logo: '/tech-logos/huggingface-color.png'
-    },
-    
-    // Cloud and infrastructure
-    { 
-      id: 11, 
-      name: 'Azure', 
-      logo: '/tech-logos/Microsoft_Azure.svg.png'
-    },
-    { 
-      id: 12, 
-      name: 'Databricks', 
-      logo: '/tech-logos/databricks-logo-1.png'
-    },
-    { 
-      id: 13, 
-      name: 'Docker', 
-      logo: '/tech-logos/docker-mark-blue-scaled.webp'
-    },
-    
-    // Databases
-    { 
-      id: 14, 
-      name: 'PostgreSQL', 
-      logo: '/tech-logos/postgresql.png'
-    },
-    
-    // Automation
-    { 
-      id: 15, 
-      name: 'n8n', 
-      logo: '/tech-logos/n8n-color.svg'
-    },
+    { id: 1,  name: 'Python',       logo: '/tech-logos/python.png',                              mobile: true  },
+    { id: 2,  name: 'FastAPI',      logo: '/tech-logos/fast-api.png',                            mobile: false },
+    { id: 3,  name: 'Jupyter',      logo: '/tech-logos/Jupyter_logo.svg.webp',                   mobile: false },
+    { id: 4,  name: 'scikit-learn', logo: '/tech-logos/Scikit_learn_logo_small.svg.png',         mobile: true  },
+    { id: 5,  name: 'XGBoost',      logo: '/tech-logos/XGBoost_logo.png',                        mobile: false },
+    { id: 6,  name: 'TensorFlow',   logo: '/tech-logos/Tensorflow_logo.svg.png',                 mobile: false },
+    { id: 7,  name: 'OpenAI',       logo: '/tech-logos/openai-icon-2021x2048-4rpe5x7n.png',      mobile: true  },
+    { id: 8,  name: 'DeepSeek',     logo: '/tech-logos/DeepSeek_logo_icon.png',                  mobile: true  },
+    { id: 9,  name: 'Gemini',       logo: '/tech-logos/gemini-icon-logo-png_seeklogo-611605.png',mobile: true  },
+    { id: 10, name: 'Hugging Face', logo: '/tech-logos/huggingface-color.png',                   mobile: false },
+    { id: 11, name: 'Azure',        logo: '/tech-logos/Microsoft_Azure.svg.png',                 mobile: true  },
+    { id: 12, name: 'Databricks',   logo: '/tech-logos/databricks-logo-1.png',                   mobile: false },
+    { id: 13, name: 'Docker',       logo: '/tech-logos/docker-mark-blue-scaled.webp',            mobile: true  },
+    { id: 14, name: 'PostgreSQL',   logo: '/tech-logos/postgresql.png',                          mobile: false },
+    { id: 15, name: 'n8n',          logo: '/tech-logos/n8n-color.svg',                           mobile: true  },
   ];
 
   return (
@@ -124,7 +53,7 @@ const Technologies = () => {
           <div className="bg-white rounded-2xl py-12 px-8 shadow-lg">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-4 gap-y-8 justify-items-center">
               {technologies.map((tech) => (
-                <div key={tech.id} className="group transform transition-all hover:scale-110">
+                <div key={tech.id} className={`group transform transition-all hover:scale-110 ${tech.mobile ? '' : 'hidden md:block'}`}>
                   <div className="h-24 flex items-center justify-center transition-all">
                     <div className="relative w-16 h-16">
                       <Image
