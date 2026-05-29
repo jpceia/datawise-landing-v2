@@ -110,68 +110,96 @@ const OurProcess = () => {
           <p className="text-lg text-gray-600">{t('subtitle')}</p>
         </motion.div>
 
-        {/* Timeline */}
-        <div className="flex justify-center mb-10 relative">
-          <div className="bg-gray-300 h-1 absolute top-1/2 left-0 right-0"></div>
-          <motion.div
-            className="bg-primary h-1 absolute top-1/2 left-0"
-            initial="initial"
-            animate="animate"
-            custom={activeStage}
-            variants={timelineVariants}
-          ></motion.div>
-          <div className="flex justify-between relative z-10 w-full max-w-3xl">
+        {/* Mobile: vertical stage selector */}
+        <div className="flex flex-col gap-2 mb-8 md:hidden">
+          {stages.map((stage, index) => (
+            <motion.button
+              key={stage.id}
+              className={`flex items-center gap-4 w-full rounded-xl px-4 py-3 text-left transition-all
+                ${activeStage === index
+                  ? 'bg-white shadow-md border-l-4 border-primary text-primary'
+                  : 'bg-white/60 border-l-4 border-transparent text-gray-500'}`}
+              onClick={() => setActiveStage(index)}
+              variants={buttonVariants}
+              initial="idle"
+              whileTap="tap"
+            >
+              <div className={`rounded-full p-2 shrink-0 ${activeStage === index ? 'bg-primary/10' : 'bg-gray-100'}`}>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={stage.icon}></path>
+                </svg>
+              </div>
+              <div>
+                <p className="font-bold text-sm leading-tight">{stage.title}</p>
+                <p className="text-xs mt-0.5 text-gray-500">{stage.subtitle}</p>
+              </div>
+            </motion.button>
+          ))}
+        </div>
+
+        {/* Desktop: horizontal timeline */}
+        <div className="hidden md:block">
+          <div className="flex justify-center mb-4 relative px-4">
+            <div className="bg-gray-300 h-1 absolute top-1/2 left-4 right-4"></div>
+            <motion.div
+              className="bg-primary h-1 absolute top-1/2 left-4"
+              initial="initial"
+              animate="animate"
+              custom={activeStage}
+              variants={timelineVariants}
+            ></motion.div>
+            <div className="flex justify-between relative z-10 w-full max-w-3xl">
+              {stages.map((stage, index) => (
+                <div key={stage.id} className="flex flex-col items-center">
+                  <motion.button
+                    className={`bg-white rounded-full focus:outline-none transition-all box-content flex items-center justify-center
+                      ${activeStage === index
+                        ? 'border-4 border-primary-light text-primary'
+                        : 'border-4 border-white text-gray-500 hover:text-gray-700'}`}
+                    style={{ width: '52px', height: '52px' } as React.CSSProperties}
+                    onClick={() => setActiveStage(index)}
+                    aria-label={stage.title}
+                    variants={buttonVariants}
+                    initial="idle"
+                    whileHover="hover"
+                    whileTap="tap"
+                  >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={stage.icon}></path>
+                    </svg>
+                  </motion.button>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex justify-between max-w-3xl mx-auto mb-16">
             {stages.map((stage, index) => (
-              <div key={stage.id} className="flex flex-col items-center">
-                <motion.button
-                  className={`bg-white rounded-full focus:outline-none transition-all box-content flex items-center justify-center
-                    ${activeStage === index
-                      ? 'border-4 border-primary-light text-primary'
-                      : 'border-4 border-white text-gray-500 hover:text-gray-700'}`}
-                  style={{ width: '52px', height: '52px' } as React.CSSProperties}
-                  onClick={() => setActiveStage(index)}
-                  aria-label={stage.title}
-                  variants={buttonVariants}
-                  initial="idle"
-                  whileHover="hover"
-                  whileTap="tap"
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={stage.icon}></path>
-                  </svg>
-                </motion.button>
+              <div key={`label-${stage.id}`} className="w-1/3 text-center px-4">
+                <div className="h-16">
+                  <motion.h3
+                    className={`font-bold transition-all ${activeStage === index ? 'text-primary text-lg' : 'text-gray-500'}`}
+                    animate={{
+                      fontSize: activeStage === index ? '1.125rem' : '1rem',
+                      color: activeStage === index ? '#0D47A1' : '#6B7280',
+                      transition: { duration: 0.4 },
+                    }}
+                  >
+                    {stage.title}
+                  </motion.h3>
+                  <motion.p
+                    className={`text-sm transition-all ${activeStage === index ? 'text-gray-800' : 'text-gray-500'}`}
+                    animate={{
+                      color: activeStage === index ? '#1F2937' : '#6B7280',
+                      transition: { duration: 0.4 },
+                    }}
+                  >
+                    {stage.subtitle}
+                  </motion.p>
+                </div>
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Stage labels */}
-        <div className="flex justify-between max-w-3xl mx-auto mb-16">
-          {stages.map((stage, index) => (
-            <div key={`label-${stage.id}`} className="w-1/3 text-center px-4 mx-5">
-              <div className="h-16">
-                <motion.h3
-                  className={`font-bold transition-all ${activeStage === index ? 'text-primary text-lg' : 'text-gray-500'}`}
-                  animate={{
-                    fontSize: activeStage === index ? '1.125rem' : '1rem',
-                    color: activeStage === index ? '#0D47A1' : '#6B7280',
-                    transition: { duration: 0.4 },
-                  }}
-                >
-                  {stage.title}
-                </motion.h3>
-                <motion.p
-                  className={`text-sm transition-all ${activeStage === index ? 'text-gray-800' : 'text-gray-500'}`}
-                  animate={{
-                    color: activeStage === index ? '#1F2937' : '#6B7280',
-                    transition: { duration: 0.4 },
-                  }}
-                >
-                  {stage.subtitle}
-                </motion.p>
-              </div>
-            </div>
-          ))}
         </div>
 
         {/* Content */}
