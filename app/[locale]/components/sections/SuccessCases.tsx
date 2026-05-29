@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const SuccessCases = () => {
   const t = useTranslations('SuccessCases');
@@ -91,63 +92,81 @@ const SuccessCases = () => {
               </div>
             </div>
             
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8">
-              <h3 className="text-2xl font-bold mb-2">{cases[activeCase].title}</h3>
-              <p className="text-white/70 mb-4">{cases[activeCase].description}</p>
-
-              {/* Mobile: vertical list */}
-              <div className="flex flex-col gap-1.5 mb-4 sm:hidden">
-                {cases[activeCase].stats.map((stat: any, index: number) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <span className="text-2xl font-bold text-primary-light w-6 text-center shrink-0">{stat.symbol}</span>
-                    <span className="text-sm text-white/80">{stat.label}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Desktop: 3 columns */}
-              <div className="hidden sm:grid grid-cols-3 gap-3 mb-8">
-                {cases[activeCase].stats.map((stat: any, index: number) => (
-                  <div key={index} className="bg-white/10 rounded-lg p-4 text-center">
-                    <div className="text-2xl font-bold text-primary-light leading-tight">{stat.value}</div>
-                    <div className="text-sm text-white/70 mt-1">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-              
-              <Link 
-                href={cases[activeCase].link}
-                className="inline-flex items-center text-white bg-primary-light/20 hover:bg-primary-light/30 px-5 py-3 rounded-lg transition-colors"
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeCase}
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.35, ease: 'easeOut' }}
               >
-                {t('readFullArticle')}
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </Link>
-            </div>
+                <h3 className="text-2xl font-bold mb-2">{cases[activeCase].title}</h3>
+                <p className="text-white/70 mb-4">{cases[activeCase].description}</p>
+
+                {/* Mobile: vertical list */}
+                <div className="flex flex-col gap-1.5 mb-4 sm:hidden">
+                  {cases[activeCase].stats.map((stat: any, index: number) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <span className="text-2xl font-bold text-primary-light w-6 text-center shrink-0">{stat.symbol}</span>
+                      <span className="text-sm text-white/80">{stat.label}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Desktop: 3 columns */}
+                <div className="hidden sm:grid grid-cols-3 gap-3 mb-8">
+                  {cases[activeCase].stats.map((stat: any, index: number) => (
+                    <div key={index} className="bg-white/10 rounded-lg p-4 text-center">
+                      <div className="text-2xl font-bold text-primary-light leading-tight">{stat.value}</div>
+                      <div className="text-sm text-white/70 mt-1">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <Link
+                  href={cases[activeCase].link}
+                  className="inline-flex items-center text-white bg-primary-light/20 hover:bg-primary-light/30 px-5 py-3 rounded-lg transition-colors"
+                >
+                  {t('readFullArticle')}
+                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </Link>
+              </motion.div>
+            </AnimatePresence>
           </div>
           
           {/* Case image */}
           <div className="relative">
-            <div className="relative h-[450px] w-full overflow-hidden rounded-xl">
-              <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/80 to-transparent z-10"></div>
-              <Image
-                src={cases[activeCase].imageUrl}
-                alt={cases[activeCase].title}
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover transition-all duration-500"
-              />
-              
-              {/* Badges */}
-              <div className="absolute bottom-6 left-6 right-6 z-20">
-                <div className="flex flex-wrap gap-3">
-                  {cases[activeCase].tags.map((tag: string, index: number) => (
-                    <span key={index} className="bg-primary-light/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm">{tag}</span>
-                  ))}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`img-${activeCase}`}
+                className="relative h-[450px] w-full overflow-hidden rounded-xl"
+                initial={{ opacity: 0, scale: 0.97 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.97 }}
+                transition={{ duration: 0.4, ease: 'easeOut' }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/80 to-transparent z-10"></div>
+                <Image
+                  src={cases[activeCase].imageUrl}
+                  alt={cases[activeCase].title}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+
+                {/* Badges */}
+                <div className="absolute bottom-6 left-6 right-6 z-20">
+                  <div className="flex flex-wrap gap-3">
+                    {cases[activeCase].tags.map((tag: string, index: number) => (
+                      <span key={index} className="bg-primary-light/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm">{tag}</span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>
