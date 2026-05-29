@@ -101,9 +101,9 @@
           "subtitle": "One-Way Fee Optimization",
           "description": "This is a success story of a motorhome rental company, where we managed to optimize the fleet management process and consequently improve their operational results.",
           "stats": [
-            { "value": "Higher", "label": "Profitability" },
-            { "value": "Reduction", "label": "Logistics costs" },
-            { "value": "Improvement", "label": "Occupancy rate" }
+            { "value": "Higher", "symbol": "+", "label": "Profitability" },
+            { "value": "Reduction", "symbol": "-", "label": "Logistics costs" },
+            { "value": "Improvement", "symbol": "+", "label": "Occupancy rate" }
           ],
           "tags": ["Data analysis", "Machine Learning", "Python"]
         },
@@ -112,9 +112,9 @@
           "subtitle": "Route Planning",
           "description": "Another success story with a carrier specialized in last-mile delivery, where we helped solve a very specific operational challenge.",
           "stats": [
-            { "value": "Reduction", "label": "Delivery time" },
-            { "value": "Savings", "label": "Fuel" },
-            { "value": "Increase", "label": "Customer satisfaction" }
+            { "value": "Reduction", "symbol": "-", "label": "Delivery time" },
+            { "value": "Savings", "symbol": "-", "label": "Fuel" },
+            { "value": "Increase", "symbol": "+", "label": "Customer satisfaction" }
           ],
           "tags": ["Optimization", "Georeferencing", "Python"]
         },
@@ -123,9 +123,9 @@
           "subtitle": "Profitability Dashboard",
           "description": "The story of how we helped a ride-hailing company solve a critical challenge related to profitability visibility.",
           "stats": [
-            { "value": "Increase", "label": "Profitability per driver" },
-            { "value": "Optimization", "label": "Work hours" },
-            { "value": "Reduction", "label": "Operational costs" }
+            { "value": "Increase", "symbol": "+", "label": "Profitability per driver" },
+            { "value": "Optimization", "symbol": "+", "label": "Work hours" },
+            { "value": "Reduction", "symbol": "-", "label": "Operational costs" }
           ],
           "tags": ["Management Control", "Analytical Accounting", "PowerBI"]
         }

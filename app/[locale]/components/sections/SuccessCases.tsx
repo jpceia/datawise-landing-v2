@@ -63,7 +63,21 @@ const SuccessCases = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Case selector */}
           <div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden mb-8">
+            {/* Mobile: vertical selector */}
+            <div className="flex flex-col gap-2 mb-8 sm:hidden">
+              {cases.map((caseItem, index) => (
+                <button
+                  key={caseItem.id}
+                  className={`flex items-center gap-3 w-full rounded-xl px-4 py-3 text-left transition-all border-l-4 ${activeCase === index ? 'bg-white/20 border-primary-light font-medium' : 'bg-white/5 border-transparent hover:bg-white/10'}`}
+                  onClick={() => setActiveCase(index)}
+                >
+                  <span className={`text-sm ${activeCase === index ? 'text-white' : 'text-white/70'}`}>{caseItem.subtitle}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Desktop: horizontal tabs */}
+            <div className="hidden sm:block bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden mb-8">
               <div className="grid grid-cols-3">
                 {cases.map((caseItem, index) => (
                   <button
@@ -79,13 +93,24 @@ const SuccessCases = () => {
             
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8">
               <h3 className="text-2xl font-bold mb-2">{cases[activeCase].title}</h3>
-              <p className="text-white/70 mb-8">{cases[activeCase].description}</p>
-              
-              <div className="grid grid-cols-3 gap-4 mb-8">
+              <p className="text-white/70 mb-4">{cases[activeCase].description}</p>
+
+              {/* Mobile: vertical list */}
+              <div className="flex flex-col gap-1.5 mb-4 sm:hidden">
+                {cases[activeCase].stats.map((stat: any, index: number) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <span className="text-2xl font-bold text-primary-light w-6 text-center shrink-0">{stat.symbol}</span>
+                    <span className="text-sm text-white/80">{stat.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Desktop: 3 columns */}
+              <div className="hidden sm:grid grid-cols-3 gap-3 mb-8">
                 {cases[activeCase].stats.map((stat: any, index: number) => (
                   <div key={index} className="bg-white/10 rounded-lg p-4 text-center">
-                    <div className="text-2xl font-bold text-primary-light">{stat.value}</div>
-                    <div className="text-sm text-white/70">{stat.label}</div>
+                    <div className="text-2xl font-bold text-primary-light leading-tight">{stat.value}</div>
+                    <div className="text-sm text-white/70 mt-1">{stat.label}</div>
                   </div>
                 ))}
               </div>

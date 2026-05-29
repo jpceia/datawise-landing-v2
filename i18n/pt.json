@@ -101,18 +101,9 @@
         "subtitle": "Otimização de One-Way Fees",
         "description": "Este é um exemplo de sucesso de uma empresa de aluguer de auto-caravanas, onde conseguimos otimizar o processo de gestão de frota e, consequentemente, melhorar os seus resultados operacionais.",
         "stats": [
-          {
-            "value": "Maior",
-            "label": "Rentabilidade"
-          },
-          {
-            "value": "Redução",
-            "label": "Custos logísticos"
-          },
-          {
-            "value": "Melhoria",
-            "label": "Taxa de ocupação"
-          }
+          { "value": "Maior", "symbol": "+", "label": "Rentabilidade" },
+          { "value": "Redução", "symbol": "-", "label": "Custos logísticos" },
+          { "value": "Melhoria", "symbol": "+", "label": "Taxa de ocupação" }
         ],
         "tags": [
           "Análise de dados",
@@ -125,18 +116,9 @@
         "subtitle": "Planeamento de Rotas",
         "description": "Mais um caso de sucesso com uma transportadora especializada em last-mile delivery, onde ajudámos a resolver um desafio operacional bastante específico.",
         "stats": [
-          {
-            "value": "Redução",
-            "label": "Tempo de entrega"
-          },
-          {
-            "value": "Economia",
-            "label": "Combustível"
-          },
-          {
-            "value": "Aumento",
-            "label": "Satisfação do cliente"
-          }
+          { "value": "Redução", "symbol": "-", "label": "Tempo de entrega" },
+          { "value": "Economia", "symbol": "-", "label": "Combustível" },
+          { "value": "Aumento", "symbol": "+", "label": "Satisfação do cliente" }
         ],
         "tags": [
           "Otimização",
@@ -149,18 +131,9 @@
         "subtitle": "Dashboard de Rentabilidade",
         "description": "A história de como auxiliámos uma empresa de TVDE a resolver um desafio crítico relacionado com a visibilidade da rentabilidade.",
         "stats": [
-          {
-            "value": "Aumento",
-            "label": "Rentabilidade por motorista"
-          },
-          {
-            "value": "Otimização",
-            "label": "Horas de trabalho"
-          },
-          {
-            "value": "Redução",
-            "label": "Custos operacionais"
-          }
+          { "value": "Aumento", "symbol": "+", "label": "Rentabilidade por motorista" },
+          { "value": "Otimização", "symbol": "+", "label": "Horas de trabalho" },
+          { "value": "Redução", "symbol": "-", "label": "Custos operacionais" }
         ],
         "tags": [
           "Controlo de Gestão",
