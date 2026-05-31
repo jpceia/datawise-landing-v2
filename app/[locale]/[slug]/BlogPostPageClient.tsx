@@ -22,9 +22,7 @@ const BlogPostHeader: React.FC<{post: BlogPost; formattedDate: string; t: (key: 
       <div className="flex items-center text-sm text-gray-500">
         <span className="mr-4">{formattedDate}</span>
         {post.category && (
-          <Link href={`/blog/categoria/${post.category.toLowerCase().replace(/ /g, '-')}`} className="inline-flex items-center text-primary hover:text-primary-dark">
-            <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">{post.category}</span>
-          </Link>
+          <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">{post.category}</span>
         )}
       </div>
       <div>
