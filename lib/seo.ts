@@ -1,4 +1,5 @@
 import {routing} from '@/i18n/routing';
+import ContactData from '@/lib/data/ContactData';
 
 /**
  * Canonical site origin. Single source of truth — every absolute URL used for
@@ -42,5 +43,73 @@ export function buildAlternates(currentLocale: string, path = '') {
   return {
     canonical: localizedUrl(currentLocale, path),
     languages
+  };
+}
+
+/** Absolute URL of the brand logo used in structured data. */
+const LOGO_URL = `${SITE_URL}/images/web-app-manifest-512x512.png`;
+
+/**
+ * Organization schema for the brand. Reused across the site (one node is enough;
+ * search engines deduplicate by `@id`).
+ */
+export function organizationSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${SITE_URL}/#organization`,
+    name: ContactData.general.companyName,
+    url: SITE_URL,
+    logo: LOGO_URL,
+    email: ContactData.general.email,
+    telephone: ContactData.general.phone,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: ContactData.general.addressLine1,
+      addressLocality: 'Elvas',
+      postalCode: '7350-100',
+      addressCountry: 'PT'
+    },
+    sameAs: [ContactData.social.facebook, ContactData.social.linkedin]
+  };
+}
+
+/** WebSite schema for the home page. */
+export function websiteSchema(locale: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE_URL}/#website`,
+    url: SITE_URL,
+    name: ContactData.general.companyName,
+    inLanguage: HREFLANG_BY_LOCALE[locale] ?? locale,
+    publisher: {'@id': `${SITE_URL}/#organization`}
+  };
+}
+
+/**
+ * BlogPosting schema for an article. The Sanity model has no author field, so
+ * the organization is used as both author and publisher.
+ */
+export function blogPostingSchema(params: {
+  locale: string;
+  url: string;
+  title: string;
+  description?: string;
+  image?: string;
+  publishedAt: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    mainEntityOfPage: {'@type': 'WebPage', '@id': params.url},
+    headline: params.title,
+    description: params.description,
+    image: params.image ? [params.image] : undefined,
+    datePublished: params.publishedAt,
+    dateModified: params.publishedAt,
+    inLanguage: HREFLANG_BY_LOCALE[params.locale] ?? params.locale,
+    author: {'@id': `${SITE_URL}/#organization`},
+    publisher: {'@id': `${SITE_URL}/#organization`}
   };
 }

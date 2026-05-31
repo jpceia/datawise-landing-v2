@@ -1,7 +1,14 @@
 import type {Metadata} from 'next';
 import {getTranslations} from 'next-intl/server';
-import {buildAlternates, localizedUrl} from '@/lib/seo';
+import {buildAlternates, localizedUrl, organizationSchema, websiteSchema} from '@/lib/seo';
+import JsonLd from '@/components/JsonLd';
 import HomePageClient from './components/HomePageClient';
+
+const OG_IMAGE = {
+  url: '/images/web-app-manifest-512x512.png',
+  width: 512,
+  height: 512
+};
 
 export async function generateMetadata({
   params
@@ -18,12 +25,23 @@ export async function generateMetadata({
       title: t('Metadata.ogTitle'),
       description: t('Metadata.ogDescription'),
       url: localizedUrl(params.locale),
-      images: ['/images/web-app-manifest-512x512.png'],
+      images: [OG_IMAGE],
       type: 'website'
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t('Metadata.ogTitle'),
+      description: t('Metadata.ogDescription'),
+      images: [OG_IMAGE.url]
     }
   };
 }
 
-export default function HomePage() {
-  return <HomePageClient />;
+export default function HomePage({params}: {params: {locale: string}}) {
+  return (
+    <>
+      <JsonLd data={[organizationSchema(), websiteSchema(params.locale)]} />
+      <HomePageClient />
+    </>
+  );
 }

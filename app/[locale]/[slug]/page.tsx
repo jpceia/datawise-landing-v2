@@ -3,7 +3,8 @@ import {notFound} from 'next/navigation';
 import BlogPostPageClient from './BlogPostPageClient';
 import {getAllPostSlugs, getFullPostBySlug, getPosts} from '@/lib/sanity/client';
 import {routing} from '@/i18n/routing';
-import {buildAlternates, localizedUrl} from '@/lib/seo';
+import {blogPostingSchema, buildAlternates, localizedUrl} from '@/lib/seo';
+import JsonLd from '@/components/JsonLd';
 
 export const revalidate = 3600;
 
@@ -38,6 +39,8 @@ export async function generateMetadata({
 
   const path = `/${post.slug.current}`;
 
+  const images = post.coverImage ? [post.coverImage] : [];
+
   return {
     title: `${post.title} | Blog Datawise`,
     description: post.excerpt,
@@ -45,9 +48,16 @@ export async function generateMetadata({
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      images: post.coverImage ? [post.coverImage] : [],
+      images,
       url: localizedUrl(params.locale, path),
-      type: 'article'
+      type: 'article',
+      publishedTime: post.publishedAt
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images
     }
   };
 }
@@ -55,13 +65,22 @@ export async function generateMetadata({
 export default async function BlogPostPage({
   params
 }: {
-  params: {slug: string};
+  params: {locale: string; slug: string};
 }) {
   const post = await getFullPostBySlug(params.slug);
 
   if (!post) {
     notFound();
   }
+
+  const postSchema = blogPostingSchema({
+    locale: params.locale,
+    url: localizedUrl(params.locale, `/${post.slug.current}`),
+    title: post.title,
+    description: post.excerpt,
+    image: post.coverImage,
+    publishedAt: post.publishedAt
+  });
 
   const allPosts = await getPosts();
   const currentIndex = allPosts.findIndex(p => p.slug.current === params.slug);
@@ -82,5 +101,10 @@ export default async function BlogPostPage({
         }
       : null;
 
-  return <BlogPostPageClient post={post} nextPost={nextPost} prevPost={prevPost} />;
+  return (
+    <>
+      <JsonLd data={postSchema} />
+      <BlogPostPageClient post={post} nextPost={nextPost} prevPost={prevPost} />
+    </>
+  );
 }

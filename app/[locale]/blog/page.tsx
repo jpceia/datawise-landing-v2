@@ -1,31 +1,53 @@
 import type {Metadata} from 'next';
+import {getTranslations} from 'next-intl/server';
+import type {BlogEntry} from '@/types/sanity';
 import {getPosts} from '@/lib/sanity/client';
-import {buildAlternates, localizedUrl} from '@/lib/seo';
+import {buildAlternates, localizedUrl, organizationSchema} from '@/lib/seo';
+import JsonLd from '@/components/JsonLd';
 import BlogIndexPageClient from './BlogIndexPageClient';
 
 export const revalidate = 3600;
 
-export function generateMetadata({params}: {params: {locale: string}}): Metadata {
+const OG_IMAGE = '/images/web-app-manifest-512x512.png';
+
+export async function generateMetadata({params}: {params: {locale: string}}): Promise<Metadata> {
+  const t = await getTranslations({locale: params.locale, namespace: 'Blog'});
+  const title = t('title');
+  const description = t('description');
+
   return {
-    title: 'Blog | Datawise',
-    description: 'Artigos, guias e notícias sobre ciência de dados, machine learning e casos de sucesso da Datawise.',
+    title,
+    description,
     alternates: buildAlternates(params.locale, '/blog'),
     openGraph: {
-      title: 'Blog | Datawise',
-      description: 'Insights e conhecimentos sobre ciência de dados e inteligência artificial',
+      title,
+      description: t('ogDescription'),
       url: localizedUrl(params.locale, '/blog'),
-      images: ['/images/web-app-manifest-512x512.png'],
+      images: [{url: OG_IMAGE, width: 512, height: 512}],
       type: 'website'
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: t('ogDescription'),
+      images: [OG_IMAGE]
     }
   };
 }
 
 export default async function BlogIndexPage() {
+  let posts: BlogEntry[];
   try {
-    const posts = await getPosts();
-    return <BlogIndexPageClient posts={posts} />;
+    posts = await getPosts();
   } catch (error) {
     console.error('Error fetching blog data:', error);
-    return <BlogIndexPageClient posts={[]} />;
+    posts = [];
   }
+
+  return (
+    <>
+      <JsonLd data={organizationSchema()} />
+      <BlogIndexPageClient posts={posts} />
+    </>
+  );
 }

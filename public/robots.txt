@@ -1,107 +1,11 @@
 # robots.txt for https://www.datawise.pt
 
-# Allow all crawlers
+# Allow all crawlers full access
 User-agent: *
 Allow: /
-Allow: /blog/
-Allow: /tvde/
-Allow: /auto-caravanas/
-Allow: /last-mile/
-Allow: /privacy-policy/
-Allow: /terms-of-use/
 
-# Common directories and files to disallow
-Disallow: /wp-admin/
-Disallow: /wp-includes/
-Disallow: /wp-content/plugins/
-Disallow: /wp-content/themes/
-Disallow: /wp-json/
-Disallow: /search/
-Disallow: /*?s=*
-Disallow: /*?p=*
-Disallow: /tmp/
-Disallow: /feed/
-Disallow: /trackback/
-Disallow: /comments/
-Disallow: /cgi-bin/
-Disallow: /wp-login.php
-Disallow: /wp-register.php
-Disallow: /xmlrpc.php
-Disallow: /template.html
-Disallow: /readme.html
-
-# Allow AI crawlers and search engines
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: Baiduspider
-Allow: /
-
-User-agent: YandexBot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-User-agent: WhatsApp
-Allow: /
-
-User-agent: TelegramBot
-Allow: /
-
-User-agent: Applebot
-Allow: /
-
-User-agent: SemrushBot
-Allow: /
-
-User-agent: AhrefsBot
-Allow: /
-
-User-agent: MJ12bot
-Allow: /
-
-User-agent: DotBot
-Allow: /
-
-User-agent: Screaming Frog SEO Spider
-Allow: /
-
-User-agent: *
-Allow: /
+# Internal/API routes that should not be indexed
+Disallow: /api/
 
 # Sitemap location
 Sitemap: https://www.datawise.pt/sitemap.xml

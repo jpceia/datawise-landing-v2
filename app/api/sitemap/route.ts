@@ -1,39 +1,67 @@
 import {NextResponse} from 'next/server';
 import {getPosts} from '@/lib/sanity/client';
 import {BlogEntry} from '@/types/sanity';
+import {routing} from '@/i18n/routing';
+import {localizedUrl} from '@/lib/seo';
 
-const SITE_URL = process.env.SITE_URL || 'https://www.datawise.pt';
+/** BCP-47 hreflang value per locale, plus the x-default. */
+const HREFLANG_BY_LOCALE: Record<string, string> = {
+  pt: 'pt-PT',
+  en: 'en'
+};
 
-interface SitemapUrl {
-  loc: string;
+interface SitemapEntry {
+  path: string;
   lastModified?: string;
   changefreq?: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
   priority?: string;
 }
 
-function generateSitemapXML(urls: SitemapUrl[]) {
+function escapeXml(value: string) {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
+/**
+ * Builds one `<url>` block per (locale, entry), each declaring `xhtml:link`
+ * alternates for every locale + x-default, so the bilingual structure is
+ * explicit to crawlers.
+ */
+function buildUrlBlock(entry: SitemapEntry, currentLocale: string) {
+  const lastmod = entry.lastModified ? new Date(entry.lastModified).toISOString() : new Date().toISOString();
+
+  const alternates = [
+    ...routing.locales.map(
+      locale =>
+        `    <xhtml:link rel="alternate" hreflang="${HREFLANG_BY_LOCALE[locale] ?? locale}" href="${escapeXml(localizedUrl(locale, entry.path))}" />`
+    ),
+    `    <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(localizedUrl(routing.defaultLocale, entry.path))}" />`
+  ].join('\n');
+
+  return `  <url>
+    <loc>${escapeXml(localizedUrl(currentLocale, entry.path))}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>${entry.changefreq || 'weekly'}</changefreq>
+    <priority>${entry.priority || '0.7'}</priority>
+${alternates}
+  </url>`;
+}
+
+function generateSitemapXML(entries: SitemapEntry[]) {
   const xmlHeader = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">`;
-
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">`;
   const xmlFooter = `</urlset>`;
 
-  const urlEntries = urls
-    .map(url => {
-      const lastmod = url.lastModified ? new Date(url.lastModified).toISOString() : new Date().toISOString();
-      return `
-        <url>
-          <loc>${url.loc}</loc>
-          <lastmod>${lastmod}</lastmod>
-          <changefreq>${url.changefreq || 'weekly'}</changefreq>
-          <priority>${url.priority || '0.7'}</priority>
-        </url>`;
-    })
+  const blocks = entries
+    .flatMap(entry => routing.locales.map(locale => buildUrlBlock(entry, locale)))
     .join('\n');
 
-  return `${xmlHeader}\n${urlEntries}\n${xmlFooter}`;
+  return `${xmlHeader}\n${blocks}\n${xmlFooter}`;
 }
 
 export async function GET() {
@@ -44,23 +72,13 @@ export async function GET() {
       orderDirection: 'desc'
     });
 
-    const staticPages: SitemapUrl[] = [
-      {
-        loc: `${SITE_URL}/`,
-        changefreq: 'daily',
-        priority: '1.0',
-        lastModified: new Date().toISOString()
-      },
-      {
-        loc: `${SITE_URL}/blog`,
-        changefreq: 'daily',
-        priority: '0.9',
-        lastModified: new Date().toISOString()
-      }
+    const staticPages: SitemapEntry[] = [
+      {path: '', changefreq: 'daily', priority: '1.0'},
+      {path: '/blog', changefreq: 'daily', priority: '0.9'}
     ];
 
-    const blogUrls: SitemapUrl[] = blogPosts.map((post: BlogEntry) => ({
-      loc: `${SITE_URL}/${post.slug.current}`,
+    const blogUrls: SitemapEntry[] = blogPosts.map((post: BlogEntry) => ({
+      path: `/${post.slug.current}`,
       changefreq: 'monthly',
       priority: '0.8',
       lastModified: post.publishedAt
