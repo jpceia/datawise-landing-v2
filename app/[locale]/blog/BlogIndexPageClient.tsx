@@ -138,6 +138,7 @@ const NoResults = () => {
 };
 
 export default function BlogIndexPageClient({posts}: BlogIndexProps) {
+  const t = useTranslations('Blog');
   const featuredPost = posts[0];
   const remainingPosts = posts.slice(1);
 
@@ -145,6 +146,10 @@ export default function BlogIndexPageClient({posts}: BlogIndexProps) {
     <main>
       <section className="pt-32 pb-20 bg-gray-50">
         <div className="container mx-auto px-4">
+          <header className="max-w-3xl mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{t('heading')}</h1>
+            <p className="text-lg text-gray-600">{t('intro')}</p>
+          </header>
           {posts.length > 0 ? (
             <>
               <div className="mb-16">

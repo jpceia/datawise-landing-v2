@@ -3,8 +3,7 @@ import {notFound} from 'next/navigation';
 import BlogPostPageClient from './BlogPostPageClient';
 import {getAllPostSlugs, getFullPostBySlug, getPosts} from '@/lib/sanity/client';
 import {routing} from '@/i18n/routing';
-
-const siteUrl = process.env.SITE_URL || 'https://www.datawise.pt';
+import {buildAlternates, localizedUrl} from '@/lib/seo';
 
 export const revalidate = 3600;
 
@@ -27,24 +26,27 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params
 }: {
-  params: {slug: string};
+  params: {locale: string; slug: string};
 }): Promise<Metadata> {
   const post = await getFullPostBySlug(params.slug);
 
   if (!post) {
     return {
-      title: 'Artigo nao encontrado | Blog Datawise'
+      title: 'Artigo não encontrado | Blog Datawise'
     };
   }
+
+  const path = `/${post.slug.current}`;
 
   return {
     title: `${post.title} | Blog Datawise`,
     description: post.excerpt,
+    alternates: buildAlternates(params.locale, path),
     openGraph: {
       title: post.title,
       description: post.excerpt,
       images: post.coverImage ? [post.coverImage] : [],
-      url: `${siteUrl}/${post.slug.current}`,
+      url: localizedUrl(params.locale, path),
       type: 'article'
     }
   };

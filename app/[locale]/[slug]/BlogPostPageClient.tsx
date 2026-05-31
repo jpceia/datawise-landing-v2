@@ -8,6 +8,7 @@ import {BlogPost} from '@/types/sanity';
 import PortableTextContent from '@/components/PortableTextContent';
 import ContactButton from '@/components/ContactButton';
 import {formatDate} from '@/lib/utils/date';
+import {SITE_URL} from '@/lib/seo';
 
 interface BlogPostPageProps {
   post: BlogPost;
@@ -93,7 +94,7 @@ const SocialSharing: React.FC<{post: BlogPost; t: (key: string) => string}> = ({
     <span className="text-gray-600 mr-4">{t('share')}</span>
     <div className="flex space-x-3">
       <a
-        href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://datawise.pt/${post.slug.current}`)}`}
+        href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`${SITE_URL}/${post.slug.current}`)}`}
         target="_blank"
         rel="noopener noreferrer"
         className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 transition-colors"
@@ -108,7 +109,7 @@ const SocialSharing: React.FC<{post: BlogPost; t: (key: string) => string}> = ({
         </svg>
       </a>
       <a
-        href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`https://datawise.pt/${post.slug.current}`)}&text=${encodeURIComponent(post.title)}`}
+        href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`${SITE_URL}/${post.slug.current}`)}&text=${encodeURIComponent(post.title)}`}
         target="_blank"
         rel="noopener noreferrer"
         className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 transition-colors"
@@ -119,7 +120,7 @@ const SocialSharing: React.FC<{post: BlogPost; t: (key: string) => string}> = ({
         </svg>
       </a>
       <a
-        href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(`https://datawise.pt/${post.slug.current}`)}&title=${encodeURIComponent(post.title)}`}
+        href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(`${SITE_URL}/${post.slug.current}`)}&title=${encodeURIComponent(post.title)}`}
         target="_blank"
         rel="noopener noreferrer"
         className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 transition-colors"

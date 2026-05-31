@@ -1,23 +1,5 @@
 import type {Metadata} from 'next';
-import {Inter, Plus_Jakarta_Sans} from 'next/font/google';
-import {GoogleAnalytics, GoogleTagManager} from '@next/third-parties/google';
-import {Analytics} from '@vercel/analytics/next';
-import {SpeedInsights} from '@vercel/speed-insights/next';
 import '@/styles/globals.css';
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
-  variable: '--font-plus-jakarta-sans',
-  display: 'swap'
-});
-
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
-  variable: '--font-inter',
-  display: 'swap'
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.datawise.pt'),
@@ -36,24 +18,11 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootLayout({
-  children
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="pt-PT">
-      <body className={`${plusJakartaSans.variable} ${inter.variable} font-sans`}>
-        {children}
-        <Analytics />
-        <SpeedInsights />
-        {process.env.NODE_ENV !== 'development' && (
-          <>
-            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
-            <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID!} />
-          </>
-        )}
-      </body>
-    </html>
-  );
+/**
+ * Root layout is a passthrough. The `<html>`/`<body>` shell lives in the locale
+ * layout so that `<html lang>` can reflect the active locale. Routes rendered
+ * outside `[locale]` (e.g. the global `not-found`) provide their own shell.
+ */
+export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
+  return children;
 }
