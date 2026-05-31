@@ -1,10 +1,12 @@
 import type {Metadata} from 'next';
 import {notFound} from 'next/navigation';
+import {getTranslations} from 'next-intl/server';
 import BlogPostPageClient from './BlogPostPageClient';
 import {getAllPostSlugs, getFullPostBySlug, getPosts} from '@/lib/sanity/client';
 import {routing} from '@/i18n/routing';
-import {blogPostingSchema, buildAlternates, localizedUrl} from '@/lib/seo';
+import {blogPostingSchema, breadcrumbSchema, buildAlternates, localizedUrl} from '@/lib/seo';
 import JsonLd from '@/components/JsonLd';
+import ContactData from '@/lib/data/ContactData';
 
 export const revalidate = 3600;
 
@@ -44,6 +46,7 @@ export async function generateMetadata({
   return {
     title: `${post.title} | Blog Datawise`,
     description: post.excerpt,
+    authors: [{name: ContactData.general.companyName}],
     alternates: buildAlternates(params.locale, path),
     openGraph: {
       title: post.title,
@@ -82,6 +85,13 @@ export default async function BlogPostPage({
     publishedAt: post.publishedAt
   });
 
+  const t = await getTranslations({locale: params.locale, namespace: 'Blog'});
+  const breadcrumb = breadcrumbSchema(params.locale, [
+    {name: t('breadcrumbHome'), path: ''},
+    {name: 'Blog', path: '/blog'},
+    {name: post.title, path: `/${post.slug.current}`}
+  ]);
+
   const allPosts = await getPosts();
   const currentIndex = allPosts.findIndex(p => p.slug.current === params.slug);
 
@@ -103,7 +113,7 @@ export default async function BlogPostPage({
 
   return (
     <>
-      <JsonLd data={postSchema} />
+      <JsonLd data={[postSchema, breadcrumb]} />
       <BlogPostPageClient post={post} nextPost={nextPost} prevPost={prevPost} />
     </>
   );

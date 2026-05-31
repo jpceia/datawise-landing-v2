@@ -113,3 +113,20 @@ export function blogPostingSchema(params: {
     publisher: {'@id': `${SITE_URL}/#organization`}
   };
 }
+
+/**
+ * BreadcrumbList schema. `items` are ordered from root to current page; each
+ * item's `path` is locale-resolved into an absolute URL.
+ */
+export function breadcrumbSchema(locale: string, items: {name: string; path: string}[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: localizedUrl(locale, item.path)
+    }))
+  };
+}
