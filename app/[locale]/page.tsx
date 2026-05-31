@@ -5,9 +5,9 @@ import JsonLd from '@/components/JsonLd';
 import HomePageClient from './components/HomePageClient';
 
 const OG_IMAGE = {
-  url: '/images/web-app-manifest-512x512.png',
-  width: 512,
-  height: 512
+  url: '/images/og-default.png',
+  width: 1200,
+  height: 630
 };
 
 export async function generateMetadata({

@@ -8,7 +8,7 @@ import BlogIndexPageClient from './BlogIndexPageClient';
 
 export const revalidate = 3600;
 
-const OG_IMAGE = '/images/web-app-manifest-512x512.png';
+const OG_IMAGE = '/images/og-default.png';
 
 export async function generateMetadata({params}: {params: {locale: string}}): Promise<Metadata> {
   const t = await getTranslations({locale: params.locale, namespace: 'Blog'});
@@ -23,7 +23,7 @@ export async function generateMetadata({params}: {params: {locale: string}}): Pr
       title,
       description: t('ogDescription'),
       url: localizedUrl(params.locale, '/blog'),
-      images: [{url: OG_IMAGE, width: 512, height: 512}],
+      images: [{url: OG_IMAGE, width: 1200, height: 630}],
       type: 'website'
     },
     twitter: {
