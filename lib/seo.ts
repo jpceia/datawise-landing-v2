@@ -115,6 +115,22 @@ export function blogPostingSchema(params: {
 }
 
 /**
+ * `Service` schema list — one node per offering, each provided by the brand.
+ * `items` are the localized service title/description pairs.
+ */
+export function servicesSchema(locale: string, items: {name: string; description: string}[]) {
+  return items.map(item => ({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: item.name,
+    description: item.description,
+    inLanguage: HREFLANG_BY_LOCALE[locale] ?? locale,
+    provider: {'@id': `${SITE_URL}/#organization`},
+    areaServed: 'PT'
+  }));
+}
+
+/**
  * BreadcrumbList schema. `items` are ordered from root to current page; each
  * item's `path` is locale-resolved into an absolute URL.
  */

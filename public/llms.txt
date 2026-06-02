@@ -1,0 +1,31 @@
+# Datawise
+
+> Datawise is a Portuguese AI and Data Science consultancy that combines artificial
+> intelligence with business knowledge to turn a company's data and processes into
+> growth engines. Based in Elvas, Portugal, it delivers high-impact MVPs in 3–6 weeks.
+
+Datawise builds custom AI solutions for companies: predictive models, workflow
+automation, competitive intelligence, operational optimization, intelligent
+document classification, and data structuring/normalization. Content is available
+in Portuguese (default) and English.
+
+## Core pages
+
+- [Home](https://www.datawise.pt/): Company overview, services, success cases and process.
+- [Blog](https://www.datawise.pt/blog): Articles and guides on data science, machine learning and AI, plus client success stories.
+
+## Services
+
+- [Predictive Models](https://www.datawise.pt/predictive-models): Models that anticipate trends and behaviors (churn, sales forecasting, preventive maintenance).
+- [Competitive Intelligence](https://www.datawise.pt/competitive-intelligence): Automated collection and analysis of competitor, market and public-sentiment data.
+- [Workflow Automation](https://www.datawise.pt/workflow-automation): Automated orchestration of complex cross-department processes.
+- [Operational Optimization](https://www.datawise.pt/operational-optimization): Route, team and resource optimization for operational efficiency.
+
+## Contact
+
+- Email: geral@datawise.pt
+- LinkedIn: https://www.linkedin.com/company/datawise-dev/
+
+## Optional
+
+- [Sitemap](https://www.datawise.pt/sitemap.xml): Full list of indexable URLs.

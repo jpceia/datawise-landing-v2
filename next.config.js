@@ -15,18 +15,6 @@ const nextConfig = {
   env: {
     SITE_URL: 'https://www.datawise.pt',
   },
-  async rewrites() {
-    return {
-      beforeFiles: [],
-      afterFiles: [],
-      fallback: [
-        {
-          source: '/sitemap.xml',
-          destination: '/api/sitemap',
-        },
-      ],
-    };
-  },
 };
 
 module.exports = withNextIntl(nextConfig);
