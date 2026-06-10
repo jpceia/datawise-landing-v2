@@ -1,9 +1,12 @@
 # Section Components
 
-Main landing page sections, rendered in order in `pages/index.tsx`:
+Main landing page sections, rendered in order in `app/[locale]/page.tsx`:
 
 ## Hero.tsx
-Full-height hero with Globe3D on right side, animated headline, dual CTAs (Calendly + anchor link), scroll indicator. White background with blob animations.
+Full-height hero with animated headline, dual CTAs (contact modal + anchor link), decorative hero SVG, scroll indicator. Primary blue gradient background.
+
+## ClientLogos.tsx
+Client logos marquee strip.
 
 ## TransformBusiness.tsx
 Value proposition section with 3 benefit cards.
@@ -14,8 +17,8 @@ Value proposition section with 3 benefit cards.
 ## SuccessCases.tsx
 Case study carousel with stats, tags, and blog links. Images from Sanity CDN.
 
-## TechMaturity.tsx
-Technology maturity matrix visualization.
+## OurProcess.tsx
+Step-by-step methodology/process section.
 
 ## MissionValues.tsx
 Company mission and values display.

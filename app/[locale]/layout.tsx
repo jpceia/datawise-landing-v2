@@ -11,14 +11,14 @@ import {routing} from '@/i18n/routing';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
+  weight: ['500', '600', '700'],
   variable: '--font-plus-jakarta-sans',
   display: 'swap'
 });
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-inter',
   display: 'swap'
 });

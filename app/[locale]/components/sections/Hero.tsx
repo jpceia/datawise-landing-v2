@@ -56,6 +56,7 @@ const Hero: React.FC = () => {
       </div>
 
       <motion.img
+        fetchPriority="high"
         src="/Data-Wise_Hero-Section-Website-1440px.svg"
         alt=""
         aria-hidden="true"
