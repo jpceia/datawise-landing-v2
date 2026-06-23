@@ -159,9 +159,8 @@ const Footer: React.FC = () => {
       <div className="bg-primary-dark py-4 relative z-10">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center">
-            <p className="text-white/70 text-sm mr-4">{t('fundedBy')}</p>
-            <div className="relative h-10 w-48">
-              <Image src="/cofinanciamento.png" alt="Cofinanciamento" fill className="object-contain object-left" />
+            <div className="relative h-16 w-full max-w-3xl">
+              <Image src="/BARRA_LOGOS-02.png" alt="Cofinanciamento" fill className="object-contain" />
             </div>
           </div>
         </div>
