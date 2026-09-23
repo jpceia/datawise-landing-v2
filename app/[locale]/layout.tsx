@@ -2,7 +2,7 @@ import {hasLocale, NextIntlClientProvider} from 'next-intl';
 import {setRequestLocale} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {Inter, Plus_Jakarta_Sans} from 'next/font/google';
-import {GoogleAnalytics, GoogleTagManager} from '@next/third-parties/google';
+import {GoogleTagManager} from '@next/third-parties/google';
 import {Analytics} from '@vercel/analytics/next';
 import {SpeedInsights} from '@vercel/speed-insights/next';
 import SiteFrame from '@/components/layout/SiteFrame';
@@ -59,11 +59,9 @@ export default async function LocaleLayout({
         </NextIntlClientProvider>
         <Analytics />
         <SpeedInsights />
+        {/* GA4 is loaded through GTM so it respects Cookiebot consent defaults */}
         {process.env.NODE_ENV !== 'development' && (
-          <>
-            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
-            <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID!} />
-          </>
+          <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID!} />
         )}
       </body>
     </html>
