@@ -158,10 +158,10 @@ const Footer: React.FC = () => {
       {/* Funding */}
       <div className="bg-primary-dark py-4 relative z-10">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center">
-            <div className="relative h-16 w-full max-w-3xl">
-              <Image src="/BARRA_LOGOS-02.png" alt="Cofinanciamento" fill className="object-contain" />
-            </div>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+            <Image src="/BARRA_LOGOS-02.png" alt="Cofinanciamento" width={4925} height={711} sizes="(min-width: 768px) 400px, 448px" className="h-auto w-full max-w-md md:h-14 md:w-auto md:max-w-none" />
+            <div className="hidden md:block h-10 w-px bg-white/20" aria-hidden="true"></div>
+            <Image src="/empreende-xxi-logo.png" alt="Empreende XXI" width={625} height={116} sizes="216px" className="h-8 md:h-10 w-auto shrink-0" />
           </div>
         </div>
       </div>
