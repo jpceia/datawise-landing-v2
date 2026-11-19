@@ -140,7 +140,7 @@ const Footer: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="text-white/70 text-sm mb-4 md:mb-0">© {currentYear} Datawise. {t('allRightsReserved')}</div>
-            <div className="flex space-x-6">
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
               <Link href="/privacy-policy" className="text-white/70 hover:text-white text-sm transition-colors">
                 {t('links.privacyPolicy')}
               </Link>
@@ -149,6 +149,9 @@ const Footer: React.FC = () => {
               </Link>
               <a href="https://www.livroreclamacoes.pt/inicio" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white text-sm transition-colors">
                 {t('links.complaintsBook')}
+              </a>
+              <a href="/voucher-startups-12318.pdf" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white text-sm transition-colors">
+                {t('links.projectSheet')}
               </a>
             </div>
           </div>
@@ -159,9 +162,13 @@ const Footer: React.FC = () => {
       <div className="bg-primary-dark py-4 relative z-10">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
-            <Image src="/BARRA_LOGOS-02.png" alt="Cofinanciamento" width={4925} height={711} sizes="(min-width: 768px) 400px, 448px" className="h-auto w-full max-w-md md:h-14 md:w-auto md:max-w-none" />
+            <a href="https://recuperarportugal.gov.pt/" target="_blank" rel="noopener noreferrer" aria-label="Recuperar Portugal – PRR, República Portuguesa, Financiado pela União Europeia NextGenerationEU (abre em novo separador)" className="block w-full max-w-md md:w-auto md:max-w-none">
+              <Image src="/BARRA_LOGOS-02.png" alt="Cofinanciamento" width={4925} height={711} sizes="(min-width: 768px) 400px, 448px" className="h-auto w-full md:h-14 md:w-auto" />
+            </a>
             <div className="hidden md:block h-10 w-px bg-white/20" aria-hidden="true"></div>
-            <Image src="/empreende-xxi-logo.png" alt="Empreende XXI" width={625} height={116} sizes="216px" className="h-8 md:h-10 w-auto shrink-0" />
+            <a href="https://startupportugal.com/programs/empreende-xxi/" target="_blank" rel="noopener noreferrer" aria-label="Empreende XXI (abre em novo separador)" className="shrink-0">
+              <Image src="/empreende-xxi-logo.png" alt="Empreende XXI" width={625} height={116} sizes="216px" className="h-8 md:h-10 w-auto" />
+            </a>
           </div>
         </div>
       </div>

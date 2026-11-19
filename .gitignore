@@ -31,3 +31,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local / work in progress (not for commit)
+.env
+/.claude/launch.json
+/.claude/settings.json
+/AGENTS.md
+/SEO-AUDIT.md
+/screenshots/
+/public/images/proposta/
+/app/\[locale\]/lp/
+/app/\[locale\]/proposta-topo/
